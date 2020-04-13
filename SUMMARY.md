@@ -2,7 +2,9 @@
 
 * [Introduction](README.md)
 
-## Introduction
+## Features
 
-* [Welcome](introduction/welcome.md)
+* [Modularity](features/modularity.md)
+* [Performance](features/performance.md)
+* [Security](features/security.md)
 

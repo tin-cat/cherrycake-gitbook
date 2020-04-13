@@ -4,7 +4,7 @@ description: >-
   efficient and secure PHP server web applications.
 ---
 
-# Welcome
+# Modularity
 
 ## Where it fits
 
