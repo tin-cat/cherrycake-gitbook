@@ -1,3 +1,9 @@
+---
+description: >-
+  These are the official Cherrycake Github repositories, please feel free to
+  take a look and contribute your ideas, issues and proposals there.
+---
+
 # Github
 
 ## Engine
