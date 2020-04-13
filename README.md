@@ -8,13 +8,12 @@ description: >-
 
 Instead of a comprehensive, all-in-one web app building environment, Cherrycake aims only to provide a strong foundational layer and implementation methodology for your server web applications that feels comfortable, rational and easy to use while prioritizing Cherrycake's three main goals:
 
-### Modularity
-
-
-
-### Performance
-
-### Security
+* **Modularity**
+  * Provides scalability, standardization and code tidiness.
+* **Performance**
+  * Maximizes response times and reliability even in very high traffic scenarios.
+* **Security**
+  * Identifies, blocks and reacts to known attack vectors.
 
 ## Applications
 
