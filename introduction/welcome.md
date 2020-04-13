@@ -4,13 +4,13 @@ description: >-
   efficient and secure PHP server web applications.
 ---
 
-# Introduction
+# Welcome
 
-## Where Cherrycake fits
+## Where it fits
 
 Instead of a comprehensive web app building environment, Cherrycake aims only to provide a strong foundational layer for your server web apps that feels comfortable, rational and easy to use with emphasis on the following key features
 
-## Key features
+## 
 
 
 
