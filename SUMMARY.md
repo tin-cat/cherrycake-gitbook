@@ -1,7 +1,10 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Architecture](architecture.md)
+
+## Architecture <a id="architecture-1"></a>
+
+* [Architecture basics](architecture-1/architecture.md)
 
 ## Features
 
