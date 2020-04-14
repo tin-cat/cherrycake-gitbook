@@ -2,16 +2,16 @@
 
 * [Introduction](README.md)
 
-## Architecture <a id="architecture-1"></a>
+## Architecture
 
-* [Basics](architecture-1/basics.md)
-* [Modules](architecture-1/modules.md)
-* [Classes](architecture-1/classes.md)
-* [Lifecycle](architecture-1/lifecycle/README.md)
-  * [Deep lifecycle](architecture-1/lifecycle/deep-lifecycle.md)
-* [Performance](architecture-1/performance.md)
-* [Security](architecture-1/security.md)
-* [Directory](architecture-1/directory-structure.md)
+* [Basics](architecture/basics.md)
+* [Modules](architecture/modules.md)
+* [Classes](architecture/classes.md)
+* [Lifecycle](architecture/lifecycle/README.md)
+  * [Deep lifecycle](architecture/lifecycle/deep-lifecycle.md)
+* [Performance](architecture/performance.md)
+* [Security](architecture/security.md)
+* [Directory](architecture/directory-structure.md)
 
 ## Guide
 
