@@ -4,11 +4,11 @@
 
 ## Architecture <a id="architecture-1"></a>
 
-* [Basics](architecture-1/architecture.md)
+* [Basics](architecture-1/basics.md)
 * [Modules](architecture-1/modules.md)
 * [Classes](architecture-1/classes.md)
 * [Lifecycle](architecture-1/lifecycle/README.md)
-  * [Deep lifecycle](architecture-1/lifecycle/cached-actions-map.md)
+  * [Deep lifecycle](architecture-1/lifecycle/deep-lifecycle.md)
 * [Performance](architecture-1/performance.md)
 * [Security](architecture-1/security.md)
 * [Directory](architecture-1/directory-structure.md)
