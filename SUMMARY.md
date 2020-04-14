@@ -11,14 +11,14 @@
   * [Deep lifecycle](architecture/lifecycle/deep-lifecycle.md)
 * [Performance](architecture/performance.md)
 * [Security](architecture/security.md)
-* [Directory](architecture/directory-structure.md)
+* [File structure](architecture/file-structure.md)
 
 ## Guide
 
 * [Starting](guide/starting/README.md)
   * [Vanilla](guide/starting/vanilla.md)
-  * [With Skeleton](guide/starting/with-skeleton.md)
-  * [With Docker](guide/starting/with-docker.md)
+  * [With Skeleton](guide/starting/skeleton.md)
+  * [With Docker](guide/starting/docker.md)
 * [User modules](guide/user-modules.md)
 * [User classes](guide/user-classes.md)
 

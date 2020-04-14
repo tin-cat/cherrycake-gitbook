@@ -12,11 +12,11 @@ I recommend you to first check the Vanilla setup, which will guide you through t
 
 Once you got it, you can always use the Cherrycake Skeleton, which sets you up with a boilerplate Cherrycake application straightaway:
 
-{% page-ref page="with-skeleton.md" %}
+{% page-ref page="skeleton.md" %}
 
 There's also a docker setup that will get you a running development server with everything you need to start building a Cherrycake application in just a few minutes:
 
-{% page-ref page="with-docker.md" %}
+{% page-ref page="docker.md" %}
 
 
 
