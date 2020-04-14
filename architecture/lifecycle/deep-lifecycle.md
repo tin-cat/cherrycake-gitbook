@@ -36,6 +36,10 @@ During its initialization, the [Actions](../../reference/core-modules/actions/) 
 $e->callMethodOnAllModules("mapActions");
 ```
 
+{% hint style="info" %}
+To optimize performance, the method Engine::callMethodOnAllModules caches the information about which methods are available in modules.
+{% endhint %}
+
 All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions/mapaction.md) method. In our _Home_ example module, this would look like this:
 
 ```php
@@ -67,6 +71,10 @@ Since the browser in our example has requested the root page of our website, the
 Notice that this action matches our example request of the home page \("/" path\) because it specifically has no `pathComponents` nor `parameters.`
 
 In the declaration of this [Action](../../reference/core-classes/action/) the `moduleName` and `methodName` keys are used to specify which module::method should be called when the action is executed. In our example, _Home::homePage._
+
+{% hint style="info" %}
+Cherrycake provides a request-level cache. At this point, if the requested Action has been cached, the result is obtained from cache and the execution ends here.
+{% endhint %}
 
 The _Home_ module will use the [Patterns](../../reference/core-modules/patterns/) module to retrieve an HTML file and send it back to the browser, this is why this dependency is specified on the `dependentCherrycakeModules` property of _Home_, like this:
 
