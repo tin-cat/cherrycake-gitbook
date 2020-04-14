@@ -10,7 +10,16 @@
 * [Lifecycle](architecture-1/lifecycle.md)
 * [Performance](architecture-1/performance.md)
 * [Security](architecture-1/security.md)
-* [Directory structure](architecture-1/directory-structure.md)
+* [Directory](architecture-1/directory-structure.md)
+
+## Guide
+
+* [Starting](guide/starting/README.md)
+  * [Vanilla](guide/starting/vanilla.md)
+  * [With Skeleton](guide/starting/with-skeleton.md)
+  * [With Docker](guide/starting/with-docker.md)
+* [User modules](guide/user-modules.md)
+* [User classes](guide/user-classes.md)
 
 ## Reference
 
@@ -39,7 +48,6 @@
   * [TableAdmin](reference/core-modules/tableadmin.md)
   * [Ui](reference/core-modules/ui.md)
   * [Validate](reference/core-modules/validate.md)
-* [User modules](reference/user-modules.md)
 * [Core classes](reference/core-classes/README.md)
   * [BasicObject](reference/core-classes/basicobject.md)
   * [Action](reference/core-classes/action/README.md)
@@ -55,6 +63,5 @@
     * [ResultOk](reference/core-classes/result/resultok.md)
     * [ResultKo](reference/core-classes/result/resultko.md)
   * [Color](reference/core-classes/color.md)
-* [User classes](reference/user-classes.md)
 * [Github](github.md)
 
