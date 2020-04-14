@@ -62,7 +62,7 @@ Now that we have all the possible actions mapped, the call to [Engine::attendWeb
 $this->Actions->run($_SERVER["REQUEST_URI"]);
 ```
 
-Everything is now set in motion: Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions/) module searches all the mapped actions for one that matches the current "/" request, and finds indeed the action named "homePage".
+Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions/) module searches all the mapped actions for one that matches the current "/" request, and finds indeed the action named "homePage".
 
 Notice that this action matches our example request of the home page \("/" path\) because it specifically has no `pathComponents` nor `parameters.`
 
@@ -88,7 +88,14 @@ function homePage() {
 
 In turn, [Patterns](../../reference/core-modules/patterns/) depends on the [Output](../../reference/core-modules/output/) module, which was loaded and initialized automatically as soon as the chain of dependencies started, when our _Home_ module was loaded.
 
-Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/parse.md) and then sends the result as a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object to [Output::setResponse](../../reference/core-modules/output/setresponse.md).
+Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/parse.md) and then sends the result as a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object to [Output::setResponse](../../reference/core-modules/output/setresponse.md), like this:
+
+```php
+$e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+			"code" => $code,
+			"payload" => $this->parse($patternName, $setup)
+]));
+```
 
 When the execution is about to end, the [Engine](../../reference/core-classes/engine/) object calls the [Output::sendResponse](../../reference/core-modules/output/sendresponse.md) method and the browser receives the HTML file, concluding the request.
 

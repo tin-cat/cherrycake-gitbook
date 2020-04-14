@@ -6,7 +6,7 @@ description: >-
 
 # Lifecycle
 
-We'll go through a simplified version of the lifecycle of a request, assuming we're building a website application and our client is a web browser.
+We'll first go through a simplified version of the lifecycle of a request, assuming we're building a website application and our client is a web browser.
 
 When a Cherrycake application receives a request, first it loads some initial modules like [Output](../../reference/core-modules/output/), [Errors](../../reference/core-modules/errors.md) and [Actions](../../reference/core-modules/actions/). These are the modules that Cherrycake needs to determine what to do next:
 
