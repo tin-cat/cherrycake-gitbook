@@ -18,7 +18,7 @@ Classes are automatically loaded whenever they're needed, meaning you don't need
 
 ### What's the difference between a class and a module?
 
-Modules are intended to pack **process-specific** functionality, can be triggered with actions \(see [Lifecycle](lifecycle.md)\), can have configuration files and can even contain dependent classes. Classes are intended to pack **object-specific** functionality,  cannot be triggered and don't get configuration files.
+Modules are intended to pack **process-specific** functionality, can be triggered with actions \(see [Lifecycle](lifecycle/)\), can have configuration files and can even contain dependent classes. Classes are intended to pack **object-specific** functionality,  cannot be triggered and don't get configuration files.
 
 {% hint style="info" %}
 #### Example

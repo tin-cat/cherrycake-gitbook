@@ -6,7 +6,7 @@ description: >-
 
 # Starting
 
-I recommend you to first check the Vanilla setup, which will guide you to setup a Cherrycake application from zero, the best way to really understand how Cherrycake works:
+I recommend you to first check the Vanilla setup, which will guide you through the creation of a Cherrycake application from the ground up without using any boilerplates or third party tools, the best way to really understand how Cherrycake works:
 
 {% page-ref page="vanilla.md" %}
 
