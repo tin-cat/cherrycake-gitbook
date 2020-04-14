@@ -1,4 +1,4 @@
-# Architecture basics
+# Basics
 
 At its simplest, Cherrycake can be understood primarily as an HTTP request router. That is, the mechanism that receives HTTP requests, hands them over to the proper module for processing, and then hands over whatever resulted from the processing to whoever did the request in the first place.
 

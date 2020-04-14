@@ -23,7 +23,7 @@ Because of this architecture, Cherrycake might come in handy when building websi
 
 ## Philosophy
 
-Server web app programming frameworks that reach higher levels on their implementation come inevitably with some loss of control and detachment from the finer details in favor of practicality, standardization and improved development speed. For the vast majority of developers this loss of control is negligible, and the benefits they provide far outweigh the loss.
+Server web app programming frameworks that reach higher implementation levels come inevitably with some loss of control and detachment from the finer details in favor of practicality, standardization and improved development speed. For the vast majority of developers this loss of control is negligible, and the benefits they provide far outweigh the loss.
 
 {% hint style="success" %}
 Cherrycake is recommended to web developers who prefer to stay closer to the metal to regain control of every possible finer detail of their application, at the expense of the benefits of higher level frameworks.
@@ -31,5 +31,5 @@ Cherrycake is recommended to web developers who prefer to stay closer to the met
 
 Very often, this need of control, more than a rational or optimal decision, is simply an emotional manifestation of passionate programmers who enjoy digging deep in the understanding of how a system works and how it can be improved, who like to defy standards and enjoy coming up with their own solutions, even when there already are solutions available.
 
-In that sense, even though Cherrycake also provides many modules to build complex websites from the ground up, it's defined as a low-level framework because instead of aiming to provide a suite of ready-made solutions for an optimized development cycle, it focuses on providing a strong foundation for you to create them.
+In that sense, even though Cherrycake also provides many higher level modules, it's defined as a low-level framework because instead of aiming to provide a suite of ready-made solutions for an optimized development cycle, it focuses on providing a strong foundation for you to create them.
 
