@@ -30,7 +30,13 @@ $e->end();
 
 When the engine is initialized with [Engine::init](../../reference/core-classes/engine/init.md), it loads and initializes the modules specified in `baseCherrycakeModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
-On the [Actions](../../reference/core-modules/actions.md) module initizalization, 
+During its initialization, the [Actions](../../reference/core-modules/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/callmethodonallmodules.md) method, which goes through all the available modules and executes the specified static method name, like this:
+
+```php
+$e->callMethodOnAllModules("mapActions");
+```
+
+All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method.
 
 [Engine::attendWebRequest ](../../reference/core-classes/engine/attendwebrequest.md)asks the [Actions](../../reference/core-modules/actions.md) module to run the action matching the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions.md) module looks:
 
