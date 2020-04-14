@@ -28,21 +28,67 @@ if ($e->init([
 $e->end();
 ```
 
-When the engine is initialized with [Engine::init](../../reference/core-classes/engine/init.md), it loads and initializes the modules specified in `baseCherrycakeModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
+When the engine is initialized with [Engine::init](../../reference/core-classes/engine/init.md), it loads and initializes the modules specified in `baseCherrycakeModules`. Since the [Actions](../../reference/core-modules/actions/) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
-During its initialization, the [Actions](../../reference/core-modules/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/callmethodonallmodules.md) method, which goes through all the available modules and executes the specified static method name, like this:
+During its initialization, the [Actions](../../reference/core-modules/actions/) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/callmethodonallmodules.md) method, which goes through all the available modules and executes the specified static method name, like this:
 
 ```php
 $e->callMethodOnAllModules("mapActions");
 ```
 
-All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method.
+All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions/mapaction.md) method. In our _Home_ example module, this would look like this:
 
-[Engine::attendWebRequest ](../../reference/core-classes/engine/attendwebrequest.md)asks the [Actions](../../reference/core-modules/actions.md) module to run the action matching the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions.md) module looks:
+```php
+public static function mapActions() {
+	global $e;
+	$e->Actions->mapAction(
+		"homePage",
+		new \Cherrycake\Action([
+			"moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+			"moduleName" => "Home",
+			"methodName" => "homePage",
+			"request" => new \Cherrycake\Request([
+				"pathComponents" => false, // No path for this request, since this must respond to the root / request
+				"parameters" => false // No parameters, for the same reason above
+			])
+		])
+	);
+}
+```
+
+Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest ](../../reference/core-classes/engine/attendwebrequest.md)in `index.php` asks the [Actions](../../reference/core-modules/actions/) module to find and run the action that matches the current request URI, if it is found. This is how this request to the [Actions](../../reference/core-modules/actions/) module looks:
 
 ```php
 $this->Actions->run($_SERVER["REQUEST_URI"]);
 ```
 
+Everything is now set in motion: Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions/) module searches all the mapped actions for one that matches the current "/" request, and finds indeed the action named "homePage".
 
+Notice that this action matches our example request of the home page \("/" path\) because it specifically has no `pathComponents` nor `parameters.`
+
+In the declaration of this [Action](../../reference/core-classes/action/) the `moduleName` and `methodName` keys are used to specify which module::method should be called when the action is executed. In our example, _Home::homePage._
+
+The _Home_ module will use the [Patterns](../../reference/core-modules/patterns/) module to retrieve an HTML file and send it back to the browser, this is why this dependency is specified on the `dependentCherrycakeModules` property of _Home_, like this:
+
+```php
+var $dependentCherrycakeModules = [
+    "Patterns"
+];
+```
+
+Now _Home_ uses the method [Patterns::out](../../reference/core-modules/patterns/out.md) to send the HTML file to the browser, like this:
+
+```php
+function homePage() {
+    global $e;
+    $e->Patterns->out("Home/Home.html");
+    return true;
+}
+```
+
+In turn, [Patterns](../../reference/core-modules/patterns/) depends on the [Output](../../reference/core-modules/output/) module, which was loaded and initialized automatically as soon as the chain of dependencies started, when our _Home_ module was loaded.
+
+Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/parse.md) and then sends the result as a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object to [Output::setResponse](../../reference/core-modules/output/setresponse.md).
+
+When the execution is about to end, the [Engine](../../reference/core-classes/engine/) object calls the [Output::sendResponse](../../reference/core-modules/output/sendresponse.md) method and the browser receives the HTML file, concluding the request.
 
