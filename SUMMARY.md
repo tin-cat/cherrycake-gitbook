@@ -8,7 +8,7 @@
 * [Modules](architecture-1/modules.md)
 * [Classes](architecture-1/classes.md)
 * [Lifecycle](architecture-1/lifecycle/README.md)
-  * [Cached actions map](architecture-1/lifecycle/cached-actions-map.md)
+  * [Deep lifecycle](architecture-1/lifecycle/cached-actions-map.md)
 * [Performance](architecture-1/performance.md)
 * [Security](architecture-1/security.md)
 * [Directory](architecture-1/directory-structure.md)
