@@ -11,7 +11,7 @@ description: >-
 
 Modules are loaded only when they're needed, on the fly, and in a per-request basis. This guarantees that each request to the server will only load the code it needs to work, reducing memory usage and latency.
 
-### Four-level caching
+### Four level caching
 
 Cherrycake comes with a solid caching system, implemented in three levels throughout the [lifecycle](lifecycle/) of a request:
 
