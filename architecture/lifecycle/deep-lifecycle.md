@@ -105,5 +105,5 @@ $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
 ]));
 ```
 
-When the execution is about to end, the [Engine](../../reference/core-classes/engine/) calls the `end` method on all loaded modules. In the `end` method for [Output](../../reference/core-modules/output/), [Output::sendResponse](../../reference/core-modules/output/sendresponse.md) is called, causing the browser to receive the HTML file, and concluding the request.
+When the execution is about to end, the [Engine](../../reference/core-classes/engine/) calls the `end` method on all loaded modules. The [Output](../../reference/core-modules/output/)  calls [Output::sendResponse](../../reference/core-modules/output/sendresponse.md) on its `end` method, causing the parsed HTML file to be sent to the browser and concluding the request lifecycle.
 
