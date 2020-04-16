@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Status](status.md)
+* [Contribute](contribute.md)
 
 ## Architecture
 
