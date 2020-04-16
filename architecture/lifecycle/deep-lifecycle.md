@@ -75,7 +75,7 @@ In the declaration of this [Action](../../reference/core-classes/action/) the `m
 Cherrycake provides a request-level cache. At this point, if the requested [Action](../../reference/core-classes/action/) has been cached, the result is obtained from cache and the execution ends here.
 {% endhint %}
 
-The _Home_ module will use the [Patterns](../../reference/core-modules/patterns/) module to retrieve an HTML file and send it back to the browser, this is why this dependency is specified on the `dependentCherrycakeModules` property of _Home_, like this:
+The _Home_ module will use the [Patterns](../../reference/core-modules/patterns.md) module to retrieve an HTML file and send it back to the browser, this is why this dependency is specified on the `dependentCherrycakeModules` property of _Home_, like this:
 
 ```php
 var $dependentCherrycakeModules = [
@@ -83,7 +83,7 @@ var $dependentCherrycakeModules = [
 ];
 ```
 
-Now _Home::homePage_ uses the method [Patterns::out](../../reference/core-modules/patterns/out.md) to send the HTML file to the browser, like this:
+Now _Home::homePage_ uses the method [Patterns::out](../../reference/core-modules/patterns.md#out-patternname-setup-code) to send the HTML file to the browser, like this:
 
 ```php
 function homePage() {
@@ -93,9 +93,9 @@ function homePage() {
 }
 ```
 
-In turn, [Patterns](../../reference/core-modules/patterns/) depends on the [Output](../../reference/core-modules/output/) module, which was loaded and initialized automatically as soon as the chain of dependencies started, when our _Home_ module was loaded.
+In turn, [Patterns](../../reference/core-modules/patterns.md) depends on the [Output](../../reference/core-modules/output/) module, which was loaded and initialized automatically as soon as the chain of dependencies started, when our _Home_ module was loaded.
 
-Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/parse.md) and then sends the result as a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object to [Output::setResponse](../../reference/core-modules/output/setresponse.md), like this:
+Since [Patterns](../../reference/core-modules/patterns.md) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns.md#parse-patternname-setup) and then sends the result as a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object to [Output::setResponse](../../reference/core-modules/output/#setresponse-response), like this:
 
 ```php
 $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
@@ -104,5 +104,5 @@ $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
 ]));
 ```
 
-When the execution is about to end, the [Engine](../../reference/core-classes/engine/) calls the `end` method on all loaded modules. The [Output](../../reference/core-modules/output/)  calls [Output::sendResponse](../../reference/core-modules/output/sendresponse.md) on its `end` method, causing the parsed HTML file to be sent to the browser and concluding the request lifecycle.
+When the execution is about to end, the [Engine](../../reference/core-classes/engine/) calls the `end` method on all loaded modules. The [Output](../../reference/core-modules/output/)  calls [Output::sendResponse](../../reference/core-modules/output/#sendresponse-response) on its `end` method, causing the parsed HTML file to be sent to the browser and concluding the request lifecycle.
 

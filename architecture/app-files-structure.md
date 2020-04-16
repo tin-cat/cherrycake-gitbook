@@ -90,7 +90,7 @@ Note that the `$HomeConfig` variable name in config files must also match the na
 {% endtab %}
 
 {% tab title="/patterns" %}
-Contains the HTML files to be used by the [Patterns](../reference/core-modules/patterns/) module. This directory can be set to anything else by changing the `directory` config key of the [Patterns](../reference/core-modules/patterns/) module.
+Contains the HTML files to be used by the [Patterns](../reference/core-modules/patterns.md) module. This directory can be set to anything else by changing the `directory` config key of the [Patterns](../reference/core-modules/patterns.md) module.
 {% endtab %}
 
 {% tab title="/public" %}

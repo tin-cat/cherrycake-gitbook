@@ -22,11 +22,11 @@ Let's say the browser requested the home of our website by requesting the `/` ro
 
 ![](../../.gitbook/assets/cherrycakediagramlifecycle3.svg)
 
-_Home_ is an app module \(as opposed to a core module\), and is in charge of showing the home page of the website. To do so, _Home_ uses the [Patterns](../../reference/core-modules/patterns/) core module to load an HTML file from disk and then send it to the browser. Since the Patterns module has not been loaded yet, Cherrycake loads it automatically:
+_Home_ is an app module \(as opposed to a core module\), and is in charge of showing the home page of the website. To do so, _Home_ uses the [Patterns](../../reference/core-modules/patterns.md) core module to load an HTML file from disk and then send it to the browser. Since the Patterns module has not been loaded yet, Cherrycake loads it automatically:
 
 ![](../../.gitbook/assets/cherrycakediagramlifecycle4.svg)
 
-Since all output is handled by the [Output](../../reference/core-modules/output/) core module, [Patterns](../../reference/core-modules/patterns/) reads the requested HTML file and uses [Output](../../reference/core-modules/output/) to send back the response to the Browser, and the request lifecycle concludes.
+Since all output is handled by the [Output](../../reference/core-modules/output/) core module, [Patterns](../../reference/core-modules/patterns.md) reads the requested HTML file and uses [Output](../../reference/core-modules/output/) to send back the response to the Browser, and the request lifecycle concludes.
 
 ![](../../.gitbook/assets/cherrycakediagramlifecycle5.svg)
 
