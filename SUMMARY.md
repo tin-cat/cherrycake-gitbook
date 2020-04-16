@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
 * [Status](status.md)
-* [Contribute](contribute.md)
 
 ## Architecture
 
@@ -77,4 +76,5 @@
     * [ResultKo](reference/core-classes/result/resultko.md)
   * [Color](reference/core-classes/color.md)
 * [Github](github.md)
+* [Contribute](contribute.md)
 
