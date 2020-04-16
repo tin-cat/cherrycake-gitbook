@@ -33,7 +33,7 @@ In that subdirectory, your module must go inside a file named in the syntax:
 
 `/modules/<ModuleName>/<ModuleName>.class.php`
 
-For example, the following module:
+It is recommended that modules follow the naming [conventions](conventions.md). For example, the following module:
 
 ```php
 namespace CherrycakeApp\Modules;
@@ -85,16 +85,18 @@ Must be saved in a file here:
 `/config/Home.config.php`
 
 {% hint style="info" %}
-Note that the `$HomeConfig` variable name must also match the name of the module, with the literal Config appended to the end. Check the [Module config files ](../guide/user-modules/module-config-files.md)documentation for more information.
+Note that the `$HomeConfig` variable name in config files must also match the name of the module, with the literal `Config` appended to the end. Check the [Module config files ](../guide/user-modules/module-config-files.md)documentation for more information.
 {% endhint %}
 {% endtab %}
 
 {% tab title="/patterns" %}
-
+Contains the HTML files to be used by the [Patterns](../reference/core-modules/patterns/) module. This directory can be set to anything else by changing the `directory` config key of the [Patterns](../reference/core-modules/patterns/) module.
 {% endtab %}
 
 {% tab title="/public" %}
+This is the directory that gets exposed publicly by an HTTP server like NGINX. It must have at least an `index.php` file to load the Cherrycake engine and attend requests.
 
+Check out the [Vanilla start](../guide/starting/vanilla.md) section to learn how to build this index file, or use the readily provided with the [Skeleton](../guide/starting/skeleton.md) or [Docker](../guide/starting/docker.md) methods.
 {% endtab %}
 {% endtabs %}
 
@@ -104,19 +106,21 @@ There are some other non-required files and directories in a typical Cherrycake 
 
 {% tabs %}
 {% tab title="/usr" %}
-
+Usually, this directory is used to store files uploaded by the users of an app. For example: If your app allows your users to upload their profile images, this is where you could be saving them using the [Image](../reference/core-classes/image.md) core class.
 {% endtab %}
 
 {% tab title="/errors" %}
-This directory holds the HTML files the [Errors](../reference/core-modules/errors.md) shows to the browser when errors occur. You can configure this in the configuration file of the [Err](../reference/core-modules/errors.md)
+This directory holds the HTML files the [Errors](../reference/core-modules/errors.md) shows to the browser when errors occur. You change this to a different directory by setting the `patternNames` key in the [Errors](../reference/core-modules/errors.md) module configuration file.
 {% endtab %}
 
 {% tab title="/install" %}
+Some Cherrycake modules make use of the database. This directory contains the SQL files needed to create the database tables needed for those Cherrycake modules.
 
+For example, if you plan to use the [Session](../reference/core-modules/session.md) module to manage your web app user sessions, you'll need to create the `cherrycake_session` table in your database by using the script `session.sql` you'll find in this directory.
 {% endtab %}
 
 {% tab title="/vendor" %}
-This is the usual directory created by [Composer](https://getcomposer.org/) to hold all the dependency libraries, including the Cherrycake engine itself.
+This is the usual directory managed by [Composer](https://getcomposer.org/) to hold all the dependency libraries, including the Cherrycake engine itself.
 {% endtab %}
 {% endtabs %}
 

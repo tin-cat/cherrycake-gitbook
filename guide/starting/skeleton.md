@@ -1,2 +1,2 @@
-# With Skeleton
+# Start with a skeleton
 

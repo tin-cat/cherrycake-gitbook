@@ -17,9 +17,9 @@
 ## Guide
 
 * [Starting](guide/starting/README.md)
-  * [Vanilla](guide/starting/vanilla.md)
-  * [With Skeleton](guide/starting/skeleton.md)
-  * [With Docker](guide/starting/docker.md)
+  * [Vanilla start](guide/starting/vanilla.md)
+  * [Start with a skeleton](guide/starting/skeleton.md)
+  * [Start with Docker](guide/starting/docker.md)
 * [User modules](guide/user-modules/README.md)
   * [Module config files](guide/user-modules/module-config-files.md)
 * [User classes](guide/user-classes.md)
