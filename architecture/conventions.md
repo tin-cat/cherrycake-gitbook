@@ -31,7 +31,7 @@ $objectName = new ClassName;
 
 ### File naming
 
-Class names, module names and directories should follow the same **PascalCase** convention, take a look at the [Files structure](app-files-structure.md) section for more information.
+Class names, module names and directories follow the same **PascalCase** convention, take a look at the [Files structure](app-files-structure.md) section for more information.
 
 {% hint style="warning" %}
 Please note that class auto-loading might not work properly if you don't follow this naming conventions.
@@ -83,7 +83,7 @@ class ClassName { // Brackets on the same line
 ```
 
 {% hint style="info" %}
-If you're contributing to the Cherrycake Engine, please always follow this official conventions.
+If you're contributing to the Cherrycake Engine, please follow this conventions.
 {% endhint %}
 
 
