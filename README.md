@@ -1,7 +1,7 @@
 ---
 description: >-
   Cherrycake is a low-level programming framework for developing modular,
-  efficient and secure PHP web applications!
+  efficient and secure PHP web applications.
 ---
 
 # Introduction
