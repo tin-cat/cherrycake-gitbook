@@ -8,5 +8,21 @@ description: >-
 
 ### Request security
 
-All requests made to Cherrycake are
+All requests are predefined with a specification of parameters, their expected types and validation methods. This makes for a strong first security layer that blocks anything that doesn't looks like a request our App would expect.
+
+### Injection prevention
+
+[SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) attack vectors are monitored from the very moment a user-provided data enters the App, to the moment it is stored on the database.
+
+### CSRF detection
+
+Cherrycake implements a [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) threat detection mechanism automatically integrated into all sensible requests.
+
+### Threat logging and blocking
+
+Cherrycake can log all attacks and keep track of suspicious IPs, automatically blacklisting clients that have passed a configured threshold.
+
+### Scalability
+
+Thanks to a thorough lifecycle and its modular structure, Cherrycake allows for the easy implementation of new security mechanisms and the improvement the existing attack detection routines, why we encourage you to to contribute your suggestions, ideas and security improvements through the official [Github](../github.md) repository.
 
