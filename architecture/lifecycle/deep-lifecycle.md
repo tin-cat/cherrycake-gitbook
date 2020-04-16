@@ -4,7 +4,7 @@ description: Let's take a deep dive on a typical request lifecycle.
 
 # Deep lifecycle
 
-To deeper understand the lifecycle of a request, we'll use the same example as in the [Lifecycle](./) section, but this time we'll stop and see with greater detail everything that happens behind the scenes, this will give you a deeper understanding of the Cherrycake architecture.
+To deeper understand the lifecycle of a request, we'll use the same example as in the [Lifecycle](./) section, but this time we'll stop and see with greater detail everything that happens behind the scenes, this will give you a better understanding of the Cherrycake architecture.
 
 When a request is received, the `index.php` file in your App's public directory is executed. This is the entry point for all requests to your Cherrycake application, and all it does is loading Cherrycake, initialize it and launch [Engine::attendWebRequest](../../reference/core-classes/engine/attendwebrequest.md). This looks something like this:
 
@@ -17,10 +17,7 @@ $e = new \Cherrycake\Engine;
 if ($e->init([
     "namespace" => __NAMESPACE__,
     "baseCherrycakeModules" => [
-        "Output",
-        "Errors",
-        "Actions",
-        "Cache"
+        "Actions"
     ]
 ]))
     $e->attendWebRequest();
@@ -60,15 +57,17 @@ public static function mapActions() {
 }
 ```
 
-Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest ](../../reference/core-classes/engine/attendwebrequest.md)in `index.php` asks the [Actions](../../reference/core-modules/actions/) module to find and run the action that matches the current request URI, if it is found. This is how this request to the [Actions](../../reference/core-modules/actions/) module looks:
+Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest ](../../reference/core-classes/engine/attendwebrequest.md)in `index.php` asks the [Actions](../../reference/core-modules/actions/) module to find and run the action that matches the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions/) module looks:
 
 ```php
 $this->Actions->run($_SERVER["REQUEST_URI"]);
 ```
 
-Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions/) module searches all the mapped actions for one that matches the current "/" request, and finds indeed the action named "homePage".
+Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions/) module searches all the mapped actions for one that matches the current "/" request, and finds the action named "homePage".
 
-Notice that this action matches our example request of the home page \("/" path\) because it specifically has no `pathComponents` nor `parameters.`
+{% hint style="info" %}
+Notice that this action matches our example request of the home page \("/" path\) because it specifically has no `pathComponents` nor `parameters`
+{% endhint %}
 
 In the declaration of this [Action](../../reference/core-classes/action/) the `moduleName` and `methodName` keys are used to specify which module::method should be called when the action is executed. In our example, _Home::homePage._
 
@@ -84,7 +83,7 @@ var $dependentCherrycakeModules = [
 ];
 ```
 
-Now _Home_ uses the method [Patterns::out](../../reference/core-modules/patterns/out.md) to send the HTML file to the browser, like this:
+Now _Home::homePage_ uses the method [Patterns::out](../../reference/core-modules/patterns/out.md) to send the HTML file to the browser, like this:
 
 ```php
 function homePage() {

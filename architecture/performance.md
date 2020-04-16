@@ -1,6 +1,6 @@
 ---
 description: >-
-  Cherrycake is capable of handling a big amount of requests per second in any
+  Cherrycake is capable of handling a high number requests per second in a
   reasonable server setup, let's take a look at the most important performance
   features and tools it provides.
 ---

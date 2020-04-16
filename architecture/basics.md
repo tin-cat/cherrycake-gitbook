@@ -4,7 +4,7 @@ At its simplest, Cherrycake can be understood primarily as an HTTP request route
 
 ![](../.gitbook/assets/cherrycakediagramroutersimple.svg)
 
-Cherrycake runs as a PHP application behind an HTTP server like NGINX, receiving all relevant requests and connecting with any third party sources like MySQL or Redis whenever a module needs it.
+Cherrycake runs as a PHP application behind an HTTP server like NGINX, receiving all relevant requests and connecting with any third party sources like MySQL or Redis when needed.
 
 Without some of the oversimplification of the diagram above, a more accurate representation of the overall architecture of a simple application running Cherrycake looks like this:
 

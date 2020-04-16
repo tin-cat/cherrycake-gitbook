@@ -11,7 +11,8 @@
   * [Deep lifecycle](architecture/lifecycle/deep-lifecycle.md)
 * [Performance](architecture/performance.md)
 * [Security](architecture/security.md)
-* [File structure](architecture/file-structure.md)
+* [Conventions](architecture/conventions.md)
+* [Files structure](architecture/app-files-structure.md)
 
 ## Guide
 
@@ -19,8 +20,10 @@
   * [Vanilla](guide/starting/vanilla.md)
   * [With Skeleton](guide/starting/skeleton.md)
   * [With Docker](guide/starting/docker.md)
-* [User modules](guide/user-modules.md)
+* [User modules](guide/user-modules/README.md)
+  * [Module config files](guide/user-modules/module-config-files.md)
 * [User classes](guide/user-classes.md)
+* [Cli](guide/cli.md)
 
 ## Reference
 
