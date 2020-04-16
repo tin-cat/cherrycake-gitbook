@@ -25,9 +25,9 @@ if ($e->init([
 $e->end();
 ```
 
-When the engine is initialized with [Engine::init](../../reference/core-classes/engine/init.md), it loads and initializes the modules specified in `baseCherrycakeModules`. Since the [Actions](../../reference/core-modules/actions/) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
+When the engine is initialized with [Engine::init](../../reference/core-classes/engine/init.md), it loads and initializes the modules specified in `baseCherrycakeModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
-During its initialization, the [Actions](../../reference/core-modules/actions/) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/callmethodonallmodules.md) method, which goes through all the available modules and executes the specified static method name, like this:
+During its initialization, the [Actions](../../reference/core-modules/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/callmethodonallmodules.md) method, which goes through all the available modules and executes the specified static method name, like this:
 
 ```php
 $e->callMethodOnAllModules("mapActions");
@@ -37,7 +37,7 @@ $e->callMethodOnAllModules("mapActions");
 To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine/callmethodonallmodules.md) caches the information about which methods are available in modules.
 {% endhint %}
 
-All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions/mapaction.md) method. In our _Home_ example module, this would look like this:
+All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions.md#mapaction-actionname-action) method. In our _Home_ example module, this would look like this:
 
 ```php
 public static function mapActions() {
@@ -57,13 +57,13 @@ public static function mapActions() {
 }
 ```
 
-Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest ](../../reference/core-classes/engine/attendwebrequest.md)in `index.php` asks the [Actions](../../reference/core-modules/actions/) module to find and run the action that matches the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions/) module looks:
+Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest ](../../reference/core-classes/engine/attendwebrequest.md)in `index.php` asks the [Actions](../../reference/core-modules/actions.md) module to find and run the action that matches the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions.md) module looks:
 
 ```php
 $this->Actions->run($_SERVER["REQUEST_URI"]);
 ```
 
-Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions/) module searches all the mapped actions for one that matches the current "/" request, and finds the action named "homePage".
+Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions.md) module searches all the mapped actions for one that matches the current "/" request, and finds the action named "homePage".
 
 {% hint style="info" %}
 Notice that this action matches our example request of the home page \("/" path\) because it specifically has no `pathComponents` nor `parameters`
