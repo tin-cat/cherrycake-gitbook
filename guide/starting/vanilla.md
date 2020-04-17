@@ -12,7 +12,9 @@ First of all, check that your web server meets the [minimum requirements](../../
 
 You can simply download the latest version of the engine from [github](https://github.com/tin-cat/cherrycake-engine), but the recommended installation method is using [composer](https://getcomposer.org). To do so, `cd` into your project directory and require the Cherrycake engine using composer:
 
-`composer require tin-cat/cherrycake-engine dev-master`
+```bash
+composer require tin-cat/cherrycake-engine dev-master
+```
 
 This will create the `/vendor` directory in your project, and will install there the Cherrycake engine and all its dependencies.
 
