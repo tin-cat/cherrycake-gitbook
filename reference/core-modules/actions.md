@@ -1,4 +1,34 @@
+---
+description: >-
+  Manage the queries to the engine. It answers to queries by evaluating the
+  query path and finding a matching mapped Action.
+---
+
 # Actions
+
+## getAction\( actionName \)
+
+Returns the action with the given actionName.
+
+**Arguments**
+
+* `actionName` ****String
+
+**Returns:** [Action](../core-classes/action/) object or false if the action has not been mapped.
+
+## init
+
+Initializes the module, loads the dependent module classes and calls the `mapActions` method on all available modules using [Engine::callMethodOnAllModules](../core-classes/engine.md#callmethodonallmodules-methodname).
+
+## isAction\( actionName \)
+
+Checks if the action with the given actionName has been mapped.
+
+**Arguments**
+
+* `actionName` String
+
+**Returns:** Boolean
 
 ## mapAction\( actionName, action \)
 
@@ -24,23 +54,7 @@ $e->Actions->mapAction(
 );
 ```
 
-## isAction\( actionName \)
+## run
 
-Checks if the action with the given actionName has been mapped.
-
-**Arguments**
-
-* `actionName` String
-
-**Returns:** Boolean
-
-## getAction\( actionName \)
-
-Returns the action with the given actionName.
-
-**Arguments**
-
-* `actionName` ****String
-
-**Returns:** [Action](../core-classes/action/) object or false if the action has not been mapped.
+Parses the received query to find the corresponding action and runs it
 

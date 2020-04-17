@@ -1,8 +1,133 @@
 ---
 description: >-
   Let's start an App with Cherrycake without using any tools or boilerplates,
-  for those who like to really understand what is going on.
+  for those who like to understand what is really going on.
 ---
 
 # Vanilla start
+
+First of all, check that your web server meets the [minimum requirements](../../architecture/server-requirements.md) and create a folder for your project.
+
+## Installing the Cherrycake engine
+
+You can simply download the latest version of the engine from [github](https://github.com/tin-cat/cherrycake-engine), but the recommended installation method is using [composer](https://getcomposer.org). To do so, `cd` into your project directory and require the Cherrycake engine using composer:
+
+`composer require tin-cat/cherrycake-engine dev-master`
+
+This will create the `/vendor` directory in your project, and will install there the Cherrycake engine and all its dependencies.
+
+## The public directory
+
+For security reasons, we'll put all the files that will be served publicly to the Internet in a subdirectory called `/public`. Create this subdirectory now.
+
+## Setting up the web server
+
+Setting up a web server to work with a Cherrycake application it's almost exactly the same as with any other application, except for one detail: We need to tell the web server to redirect all the queries to the index.php file instead of the usual server behavior.
+
+**For NGINX:** Add the following to your virtual host configuration file:
+
+```bash
+root /<path_to_your_app>/public;
+index index.php;
+location / {
+    try_files $uri $uri/ /?$query_string;
+}
+```
+
+**For Apache:** Be sure to point your Virtual Host `DocumentRoot` directive to `/path_to_your_app/public` in your virtual host configuration file and create the file `/public/.htaccess` in your project with the following contents:
+
+```bash
+RewriteEngine On
+RewriteCond %{DOCUMENT_ROOT}/$1 -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/$1 -d
+RewriteRule (.*) - [L]
+RewriteRule (.*) / [L]
+```
+
+## Creating the index.php
+
+The `/public/index.php` file will receive all the requests to your app and will be in charge of starting up the Cherrycake engine. Create it now and let's go step by step:
+
+Cherrycake apps need to be declared in a namespace of your choice, or you can use the default `CherrycakeApp` namespace. In any case, we declare the namespace first:
+
+```php
+<?php
+
+namespace CherrycakeApp;
+```
+
+Now we load the engine. Since it has been installed by composer in a previous step, we do it by including the engine's loader file, called `load.php`:
+
+```php
+require "../vendor/tin-cat/cherrycake-engine/load.php";
+```
+
+Now we can instantiate the engine. We use the `$e` variable as a convention:
+
+```php
+$e = new \Cherrycake\Engine;
+```
+
+{% hint style="info" %}
+Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace that you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here.
+{% endhint %}
+
+Now we call the [Engine::init](../../reference/core-classes/engine.md#init-setup) method to start it up:
+
+```php
+if ($e->init([
+    "namespace" => __NAMESPACE__,
+    "baseCherrycakeModules" => [
+        "Actions"
+    ]
+]))
+    $e->attendWebRequest();
+```
+
+There are at least two required keys in the hash array we pass to [Engine::init](../../reference/core-classes/engine.md#init-setup) to initialize the Engine:
+
+* `namespace` The namespace of our app. Since we just declared it above, we can pass here the PHP constant `__NAMESPACE__`
+* `baseCherrycakeModules` An array of the base module names that should be loaded right away. 
+
+Let's take a pause here to see why we've added the [Actions](../../reference/core-modules/actions.md) module on the `baseCherrycakeModules` list. We need our app to attend requests \(it would be pretty useless otherwise\), and [Actions](../../reference/core-modules/actions.md) is the module in charge of doing exactly that.
+
+By including [Actions](../../reference/core-modules/actions.md) in `baseCherrycakeModules`, it will be loaded immediately and, as part of the loading process, it will be initialized by calling the [Actions::init](../../reference/core-modules/actions.md#init) method. What this method does in the [Actions](../../reference/core-modules/actions.md) module, among other things, is to go through all available modules in both the Cherrycake engine and your app, check if they have a method called `mapActions` and run it.
+
+> It's as if the Actions module asked all other modules: "If you have any actions you would like to map to respond to requests, please let me know now!"
+
+This causes all modules that have some action to map to do so \(by using the [Actions::mapAction](../../reference/core-modules/actions.md#mapaction-actionname-action) method\), thus leaving [Actions](../../reference/core-modules/actions.md) ready to attend requests.
+
+Now, if [Engine::init](../../reference/core-classes/engine.md#init-setup) goes well, we run the [Engine::attendWebRequest](../../reference/core-classes/engine.md#attendwebrequest) method. What this method does is quite simple: By calling the [Actions::run](../../reference/core-modules/actions.md#run) method, it asks the [Actions](../../reference/core-modules/actions.md) module to go through all mapped actions and run the one that matches the current request.
+
+Lastly, we need to finalize execution by calling the [Engine::end](../../reference/core-classes/engine.md#end) method, which in turns calls the `end` methods of all the loaded modules, so they can perform any cleaning tasks like disconnecting from external sources:
+
+```php
+$e->end();
+```
+
+So, our `index.php` file ends looking like this:
+
+```php
+<?php
+
+namespace CherrycakeApp;
+
+require "../vendor/tin-cat/cherrycake-engine/load.php";
+
+$e = new \Cherrycake\Engine;
+
+if ($e->init([
+    "namespace" => __NAMESPACE__,
+    "baseCherrycakeModules" => [
+        "Actions"
+    ]
+]))
+    $e->attendWebRequest();
+
+$e->end();
+```
+
+## Creating the Cherrycake configuration file
+
+ Make sure you can test the project in your browser by accessing an URL like `http://localhost`
 
