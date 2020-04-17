@@ -14,8 +14,7 @@ require "vendor/tin-cat/cherrycake-engine/load.php"
 
 $e = new \Cherrycake\Engine;
 
-if ($e->init([
-    "namespace" => __NAMESPACE__,
+if ($e->init(__NAMESPACE__, [
     "baseCherrycakeModules" => [
         "Actions"
     ]
@@ -26,6 +25,10 @@ $e->end();
 ```
 
 When the engine is initialized with [Engine::init](../../reference/core-classes/engine.md#init-setup), it loads and initializes the modules specified in `baseCherrycakeModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
+
+{% hint style="info" %}
+If you only need the Actions module as your `baseCherrycakeModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) line to just `$e->init(__NAMESPACE__)`
+{% endhint %}
 
 During its initialization, the [Actions](../../reference/core-modules/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine.md#callmethodonallmodules-methodname) method, which goes through all the available modules and executes the specified static method name, like this:
 

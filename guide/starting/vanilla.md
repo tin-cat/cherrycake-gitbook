@@ -75,8 +75,9 @@ Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, 
 Now we call the [Engine::init](../../reference/core-classes/engine.md#init-setup) method to start it up:
 
 ```php
-if ($e->init([
-    "namespace" => __NAMESPACE__,
+if ($e->init(__NAMESPACE__, [
+    "appName" => "CherrycakeApp",
+    "isDevel" => true,
     "baseCherrycakeModules" => [
         "Actions"
     ]
@@ -84,10 +85,17 @@ if ($e->init([
     $e->attendWebRequest();
 ```
 
-There are at least two required keys in the hash array we pass to [Engine::init](../../reference/core-classes/engine.md#init-setup) to initialize the Engine:
+[Engine::init](../../reference/core-classes/engine.md#init-setup) accepts two parameters. The first is must be the namespace of your app. Since we just declared it above, we can pass here the PHP constant `__NAMESPACE__`
 
-* `namespace` The namespace of our app. Since we just declared it above, we can pass here the PHP constant `__NAMESPACE__`
-* `baseCherrycakeModules` An array of the base module names that should be loaded right away. 
+The second parameter is an optional hash array that lets you configure some important parameters of the Cherrycake engine. The ones we're using here are: 
+
+* `appName` The name of the application. You can skip this and the default name `CherrycakeApp` will be used.
+* `isDevel` When set to true, the application is put into development mode, meaning you'll get extended error reports and other tricks to help you develop your app. When not specified, this parameter defaults to false.
+* `baseCherrycakeModules` Is an array of the module names that should be loaded upon initialization of the engine. If not specified, only the [Actions](../../reference/core-modules/actions.md) module will be loaded.
+
+{% hint style="info" %}
+Check the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) documentation for more configuration parameters when initializing the engine.
+{% endhint %}
 
 Let's take a pause here to see why we've added the [Actions](../../reference/core-modules/actions.md) module on the `baseCherrycakeModules` list. We need our app to attend requests \(it would be pretty useless otherwise\), and [Actions](../../reference/core-modules/actions.md) is the module in charge of doing exactly that.
 
@@ -96,6 +104,10 @@ By including [Actions](../../reference/core-modules/actions.md) in `baseCherryca
 > It's as if the Actions module asked all other modules: "If you have any actions you would like to map to respond to requests, please let me know now!"
 
 This causes all modules that have some action to map to do so \(by using the [Actions::mapAction](../../reference/core-modules/actions.md#mapaction-actionname-action) method\), thus leaving [Actions](../../reference/core-modules/actions.md) ready to attend requests.
+
+{% hint style="info" %}
+Note that there's actually no need to specify a `baseCherrycakeModules` setup key when initializing the engine. If you skip this parameter, the [Actions](../../reference/core-modules/actions.md) module will be loaded by default, which is the most common scenario when developing regular apps.
+{% endhint %}
 
 Now, if [Engine::init](../../reference/core-classes/engine.md#init-setup) goes well, we run the [Engine::attendWebRequest](../../reference/core-classes/engine.md#attendwebrequest) method. What this method does is quite simple: By calling the [Actions::run](../../reference/core-modules/actions.md#run) method, it asks the [Actions](../../reference/core-modules/actions.md) module to go through all mapped actions and run the one that matches the current request.
 
@@ -116,18 +128,19 @@ require "../vendor/tin-cat/cherrycake-engine/load.php";
 
 $e = new \Cherrycake\Engine;
 
-if ($e->init([
-    "namespace" => __NAMESPACE__,
-    "baseCherrycakeModules" => [
-        "Actions"
-    ]
+if ($e->init(__NAMESPACE__, [
+    "isDevel" => true
 ]))
     $e->attendWebRequest();
 
 $e->end();
 ```
 
-## Creating the Cherrycake configuration file
+{% hint style="info" %}
+Note that because we're ok with the default configuration parameters for the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) call, we've simplified it.
+{% endhint %}
 
- Make sure you can test the project in your browser by accessing an URL like `http://localhost`
+## Creating the essential configuration files
+
+
 
