@@ -11,7 +11,7 @@ In Cherrycake, all process-specific functionality is packed in modules. A great 
 
 * [Core modules](../reference/core-modules/)
   * Ready-made modules provided by Cherrycake, they implement all the process-specific functionality behind the Cherrycake architecture.
-* [User modules](../guide/app-modules/)
+* [ App modules](../guide/app-modules/)
   * Modules created by the developer when creating a new application.
 
 ### Dependency

@@ -1,6 +1,6 @@
 # Status
 
-Even though Cherrycake is completely functional and there are already some interesting web applications built with it, it is still being improved and cannot be considered production-ready yet.
+Even though Cherrycake is completely functional and there are already some interesting web applications built with it, it is still being improved and cannot be considered stable or production-ready yet.
 
 ### I invite you to take a look
 

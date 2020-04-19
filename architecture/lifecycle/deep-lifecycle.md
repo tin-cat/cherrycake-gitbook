@@ -37,7 +37,7 @@ $e->callMethodOnAllModules("mapActions");
 ```
 
 {% hint style="info" %}
-To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine.md#callmethodonallmodules-methodname) caches the information about which methods are available in modules.
+To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine.md#callmethodonallmodules-methodname) caches the information about which methods are available in modules so it doesn't need to search for those methods each time a request is made.
 {% endhint %}
 
 All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions.md#mapaction-actionname-action) method. In our _Home_ example module, this would look like this:
@@ -52,8 +52,8 @@ public static function mapActions() {
 			"moduleName" => "Home",
 			"methodName" => "homePage",
 			"request" => new \Cherrycake\Request([
-				"pathComponents" => false, // No path for this request, since this must respond to the root / request
-				"parameters" => false // No parameters, for the same reason above
+				"pathComponents" => false,
+				"parameters" => false
 			])
 		])
 	);
@@ -69,7 +69,7 @@ $this->Actions->run($_SERVER["REQUEST_URI"]);
 Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions.md) module searches all the mapped actions for one that matches the current "/" request, and finds the action named "homePage".
 
 {% hint style="info" %}
-Notice that this action matches our example request of the home page \(`/` path\) because it specifically has no `pathComponents` nor `parameters`
+Notice that this action matches our example request of the home page \(`/` path\) because it specifically has no `pathComponents` 
 {% endhint %}
 
 In the declaration of this [Action](../../reference/core-classes/action/) the `moduleName` and `methodName` keys are used to specify which module::method should be called when the action is executed. In our example, _Home::homePage._
