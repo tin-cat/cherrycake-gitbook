@@ -7,7 +7,7 @@ description: >-
 # Docker start
 
 {% hint style="warning" %}
-Please note that the Cherrycake Docker project only runs in Linux. Should work in Mac Os too, but hasn't been tested.
+Please note that the Cherrycake Docker project only runs in Linux. Should work in Mac Os too, but hasn't been tested yet.
 {% endhint %}
 
 First of all if you haven't done it before, [install Docker](https://docs.docker.com/get-docker).
