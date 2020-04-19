@@ -1,6 +1,6 @@
 ---
 description: >-
-  Cherrycake is capable of handling a high number requests per second in a
+  Cherrycake is capable of handling a high number of requests per second in a
   reasonable server setup, let's take a look at the most important performance
   features and tools it provides.
 ---
@@ -18,7 +18,7 @@ Cherrycake comes with a solid caching system, implemented in three levels throug
 * **Request level cache**
   * Each request can be configured to be cacheable, meaning that requests that have been cached will be served much earlier in the request lifecycle, sparing memory and server usage and critically improving latency.
 * **Template level cache**
-  * Template files, even when they contain logic and PHP code, can be cached. meaning that you can fine tune specific sections of a document or a web page to be cached while keeping others live. Since Cherrycake templates can work with HTML, CSS, JavaScript and any other kind of files, this template-level caching logic can be used in many creative ways.
+  * Template files, even when they contain logic and PHP code, can be cached. meaning, for example, that you can fine tune specific sections of a web page to be cached while keeping others live. Since Cherrycake templates can work with HTML, CSS, JavaScript and any other kind of files, this template-level caching logic can be used in many creative ways.
 * **Item level cache**
   * The logical items of your applications are represented as cacheable objects in Cherrycake called [Items](../reference/core-classes/item.md). Whenever you work with, for example, users from a database or posts in a blog, each user and post can be cached according to your needs, meaning it will load much faster in subsequent requests. Groups of multiple [Items](../reference/core-classes/items.md) like database searches, filtered search results or paged listings can also be cached automatically.
 * **Database level cache**
