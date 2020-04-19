@@ -26,6 +26,7 @@
 * [User modules](guide/user-modules/README.md)
   * [Module config files](guide/user-modules/module-config-files.md)
 * [User classes](guide/user-classes.md)
+* [Actions](guide/actions.md)
 * [Cli](guide/cli.md)
 
 ## Reference

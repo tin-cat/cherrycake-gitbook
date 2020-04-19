@@ -87,7 +87,7 @@ if ($e->init(__NAMESPACE__, [
     $e->attendWebRequest();
 ```
 
-[Engine::init](../../reference/core-classes/engine.md#init-setup) accepts two parameters. The first is must be the namespace of your app. Since we just declared it above, we can pass here the PHP constant `__NAMESPACE__`
+[Engine::init](../../reference/core-classes/engine.md#init-setup) accepts two parameters. The first must be the namespace of your app. Since we just declared it above, we can pass here the PHP constant `__NAMESPACE__`
 
 The second parameter is an optional hash array that lets you configure some important parameters of the Cherrycake engine. The ones we're using here are: 
 
@@ -142,7 +142,58 @@ $e->end();
 Note that because we're ok with the default configuration parameters for the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) call, we've simplified it.
 {% endhint %}
 
-## Creating the essential configuration files
+Your Cherrycake app setup is ready, but if you run it now by browsing to your web server address, you'll get a `No mapped action found for this request`. This is quite normal, since we haven't yet configured any actions for Cherrycake to respond to. Let's do it now.
 
+## The "Hello world" module
 
+Four our setup to be complete, we'll tell Cherrycake to attend requests to the `/` route of your web application and respond by showing a simple HTML "Hello world" message.
+
+To do this, we'll create a module called `HelloWorld` that will map an action into the [Actions](../../reference/core-modules/actions.md) module.
+
+Create the file `/modules/HelloWorld/HelloWorld.class.php` and edit it so it declares an empty module structure, like this:
+
+```php
+<?php
+
+namespace CherrycakeApp\Modules;
+
+class HelloWorld extends \Cherrycake\Module {
+}
+```
+
+{% hint style="info" %}
+Remember to use the same namespace you choose for your application in the `/public/index.php` file, plus the \Modules at the end.
+
+Also, don't forget that modules have their own directory inside `/modules`, that the directory name must match the module name and that it's also case-sensitive.
+{% endhint %}
+
+To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the [Actions::mapAction](../../reference/core-modules/actions.md#mapaction-actionname-action) method, like this:
+
+```php
+<?php
+
+namespace CherrycakeApp\Modules;
+
+class HelloWorld extends \Cherrycake\Module {
+
+    public static function mapActions() {
+        global $e;
+        $e->Actions->mapAction(
+            "home",
+            new \Cherrycake\ActionHtml([
+                "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+                "moduleName" => "HelloWorld",
+                "methodName" => "show",
+                "request" => new \Cherrycake\Request([
+                    "pathComponents" => false,
+                    "parameters" => false
+                ])
+            ])
+        );
+    }
+    
+}
+```
+
+This will map an action that will respond to requests to the `/` path \(that's why `pathComponents` has been set to false\), and will call the `show` method on the `HelloWorld` module \(the same module we're working on\). Take a look at the `Actions` guide to learn about how to map more advanced actions.
 

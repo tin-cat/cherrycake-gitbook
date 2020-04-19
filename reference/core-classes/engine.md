@@ -19,6 +19,7 @@ Initializes the Cherrycake engine
   * `appName` The app name
   * `isDevel` Set it to true if the app is running in a development environment
   * `isUnderMaintenance` Whether the App is under maintenance or not
+  * `isCli` Whether the engine is running as a cli or not. When not specified, it will autodetect.
   * `configDir` The directory where configuration files are stored
   * `appModulesDir` The directory where app modules are stored
   * `appClassesDir` The directory where app classes are stored
