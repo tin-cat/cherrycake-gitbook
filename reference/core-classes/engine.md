@@ -8,6 +8,28 @@ Attends the request received from a web server by calling Actions::run with the 
 
 Ends the application by calling the `end` methods of all the loaded modules.
 
+## getStatus
+
+Returns information about the engine and its current status, including the loaded modules, the mapped actions and some benchmarks.
+
+{% hint style="info" %}
+Note that some information on the return array will be missing if the `isDevel` option has not been activated when initializing the engine. This also applies to the [getStatusHumanReadable](engine.md#getstatushumanreadable) and [getStatusHtml](engine.md#getstatushtml) methods.
+{% endhint %}
+
+**Returns:** A hash array with the information
+
+## getStatusHumanReadable
+
+Returns a human-readable version of the status information provided by the [getStatus](engine.md#getstatus) method.
+
+**Returns:** A hash array with the status information in a human readable format
+
+## getStatusHtml
+
+Returns an HTML version of the status in a human readable format.
+
+**Returns:** The HTML code
+
 ## init\( appNamespace, setup \)
 
 Initializes the Cherrycake engine

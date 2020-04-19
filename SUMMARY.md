@@ -27,6 +27,7 @@
 * [App classes](guide/app-classes.md)
 * [Actions guide](guide/actions-guide.md)
 * [Working with patterns](guide/working-with-patterns.md)
+* [Debugging](guide/debugging.md)
 * [Creating an API server](guide/creating-an-api-server.md)
 * [Cherrycake and Vue](guide/cherrycake-and-vue.md)
 * [Command line apps](guide/cli.md)
