@@ -3,7 +3,7 @@
 [Engine::getStatus](../reference/core-classes/engine.md#getstatus) and [Engine:getStatusHumanReadable](../reference/core-classes/engine.md#getstatushumanreadable) will give you a hash array with detailed information on Cherrycake, the loaded modules, the mapped actions and some benchmarks.
 
 {% hint style="info" %}
-Note that the status information will be incomplete if the `isDevel` engine option is not set to true.
+Note that the status information will be incomplete if the [`isDevel`](../reference/core-classes/engine.md#init-appnamespace-setup) engine option is not set to true.
 {% endhint %}
 
 For a convenient way of getting the status of the engine, just use the [Engine:getStatusHtml](../reference/core-classes/engine.md#getstatushtml) method at the desired point in your code, like this:
@@ -68,7 +68,7 @@ This will give show you a status report like this:
 }
 ```
 
-A more usual way of using [Engine:getStatusHtml](../reference/core-classes/engine.md#getstatushtml) is to call it after all execution has been done, and  just before the engine is about to end. Here's a way to do it in your `/public/index.php` file:
+A more usual way of using [Engine:getStatusHtml](../reference/core-classes/engine.md#getstatushtml) is to call it after all execution has been done, and just before the engine is about to end. Here's a way to do it in your `/public/index.php` file:
 
 ```php
 <?php
