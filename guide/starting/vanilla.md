@@ -172,7 +172,7 @@ class HelloWorld extends \Cherrycake\Module {
 {% hint style="info" %}
 Remember to use the same namespace you choose for your application in the `/public/index.php` file, plus the \Modules at the end.
 
-Also, don't forget that modules have their own directory inside `/modules`, that the directory name must match the module name and that it's also case-sensitive.
+Also, don't forget that modules have their own directory inside `/modules`, that directory name must match the module name, even with uppercase and lowercase characters.
 {% endhint %}
 
 To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the [Actions::mapAction](../../reference/core-modules/actions.md#mapaction-actionname-action) method, like this:
@@ -251,7 +251,7 @@ To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml](
 
 And that's it! If you now run your app you should see a boring yet quite welcoming "Hello world" message in your browser.
 
-> This seems to be a somewhat overkill way of doing what can be done with a simple `echo "Hello World";` line in PHP, isn't it?
+> This seems to be a somewhat overkill way of doing what can be done with a simple `echo "Hello world";` line in PHP, isn't it?
 
 Bear with me with the rest of this guide and you'll find this architecture to really come in handy when what you want to accomplish with your app is much more complex than a "Hello World"!
 
