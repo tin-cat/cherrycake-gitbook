@@ -10,7 +10,7 @@ Cherrycake uses the [JavaScript conventions](https://www.w3schools.com/js/js_con
 
 * **camelCase** for variables, properties and methods.
 * **PascalCase** for types, classes and modules.
-* **UPPER\_CASE\_SNAKE\_CASE** for defines.
+* **UPPER\_CASE\_SNAKE\_CASE** for constants.
 
 For example:
 

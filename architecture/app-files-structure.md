@@ -13,7 +13,7 @@ The root of your Cherrycake App directory. Can be placed anywhere in your server
 It contains some important files:
 
 * **cherrycake**
-  * An executable script that allows you to perform a [cli](../guide/cli.md) call to the Cherrycake application from the server the command line.
+  * An executable script that allows you to perform a [cli](../guide/cli.md) call to the Cherrycake application from the server command line.
 * **composer.json**
   * Cherrycake uses [composer](https://getcomposer.org/) to manage dependencies. Modify this file to add your own dependencies if needed. To make your Cherrycake application work, the dependency `tin-cat/cherrycake-engine` is required.
 * **LICENSE\_Cherrycake**
@@ -102,7 +102,7 @@ Check out the [Vanilla start](../guide/getting-started/) section to learn how to
 
 ### Other files and directories
 
-There are some other non-required files and directories in a typical Cherrycake app, you'll find some of them there if you create your Cherrycake App using a boilerplate like the [Cherrycake Skeleton]():
+There are some other non-required files and directories in a typical Cherrycake app, you'll find some of them there if you create your Cherrycake App using a boilerplate like the [Cherrycake Skeleton](../guide/getting-started/skeleton.md).
 
 {% tabs %}
 {% tab title="/usr" %}
