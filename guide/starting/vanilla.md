@@ -208,7 +208,7 @@ This will map an action that will respond to requests to the `/` path \(that's w
 If we run our app now, we'll get this error:
 
 {% hint style="danger" %}
-Module method HelloWorld::show not found when running Action
+Mapped method HelloWorld::show not found
 {% endhint %}
 
 Which is quite understandable, because we haven't yet created the show method we told the Action to run. Let's add it now:
