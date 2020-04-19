@@ -85,7 +85,7 @@ Must be saved in a file here:
 `/config/Home.config.php`
 
 {% hint style="info" %}
-Note that the `$HomeConfig` variable name in config files must also match the name of the module, with the literal `Config` appended to the end. Check the [Module config files ](../guide/user-modules/module-config-files.md)documentation for more information.
+Note that the `$HomeConfig` variable name in config files must also match the name of the module, with the literal `Config` appended to the end. Check the [Module config files ](../guide/app-modules/module-config-files.md)documentation for more information.
 {% endhint %}
 {% endtab %}
 
@@ -96,13 +96,13 @@ Contains the HTML files to be used by the [Patterns](../reference/core-modules/p
 {% tab title="/public" %}
 This is the directory that gets exposed publicly by an HTTP server like NGINX. It must have at least an `index.php` file to load the Cherrycake engine and attend requests.
 
-Check out the [Vanilla start](../guide/starting/vanilla.md) section to learn how to build this index file, or use the readily provided with the [Skeleton](../guide/starting/skeleton.md) or [Docker](../guide/starting/docker.md) methods.
+Check out the [Vanilla start](../guide/getting-started/) section to learn how to build this index file, or use the readily provided with the [Skeleton](../guide/getting-started/skeleton.md) or [Docker](../guide/getting-started/docker.md) methods.
 {% endtab %}
 {% endtabs %}
 
 ### Other files and directories
 
-There are some other non-required files and directories in a typical Cherrycake app, you'll find some of them there if you create your Cherrycake App using a boilerplate like the [Cherrycake Skeleton](../github.md):
+There are some other non-required files and directories in a typical Cherrycake app, you'll find some of them there if you create your Cherrycake App using a boilerplate like the [Cherrycake Skeleton]():
 
 {% tabs %}
 {% tab title="/usr" %}

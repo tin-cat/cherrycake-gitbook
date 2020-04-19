@@ -18,14 +18,13 @@
 
 ## Guide
 
-* [Starting](guide/starting/README.md)
-  * [Vanilla start](guide/starting/vanilla.md)
-  * [Skeleton start](guide/starting/skeleton.md)
-  * [Docker start](guide/starting/docker.md)
+* [Getting started](guide/getting-started/README.md)
+  * [Skeleton start](guide/getting-started/skeleton.md)
+  * [Docker start](guide/getting-started/docker.md)
 * [Modules](guide/modules.md)
-* [User modules](guide/user-modules/README.md)
-  * [Module config files](guide/user-modules/module-config-files.md)
-* [User classes](guide/user-classes.md)
+* [App modules](guide/app-modules/README.md)
+  * [Module config files](guide/app-modules/module-config-files.md)
+* [App classes](guide/app-classes.md)
 * [Actions guide](guide/actions-guide.md)
 * [Working with patterns](guide/working-with-patterns.md)
 * [Cli](guide/cli.md)
@@ -76,8 +75,7 @@
     * [ResultOk](reference/core-classes/result/resultok.md)
     * [ResultKo](reference/core-classes/result/resultko.md)
   * [Color](reference/core-classes/color.md)
-* [Github](github.md)
 * [Contribute](contribute.md)
 * [License](license.md)
-* [about](about.md)
+* [About](about.md)
 
