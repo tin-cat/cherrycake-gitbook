@@ -2,8 +2,8 @@
 
 ### Minimum requirements
 
-* **Linux** operating system. Other operating systems should work without problems but haven't been tested.
-* **HTTP Server**, NGINX is recommended, Apache HTTPd should work without problems but haven't been tested.
+* **Linux** operating system. Other operating systems should work problems but haven't been tested.
+* **HTTP Server**, NGINX is recommended, Apache HTTPd should work without problems but hasn't been tested.
 * **PHP**, version &gt;= 7
   * **apcu** extension \(`opcache` package\)
   * **json** extension

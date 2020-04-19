@@ -10,18 +10,10 @@ description: >-
 {% tab title="/" %}
 The root of your Cherrycake App directory. Can be placed anywhere in your server, a usual choice would be `/var/www/AppName`
 
-It contains some important files:
+In its most basic form, it contains at least one important file:
 
-* **cherrycake**
-  * An executable script that allows you to perform a [cli](../guide/cli.md) call to the Cherrycake application from the server command line.
 * **composer.json**
   * Cherrycake uses [composer](https://getcomposer.org/) to manage dependencies. Modify this file to add your own dependencies if needed. To make your Cherrycake application work, the dependency `tin-cat/cherrycake-engine` is required.
-* **LICENSE\_Cherrycake**
-  * This contains the license disclaimer for the Cherrycake engine, please keep this file untouched in all your Cherrycake projects.
-* **cli.php**
-  * A PHP script to launch a [cli](../guide/cli.md) request to the Cherrycake application. This PHP file is used by  the `cherrycake` script.
-* **load.php**
-  * A convenience loader for the Cherrycake engine, used by any other scripts that need to run the Cherrycake engine, like `cli.php`, or `public/index.php`
 {% endtab %}
 
 {% tab title="/modules" %}
@@ -96,7 +88,7 @@ Contains the HTML files to be used by the [Patterns](../reference/core-modules/p
 {% tab title="/public" %}
 This is the directory that gets exposed publicly by an HTTP server like NGINX. It must have at least an `index.php` file to load the Cherrycake engine and attend requests.
 
-Check out the [Vanilla start](../guide/getting-started/) section to learn how to build this index file, or use the readily provided with the [Skeleton](../guide/getting-started/skeleton.md) or [Docker](../guide/getting-started/docker.md) methods.
+Check out the [Getting started](../guide/getting-started/) section to learn how to build this index file, or use the readily provided with the [Skeleton](../guide/getting-started/skeleton.md) or [Docker](../guide/getting-started/docker.md) methods.
 {% endtab %}
 {% endtabs %}
 
@@ -105,6 +97,19 @@ Check out the [Vanilla start](../guide/getting-started/) section to learn how to
 There are some other non-required files and directories in a typical Cherrycake app, you'll find some of them there if you create your Cherrycake App using a boilerplate like the [Cherrycake Skeleton](../guide/getting-started/skeleton.md).
 
 {% tabs %}
+{% tab title="/" %}
+If you've used the [Cherrycake Skeleton](../guide/getting-started/skeleton.md) to start your app, you'll also find this files in your app's root directory:
+
+* **cherrycake**
+  * An executable script that allows you to perform a [cli](../guide/cli.md) call to the Cherrycake application from the server command line.
+* **LICENSE\_Cherrycake**
+  * This contains the license disclaimer for the Cherrycake engine, please keep this file untouched in all your Cherrycake projects.
+* **cli.php**
+  * A PHP script to launch a [cli](../guide/cli.md) request to the Cherrycake application. This PHP file is used by  the `cherrycake` script.
+* **load.php**
+  * A convenience loader for the Cherrycake engine, used by any other scripts that need to run the Cherrycake engine, like `cli.php`, or `public/index.php`
+{% endtab %}
+
 {% tab title="/usr" %}
 Usually, this directory is used to store files uploaded by the users of an app. For example: If your app allows your users to upload their profile images, this is where you could be saving them using the [Image](../reference/core-classes/image.md) core class.
 {% endtab %}
