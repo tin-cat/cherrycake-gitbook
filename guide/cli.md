@@ -1,2 +1,2 @@
-# Cli
+# Command line apps
 

@@ -17,7 +17,7 @@ Instead of a comprehensive, all-in-one web app building environment, Cherrycake 
 
 ## Applications
 
-Because Cherrycake sits and stays at the lower level of the server application, it provides you with a clean slate to build probably anything you can think of that is based on the HTTP protocol. That includes \(obviously\) any kind of website, but also: API endpoints, client-server architectures, proxy-like architectures, resource serving services and servers for system interfacing, for example.
+Because Cherrycake sits and stays at the lower level of the server application, it provides you with a clean slate to build probably anything you can think of that is based on the HTTP protocol. That includes \(obviously\) any kind of website, but also: API endpoints, client-server architectures, proxy-like architectures, resource serving services, servers for system interfacing or batch processors for example.
 
 Because of this architecture, Cherrycake might come in handy when building websites of any complexity, but could also be a great partner for your client-side JavaScript application by providing the API it needs. Similarly, Cherrycake might be a good starting point if you're experimenting with new ways of using the Internet, or it could even be a strong foundation if you're developing your own server application programming framework.
 
