@@ -6,6 +6,8 @@ description: >-
 
 # Vanilla start
 
+For this guide we'll be creating a simple web application with Cherrycake that shows the globally known "Hello world" message in the browser. We won't be using any boilerplates, or assisting tools, so we'll write all the code you need line by line, so you can understand the basics of how Cherrycake works.
+
 First of all, check that your web server meets the [minimum requirements](../../architecture/server-requirements.md) and create a folder for your project.
 
 ## Installing the Cherrycake engine
@@ -142,7 +144,13 @@ $e->end();
 Note that because we're ok with the default configuration parameters for the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) call, we've simplified it.
 {% endhint %}
 
-Your Cherrycake app setup is ready, but if you run it now by browsing to your web server address, you'll get a `No mapped action found for this request`. This is quite normal, since we haven't yet configured any actions for Cherrycake to respond to. Let's do it now.
+Your Cherrycake app setup is ready, but if you run it now by browsing to your web server address, you'll get an error:
+
+{% hint style="danger" %}
+No mapped action found for this request
+{% endhint %}
+
+This is quite normal, since we haven't yet configured any actions for Cherrycake to respond to. Let's do it now.
 
 ## The "Hello world" module
 
@@ -195,5 +203,55 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-This will map an action that will respond to requests to the `/` path \(that's why `pathComponents` has been set to false\), and will call the `show` method on the `HelloWorld` module \(the same module we're working on\). Take a look at the `Actions` guide to learn about how to map more advanced actions.
+This will map an action that will respond to requests to the `/` path \(that's why `pathComponents` has been set to false\), and will call the `show` method on the `HelloWorld` module \(the same module we're working on\). Take a look at the [Actions guide](../actions.md) to learn about how to map more advanced actions.
+
+If we run our app now, we'll get this error:
+
+{% hint style="danger" %}
+Module method HelloWorld::show not found when running Action
+{% endhint %}
+
+Which is quite understandable, because we haven't yet created the show method we told the Action to run. Let's add it now:
+
+```php
+<?php
+
+namespace CherrycakeApp\Modules;
+
+class HelloWorld extends \Cherrycake\Module {
+
+    public static function mapActions() {
+        global $e;
+        $e->Actions->mapAction(
+            "home",
+            new \Cherrycake\ActionHtml([
+                "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+                "moduleName" => "HelloWorld",
+                "methodName" => "show",
+                "request" => new \Cherrycake\Request([
+                    "pathComponents" => false,
+                    "parameters" => false
+                ])
+            ])
+        );
+    }
+    
+    function show() {
+        global $e;
+        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+            "code" => \Cherrycake\Modules\RESPONSE_OK,
+            "payload" => "<html><body>Hello world</body></html>"
+        ]));
+    }
+    
+}
+```
+
+To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object using the [Output::setResponse](../../reference/core-modules/output/#setresponse-response) method.
+
+And that's it! If you now run your app you should see a boring yet quite welcoming "Hello world" message in your browser.
+
+> This seems to be a somewhat overkill way of doing what can be done with a simple `echo "Hello World";` line in PHP, isn't it?
+
+Bear with me with the rest of this guide and you'll find this architecture to really come in handy when what you want to accomplish with your app is much more complex than a "Hello World"!
 

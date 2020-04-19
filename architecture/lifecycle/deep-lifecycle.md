@@ -60,7 +60,7 @@ public static function mapActions() {
 }
 ```
 
-Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest ]()in `index.php` asks the [Actions](../../reference/core-modules/actions.md) module to find and run the action that matches the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions.md) module looks:
+Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest](../../reference/core-classes/engine.md#attendwebrequest) in `index.php` asks the [Actions](../../reference/core-modules/actions.md) module to find and run the action that matches the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions.md) module looks:
 
 ```php
 $this->Actions->run($_SERVER["REQUEST_URI"]);
@@ -69,7 +69,7 @@ $this->Actions->run($_SERVER["REQUEST_URI"]);
 Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions.md) module searches all the mapped actions for one that matches the current "/" request, and finds the action named "homePage".
 
 {% hint style="info" %}
-Notice that this action matches our example request of the home page \("/" path\) because it specifically has no `pathComponents` nor `parameters`
+Notice that this action matches our example request of the home page \(`/` path\) because it specifically has no `pathComponents` nor `parameters`
 {% endhint %}
 
 In the declaration of this [Action](../../reference/core-classes/action/) the `moduleName` and `methodName` keys are used to specify which module::method should be called when the action is executed. In our example, _Home::homePage._
