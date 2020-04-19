@@ -26,7 +26,8 @@
 * [User modules](guide/user-modules/README.md)
   * [Module config files](guide/user-modules/module-config-files.md)
 * [User classes](guide/user-classes.md)
-* [Actions](guide/actions.md)
+* [Actions guide](guide/actions-guide.md)
+* [Working with patterns](guide/working-with-patterns.md)
 * [Cli](guide/cli.md)
 
 ## Reference
@@ -77,4 +78,6 @@
   * [Color](reference/core-classes/color.md)
 * [Github](github.md)
 * [Contribute](contribute.md)
+* [License](license.md)
+* [about](about.md)
 

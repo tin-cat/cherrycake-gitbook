@@ -1,7 +1,5 @@
 ---
-description: >-
-  We'll create a simple Cherrycake application from the ground up, the best way
-  to learn.
+description: We'll create a simple Cherrycake application from the ground up.
 ---
 
 # Starting

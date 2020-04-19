@@ -6,5 +6,9 @@ Even though Cherrycake is completely functional and there are already some inter
 
 You might find Cherrycake to perfectly match your needs for your upcoming project, or it might simply become a fun way to contribute and experiment with a newly born engine.
 
+{% hint style="warning" %}
+This documentation web site is under construction.
+{% endhint %}
+
 
 

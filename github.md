@@ -1,7 +1,7 @@
 ---
 description: >-
-  These are the official Cherrycake Github repositories, please feel free to
-  take a look and contribute your ideas, issues and proposals there.
+  These are the official Cherrycake GitHub repositories, please feel free to
+  take a look and contribute your ideas and report any issues.
 ---
 
 # Github

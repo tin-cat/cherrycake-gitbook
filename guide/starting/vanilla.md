@@ -203,7 +203,7 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-This will map an action that will respond to requests to the `/` path \(that's why `pathComponents` has been set to false\), and will call the `show` method on the `HelloWorld` module \(the same module we're working on\). Take a look at the [Actions guide](../actions.md) to learn about how to map more advanced actions.
+This will map an action that will respond to requests to the `/` path \(that's why `pathComponents` has been set to false\), and will call the `show` method on the `HelloWorld` module \(the same module we're working on\). Take a look at the [Actions guide](../actions-guide.md) to learn about how to map more advanced actions.
 
 If we run our app now, we'll get this error:
 
@@ -251,7 +251,7 @@ To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml](
 
 And that's it! If you now run your app you should see a boring yet quite welcoming "Hello world" message in your browser.
 
-> This seems to be a somewhat overkill way of doing what can be done with a simple `echo "Hello world";` line in PHP, isn't it?
+> This seems to be a somewhat overkill way of doing what could've been done with a simple `echo "Hello world"` line, isn't it?
 
 Bear with me with the rest of this guide and you'll find this architecture to really come in handy when what you want to accomplish with your app is much more complex than a "Hello World"!
 
