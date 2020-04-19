@@ -89,3 +89,12 @@ echo $e->getStatusHtml(); die;
 $e->end();
 ```
 
+Here's some interesting information you'll find in the output of [Engine:getStatusHtml](../reference/core-classes/engine.md#getstatushtml):
+
+* `runningHrTime` The amount of time it took PHP to run the current request, up to the point where you called the getStatus method.
+* `moduleLoadingHistory` The list modules that were loaded when you called the getStatus method, in the order they were loaded, and including this extra information:
+  * Whether the module was loaded as a base module, as a dependency of another module or programmatically.
+  * The point in time after the execution started where the module was loaded.
+  * The amount of time it took the module to load and init, including loading any other module dependencies.
+* `mappedActions` The list of mapped actions when you called the getStatus method, including the module::class they call, their route and the parameters they accept.
+
