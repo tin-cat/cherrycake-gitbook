@@ -24,5 +24,5 @@ Cherrycake can log all attacks and keep track of suspicious IPs, automatically b
 
 ### Scalability
 
-Thanks to a thorough lifecycle and its modular structure, Cherrycake allows for the easy implementation of new security mechanisms and the improvement the existing attack detection routines, why we encourage you to to contribute your suggestions, ideas and security improvements through the official [Github]() repository.
+Thanks to a thorough [lifecycle](lifecycle/) and its modular structure, Cherrycake allows for the easy implementation of new security mechanisms and the improvement the existing attack detection routines, why we encourage you to to contribute your suggestions, ideas and security improvements through the official [GitHub](https://github.com/tin-cat/cherrycake-engine) repository.
 
