@@ -7,12 +7,7 @@ description: >-
 
 # Modules
 
-In Cherrycake, all process-specific functionality is packed in modules. A great example is the [Database](../reference/core-modules/database.md) module, which is in charge of all the communication with a server like MySQL. Modules come in two flavors:
-
-* [Core modules](../reference/core-modules/)
-  * Ready-made modules provided by Cherrycake, they implement all the process-specific functionality behind the Cherrycake architecture.
-* [ App modules](../guide/app-modules/)
-  * Modules created by the developer when creating a new application.
+In Cherrycake, all process-specific functionality is packed in modules. A great example is the [Database](../reference/core-modules/database.md) module, which is in charge of all the communication with a server like MySQL.
 
 ### Dependency
 

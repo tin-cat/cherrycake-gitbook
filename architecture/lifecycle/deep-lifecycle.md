@@ -15,7 +15,7 @@ require "vendor/tin-cat/cherrycake-engine/load.php"
 $e = new \Cherrycake\Engine;
 
 if ($e->init(__NAMESPACE__, [
-    "baseCherrycakeModules" => [
+    "baseCoreModules" => [
         "Actions"
     ]
 ]))
@@ -24,10 +24,10 @@ if ($e->init(__NAMESPACE__, [
 $e->end();
 ```
 
-When the engine is initialized with [Engine::init](../../reference/core-classes/engine.md#init-setup), it loads and initializes the modules specified in `baseCherrycakeModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
+When the engine is initialized with [Engine::init](../../reference/core-classes/engine.md#init-setup), it loads and initializes the modules specified in `baseCoreModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
 {% hint style="info" %}
-If you only need the Actions module as your `baseCherrycakeModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) line to just `$e->init(__NAMESPACE__)`
+If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) line to just `$e->init(__NAMESPACE__)`
 {% endhint %}
 
 During its initialization, the [Actions](../../reference/core-modules/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine.md#callmethodonallmodules-methodname) method, which goes through all the available modules and executes the specified static method name, like this:
@@ -78,10 +78,10 @@ In the declaration of this [Action](../../reference/core-classes/action/) the `m
 Cherrycake provides a request-level cache. At this point, if the requested [Action](../../reference/core-classes/action/) has been cached, the result is obtained from cache and the execution ends here.
 {% endhint %}
 
-The _Home_ module will use the [Patterns](../../reference/core-modules/patterns.md) module to retrieve an HTML file and send it back to the browser, this is why this dependency is specified on the `dependentCherrycakeModules` property of _Home_, like this:
+The _Home_ module will use the [Patterns](../../reference/core-modules/patterns.md) module to retrieve an HTML file and send it back to the browser, this is why this dependency is specified on the `dependentCoreModules` property of _Home_, like this:
 
 ```php
-var $dependentCherrycakeModules = [
+var $dependentCoreModules = [
     "Patterns"
 ];
 ```

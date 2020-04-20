@@ -77,7 +77,7 @@ Must be saved in a file here:
 `/config/Home.config.php`
 
 {% hint style="info" %}
-Note that the `$HomeConfig` variable name in config files must also match the name of the module, with the literal `Config` appended to the end. Check the [Module config files ](../guide/app-modules/module-config-files.md)documentation for more information.
+Note that the `$HomeConfig` variable name in config files must also match the name of the module, with the literal `Config` appended to the end. Check the [Module config files ](../guide/modules/module-config-files.md)documentation for more information.
 {% endhint %}
 {% endtab %}
 

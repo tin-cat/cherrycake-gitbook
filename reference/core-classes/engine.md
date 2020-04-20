@@ -4,6 +4,14 @@
 
 Attends the request received from a web server by calling Actions::run with the requested URI string
 
+## callMethodOnAllModules\( methodName \)
+
+Calls the specified static method on all the available Core and App modules where it's implemented, and then loads those modules.
+
+**Parameters**
+
+* `methodName` The method name to call
+
 ## end
 
 Ends the application by calling the `end` methods of all the loaded modules.
@@ -32,7 +40,7 @@ Returns an HTML version of the status in a human readable format.
 
 ## init\( appNamespace, setup \)
 
-Initializes the Cherrycake engine
+Initializes the Cherrycake engine.
 
 **Parameters**
 
@@ -47,22 +55,28 @@ Initializes the Cherrycake engine
   * `appClassesDir` The directory where app classes are stored
   * `timezoneName` The system's timezone. All modules, including Database for date/time retrievals/saves will be made taking this timezone into account. The server is expected to run on this timezone. Standard "Etc/UTC" is recommended.
   * `timezoneId` The system's timezone. The same as `timezoneName`, but the matching id on the Cherrycake timezones database table
-  * `baseCherrycakeModules` An ordered array of the base Cherrycake module names that have to be always loaded on application start. These must include at least the [Actions](../core-modules/actions.md) module to determine the action to be taken based on the received query.
+  * `baseCoreModules` An ordered array of the base Core module names that have to be always loaded on application start. These must include at least the [Actions](../core-modules/actions.md) module to determine the action to be taken based on the received query.
   * `additionalAppConfigFiles` An ordered array of any additional App config file names to load from the App config directory.
 
 **Returns:** Boolean indicating whether all the modules have been loaded ok or not.
 
-## callMethodOnAllModules\( methodName \)
-
-Calls the specified static method on all the available Cherrycake and App modules where it's implemented, and then loads those modules.
+## loadAppModule\( moduleName, requiredByModuleName \)
 
 **Parameters**
 
-* `methodName` The method name to call
+* `moduleName` The name of the module.
+* `requiredByModuleName` Optional name of the module that required to load the module.
 
+## loadCoreModule\( moduleName, requiredByModuleName \)
 
+Loads a Core [module](../../guide/modules/).
 
+**Parameters**
 
+* `moduleName` The name of the module.
+* `requiredByModuleName` Optional name of the module that required to load the module.
+
+Loads an [App module](../../guide/modules/create-an-app-module.md).
 
 \*\*\*\*
 
