@@ -28,9 +28,14 @@ global $e;
 $e->Patterns->out("Pattern.html");
 ```
 
-## Lifecycle of a module
+## Modules lifecycle
 
+When a module is loaded for the first time during a request, this is what happens:
 
-
-
+1. The module file is loaded, and the module instantiated.
+2. The `init` method of the module is called, which does the following:
+   1. If the module has some dependencies on other modules, they're loaded.
+   2. If the module has a configuration file, it is loaded.
+   3. Any other module-specific initialization is done.
+3. When the engine request has finished, or if any module initialization failed, the `end` method is called.
 
