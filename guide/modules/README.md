@@ -39,3 +39,5 @@ When a module is loaded for the first time during a request, this is what happen
    3. Any other module-specific initialization is done.
 3. When the engine request has finished, or if any module initialization failed, the `end` method is called.
 
+## Modules config file
+
