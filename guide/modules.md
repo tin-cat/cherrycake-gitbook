@@ -62,8 +62,6 @@ $HtmlDocumentConfig = [
 
 You can set default configuration values that will be used if the configuration file didn't exist, or if a specific configuration key was not set on the configuration file. To do so, set the Module::config property of your module, like this:
 
-To get a configuration value from a module, use the [Module::getConfig](../reference/core-classes/module.md#getconfig-key) method, for example:
-
 ```php
 class MyModule extends \Cherrycake\Module {
     protected $config = [
@@ -73,5 +71,9 @@ class MyModule extends \Cherrycake\Module {
 }
 ```
 
+To get a configuration value from a module, use the [Module::getConfig](../reference/core-classes/module.md#getconfig-key) method, for example:
 
+```php
+$this->getConfig("title");
+```
 
