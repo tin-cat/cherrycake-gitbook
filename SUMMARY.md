@@ -12,7 +12,6 @@
   * [Deep lifecycle](architecture/lifecycle/deep-lifecycle.md)
 * [Performance](architecture/performance.md)
 * [Security](architecture/security.md)
-* [Conventions](architecture/conventions.md)
 * [Files structure](architecture/app-files-structure.md)
 * [Server requirements](architecture/server-requirements.md)
 
@@ -78,6 +77,7 @@
     * [ResultOk](reference/core-classes/result/resultok.md)
     * [ResultKo](reference/core-classes/result/resultko.md)
   * [Color](reference/core-classes/color.md)
+* [Code conventions](conventions.md)
 * [Contribute](contribute.md)
 * [License](license.md)
 

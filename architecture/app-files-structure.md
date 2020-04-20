@@ -25,7 +25,7 @@ In that subdirectory, your module must go inside a file named in the syntax:
 
 `/modules/<ModuleName>/<ModuleName>.class.php`
 
-It is recommended that modules follow the naming [conventions](conventions.md). For example, the following module:
+It is recommended that modules follow the naming [conventions](../conventions.md). For example, the following module:
 
 ```php
 namespace CherrycakeApp\Modules;
@@ -44,7 +44,7 @@ Contains your [classes](classes.md), each in one file named in the syntax:
 
 `/classes/<ClassName>.class.php`
 
-The file name must match the class name exactly, and it is recommended to follow the naming [conventions](conventions.md). For example, the following class:
+The file name must match the class name exactly, and it is recommended to follow the naming [conventions](../conventions.md). For example, the following class:
 
 ```php
 namespace CherrycakeApp;
