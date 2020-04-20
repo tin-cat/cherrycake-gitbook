@@ -21,7 +21,7 @@
   * [Skeleton start](guide/getting-started/skeleton.md)
   * [Docker start](guide/getting-started/docker.md)
 * [Modules](guide/modules/README.md)
-  * [Create an App module](guide/modules/create-an-app-module.md)
+  * [Creating an App module](guide/modules/creating-an-app-module.md)
 * [App classes](guide/classes.md)
 * [Actions guide](guide/actions-guide.md)
 * [Working with patterns](guide/working-with-patterns.md)

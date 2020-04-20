@@ -76,7 +76,7 @@ Loads a Core [module](../../guide/modules/).
 * `moduleName` The name of the module.
 * `requiredByModuleName` Optional name of the module that required to load the module.
 
-Loads an [App module](../../guide/modules/create-an-app-module.md).
+Loads an [App module](../../guide/modules/creating-an-app-module.md).
 
 \*\*\*\*
 

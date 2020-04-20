@@ -18,7 +18,7 @@ Modules pack the process-specific logic of an app and have some [additional bene
 Modules must be loaded before they can be used, they can be loaded in three ways:
 
 * As a **Base core module**, when initializing the engine. Base core modules are loaded right when the engine is initialized. You specify your base modules in the `baseCoreModules` setup key of [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup). See the [Deep lifecycle](../../architecture/lifecycle/deep-lifecycle.md) section for more details on this.
-* As a **dependent module**, when they're required by other modules in their [Module::dependentCoreModules](../../reference/core-classes/module.md#usddependentcherrycakemodules) or [Module::dependentAppModules](../../reference/core-classes/module.md#usddependentappmodules) properties. See the [Create an App module](create-an-app-module.md) for more details on this.
+* As a **dependent module**, when they're required by other modules in their [Module::dependentCoreModules](../../reference/core-classes/module.md#usddependentcherrycakemodules) or [Module::dependentAppModules](../../reference/core-classes/module.md#usddependentappmodules) properties. See the [Create an App module](creating-an-app-module.md) for more details on this.
 * At any point in your code, **programmatically**. Just by calling [Engine::loadCoreModule](../../reference/core-classes/engine.md#loadcoremodule-modulename-requiredbymodulename) or [Engine::loadAppModule](../../reference/core-classes/engine.md#loadappmodule-modulename-requiredbymodulename).
 
 ## Accessing modules
