@@ -69,14 +69,14 @@ Initializes the Cherrycake engine.
 
 ## loadCoreModule\( moduleName, requiredByModuleName \)
 
-Loads a Core [module](../../guide/modules/).
+Loads a Core [module](../../guide/modules.md).
 
 **Parameters**
 
 * `moduleName` The name of the module.
 * `requiredByModuleName` Optional name of the module that required to load the module.
 
-Loads an [App module](../../guide/modules/creating-an-app-module.md).
+Loads an [App module]().
 
 \*\*\*\*
 
