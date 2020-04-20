@@ -63,21 +63,12 @@ Contains the configuration files for your modules, if they need one. The syntax 
 
 `/config/<ModuleName>.config.php`
 
-For example, the configuration file for the module _Home:_
-
-```php
-namespace Cherrycake;
-$HomeConfig = [
-    [...]
-];
-```
-
-Must be saved in a file here:
+For example, the configuration file for the module _Home m_ust be saved in a file here:
 
 `/config/Home.config.php`
 
 {% hint style="info" %}
-Note that the `$HomeConfig` variable name in config files must also match the name of the module, with the literal `Config` appended to the end. Check the [Module config files ]()documentation for more information.
+Check the [Module config files](../guide/modules/#modules-config-file) documentation for more information
 {% endhint %}
 {% endtab %}
 
