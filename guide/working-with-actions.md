@@ -80,7 +80,11 @@ $e->Actions->mapAction([
 ...
 ```
 
-### Mapping actions for dynamic routes
+{% hint style="info" %}
+See [RequestPathComponent::\_\_construct](../reference/core-classes/requestpathcomponent.md#__construct-setup) to learn more about other options when setting up path components for complex routes.
+{% endhint %}
+
+### Mapping actions for dynamic paths
 
 A lot of times we'll need to respond to requests where some component of the path is dynamic, like when we are attending requests like `/product/4739` to show some specific product id. For this, we use the `REQUEST_PATH_COMPONENT_TYPE_VARIABLE_NUMERIC` type instead, like this:
 
@@ -121,7 +125,7 @@ In this case, instead of passing a `string` like we do with the `REQUEST_PATH_CO
 In our example, the `viewProduct` action is triggered when we receive a request like `/product/4739`, and we specify that `4739` will be stored as `productId`, that it cannot be empty and that it has to be a positive integer.
 
 {% hint style="info" %}
-Check out the [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` we can pass here.
+Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and filters we can configure when mapping actions with `pathComponents`.
 {% endhint %}
 
 To receive the `productId` value that was passed when the client requested `/product/4739`,  we simply add a `request` parameter to the method triggered by the action \(`Products::view` in the example above\), and we'll get a [Request](../reference/core-classes/request.md) object that contains, among other useful things, the value of the `productId` path section:
@@ -132,5 +136,51 @@ function view($request) {
 }
 ```
 
-### Mapping actions that accept GET parameters
+### Mapping actions that accept GET or POST parameters
+
+To map actions that receive parameters, pass an array of [RequestParameter](../reference/core-classes/requestparameter.md) objects via the `parameters` key when creating [Request](../reference/core-classes/request.md) object. For example, mapping an action that receives a `userId` parameter via GET would look like this:
+
+```php
+...
+
+$e->Actions->mapAction([
+    "viewUser",
+    new \Cherrycake\ActionHtml([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "Users",
+        "methodName" => "view",
+        "request" => new \Cherrycake\Request([
+            "pathComponents" => [
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "user"
+                ])
+            ],
+            "parameters" => [
+                new \Cherrycake\RequestParameter([
+                    "type" => \Cherrycake\REQUEST_PARAMETER_TYPE_GET,
+    						    "name" => "userId",
+                    "securityRules" => [
+                        \Cherrycake\SECURITY_RULE_TYPICAL_ID
+                    ]
+    						])
+            ]
+        ])
+    ])
+]);
+
+...
+```
+
+This action will be triggered when URLs like `/user?userId=381` are requested. You can then get the `userId` value just like we did above for dynamic paths:
+
+```php
+function view($request) {
+    echo "The requested user id ".$request->userId;
+}
+```
+
+{% hint style="info" %}
+Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and `filters` we can configure when mapping actions with `parameters`.
+{% endhint %}
 
