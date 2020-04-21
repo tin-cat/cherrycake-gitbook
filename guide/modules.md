@@ -1,7 +1,3 @@
----
-description: Modular architecture is at the heart of Cherrycake
----
-
 # Modules
 
 Modules pack the process-specific logic of an app and have some [additional benefits](../architecture/modules.md) and [important differences](../architecture/classes.md#whats-the-difference-between-a-class-and-a-module) over regular classes. Modules come in two flavors:
@@ -40,6 +36,20 @@ When a module is loaded for the first time during a request, this is what happen
    2. If the module has a configuration file, it is loaded.
    3. Any other module-specific initialization is done.
 3. When the engine request has finished, or if any module initialization failed, the `end` method is called.
+
+## App module files
+
+The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.class.php` extension.
+
+{% hint style="info" %}
+You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup)
+{% endhint %}
+
+For example, if you were to create a module called `Products`, it should be stored on the `/modules/Products/Products.class.php` directory.
+
+{% hint style="info" %}
+Note that both the subdirectory and the file name itself are case-sensitive.
+{% endhint %}
 
 ## Modules configuration file
 
