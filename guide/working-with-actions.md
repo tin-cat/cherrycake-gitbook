@@ -47,7 +47,7 @@ class Home extends \Cherrycake\Module {
 }
 ```
 
-### Mapping actions for complex routes
+### Complex routes
 
 In the example above, the `pathComponents` is left to false because we wanted the action to respond to requests to the root `/` page. To map actions that respond to more complex routes like `/about/contact`, we pass `pathComponents` an array of [RequestPathComponent](../reference/core-classes/requestpathcomponent.md) objects representing the segments of the path in between the `/` symbols.
 
@@ -84,7 +84,7 @@ $e->Actions->mapAction([
 See [RequestPathComponent::\_\_construct](../reference/core-classes/requestpathcomponent.md#__construct-setup) to learn more about other options when setting up path components for complex routes.
 {% endhint %}
 
-### Mapping actions for dynamic paths
+### Dynamic paths
 
 A lot of times we'll need to respond to requests where some component of the path is dynamic, like when we are attending requests like `/product/4739` to show some specific product id. For this, we use the `REQUEST_PATH_COMPONENT_TYPE_VARIABLE_NUMERIC` type instead, like this:
 
@@ -136,7 +136,7 @@ function view($request) {
 }
 ```
 
-### Mapping actions that accept GET or POST parameters
+### Accept GET or POST parameters
 
 To map actions that receive parameters, pass an array of [RequestParameter](../reference/core-classes/requestparameter.md) objects via the `parameters` key when creating [Request](../reference/core-classes/request.md) object. For example, mapping an action that receives a `userId` parameter via GET would look like this:
 
