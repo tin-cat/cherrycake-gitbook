@@ -68,7 +68,7 @@ For example, the configuration file for the module _Home m_ust be saved in a fil
 `/config/Home.config.php`
 
 {% hint style="info" %}
-Check the [Module config files](../guide/modules.md#modules-config-file) documentation for more information
+Check the [Module config files](../guide/working-with-modules.md#modules-config-file) documentation for more information
 {% endhint %}
 {% endtab %}
 

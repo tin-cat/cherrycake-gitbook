@@ -69,7 +69,7 @@ Initializes the Cherrycake engine.
 
 ## loadCoreModule\( moduleName, requiredByModuleName \)
 
-Loads a Core [module](../../guide/modules.md).
+Loads a Core [module](../../guide/working-with-modules.md).
 
 **Parameters**
 

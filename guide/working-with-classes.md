@@ -1,4 +1,4 @@
-# Classes
+# Working with classes
 
 Classes encapsulate [object-specific logic](../architecture/classes.md), and they also come in two flavors:
 
