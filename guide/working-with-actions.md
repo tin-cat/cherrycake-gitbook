@@ -181,6 +181,6 @@ function view($request) {
 ```
 
 {% hint style="info" %}
-Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and `filters` we can configure when mapping actions with `parameters`.
+Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.
 {% endhint %}
 
