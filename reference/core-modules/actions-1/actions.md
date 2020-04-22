@@ -1,10 +1,4 @@
----
-description: >-
-  Manage the queries to the engine. It answers to queries by evaluating the
-  query path and parameters and finding a matching mapped Action.
----
-
-# Actions
+# Methods
 
 ## getAction\( actionName \)
 
@@ -14,11 +8,11 @@ Returns the action with the given actionName.
 
 * `actionName` ****String
 
-**Returns:** [Action](../core-classes/action/) object or false if the action has not been mapped.
+**Returns:** [Action](../../core-classes/action/) object or false if the action has not been mapped.
 
 ## init
 
-Initializes the module, loads the dependent module classes and calls the `mapActions` method on all available modules using [Engine::callMethodOnAllModules](../core-classes/engine.md#callmethodonallmodules-methodname).
+Initializes the module, loads the dependent module classes and calls the `mapActions` method on all available modules using [Engine::callMethodOnAllModules](../../core-classes/engine.md#callmethodonallmodules-methodname).
 
 ## isAction\( actionName \)
 
@@ -37,7 +31,7 @@ Maps an action for a module.
 **Arguments**
 
 * `actionName` String
-* `action` [Action](../core-classes/action/) object
+* `action` [Action](../../core-classes/action/) object
 
 ```php
 $e->Actions->mapAction(

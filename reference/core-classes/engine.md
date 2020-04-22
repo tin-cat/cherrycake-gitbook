@@ -55,7 +55,7 @@ Initializes the Cherrycake engine.
   * `appClassesDir` The directory where app classes are stored
   * `timezoneName` The system's timezone. All modules, including Database for date/time retrievals/saves will be made taking this timezone into account. The server is expected to run on this timezone. Standard "Etc/UTC" is recommended.
   * `timezoneId` The system's timezone. The same as `timezoneName`, but the matching id on the Cherrycake timezones database table
-  * `baseCoreModules` An ordered array of the base Core module names that has to be always loaded on application start. Defaults to \["Actions"\]. This list should include the [Actions](../core-modules/actions.md) module to provide some kind of functionality to the app, since otherwise it wouldn't be answering any requests and will be completely unusable, except if you're experimenting with different ways of using the Cherrycake engine. See [Working with Actions](../../guide/working-with-actions.md).
+  * `baseCoreModules` An ordered array of the base Core module names that has to be always loaded on application start. Defaults to \["Actions"\]. This list should include the [Actions](../core-modules/actions-1/actions.md) module to provide some kind of functionality to the app, since otherwise it wouldn't be answering any requests and will be completely unusable, except if you're experimenting with different ways of using the Cherrycake engine. See [Working with Actions](../../guide/working-with-actions.md).
   * `baseAppModules` An ordered array of the base App module names that has to be always loaded on application start.
   * `additionalAppConfigFiles` An ordered array of any additional App config file names to load from the App config directory.
 
@@ -77,7 +77,7 @@ Loads a Core [module](../../guide/working-with-modules.md).
 * `moduleName` The name of the module.
 * `requiredByModuleName` Optional name of the module that required to load the module.
 
-Loads an [App module]().
+Loads an [App module](../../architecture/modules.md).
 
 \*\*\*\*
 

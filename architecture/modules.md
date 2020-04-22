@@ -19,5 +19,5 @@ Modules can have configuration files. For example, the [Database](../reference/c
 
 ### Actionability
 
-Modules can respond to requests, so they're the entry point in the [Lifecycle](lifecycle/) of a request to any Cherrycake application. The [Actions](../reference/core-modules/actions.md) module takes takes care of routing requests to the matching mapped modules, that's why we call the modules that can be triggered from an action "actionable".
+Modules can respond to requests, so they're the entry point in the [Lifecycle](lifecycle/) of a request to any Cherrycake application. The [Actions](../reference/core-modules/actions-1/actions.md) module takes takes care of routing requests to the matching mapped modules, that's why we call the modules that can be triggered from an action "actionable".
 

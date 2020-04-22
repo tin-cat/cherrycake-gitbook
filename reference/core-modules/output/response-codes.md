@@ -1,6 +1,4 @@
-# Response codes
-
-These are the available response codes to be sent using the [Output](./) module.
+# Constants
 
 * `RESPONSE_OK`
 * `RESPONSE_NOT_FOUND`

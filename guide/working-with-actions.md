@@ -1,16 +1,14 @@
 # Working with Actions
 
-[Actions](../reference/core-modules/actions.md) is the routing core module of Cherrycake that allows your application to receive requests and attend them accordingly.
+[Actions](../reference/core-modules/actions-1/actions.md) is the routing core module of Cherrycake that allows your application to receive requests and attend them accordingly.
 
-{% hint style="success" %}
-[Actions](../reference/core-modules/actions.md) is the default base core module because it is what you'll need in most cases. If you're experimenting with different ways of using Cherrycake, you can specify a different set of base modules in [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup)
-{% endhint %}
+> [Actions](../reference/core-modules/actions-1/actions.md) is the default base core module because it is what you'll need in most cases. If you're experimenting with different ways of using Cherrycake, you can specify a different set of base modules in [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup)
 
-When using [Actions](../reference/core-modules/actions.md), all the modules who will be receiving requests should map their actions in the [Module::mapActions](../reference/core-classes/module.md#mapactions) method, by calling [Actions::mapAction](../reference/core-modules/actions.md#mapaction-actionname-action).
+When using [Actions](../reference/core-modules/actions-1/actions.md), all the modules who will be receiving requests should map their actions in the [Module::mapActions](../reference/core-classes/module/#mapactions) method, by calling [Actions::mapAction](../reference/core-modules/actions-1/actions.md#mapaction-actionname-action).
 
-When a request is received, [Actions](../reference/core-modules/actions.md) will look through all the mapped actions. If any of them matches the current request, it will load the associated module and run the mapped method.
+When a request is received, [Actions](../reference/core-modules/actions-1/actions.md) will look through all the mapped actions. If any of them matches the current request, it will load the associated module and run the mapped method.
 
-> [Actions](../reference/core-modules/actions.md) calls [mapActions](../reference/core-classes/module.md#mapactions) methods on all available modules during its initialization, using the [Engine::callMethodOnAllModules](../reference/core-classes/engine.md#callmethodonallmodules-methodname)
+> [Actions](../reference/core-modules/actions-1/actions.md) calls [mapActions](../reference/core-classes/module/#mapactions) methods on all available modules during its initialization, using the [Engine::callMethodOnAllModules](../reference/core-classes/engine.md#callmethodonallmodules-methodname)
 
 For example, the following module maps a simple action named `home` that will call the `viewHome` method when the root page `/` is requested:
 
@@ -47,7 +45,7 @@ class Home extends \Cherrycake\Module {
 
 ## Complex routes
 
-In the example above, the `pathComponents` is left to false because we wanted the action to respond to requests to the root `/` page. To map actions that respond to more complex routes like `/about/contact`, we pass `pathComponents` an array of [RequestPathComponent](../reference/core-classes/requestpathcomponent.md) objects representing the segments of the path in between the `/` symbols.
+In the example above, the `pathComponents` is left to false because we wanted the action to respond to requests to the root `/` page. To map actions that respond to more complex routes like `/about/contact`, we pass `pathComponents` an array of [RequestPathComponent](../reference/core-classes/requestpathcomponent/) objects representing the segments of the path in between the `/` symbols.
 
 In this example, we map an action that will respond when the `/about/contact` path is requested:
 
@@ -78,7 +76,7 @@ $e->Actions->mapAction([
 ...
 ```
 
-> See [RequestPathComponent::\_\_construct](../reference/core-classes/requestpathcomponent.md#__construct-setup) to learn more about other options when setting up path components for complex routes.
+> See [RequestPathComponent::\_\_construct](../reference/core-classes/requestpathcomponent/#__construct-setup) to learn more about other options when setting up path components for complex routes.
 
 ## Dynamic paths
 
@@ -132,7 +130,7 @@ function view($request) {
 
 ## Accept GET or POST parameters
 
-To map actions that receive parameters, pass an array of [RequestParameter](../reference/core-classes/requestparameter.md) objects via the `parameters` key when creating [Request](../reference/core-classes/request.md) object. For example, mapping an action that receives a `userId` parameter via GET would look like this:
+To map actions that receive parameters, pass an array of [RequestParameter](../reference/core-classes/requestparameter/) objects via the `parameters` key when creating [Request](../reference/core-classes/request.md) object. For example, mapping an action that receives a `userId` parameter via GET would look like this:
 
 ```php
 ...

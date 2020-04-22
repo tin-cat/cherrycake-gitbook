@@ -1,4 +1,4 @@
-# Patterns
+# Methods
 
 ## parse**\( patternName, setup \)**
 
@@ -22,7 +22,7 @@ Parses a pattern and sets the result as the output response payload.
 **Parameters**
 
 * `patternName` String
-* `setup` Optional hash array: The options to be passed to the [parse](patterns.md#parse-patternname-setup) method
+* `setup` Optional hash array: The options to be passed to the [parse](./#parse-patternname-setup) method
 * `code` Optional integer: The response code, one of the available RESPONSE\_\*
 
 \*\*\*\*
