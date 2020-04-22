@@ -12,6 +12,7 @@
   * [Deep lifecycle](architecture/lifecycle/deep-lifecycle.md)
 * [Performance](architecture/performance.md)
 * [Security](architecture/security.md)
+* [Patterns](architecture/patterns.md)
 * [Files structure](architecture/app-files-structure.md)
 * [Server requirements](architecture/server-requirements.md)
 
