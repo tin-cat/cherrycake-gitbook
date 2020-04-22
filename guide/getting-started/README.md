@@ -191,7 +191,7 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-This will map an action that will respond to requests to the `/` path \(that's why `pathComponents` has been set to false\), and will call the `show` method on the `HelloWorld` module \(the same module we're working on\). Take a look at the [Actions guide](../working-with-actions.md) to learn about how to map more advanced actions.
+This will map an action that will respond to requests to the `/` path \(that's why `pathComponents` has been set to false\), and will call the `show` method on the `HelloWorld` module \(the same module we're working on\). Take a look at the [Actions guide](../actions-guide.md) to learn about how to map more advanced actions.
 
 If we run our app now, we'll get this error:
 

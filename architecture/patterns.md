@@ -21,5 +21,5 @@ These are the most interesting capabilities [Patterns](../reference/core-modules
 
 Because [Patterns](../reference/core-modules/patterns/) is actually a Cherrycake core module, you can use any other template parser you like in your Cherrycake app, build your own or get rid of any template mechanism if you like.
 
-> See [Working with Patterns](../guide/working-with-patterns.md) for a guide on how to use this module.
+> See [Working with Patterns](../guide/patterns-guide.md) for a guide on how to use this module.
 
