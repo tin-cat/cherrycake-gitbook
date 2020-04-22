@@ -1,4 +1,4 @@
-# Constants
+# Output / Constants
 
 * `RESPONSE_OK`
 * `RESPONSE_NOT_FOUND`

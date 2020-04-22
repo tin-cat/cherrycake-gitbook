@@ -1,6 +1,6 @@
-# Constants
+# Security / Constants
 
-## Security rules
+## Rules
 
 * `SECURITY_RULE_NOT_NULL` The value must be not null, typically used to check whether a parameter has been passed or not. An empty field in a form will not trigger this rule.
 * `SECURITY_RULE_NOT_EMPTY` The value must not be empty, typically used to check whether a parameter has been passed or not. An empty field in a form will trigger this rule.
@@ -20,7 +20,7 @@
 * `SECURITY_RULE_SQL_INJECTION` The value must not contain SQL injection suspicious strings
 * `SECURITY_RULE_TYPICAL_ID` Same as `SECURITY_RULE_NOT_EMPTY` + `SECURITY_RULE_INTEGER` + `SECURITY_RULE_POSITIVE`
 
-## Security filters
+## Filters
 
 * `SECURITY_FILTER_XSS` The value is purified to try to remove XSS attacks
 * `SECURITY_FILTER_STRIP_TAGS` HTML tags are removed from the value

@@ -1,4 +1,4 @@
-# Methods
+# Patterns / Methods
 
 ## parse**\( patternName, setup \)**
 

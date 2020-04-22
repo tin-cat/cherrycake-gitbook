@@ -1,4 +1,4 @@
-# Methods
+# Security / Methods
 
 ## checkUploadedFile\( file, p \)
 

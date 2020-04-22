@@ -1,4 +1,4 @@
-# Methods
+# Output / Methods
 
 ## setResponse\( response \)
 
