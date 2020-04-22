@@ -226,6 +226,8 @@ $e->Actions->mapAction([
 ...
 ```
 
+The default cache provider is called `engine`, and uses [APCu](https://www.php.net/manual/en/book.apcu.php) for a fast yet basic caching mechanism. See Working with Cache to use other more advanced alternatives like [Redis](https://redis.io).
+
 ## Actions sensible to brute force attacks
 
 Dictionary attacks and other kinds of brute force attacks often rely on the ability to send lots of requests per second in order to, for example, try different passwords to hack an account. In those cases, the faster our server responds, the easier is for the attacker to try many passwords per second.
