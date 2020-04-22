@@ -176,3 +176,7 @@ function view($request) {
 
 > Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.
 
+## Cached actions
+
+
+
