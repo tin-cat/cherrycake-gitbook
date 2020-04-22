@@ -2,6 +2,14 @@
 
 ## getConfig\( key \)
 
+Gets a configuration value.
+
+**Parameters**
+
+* **`key`** The configuration key
+
+**Returns:** The configuration value.
+
 ## init
 
 Initializes the module, called automatically when the module is loaded. Contains any specific initialization for the module, and any required loading of modules and classes dependencies.

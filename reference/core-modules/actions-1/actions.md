@@ -6,13 +6,13 @@ Returns the action with the given actionName.
 
 **Arguments**
 
-* `actionName` ****String
+* **`actionName`** String
 
 **Returns:** [Action](../../core-classes/action/) object or false if the action has not been mapped.
 
 ## init
 
-Initializes the module, loads the dependent module classes and calls the `mapActions` method on all available modules using [Engine::callMethodOnAllModules](../../core-classes/engine.md#callmethodonallmodules-methodname).
+Initializes the module, loads the dependent module classes and calls the `mapActions` method on all available modules using [Engine::callMethodOnAllModules](../../core-classes/engine/#callmethodonallmodules-methodname).
 
 ## isAction\( actionName \)
 
@@ -20,7 +20,7 @@ Checks if the action with the given actionName has been mapped.
 
 **Arguments**
 
-* `actionName` String
+* **`actionName`** String
 
 **Returns:** Boolean
 
@@ -30,8 +30,8 @@ Maps an action for a module.
 
 **Arguments**
 
-* `actionName` String
-* `action` [Action](../../core-classes/action/) object
+* **`actionName`** String
+* **`action`** [Action](../../core-classes/action/) object
 
 ```php
 $e->Actions->mapAction(

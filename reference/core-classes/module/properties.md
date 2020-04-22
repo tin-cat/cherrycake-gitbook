@@ -12,14 +12,6 @@ An array of strings specifying the Core module names that are required by this m
 
 An array of strings specifying the App module names that are required by this module.
 
-Gets a configuration value.
-
-**Parameters**
-
-* `key` The configuration key
-
-**Returns:** The configuration value.
-
 ## $isConfigFile
 
 Whether this module has its own configuration file.

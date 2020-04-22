@@ -13,9 +13,9 @@ Modules pack the process-specific logic of an app and have some [additional bene
 
 Modules must be loaded before they can be used, they can be loaded in three ways:
 
-* As a **Base core module**, when initializing the engine. Base core modules are loaded right when the engine is initialized. You specify your base modules in the `baseCoreModules` setup key of [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup). See the [Deep lifecycle](../architecture/lifecycle/deep-lifecycle.md) section for more details on this.
+* As a **Base core module**, when initializing the engine. Base core modules are loaded right when the engine is initialized. You specify your base modules in the `baseCoreModules` setup key of [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup). See the [Deep lifecycle](../architecture/lifecycle/deep-lifecycle.md) section for more details on this.
 * As a **dependent module**, when they're required by other modules in their [Module::dependentCoreModules](../reference/core-classes/module/#usddependentcherrycakemodules) or [Module::dependentAppModules](../reference/core-classes/module/#usddependentappmodules) properties. See [Specifying module dependencies](working-with-modules.md#specifying-module-dependencies).
-* At any point in your code, **programmatically**. Just by calling [Engine::loadCoreModule](../reference/core-classes/engine.md#loadcoremodule-modulename-requiredbymodulename) or [Engine::loadAppModule](../reference/core-classes/engine.md#loadappmodule-modulename-requiredbymodulename).
+* At any point in your code, **programmatically**. Just by calling [Engine::loadCoreModule](../reference/core-classes/engine/#loadcoremodule-modulename-requiredbymodulename) or [Engine::loadAppModule](../reference/core-classes/engine/#loadappmodule-modulename-requiredbymodulename).
 
 ## Accessing modules
 
@@ -41,7 +41,7 @@ When a module is loaded for the first time during a request, this is what happen
 
 The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.class.php` extension.
 
-> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup)
+> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup)
 
 For example, if you were to create a module called `Products`, it should be stored on the `/modules/Products/Products.class.php` directory.
 
@@ -49,7 +49,7 @@ For example, if you were to create a module called `Products`, it should be stor
 
 ## Modules configuration file
 
-Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup)
+Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup)
 
 Module configuration files must have a name that matches the module name, even with upper and lowercase characters. For example, the configuration file for the [Database](../reference/core-modules/database.md) module must be called `/config/Database.config.php`
 

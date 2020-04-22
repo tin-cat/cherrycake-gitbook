@@ -9,14 +9,14 @@ Checks an uploaded file for security attacks and moves it to a safe place if it 
 
 **Parameters:**
 
-* `file` The file array given by PHP after receiving an uploaded file, received via $\_FILES\[name of the file\]
-* `p` Optional hash array
-  * `isRequireImage` Requires the file to be an image. If `allowedImageTypes` is specified, this is forced to true. 
-  * `allowedFileExtensions` If value is specified with an array of extensions, only those file extensions are allowed. For example: `["pdf", "rtf"]`. If `allowedImageTypes` is specified and this is not, file extensions matching the specific `allowedImageTypes` will be required automatically.
-  * `allowedImageTypes` If value is specified with an array of IMG\_?, only those image types are allowed \(See [https://www.php.net/manual/en/image.constants.php](https://www.php.net/manual/en/image.constants.php)\). If not specified, all image types supported by GD are accepted.
+* **`file`** The file array given by PHP after receiving an uploaded file, received via $\_FILES\[name of the file\]
+* **`setup`** Optional hash array
+  * **`isRequireImage`** Requires the file to be an image. If `allowedImageTypes` is specified, this is forced to true. 
+  * **`allowedFileExtensions`** If value is specified with an array of extensions, only those file extensions are allowed. For example: `["pdf", "rtf"]`. If `allowedImageTypes` is specified and this is not, file extensions matching the specific `allowedImageTypes` will be required automatically.
+  * **`allowedImageTypes`** If value is specified with an array of IMG\_?, only those image types are allowed \(See [https://www.php.net/manual/en/image.constants.php](https://www.php.net/manual/en/image.constants.php)\). If not specified, all image types supported by GD are accepted.
 
 **Returns:** A [Result](../../core-classes/result/) object with the following payloads:
 
-* `description` A description of what went wrong
-* `finalPath` The complete path where the file was moved if it was considered safe
+* **`description`** A description of what went wrong
+* **`finalPath`** The complete path where the file was moved if it was considered safe
 
