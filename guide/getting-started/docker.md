@@ -24,9 +24,7 @@ Once in the Cherrycake Docker directory, use the  `cherrycake` script to interac
 ./cherrycake
 ```
 
-{% hint style="info" %}
-Note that, depending on your Docker installation, you might need root privileges to run the `./cherrycake` script. In such cases, use `sudo ./cherrycake` instead.
-{% endhint %}
+> Note that, depending on your Docker installation, you might need root privileges to run the `./cherrycake` script. In such cases, use `sudo ./cherrycake` instead.
 
 To start the server, use the `start` command:
 

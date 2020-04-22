@@ -26,9 +26,7 @@ $e->end();
 
 When the engine is initialized with [Engine::init](../../reference/core-classes/engine.md#init-setup), it loads and initializes the modules specified in `baseCoreModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
-{% hint style="info" %}
-If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) line to just `$e->init(__NAMESPACE__)`
-{% endhint %}
+> If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup) line to just `$e->init(__NAMESPACE__)`
 
 During its initialization, the [Actions](../../reference/core-modules/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine.md#callmethodonallmodules-methodname) method, which goes through all the available modules and executes the specified static method name, like this:
 
@@ -36,9 +34,7 @@ During its initialization, the [Actions](../../reference/core-modules/actions.md
 $e->callMethodOnAllModules("mapActions");
 ```
 
-{% hint style="info" %}
-To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine.md#callmethodonallmodules-methodname) caches the information about which methods are available in modules so it doesn't need to search for those methods each time a request is made.
-{% endhint %}
+> To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine.md#callmethodonallmodules-methodname) caches the information about which methods are available in modules so it doesn't need to search for those methods each time a request is made.
 
 All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions.md#mapaction-actionname-action) method. In our _Home_ example module, this would look like this:
 
@@ -68,15 +64,11 @@ $this->Actions->run($_SERVER["REQUEST_URI"]);
 
 Since the browser in our example has requested the root page of our website, the [Actions](../../reference/core-modules/actions.md) module searches all the mapped actions for one that matches the current "/" request, and finds the action named "homePage".
 
-{% hint style="info" %}
-Notice that this action matches our example request of the home page \(`/` path\) because it specifically has no `pathComponents` 
-{% endhint %}
+> Notice that this action matches our example request of the home page \(`/` path\) because it specifically has no `pathComponents`
 
 In the declaration of this [Action](../../reference/core-classes/action/) the `moduleName` and `methodName` keys are used to specify which module::method should be called when the action is executed. In our example, _Home::homePage._
 
-{% hint style="info" %}
-Cherrycake provides a request-level cache. At this point, if the requested [Action](../../reference/core-classes/action/) has been cached, the result is obtained from cache and the execution ends here.
-{% endhint %}
+> Cherrycake provides a request-level cache. At this point, if the requested [Action](../../reference/core-classes/action/) has been cached, the result is obtained from cache and the execution ends here.
 
 The _Home_ module will use the [Patterns](../../reference/core-modules/patterns.md) module to retrieve an HTML file and send it back to the browser, this is why this dependency is specified on the `dependentCoreModules` property of _Home_, like this:
 

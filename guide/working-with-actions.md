@@ -10,9 +10,7 @@ When using [Actions](../reference/core-modules/actions.md), all the modules who 
 
 When a request is received, [Actions](../reference/core-modules/actions.md) will look through all the mapped actions. If any of them matches the current request, it will load the associated module and run the mapped method.
 
-{% hint style="info" %}
-[Actions](../reference/core-modules/actions.md) calls [mapActions](../reference/core-classes/module.md#mapactions) methods on all available modules during its initialization, using the [Engine::callMethodOnAllModules](../reference/core-classes/engine.md#callmethodonallmodules-methodname)
-{% endhint %}
+> [Actions](../reference/core-modules/actions.md) calls [mapActions](../reference/core-classes/module.md#mapactions) methods on all available modules during its initialization, using the [Engine::callMethodOnAllModules](../reference/core-classes/engine.md#callmethodonallmodules-methodname)
 
 For example, the following module maps a simple action named `home` that will call the `viewHome` method when the root page `/` is requested:
 
@@ -47,7 +45,7 @@ class Home extends \Cherrycake\Module {
 }
 ```
 
-### Complex routes
+## Complex routes
 
 In the example above, the `pathComponents` is left to false because we wanted the action to respond to requests to the root `/` page. To map actions that respond to more complex routes like `/about/contact`, we pass `pathComponents` an array of [RequestPathComponent](../reference/core-classes/requestpathcomponent.md) objects representing the segments of the path in between the `/` symbols.
 
@@ -80,11 +78,9 @@ $e->Actions->mapAction([
 ...
 ```
 
-{% hint style="info" %}
-See [RequestPathComponent::\_\_construct](../reference/core-classes/requestpathcomponent.md#__construct-setup) to learn more about other options when setting up path components for complex routes.
-{% endhint %}
+> See [RequestPathComponent::\_\_construct](../reference/core-classes/requestpathcomponent.md#__construct-setup) to learn more about other options when setting up path components for complex routes.
 
-### Dynamic paths
+## Dynamic paths
 
 A lot of times we'll need to respond to requests where some component of the path is dynamic, like when we are attending requests like `/product/4739` to show some specific product id. For this, we use the `REQUEST_PATH_COMPONENT_TYPE_VARIABLE_NUMERIC` type instead, like this:
 
@@ -124,9 +120,7 @@ In this case, instead of passing a `string` like we do with the `REQUEST_PATH_CO
 
 In our example, the `viewProduct` action is triggered when we receive a request like `/product/4739`, and we specify that `4739` will be stored as `productId`, that it cannot be empty and that it has to be a positive integer.
 
-{% hint style="info" %}
-Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and filters we can configure when mapping actions with `pathComponents`.
-{% endhint %}
+> Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and filters we can configure when mapping actions with `pathComponents`.
 
 To receive the `productId` value that was passed when the client requested `/product/4739`,  we simply add a `request` parameter to the method triggered by the action \(`Products::view` in the example above\), and we'll get a [Request](../reference/core-classes/request.md) object that contains, among other useful things, the value of the `productId` path section:
 
@@ -136,7 +130,7 @@ function view($request) {
 }
 ```
 
-### Accept GET or POST parameters
+## Accept GET or POST parameters
 
 To map actions that receive parameters, pass an array of [RequestParameter](../reference/core-classes/requestparameter.md) objects via the `parameters` key when creating [Request](../reference/core-classes/request.md) object. For example, mapping an action that receives a `userId` parameter via GET would look like this:
 
@@ -180,7 +174,5 @@ function view($request) {
 }
 ```
 
-{% hint style="info" %}
-Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.
-{% endhint %}
+> Check out [Working with Security](working-with-security.md#security-rules) to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.
 

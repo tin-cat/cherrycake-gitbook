@@ -41,15 +41,11 @@ When a module is loaded for the first time during a request, this is what happen
 
 The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.class.php` extension.
 
-{% hint style="info" %}
-You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup)
-{% endhint %}
+> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine.md#init-appnamespace-setup)
 
 For example, if you were to create a module called `Products`, it should be stored on the `/modules/Products/Products.class.php` directory.
 
-{% hint style="info" %}
-Note that both the subdirectory and the file name itself are case-sensitive.
-{% endhint %}
+> Note that both the subdirectory and the file name itself are case-sensitive.
 
 ## Modules configuration file
 

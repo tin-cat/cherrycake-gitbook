@@ -1,8 +1,8 @@
 ---
 description: >-
-  A template parser that uses PHP code to integrate your code seamlessly with
-  your template files, while providing advanced Cherrycake capabilities to your
-  templates.
+  Cherrycake provides a patterns parser that uses PHP code to integrate your
+  code seamlessly with your template files, providing advanced Cherrycake
+  capabilities to your template structures.
 ---
 
 # Patterns
@@ -19,7 +19,7 @@ These are the most interesting capabilities [Patterns](../reference/core-modules
 * [Patterns](patterns.md) works with the [Cache](../reference/core-modules/cache.md) module to provide a pattern-level cache, meaning that individual patterns can be cached as you like to improve performance. Because patterns can be nested, you can cache only the patterns that contain static or almost static information, and let only patterns with dynamic information be parsed each time they're used.
 * The [Css](../reference/core-modules/css.md) and [JavaScript](../reference/core-modules/javascript.md) modules work with Patterns too, bringing all this capabilities also to your Css and JavaScript files.
 
-{% hint style="info" %}
-See [Working with Patterns](../guide/working-with-patterns.md) for a guide on how to use this module.
-{% endhint %}
+Because [Patterns](../reference/core-modules/patterns.md) is actually a Cherrycake core module, you can use any other template parser you like in your Cherrycake app, build your own or get rid of any template mechanism if you like.
+
+> See [Working with Patterns](../guide/working-with-patterns.md) for a guide on how to use this module.
 
