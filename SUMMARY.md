@@ -57,6 +57,7 @@
     * [Output / Methods](reference/core-modules/output/methods.md)
     * [Output / Constants](reference/core-modules/output/response-codes.md)
   * [Patterns](reference/core-modules/patterns/README.md)
+    * [Patterns / Configuration](reference/core-modules/patterns/patterns-configuration.md)
     * [Patterns / Methods](reference/core-modules/patterns/methods.md)
   * [Pdf](reference/core-modules/pdf.md)
   * [Security](reference/core-modules/security/README.md)
