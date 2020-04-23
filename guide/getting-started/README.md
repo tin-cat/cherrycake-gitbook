@@ -1,5 +1,5 @@
 ---
-description: Let's start an App with Cherrycake
+description: A simple guide to build a simple "Hello world" application with Cherrycake.
 ---
 
 # Getting started

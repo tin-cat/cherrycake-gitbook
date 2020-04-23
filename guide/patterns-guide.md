@@ -1,3 +1,10 @@
+---
+description: >-
+  Patterns provides your HTML, CSS, JavaScript and other types of files with a
+  dynamic template mechanism that brings performance, re-usability and code
+  tidiness benefits.
+---
+
 # Patterns guide
 
 The simplest way of using [Patterns](../architecture/patterns.md) is just calling the [Patterns::out](../reference/core-modules/patterns/#out-patternname-setup-code) method to send a pattern to the browser:

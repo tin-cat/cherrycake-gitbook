@@ -1,3 +1,7 @@
+---
+description: Modules are the fundamental containers of functionality in Cherrycake apps.
+---
+
 # Modules guide
 
 Modules pack the process-specific logic of an app and have some [additional benefits](../architecture/modules.md) and [important differences](../architecture/classes.md#whats-the-difference-between-a-class-and-a-module) over regular classes. Modules come in two flavors:

@@ -1,3 +1,9 @@
+---
+description: >-
+  Classes contain the logic behind  the elemental objects that are used within a
+  Cherrycake application.
+---
+
 # Classes guide
 
 Classes encapsulate [object-specific logic](../architecture/classes.md), and they also come in two flavors:

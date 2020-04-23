@@ -1,3 +1,10 @@
+---
+description: >-
+  Cache provides your Cherrycake application with a standardized interface to
+  implement caching and shared memory mechanisms into your App while connecting
+  to multiple external cache providers.
+---
+
 # Cache guide
 
 ## Cache providers

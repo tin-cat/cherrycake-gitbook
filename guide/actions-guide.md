@@ -1,10 +1,14 @@
+---
+description: >-
+  Actions is the routing core module of Cherrycake, and allows your application
+  to receive requests and attend them accordingly.
+---
+
 # Actions guide
 
-[Actions](../reference/core-modules/actions-1/actions.md) is the routing core module of Cherrycake that allows your application to receive requests and attend them accordingly.
+When using [Actions](../reference/core-modules/actions-1/actions.md), all the modules who will be receiving requests should map their actions in the [Module::mapActions](../reference/core-classes/module/#mapactions) method, by calling [Actions::mapAction](../reference/core-modules/actions-1/actions.md#mapaction-actionname-action).
 
 > [Actions](../reference/core-modules/actions-1/actions.md) is the default base core module because it is what you'll need in most cases. If you're experimenting with different ways of using Cherrycake, you can specify a different set of base modules in [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup)
-
-When using [Actions](../reference/core-modules/actions-1/actions.md), all the modules who will be receiving requests should map their actions in the [Module::mapActions](../reference/core-classes/module/#mapactions) method, by calling [Actions::mapAction](../reference/core-modules/actions-1/actions.md#mapaction-actionname-action).
 
 When a request is received, [Actions](../reference/core-modules/actions-1/actions.md) will look through all the mapped actions. If any of them matches the current request, it will load the associated module and run the mapped method.
 
