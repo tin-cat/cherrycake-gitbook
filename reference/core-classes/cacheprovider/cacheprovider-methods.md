@@ -18,7 +18,7 @@ Stores a value into the cache
 
 * **`key`** The identifier key
 * **`value`** The value
-* **`ttl`** The [Time To Live](../../../guide/cache-guide.md#time-to-live) of the stored value in seconds
+* **`ttl`** The [Time To Live](../../../guide/cache-guide.md#time-to-live) of the stored value in seconds. Default: `false`
 
 **Returns:** Whether the value has been correctly stored, false otherwise.
 

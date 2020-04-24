@@ -64,7 +64,7 @@ Some Core modules make use of Cache by their own, like [Database](../reference/c
 Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache/) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set](../reference/core-classes/cacheprovider/cacheprovider-methods.md#set-key-value-ttl) method, like this:
 
 ```php
-$value = $e->Cache->fast->set("myKey", "value", );
+$value = $e->Cache->fast->set("myKey", "value", \Cherrycake\CACHE_TTL_5_MINUTES);
 ```
 
 And [CacheProvider::get](../reference/core-classes/cacheprovider/cacheprovider-methods.md#get-key) to set a value into a cache key:
@@ -74,6 +74,14 @@ $value = $e->Cache->fast->get("myKey")
 ```
 
 ## Time To Live
+
+TTL is a common concept in caching, it represents the amount of time the cached object will be available in the cache. Even though this mechanism might work differently for different cache systems, in general, cached objects are removed automatically from cache when their TTL has passed, so you'll get `false` whenever you try to access them.
+
+### What about when TTL is zero?
+
+Generally, when an object is stored in cache with a zero TTL, the cache system tries to hold it as long as possible, considering the resources of the server and any persistence mechanisms the server might implement. In practice, you should not rely on a zero TTL to store any persistent information.
+
+> As a general rule, do not use cache systems to store persistent information. Use a database instead.
 
 ## Prefix
 
