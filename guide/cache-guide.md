@@ -87,13 +87,42 @@ Generally, when an object is stored in cache with a zero TTL, the cache system t
 
 > As a general rule, do not use cache systems to store persistent information. Use a database instead.
 
-## Prefix
+## Lists
 
-Prefixes are used in caching to isolate one set of cache keys from another, mainly to avoid collisions. For example: You might want to store the precalculated number of followers a certain user has in your social network. If you cache this information in a key named `numberOfFollowers`, it will collide with the data for every other user in your system. To distinguish them, you can use the user Id as your prefix, for example: `832`.
+A cache list is a subset of keys that are kept isolated from other keys, and can be manipulated at once as a group. For example, you might want store all cached objects related to the user with id `214` in a list named `user_214`, like this:
 
-> A prefix is simply a string that is prepended to the cache key, so they're equivalent to manually append some prefix to the key. For example: `user832_numberOfFollowers`.
+```php
+$userId = 214;
+$cacheListName = "user_".$userId;
+$e->Cache->huge->hSet($cacheListName, "numberOfVisits", $numberOfVisits);
+$e->Cache->huge->hSet($cacheListName, "numberOfFollowers", $numberOfFollowers);
+$e->Cache->huge->hSet($cacheListName, "numberOfLikes", $numberOfLikes);
+```
 
-## Cache lists
+Now, when you want to clear the entire cache for a specific user, you don't have to remember all the cache keys you used for that user, you just clear the entire list:
+
+```php
+foreach ($e->Cache->huge->hGetAll($cacheListName) as $listKey)
+    $e->Cache->huge->hDel($cacheListName, $listKey);
+```
+
+Check [CacheProvider methods](../reference/core-classes/cacheprovider/cacheprovider-methods.md) to see more ways to interact with cache lists.
+
+{% hint style="info" %}
+Note that cache lists functionalities are only available when using [CacheProviderRedis](../reference/core-classes/cacheprovider/cacheproviderredis.md)
+{% endhint %}
+
+## Queues
+
+{% hint style="info" %}
+Note that cache lists functionalities are only available when using [CacheProviderRedis](../reference/core-classes/cacheprovider/cacheproviderredis.md)
+{% endhint %}
+
+## Pools
+
+{% hint style="info" %}
+Note that cache lists functionalities are only available when using [CacheProviderRedis](../reference/core-classes/cacheprovider/cacheproviderredis.md)
+{% endhint %}
 
 ## When to use Action, Pattern, Item or Database-level cache?
 

@@ -22,6 +22,6 @@ description: 'The available configuration keys for this module, and its default 
       * **`host`** The host name or IP of the Redis server. Default: `localhost`
       * **`port`** The server port. Default: `6379`
       * **`database`** The Redis database number to use. Default: `0`
-      * **`prefix`** The prefix to use for cache keys. Defaults to none.
+      * **`prefix`** The prefix to use for all cache keys. Used to avoid key collisions with other apps that might be running in the server. Defaults to none.
       * **`isPersistentConnection`** Whether to keep the connection to Redis active between requests. Default: `true`
 
