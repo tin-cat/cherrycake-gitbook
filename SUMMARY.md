@@ -41,6 +41,7 @@
     * [Actions / Methods](reference/core-modules/actions-1/actions.md)
   * [Browser](reference/core-modules/browser.md)
   * [Cache](reference/core-modules/cache/README.md)
+    * [Cache / Configuration](reference/core-modules/cache/cache-configuration.md)
     * [Cache / Constants](reference/core-modules/cache/cache-constants.md)
   * [Css](reference/core-modules/css.md)
   * [Database](reference/core-modules/database.md)
