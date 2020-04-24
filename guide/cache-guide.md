@@ -124,9 +124,9 @@ Queues are ordered lists of values. New values can be appended to the end of a q
 
 ## Pools
 
-Pools work a little bit like queues, with the exception of not being ordered. You cannot choose whether to add a value to a pool to the beginning or to the end, you just throw it to the pool with with [CacheProviderRedis::poolAdd](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#pooladd-poolname-value), and it stays there until you remove it with with [CacheProviderRedis::poolPop](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#poolpop-poolname-value).
+Pools work a little bit like queues, with the exception of not being ordered. You cannot choose whether to add a value to a pool to the beginning or to the end, you just throw it to the pool with [CacheProviderRedis::poolAdd](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#pooladd-poolname-value), and it stays. Also, when you get objects from the pool with [CacheProviderRedis::poolPop](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#poolpop-poolname-value), you can't choose what object you get, you just get a random one.
 
-One benefit you get when using pools is that you can check if a certain value is in the pool or not using [CacheProviderRedis::isInPool](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#isinpool-poolname-value), and you can also get the number of values in the pool with [CacheProviderRedis::poolCount](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#poolcount-poolname).
+One benefit you get when using pools is that you can check if a certain value is in the pool by using [CacheProviderRedis::isInPool](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#isinpool-poolname-value), and you can also get the number of values in the pool with [CacheProviderRedis::poolCount](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#poolcount-poolname).
 
 
 
