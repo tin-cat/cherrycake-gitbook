@@ -2,7 +2,7 @@
 description: 'The available configuration keys for this module, and its default values.'
 ---
 
-# Patterns / Configuration
+# Patterns configuration
 
 * **`directory`** The directory where patterns are stored.
 * **`defaultCacheProviderName`** The default cache provider name to use for cached patterns.

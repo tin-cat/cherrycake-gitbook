@@ -1,4 +1,4 @@
-# RequestParameter / Methods
+# RequestParameter methods
 
 ## \_\_construct\( setup \)
 

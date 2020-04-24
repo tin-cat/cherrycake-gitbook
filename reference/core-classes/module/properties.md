@@ -1,4 +1,4 @@
-# Module / Properties
+# Module properties
 
 ## $config
 

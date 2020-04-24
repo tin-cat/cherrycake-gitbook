@@ -1,4 +1,4 @@
-# Security / Constants
+# Security constants
 
 ## Rules
 

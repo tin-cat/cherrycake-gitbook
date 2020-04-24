@@ -1,4 +1,4 @@
-# Module / Methods
+# Module methods
 
 ## getConfig\( key \)
 

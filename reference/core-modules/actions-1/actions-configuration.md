@@ -2,7 +2,7 @@
 description: 'The available configuration keys for this module, and its default values.'
 ---
 
-# Actions / Configuration
+# Actions configuration
 
 * **`defaultActionCacheTtl`** The default cache provider name to use. Default: `engine`
 * **`defaultActionCacheTtl`** The default TTL. Default: `CACHE_TTL_NORMAL`

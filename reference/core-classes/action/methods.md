@@ -1,4 +1,4 @@
-# Action / Methods
+# Action methods
 
 ## \_\_construct\( setup \)
 

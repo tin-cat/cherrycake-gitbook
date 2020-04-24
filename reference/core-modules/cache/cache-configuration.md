@@ -2,7 +2,7 @@
 description: 'The available configuration keys for this module, and its default values.'
 ---
 
-# Cache / Configuration
+# Cache configuration
 
 * **`providers`** A hash array of the available [cache providers](../../../guide/cache-guide.md#cache-providers), where the key is the name of the cache provider, and the value is a hash array with the following possible keys:
   * **`providerClassName`** The name of the cache provider class, from the available ones:

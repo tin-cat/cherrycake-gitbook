@@ -29,7 +29,7 @@ $CacheConfig = [
 
 > Note we called our cache provider `fast`
 
-You can configure more than one cache providers. For example, let's add a Redis cache provider too, called "huge":
+You can configure more than one cache providers. For example, let's add a Redis cache provider too, called `huge`:
 
 ```php
 <?php
@@ -53,6 +53,24 @@ $CacheConfig = [
         ]
     ]
 ];
+```
+
+> Since some functionalities of Cherrycake make use of caching mechanisms, there is a default cache provider called `engine` that uses an APCu cache provider. This provider is always defined, no matter what you setup in your `Cache.config.php` file.
+
+## Using cache
+
+Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database.md) and [Patterns](../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
+
+Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache/) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set](../reference/core-classes/cacheprovider/cacheprovider-methods.md#set-key-value-ttl) method, like this:
+
+```php
+$value = $e->Cache->fast->set("myKey", "value", );
+```
+
+And [CacheProvider::get](../reference/core-classes/cacheprovider/cacheprovider-methods.md#get-key) to set a value into a cache key:
+
+```php
+$value = $e->Cache->fast->get("myKey")
 ```
 
 ## Time To Live

@@ -1,4 +1,4 @@
-# Actions / Methods
+# Actions methods
 
 ## getAction\( actionName \)
 

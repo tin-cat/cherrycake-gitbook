@@ -1,4 +1,4 @@
-# RequestPathComponent / Methods
+# RequestPathComponent methods
 
 ## \_\_construct\( setup \)
 

@@ -1,4 +1,4 @@
-# Action / Constants
+# Action constants
 
 * `ACTION_MODULE_TYPE_CORE` Identifies a Core type Module
 * `ACTION_MODULE_TYPE_APP` Identifies an App type Module

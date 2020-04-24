@@ -1,4 +1,4 @@
-# Cache / Constants
+# Cache constants
 
 * `CACHE_TTL_1_MINUTE`
 * `CACHE_TTL_5_MINUTES`
