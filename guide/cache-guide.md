@@ -61,19 +61,19 @@ $CacheConfig = [
 
 Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database.md) and [Patterns](../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
 
-Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache/) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set](../reference/core-classes/cacheprovider/cacheprovider-methods.md#set-key-value-ttl) method, like this:
+Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache/) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set](../reference/core-classes/cacheprovider/cacheprovider-methods/#set-key-value-ttl) method, like this:
 
 ```php
 $value = $e->Cache->fast->set("myKey", "value", \Cherrycake\CACHE_TTL_5_MINUTES);
 ```
 
-And [CacheProvider::get](../reference/core-classes/cacheprovider/cacheprovider-methods.md#get-key) to set a value into a cache key:
+And [CacheProvider::get](../reference/core-classes/cacheprovider/cacheprovider-methods/#get-key) to set a value into a cache key:
 
 ```php
 $value = $e->Cache->fast->get("myKey")
 ```
 
-See [Cache methods](../reference/core-modules/cache/cache-methods.md) for other ways of using the cache.
+See [CacheProvider methods](../reference/core-classes/cacheprovider/cacheprovider-methods/) for other ways of using the cache.
 
 ## Time To Live
 
@@ -87,9 +87,17 @@ Generally, when an object is stored in cache with a zero TTL, the cache system t
 
 > As a general rule, do not use cache systems to store persistent information. Use a database instead.
 
+## Other ways of using shared memory
+
+Some specific cache providers like Redis implement other useful ways of working with shared memory. This methods also are designed to store objects in different ways, and stored objects do not have a TTL expiration.
+
+Because this methods also use the shared memory of the cache system, the data you store using them is persistent between requests. This methods are specially suited for high performance operations like the storage of events in a high traffic scenario, or the intermediate storage of data that needs to be accessed extremely fast, lots of times per second.
+
+Let's take a look at the three mechanisms of this type provided by CacheProviderRedis:
+
 ## Lists
 
-A cache list is a subset of keys that are kept isolated from other keys, and can be manipulated at once as a group. For example, you might want store all cached objects related to the user with id `214` in a list named `user_214`, like this:
+A list is an isolated subset of keys stored in the shared memory of the cache system that can be manipulated at once as a group. For example, you might want store all cached objects related to the user with id `214` in a list named `user_214`, like this:
 
 ```php
 $userId = 214;
@@ -106,25 +114,19 @@ foreach ($e->Cache->huge->hGetAll($cacheListName) as $listKey)
     $e->Cache->huge->hDel($cacheListName, $listKey);
 ```
 
-Check [CacheProvider methods](../reference/core-classes/cacheprovider/cacheprovider-methods.md) to see more ways to interact with cache lists.
-
-{% hint style="info" %}
-Note that cache lists functionalities are only available when using [CacheProviderRedis](../reference/core-classes/cacheprovider/cacheproviderredis.md)
-{% endhint %}
+Check [Lists methods](../reference/core-classes/cacheprovider/cacheprovider-methods/lists-methods.md) to see more ways to interact with cache lists.
 
 ## Queues
 
-{% hint style="info" %}
-Note that cache lists functionalities are only available when using [CacheProviderRedis](../reference/core-classes/cacheprovider/cacheproviderredis.md)
-{% endhint %}
+Queues are ordered lists of values. New values can be appended to the end of a queue with [CacheProviderRedis::rPush](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-queueing-methods.md#rpush-queuename-value), or prepended to the beginning with [CacheProviderRedis::lPush](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-queueing-methods.md#lpush-queuename-value). You then can use [CacheProviderRedis::rPop](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-queueing-methods.md#rpop-queuename) to extract a value from the end of the queue and [CacheProvider::lPop](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-queueing-methods.md#lpop-queuename) to extract it from the beginning.
+
+> Queues are great to store events in the same order as they arrive. For example, they're a really efficient way of storing an ordered log of page views, even if your pages get a huge amount of traffic. In a separate process that runs automatically every few minutes, you can then retrieve those page view events and store them in a database for persistence.
 
 ## Pools
 
-{% hint style="info" %}
-Note that cache lists functionalities are only available when using [CacheProviderRedis](../reference/core-classes/cacheprovider/cacheproviderredis.md)
-{% endhint %}
+Pools work a little bit like queues, with the exception of not being ordered. You cannot choose whether to add a value to a pool to the beginning or to the end, you just throw it to the pool with with [CacheProviderRedis::poolAdd](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#pooladd-poolname-value), and it stays there until you remove it with with [CacheProviderRedis::poolPop](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#poolpop-poolname-value).
 
-## When to use Action, Pattern, Item or Database-level cache?
+One benefit you get when using pools is that you can check if a certain value is in the pool or not using [CacheProviderRedis::isInPool](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#isinpool-poolname-value), and you can also get the number of values in the pool with [CacheProviderRedis::poolCount](../reference/core-classes/cacheprovider/cacheprovider-methods/cacheproviderredis-pools-methods.md#poolcount-poolname).
 
 
 
