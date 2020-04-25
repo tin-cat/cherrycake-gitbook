@@ -17,9 +17,9 @@ Modules pack the process-specific logic of an app and have some [additional bene
 
 Modules must be loaded before they can be used, they can be loaded in three ways:
 
-* As a **Base core module**, when initializing the engine. Base core modules are loaded right when the engine is initialized. You specify your base modules in the `baseCoreModules` setup key of [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup). See the [Deep lifecycle](../architecture/lifecycle/deep-lifecycle.md) section for more details on this.
-* As a **dependent module**, when they're required by other modules in their [Module::dependentCoreModules](../reference/core-classes/module/#usddependentcherrycakemodules) or [Module::dependentAppModules](../reference/core-classes/module/#usddependentappmodules) properties. See [Specifying module dependencies](modules-guide.md#specifying-module-dependencies).
-* At any point in your code, **programmatically**. Just by calling [Engine::loadCoreModule](../reference/core-classes/engine/#loadcoremodule-modulename-requiredbymodulename) or [Engine::loadAppModule](../reference/core-classes/engine/#loadappmodule-modulename-requiredbymodulename).
+* As a **Base core module**, when initializing the engine. Base core modules are loaded right when the engine is initialized. You specify your base modules in the `baseCoreModules` setup key of [Engine::init](). See the [Deep lifecycle](../architecture/lifecycle/deep-lifecycle.md) section for more details on this.
+* As a **dependent module**, when they're required by other modules in their [Module::dependentCoreModules](../reference/core-classes/module.md#usddependentcherrycakemodules) or [Module::dependentAppModules](../reference/core-classes/module.md#usddependentappmodules) properties. See [Specifying module dependencies](modules-guide.md#specifying-module-dependencies).
+* At any point in your code, **programmatically**. Just by calling [Engine::loadCoreModule]() or [Engine::loadAppModule]().
 
 ## Accessing modules
 
@@ -45,7 +45,7 @@ When a module is loaded for the first time during a request, this is what happen
 
 The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.class.php` extension.
 
-> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup)
+> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init]()
 
 For example, if you were to create a module called `Products`, it should be stored on the `/modules/Products/Products.class.php` directory.
 
@@ -53,7 +53,7 @@ For example, if you were to create a module called `Products`, it should be stor
 
 ## Modules configuration file
 
-Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup)
+Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init]()
 
 Module configuration files must have a name that matches the module name, even with upper and lowercase characters. For example, the configuration file for the [Database](../reference/core-modules/database/) module must be called `/config/Database.config.php`
 
@@ -81,7 +81,7 @@ class MyModule extends \Cherrycake\Module {
 }
 ```
 
-To get a configuration value from a module, use the [Module::getConfig](../reference/core-classes/module/#getconfig-key) method, for example:
+To get a configuration value from a module, use the [Module::getConfig](../reference/core-classes/module.md#getconfig-key) method, for example:
 
 ```php
 $this->getConfig("title");
@@ -91,7 +91,7 @@ $this->getConfig("title");
 
 When your module makes use of another modules regularly, you should specify them as a dependency.
 
-Set the [dependentCoreModules](../reference/core-classes/module/#usddependentcoremodules) property of your module to specify which Core modules are required by yours, and the [dependentAppModules](../reference/core-classes/module/#usddependentappmodules) to specify dependencies between your own modules, here's an example:
+Set the [dependentCoreModules](../reference/core-classes/module.md#usddependentcoremodules) property of your module to specify which Core modules are required by yours, and the [dependentAppModules](../reference/core-classes/module.md#usddependentappmodules) to specify dependencies between your own modules, here's an example:
 
 ```php
 class MyModule extends \Cherrycake\Module {

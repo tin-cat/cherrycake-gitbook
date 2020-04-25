@@ -1,0 +1,7 @@
+# Result
+
+## Subclasses
+
+* **`ResultOk`**
+* **`ResultKo`**
+

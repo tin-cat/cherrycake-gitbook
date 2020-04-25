@@ -8,17 +8,15 @@ description: >-
 
 ## **Subclasses**
 
-* CacheProviderApcu Provides connection to the [Alternative PHP Cache](https://www.php.net/manual/en/book.apc.php), which is easily available as a PHP module and provides high speed, shared memory based caching suited for scenarios without complex cache or shared memory requirements and that won't use big amounts of memory.
-* `CacheProviderMemcached` Provides connection to a [Memcached](https://www.memcached.org/) server, which provides high performance caching and shared memory capabilities, suited for scenarios where big amounts of memory will be used, even with distributed server structures.
-* CacheProviderRedis
+* **`CacheProviderApcu`** Provides connection to the [Alternative PHP Cache](https://www.php.net/manual/en/book.apc.php), which is easily available as a PHP module and provides high speed, shared memory based caching suited for scenarios without complex cache or shared memory requirements and that won't use big amounts of memory.
+* **`CacheProviderMemcached`** Provides connection to a [Memcached](https://www.memcached.org/) server, which provides high performance caching and shared memory capabilities without the need of advanced shared memory tools, suited for scenarios where big amounts of memory will be used, even with distributed server structures.
+* **`CacheProviderRedis`** Provides connection to a [Redis](https://redis.io/) server, which provides high performance caching and shared memory capabilities while also providing advanced shared memory mechanisms like lists, queues and pools. Also supports distributed server architectures.
 
 {% tabs %}
 {% tab title="Methods" %}
 ## get\( key \) <a id="get"></a>
 
 Gets a value from the cache.
-
-**Parameters:**
 
 * **`key`** The identifier key
 
@@ -27,8 +25,6 @@ Gets a value from the cache.
 ## set\( key, value, ttl \) <a id="set"></a>
 
 Stores a value into the cache
-
-**Parameters:**
 
 * **`key`** The identifier key
 * **`value`** The value
@@ -46,8 +42,6 @@ List methods only work with CacheProviderRedis.
 
 Retrieves an object from a list
 
-**Parameters:**
-
 * **`listName`** The name of the list
 * **`key`** The key of the object
 
@@ -57,8 +51,6 @@ Retrieves an object from a list
 
 Retrieves all the keys in a list
 
-**Parameters:**
-
 * **`listName`** The name of the list
 
 **Returns:** An array containing all the keys in the list, an empty array if the list was empty or false if the list didn't exist.
@@ -66,8 +58,6 @@ Retrieves all the keys in a list
 ## hSet\( listName, key, value\) <a id="hset"></a>
 
 Adds an object to a list
-
-**Parameters:**
 
 * **`listName`** The name of the list
 * **`key`** The key of the object
@@ -85,8 +75,6 @@ Queue methods only work with CacheProviderRedis.
 
 Returns the element at the beginning of a queue and removes it.
 
-**Parameters:**
-
 * **`queueName`** The name of the queue
 
 **Returns:** The value that was a the beginning of the queue, or null if the queue was empty.
@@ -94,8 +82,6 @@ Returns the element at the beginning of a queue and removes it.
 ## lPush\( queueName, value \) <a id="lpush"></a>
 
 Prepends a value to the beginning of a queue.
-
-**Parameters:**
 
 * **`queueName`** The name of the queue
 * **`value`** The value to prepend
@@ -106,8 +92,6 @@ Prepends a value to the beginning of a queue.
 
 Returns the element at the end of a queue and removes it.
 
-**Parameters:**
-
 * **`queueName`** The name of the queue
 
 **Returns:** The value that was a the end of the queue, or null if the queue was empty.
@@ -115,8 +99,6 @@ Returns the element at the end of a queue and removes it.
 ## rPush\( queueName, value \) <a id="rpush"></a>
 
 Appends a value to the end of a queue.
-
-**Parameters:**
 
 * **`queueName`** The name of the queue
 * **`value`** The value to append
@@ -133,8 +115,6 @@ Pool methods only work with CacheProviderRedis.
 
 Checks whether a value is in the pool.
 
-**Parameters:**
-
 * **`poolName`** The pool name
 * **`value`** The value to check
 
@@ -143,8 +123,6 @@ Checks whether a value is in the pool.
 ## poolAdd\( poolName, value \) <a id="pooladd"></a>
 
 Adds a value to a pool.
-
-**Parameters:**
 
 * **`poolName`** The pool name
 * **`value`** The value to add
@@ -155,8 +133,6 @@ Adds a value to a pool.
 
 Counts the number of objects in the pool
 
-**Parameters:**
-
 * **`poolName`** The pool name
 
 **Returns:** The number of objects in the pool, or false if the pool doesn't exists.
@@ -164,8 +140,6 @@ Counts the number of objects in the pool
 ## poolPop\( poolName, value \) <a id="poolpop"></a>
 
 Retrieves a random value from a pool and removes it.
-
-**Parameters:**
 
 * **`poolName`** The pool name
 
