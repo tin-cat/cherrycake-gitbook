@@ -182,9 +182,9 @@ function view($request) {
 
 When an action is configured as cacheable, when a request is received for that action, the cached output will be returned instead of executing the method. This can provide extremely efficient and short response times as the engine will only load the minimal set of modules needed to attend the cached request.
 
-To activate caching for an action, set the `isCache` setup key to true when creating the [Action](../reference/core-classes/action/methods.md#__construct-setup) object.
+To activate caching for an action, set the `isCache` setup key to true when creating the [Action]() object.
 
-To use a different cache provider, TTL or prefix, specify also the `cacheProviderName`, `cacheTtl` or `cachePrefix` [setup keys](../reference/core-classes/action/methods.md#__construct-setup). See [Working with Cache](cache-guide.md) for more details on this concepts.
+To use a different cache provider, TTL or prefix, specify also the `cacheProviderName`, `cacheTtl` or `cachePrefix` [setup keys](). See [Working with Cache](cache-guide.md) for more details on this concepts.
 
 For example, if we wanted to activate the cache for the action we used in the first example on this section, it would look like this:
 
@@ -238,7 +238,7 @@ Dictionary attacks and other kinds of brute force attacks often rely on the abil
 
 One way of making it difficult for the attackers is to add an intentional delay to the response, so the amount of time needed to try a reasonable amount of passwords rises quickly, hopefully discouraging the attacker.
 
-By setting the `isSensibleToBruteForceAttacks` setup key to true when creating the [Action](../reference/core-classes/action/methods.md#__construct-setup) object, Cherrycake will take care of adding this delay to the request.
+By setting the `isSensibleToBruteForceAttacks` setup key to true when creating the [Action]() object, Cherrycake will take care of adding this delay to the request.
 
 The delay is only added when the method called by the action returns `false`. Be sure to return `false` in methods mapped as actions when the sensible task was unsuccessful. For example: If a received  password or key of any kind was checked against a database or any kind of authentication method, and it failed.
 
