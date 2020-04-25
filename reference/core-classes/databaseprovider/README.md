@@ -1,3 +1,7 @@
+---
+description: Represents a connection to a database provider.
+---
+
 # DatabaseProvider
 
 ## Subclasses

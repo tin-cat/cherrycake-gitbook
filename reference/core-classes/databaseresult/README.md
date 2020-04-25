@@ -1,3 +1,7 @@
+---
+description: Manages the result of a query to a database.
+---
+
 # DatabaseResult
 
 ## Subclasses
