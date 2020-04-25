@@ -235,7 +235,7 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object using the [Output::setResponse](../../reference/core-modules/output/#setresponse-response) method.
+To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml]() object using the [Output::setResponse](../../reference/core-modules/output/#setresponse-response) method.
 
 And that's it! If you now run your app you should see a boring yet quite welcoming "Hello world" message in your browser.
 

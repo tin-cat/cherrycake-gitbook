@@ -90,7 +90,7 @@ function homePage() {
 
 In turn, [Patterns](../../reference/core-modules/patterns/) depends on the [Output](../../reference/core-modules/output/) module, which was loaded and initialized automatically as soon as the chain of dependencies started, when our _Home_ module was loaded.
 
-Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/#parse-patternname-setup) and then sends the result as a [ResponseTextHtml](../../reference/core-classes/response/responsetexthtml.md) object to [Output::setResponse](../../reference/core-modules/output/#setresponse-response), like this:
+Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/#parse-patternname-setup) and then sends the result as a [ResponseTextHtml]() object to [Output::setResponse](../../reference/core-modules/output/#setresponse-response), like this:
 
 ```php
 $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([

@@ -1,8 +1,6 @@
 # RequestPathComponent methods
 
-## \_\_construct\( setup \)
-
-**Parameters:**
+## \_\_construct\( setup \) <a id="__construct"></a>
 
 * **`setup`** A hash array with the following possible keys:
   * **`name`** A name for the path component, it will let you refer to this component in the future.

@@ -1,10 +1,8 @@
 # Module methods
 
-## getConfig\( key \)
+## getConfig\( key \) <a id="getconfig"></a>
 
 Gets a configuration value.
-
-**Parameters**
 
 * **`key`** The configuration key
 

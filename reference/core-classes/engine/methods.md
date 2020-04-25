@@ -4,11 +4,9 @@
 
 Attends the request received from a web server by calling Actions::run with the requested URI string
 
-## callMethodOnAllModules\( methodName \)
+## callMethodOnAllModules\( methodName \) <a id="callmethodonallmodules"></a>
 
 Calls the specified static method on all the available Core and App modules where it's implemented, and then loads those modules.
-
-**Parameters**
 
 * **`methodName`** The method name to call
 
@@ -36,11 +34,9 @@ Returns an HTML version of the status in a human readable format.
 
 **Returns:** The HTML code
 
-## init\( appNamespace, setup \)
+## init\( appNamespace, setup \) <a id="init"></a>
 
 Initializes the Cherrycake engine.
-
-**Parameters**
 
 * **`appNamespace`** The app namespace
 * **`setup`** Optional hash array
@@ -59,18 +55,14 @@ Initializes the Cherrycake engine.
 
 **Returns:** Boolean indicating whether all the modules have been loaded ok or not.
 
-## loadAppModule\( moduleName, requiredByModuleName \)
-
-**Parameters**
+## loadAppModule\( moduleName, requiredByModuleName \) <a id="loadappmodule"></a>
 
 * **`moduleName`** The name of the module.
 * **`requiredByModuleName`** Optional name of the module that required to load the module.
 
-## loadCoreModule\( moduleName, requiredByModuleName \)
+## loadCoreModule\( moduleName, requiredByModuleName \) <a id="loadcoremodule"></a>
 
 Loads a Core [module](../../../guide/modules-guide.md).
-
-**Parameters**
 
 * **`moduleName`** The name of the module.
 * **`requiredByModuleName`** Optional name of the module that required to load the module.

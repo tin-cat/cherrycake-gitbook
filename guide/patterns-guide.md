@@ -13,7 +13,7 @@ The simplest way of using [Patterns](../architecture/patterns.md) is just callin
 $e->Patterns->out("helloworld.html");
 ```
 
-This will read the file `/patterns/pattern.html`, parse and output it to the client as the `payload` of an [ResponseTextHtml](../reference/core-classes/response/responsetexthtml.md) response.
+This will read the file `/patterns/pattern.html`, parse and output it to the client as the `payload` of an [ResponseTextHtml]() response.
 
 > You can change the directory where your patterns are stored by setting the `directory` key of the Patterns module configuration file.
 
