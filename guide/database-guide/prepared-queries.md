@@ -20,7 +20,7 @@ You replace the values with question marks `?` like so:
 insert into users (name, email) values (?, ?);
 ```
 
-And then pass the values in a separate array to [DatabaseProvider::prepareAndExecute](../../reference/core-classes/databaseprovider/databaseprovider-methods.md#prepareandexecute), like this:
+And then pass the values in a separate array to [DatabaseProvider::prepareAndExecute](../../reference/core-classes/databaseprovider/databaseprovider-methods.md#prepareandexecute), this is how it looks.
 
 ```sql
 $result = $e->Database->main->prepareAndExecute(
@@ -37,4 +37,8 @@ $result = $e->Database->main->prepareAndExecute(
     ]
 );
 ```
+
+> See [Database constants](../../reference/core-modules/database.md#constants) for a list of all available field types.
+
+
 
