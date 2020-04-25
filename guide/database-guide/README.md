@@ -40,7 +40,7 @@ $CacheConfig = [
 
 ## Modules that depend on Database
 
-Just like Cache, some other modules use Database for many purposes, for example: The Session module uses a database connection to store information about sessions.
+Just like Cache, some other modules use Database for many purposes, for example: The [Session](../../reference/core-modules/session.md) module uses a database connection to store information about sessions.
 
 > That's why in the [Cherrycake Skeleton](../getting-started/skeleton.md) boilerplate you'll find the `/install` directory containing some SQL scripts to create tables some Cherrycake modules need.
 

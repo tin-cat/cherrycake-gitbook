@@ -1,6 +1,6 @@
 # DatabaseProvider methods
 
-## query\( query, setup \)
+## query\( query, setup \) <a id="query"></a>
 
 Performs a query to the database
 
