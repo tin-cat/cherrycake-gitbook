@@ -23,6 +23,18 @@ insert into users (name, email) values (?, ?);
 And then pass the values in a separate array to [DatabaseProvider::prepareAndExecute](../../reference/core-classes/databaseprovider/databaseprovider-methods.md#prepareandexecute), like this:
 
 ```sql
-
+$result = $e->Database->main->prepareAndExecute(
+    "insert into users (name, email) values (?, ?)",
+    [
+        [
+            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_STRING,
+            "value" => "Frank"
+        ],
+        [
+            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_STRING,
+            "value" => "frank.abagnale@united.com"
+        ]
+    ]
+);
 ```
 
