@@ -1,0 +1,4 @@
+# DatabaseResult properties
+
+## $setup
+

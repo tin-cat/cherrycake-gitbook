@@ -78,6 +78,7 @@
     * [DatabaseProvider methods](reference/core-classes/databaseprovider/databaseprovider-methods.md)
   * [DatabaseResult](reference/core-classes/databaseresult/README.md)
     * [DatabaseResult methods](reference/core-classes/databaseresult/databaseresult-methods.md)
+    * [DatabaseResult properties](reference/core-classes/databaseresult/databaseresult-properties.md)
   * [DatabaseRow](reference/core-classes/databaserow.md)
   * [Engine](reference/core-classes/engine/README.md)
     * [Engine methods](reference/core-classes/engine/methods.md)

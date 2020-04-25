@@ -8,5 +8,17 @@ Even though prepared queries are a little bit verbose to code, they provide a ve
 Because of the security benefits of prepared queries, you're strongly advised to use prepared queries instead of basic queries.
 {% endhint %}
 
+In prepared queries, instead of specifying your values in the SQL string like this:
 
+```sql
+insert into users (name, email) values ('Frank', 'frank.abagnale@united.com');
+```
+
+You replace the values with question marks `?` like so:
+
+```sql
+insert into users (name, email) values (?, ?);
+```
+
+And then pass the values in a separate array to DatabaseProvider::prepareAndExecute, like this:
 
