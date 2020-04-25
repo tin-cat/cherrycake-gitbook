@@ -113,5 +113,15 @@ Counts the number of objects in the pool
 
 **Returns:** The number of objects in the pool, or false if the pool doesn't exists.
 
+## poolPop\( poolName \)
+
+Retrieves a random object of the pool and removes it.
+
+* **`poolName`** The pool name
+
+**Returns:** The object, or null if the pool was empty.
+
+
+
 
 
