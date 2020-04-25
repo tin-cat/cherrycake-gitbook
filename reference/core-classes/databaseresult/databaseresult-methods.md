@@ -12,7 +12,7 @@ Frees the memory associated to the results of the query. This causes results to 
 
 Returns the current row in the results of the query, and advances to the next row.
 
-**Returns:** A [DatabaseRow](../databaserow.md) object.
+**Returns:** A [DatabaseRow](../databaserow.md) object, or false i no more rows are available.
 
 ## isAny
 
