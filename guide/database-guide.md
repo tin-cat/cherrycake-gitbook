@@ -36,5 +36,5 @@ $CacheConfig = [
 ];
 ```
 
-> Note we called our cache provider `fast`
+> Note we called our database provider `main`
 
