@@ -38,3 +38,11 @@ $CacheConfig = [
 
 > Note we called our database provider `main`
 
+## Using the database
+
+Just like Cache, some other modules use Database for many purposes, for example: The [Session](session-guide.md) module uses a database connection to store information about sessions.
+
+> That's why in the [Cherrycake Skeleton](getting-started/skeleton.md) boilerplate you'll find the `/install` directory containing some SQL scripts to setup the needed tables to work with all the core Cherrycake modules.
+
+Of course you can access the database too in your app, and here's how it's done.
+
