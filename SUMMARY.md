@@ -28,6 +28,7 @@
 * [Cache guide](guide/cache-guide.md)
 * [Database guide](guide/database-guide/README.md)
   * [Basic queries](guide/database-guide/basic-queries.md)
+  * [Prepared queries](guide/database-guide/prepared-queries.md)
   * [Cached queries](guide/database-guide/cached-queries.md)
 * [Security guide](guide/security-guide.md)
 * [Session guide](guide/session-guide.md)
