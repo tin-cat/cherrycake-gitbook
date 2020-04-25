@@ -93,7 +93,7 @@ The second parameter is an optional hash array that lets you configure some impo
 * `isDevel` When set to true, the application is put into development mode, meaning you'll get extended error reports and other tricks to help you develop your app. When not specified, this parameter defaults to false.
 * `baseCoreModules` Is an array of the module names that should be loaded upon initialization of the engine. If not specified, only the [Actions](../../reference/core-modules/actions-1/actions.md) module will be loaded.
 
-> Check the [Engine::init](../../reference/core-classes/engine/#init-appnamespace-setup) documentation for more configuration parameters when initializing the engine.
+> Check the [Engine::init](../../reference/core-classes/engine/methods.md#init) documentation for more configuration parameters when initializing the engine.
 
 Let's take a pause here to see why we've added the [Actions](../../reference/core-modules/actions-1/actions.md) module on the `baseCoreModules` list. We need our app to attend requests \(it would be pretty useless otherwise\), and [Actions](../../reference/core-modules/actions-1/actions.md) is the module in charge of doing exactly that.
 
@@ -101,13 +101,13 @@ By including [Actions](../../reference/core-modules/actions-1/actions.md) in `ba
 
 > It's as if the Actions module asked all other modules: "If you have any actions you would like to map to respond to requests, please let me know now!"
 
-This causes all modules that have some action to map to do so \(by using the [Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction-actionname-action) method\), thus leaving [Actions](../../reference/core-modules/actions-1/actions.md) ready to attend requests.
+This causes all modules that have some action to map to do so \(by using the [Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction) method\), thus leaving [Actions](../../reference/core-modules/actions-1/actions.md) ready to attend requests.
 
 > Note that there's actually no need to specify a `baseCoreModules` setup key when initializing the engine. If you skip this parameter, the [Actions](../../reference/core-modules/actions-1/actions.md) module will be loaded by default, which is the most common scenario when developing regular apps.
 
-Now, if [Engine::init](../../reference/core-classes/engine/#init-setup) goes well, we run the [Engine::attendWebRequest](../../reference/core-classes/engine/#attendwebrequest) method. What this method does is quite simple: By calling the [Actions::run](../../reference/core-modules/actions-1/actions.md#run) method, it asks the [Actions](../../reference/core-modules/actions-1/actions.md) module to go through all mapped actions and run the one that matches the current request.
+Now, if [Engine::init](../../reference/core-classes/engine/methods.md#init) goes well, we run the [Engine::attendWebRequest](../../reference/core-classes/engine/methods.md#attendwebrequest) method. What this method does is quite simple: By calling the [Actions::run](../../reference/core-modules/actions-1/actions.md#run) method, it asks the [Actions](../../reference/core-modules/actions-1/actions.md) module to go through all mapped actions and run the one that matches the current request.
 
-Lastly, we need to finalize execution by calling the [Engine::end](../../reference/core-classes/engine/#end) method, which in turns calls the `end` methods of all the loaded modules, so they can perform any cleaning tasks like disconnecting from external sources:
+Lastly, we need to finalize execution by calling the [Engine::end ](../../reference/core-classes/engine/methods.md#end)method, which in turns calls the `end` methods of all the loaded modules, so they can perform any cleaning tasks like disconnecting from external sources:
 
 ```php
 $e->end();
@@ -132,7 +132,7 @@ if ($e->init(__NAMESPACE__, [
 $e->end();
 ```
 
-> Note that because we're ok with the default configuration parameters for the [Engine::init](../../reference/core-classes/engine/#init-appnamespace-setup) call, we've simplified it.
+> Note that because we're ok with the default configuration parameters for the [Engine::init ](../../reference/core-classes/engine/methods.md#init)call, we've simplified it.
 
 Your Cherrycake app setup is ready, but if you run it now by browsing to your web server address, you'll get an error:
 
@@ -163,7 +163,7 @@ class HelloWorld extends \Cherrycake\Module {
 >
 > Also, don't forget that modules have their own directory inside `/modules`, that directory name must match the module name, even with uppercase and lowercase characters.
 
-To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the [Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction-actionname-action) method, like this:
+To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the[ Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction) method, like this:
 
 ```php
 <?php
@@ -235,7 +235,7 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml]() object using the [Output::setResponse](../../reference/core-modules/output/#setresponse-response) method.
+To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml](../../reference/core-classes/response.md) object using the [Output::setResponse](../../reference/core-modules/output/methods.md#setresponse) method.
 
 And that's it! If you now run your app you should see a boring yet quite welcoming "Hello world" message in your browser.
 

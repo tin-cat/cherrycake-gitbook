@@ -24,9 +24,9 @@ if ($e->init(__NAMESPACE__, [
 $e->end();
 ```
 
-When the engine is initialized with [Engine::init](../../reference/core-classes/engine/#init-setup), it loads and initializes the modules specified in `baseCoreModules`. Since the [Actions](../../reference/core-modules/actions-1/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
+When the engine is initialized with [Engine::init](../../reference/core-classes/engine/methods.md#init), it loads and initializes the modules specified in `baseCoreModules`. Since the [Actions](../../reference/core-modules/actions-1/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
-> If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine/#init-appnamespace-setup) line to just `$e->init(__NAMESPACE__)`
+> If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine/methods.md#init) line to just `$e->init(__NAMESPACE__)`
 
 During its initialization, the [Actions](../../reference/core-modules/actions-1/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/methods.md#callmethodonallmodules) method, which goes through all the available modules and executes the specified static method name, like this:
 
@@ -36,7 +36,7 @@ $e->callMethodOnAllModules("mapActions");
 
 > To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine/methods.md#callmethodonallmodules) caches the information about which methods are available in modules so it doesn't need to search for those methods each time a request is made.
 
-All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction-actionname-action) method. In our _Home_ example module, this would look like this:
+All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the[ Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction) method. In our _Home_ example module, this would look like this:
 
 ```php
 public static function mapActions() {
@@ -56,7 +56,7 @@ public static function mapActions() {
 }
 ```
 
-Now that we have all the possible actions mapped, the call to [Engine::attendWebRequest](../../reference/core-classes/engine/#attendwebrequest) in `index.php` asks the [Actions](../../reference/core-modules/actions-1/actions.md) module to find and run the action that matches the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions-1/actions.md) module looks:
+Now that we have all the possible actions mapped, the call to[ Engine::attendWebRequest](../../reference/core-classes/engine/methods.md#attendwebrequest) in `index.php` asks the [Actions](../../reference/core-modules/actions-1/actions.md) module to find and run the action that matches the current request URI. This is how this request to the [Actions](../../reference/core-modules/actions-1/actions.md) module looks:
 
 ```php
 $this->Actions->run($_SERVER["REQUEST_URI"]);
@@ -78,7 +78,7 @@ var $dependentCoreModules = [
 ];
 ```
 
-Now _Home::homePage_ uses the method [Patterns::out](../../reference/core-modules/patterns/#out-patternname-setup-code) to send the HTML file to the browser, like this:
+Now _Home::homePage_ uses the method [Patterns::out](../../reference/core-modules/patterns/methods.md#out) to send the HTML file to the browser, like this:
 
 ```php
 function homePage() {
