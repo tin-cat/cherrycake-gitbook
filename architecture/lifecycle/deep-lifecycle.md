@@ -6,7 +6,7 @@ description: Let's take a deep dive on a typical request lifecycle.
 
 To deeper understand the lifecycle of a request, we'll use the same example as in the [Lifecycle](./) section, but this time we'll stop and see with greater detail everything that happens behind the scenes, this will give you a better understanding of the Cherrycake architecture.
 
-When a request is received, the `index.php` file in your App's public directory is executed. This is the entry point for all requests to your Cherrycake application, and all it does is loading Cherrycake, initialize it and launch [Engine::attendWebRequest](../../reference/core-classes/engine/#attendwebrequest). This looks something like this:
+When a request is received, the `index.php` file in your App's public directory is executed. This is the entry point for all requests to your Cherrycake application, and all it does is loading Cherrycake, initialize it and launch [Engine::attendWebRequest](../../reference/core-classes/engine/methods.md#attendwebrequest). This looks something like this:
 
 ```php
 namespace CherrycakeApp;
@@ -28,13 +28,13 @@ When the engine is initialized with [Engine::init](../../reference/core-classes/
 
 > If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine/#init-appnamespace-setup) line to just `$e->init(__NAMESPACE__)`
 
-During its initialization, the [Actions](../../reference/core-modules/actions-1/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/#callmethodonallmodules-methodname) method, which goes through all the available modules and executes the specified static method name, like this:
+During its initialization, the [Actions](../../reference/core-modules/actions-1/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/methods.md#callmethodonallmodules) method, which goes through all the available modules and executes the specified static method name, like this:
 
 ```php
 $e->callMethodOnAllModules("mapActions");
 ```
 
-> To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine/#callmethodonallmodules-methodname) caches the information about which methods are available in modules so it doesn't need to search for those methods each time a request is made.
+> To optimize performance, the method [Engine::callMethodOnAllModules](../../reference/core-classes/engine/methods.md#callmethodonallmodules) caches the information about which methods are available in modules so it doesn't need to search for those methods each time a request is made.
 
 All `mapActions` methods found in any of the available modules \(both core and app modules\) are executed, so any module that needs to map an action to respond to requests must do it so on its `mapActions` static method by calling the [Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction-actionname-action) method. In our _Home_ example module, this would look like this:
 
@@ -90,7 +90,7 @@ function homePage() {
 
 In turn, [Patterns](../../reference/core-modules/patterns/) depends on the [Output](../../reference/core-modules/output/) module, which was loaded and initialized automatically as soon as the chain of dependencies started, when our _Home_ module was loaded.
 
-Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/#parse-patternname-setup) and then sends the result as a [ResponseTextHtml]() object to [Output::setResponse](../../reference/core-modules/output/#setresponse-response), like this:
+Since [Patterns](../../reference/core-modules/patterns/) is actually a parser, it not only loads the HTML file, but also parses it using [Patterns:parse](../../reference/core-modules/patterns/#parse-patternname-setup) and then sends the result as a [ResponseTextHtml](../../reference/core-classes/response.md) object to [Output::setResponse](../../reference/core-modules/output/#setresponse-response), like this:
 
 ```php
 $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([

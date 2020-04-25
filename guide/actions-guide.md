@@ -242,5 +242,5 @@ By setting the `isSensibleToBruteForceAttacks` setup key to true when creating t
 
 The delay is only added when the method called by the action returns `false`. Be sure to return `false` in methods mapped as actions when the sensible task was unsuccessful. For example: If a received  password or key of any kind was checked against a database or any kind of authentication method, and it failed.
 
-> A random delay is used to emulate an unstable connection for added stealthiness. This can be adjusted by setting the `sleepSecondsWhenActionSensibleToBruteForceAttacksFails` configuration key of the [Actions](../reference/core-modules/actions-1/actions-configuration.md) module.
+> A random delay is used to emulate an unstable connection for added stealthiness. This can be adjusted by setting the `sleepSecondsWhenActionSensibleToBruteForceAttacksFails` configuration key of the [Actions]() module.
 

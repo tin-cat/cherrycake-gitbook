@@ -11,7 +11,7 @@ description: >-
 
 To use cache in your application, you must first define a cache provider. Each cache provider connects your app with a different cache mechanism or server, that means your app can make use of different caches at the same time.
 
-Cache providers are configured in the [Cache configuration](../reference/core-modules/cache/cache-configuration.md) file `/config/Cache.config.php`. For example, if you want to use a simple but fast APCu cache provider, your Cache configuration file would look like this:
+Cache providers are configured in the [Cache configuration]() file `/config/Cache.config.php`. For example, if you want to use a simple but fast APCu cache provider, your Cache configuration file would look like this:
 
 ```php
 <?php
@@ -59,7 +59,7 @@ $CacheConfig = [
 
 ## Modules that depend on Cache
 
-Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database/) and [Patterns](../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
+Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database.md) and [Patterns](../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
 
 ## Using cache
 

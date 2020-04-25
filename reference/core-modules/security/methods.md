@@ -1,14 +1,11 @@
 # Security methods
 
-## checkUploadedFile\( file, p \)
+## checkUploadedFile\( file, p \) <a id="checkuploadedfile"></a>
 
 Checks an uploaded file for security attacks and moves it to a safe place if it is considered secure. It moves the file to a safe place, specified by the returned Result property "`finalPath`".
 
 * When checking uploaded images \(`isRequireImage` or `allowedImageTypes` has been set\), image types other than jpg, gif or png are converted to png.
 * When uploading compressed image formats like jpg, since this method generates a new image from the uploaded one for security purposes, the final compression is always set to the maximum possible setting. This will cause compressed images like jpg files to take more disk space than their originals in most cases.
-
-**Parameters:**
-
 * **`file`** The file array given by PHP after receiving an uploaded file, received via $\_FILES\[name of the file\]
 * **`setup`** Optional hash array
   * **`isRequireImage`** Requires the file to be an image. If `allowedImageTypes` is specified, this is forced to true. 

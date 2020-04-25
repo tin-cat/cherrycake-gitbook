@@ -72,7 +72,7 @@ $e = new \Cherrycake\Engine;
 
 > Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace that you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here.
 
-Now we call the [Engine::init](../../reference/core-classes/engine/#init-setup) method to start it up:
+Now we call the [Engine::init](../../reference/core-classes/engine/methods.md#init) method to start it up:
 
 ```php
 if ($e->init(__NAMESPACE__, [
@@ -85,7 +85,7 @@ if ($e->init(__NAMESPACE__, [
     $e->attendWebRequest();
 ```
 
-[Engine::init](../../reference/core-classes/engine/#init-setup) accepts two parameters. The first must be the namespace of your app. Since we just declared it above, we can pass here the PHP constant `__NAMESPACE__`
+[Engine::init](../../reference/core-classes/engine/methods.md#init) accepts two parameters. The first must be the namespace of your app. Since we just declared it above, we can pass here the PHP constant `__NAMESPACE__`
 
 The second parameter is an optional hash array that lets you configure some important parameters of the Cherrycake engine. The ones we're using here are: 
 

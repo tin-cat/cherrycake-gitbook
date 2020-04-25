@@ -1,7 +1,7 @@
 # Database
 
-{% tabs %}
-{% tab title="Configuration" %}
+## Configuration
+
 * **`providers`** A hash array of the available [database providers](../../guide/database-guide/#database-providers), where the key is the name of the database provider, and the value is a hash array with the following possible keys:
   * **`providerClassName`** The name of the cache provider class, from the available ones:
     * `DatabaseProviderMysql` To connect to MySQL or MariaDB database servers.
@@ -15,35 +15,33 @@
       * **`cacheKeyPrefix`** The cache prefix to use when caching data from the database. Default: `Database`
       * **`cacheDefaultTtl`** The default [TTL](../../guide/cache-guide.md#time-to-live) to use when caching data from the database. Default: `CACHE_TTL_NORMAL`
       * **`cacheProviderName`** The default cache provider name to use when caching data from the database. Default: `engine`
-{% endtab %}
 
-{% tab title="Constants" %}
-* `DATABASE_FIELD_TYPE_INTEGER`
-* `DATABASE_FIELD_TYPE_TINYINT`
-* `DATABASE_FIELD_TYPE_FLOAT`
-* `DATABASE_FIELD_TYPE_DATE`
-* `DATABASE_FIELD_TYPE_DATETIME`
-* `DATABASE_FIELD_TYPE_TIMESTAMP`
-* `DATABASE_FIELD_TYPE_TIME`
-* `DATABASE_FIELD_TYPE_YEAR`
-* `DATABASE_FIELD_TYPE_STRING`
-* `DATABASE_FIELD_TYPE_TEXT`
-* `DATABASE_FIELD_TYPE_BLOB`
-* `DATABASE_FIELD_TYPE_BOOLEAN`
-* `DATABASE_FIELD_TYPE_IP`
-* `DATABASE_FIELD_TYPE_SERIALIZED`
-* `DATABASE_FIELD_TYPE_COLOR`
+## Constants
 
+* **`DATABASE_FIELD_TYPE_INTEGER`**
+* **`DATABASE_FIELD_TYPE_TINYINT`**
+* **`DATABASE_FIELD_TYPE_FLOAT`**
+* **`DATABASE_FIELD_TYPE_DATE`**
+* **`DATABASE_FIELD_TYPE_DATETIME`**
+* **`DATABASE_FIELD_TYPE_TIMESTAMP`**
+* **`DATABASE_FIELD_TYPE_TIME`**
+* **`DATABASE_FIELD_TYPE_YEAR`**
+* **`DATABASE_FIELD_TYPE_STRING`**
+* **`DATABASE_FIELD_TYPE_TEXT`**
+* **`DATABASE_FIELD_TYPE_BLOB`**
+* **`DATABASE_FIELD_TYPE_BOOLEAN`**
+* **`DATABASE_FIELD_TYPE_IP`**
+* **`DATABASE_FIELD_TYPE_SERIALIZED`**
+* **`DATABASE_FIELD_TYPE_COLOR`**
 
+\*\*\*\*
 
-* `DATABASE_FIELD_DEFAULT_VALUE`
-* `DATABASE_FIELD_DEFAULT_VALUE_DATE`
-* `DATABASE_FIELD_DEFAULT_VALUE_DATETIME`
-* `DATABASE_FIELD_DEFAULT_VALUE_TIMESTAMP`
-* `DATABASE_FIELD_DEFAULT_VALUE_TIME`
-* `DATABASE_FIELD_DEFAULT_VALUE_YEAR`
-* `DATABASE_FIELD_DEFAULT_VALUE_IP`
-* `DATABASE_FIELD_DEFAULT_VALUE_AVAILABLE_URL_SHORT_CODE`
-{% endtab %}
-{% endtabs %}
+* **`DATABASE_FIELD_DEFAULT_VALUE`**
+* **`DATABASE_FIELD_DEFAULT_VALUE_DATE`**
+* **`DATABASE_FIELD_DEFAULT_VALUE_DATETIME`**
+* **`DATABASE_FIELD_DEFAULT_VALUE_TIMESTAMP`**
+* **`DATABASE_FIELD_DEFAULT_VALUE_TIME`**
+* **`DATABASE_FIELD_DEFAULT_VALUE_YEAR`**
+* **`DATABASE_FIELD_DEFAULT_VALUE_IP`**
+* **`DATABASE_FIELD_DEFAULT_VALUE_AVAILABLE_URL_SHORT_CODE`**
 

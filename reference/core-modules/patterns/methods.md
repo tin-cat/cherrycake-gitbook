@@ -1,10 +1,8 @@
 # Patterns methods
 
-## parse**\( patternName, setup \)**
+## parse**\( patternName, setup \)** <a id="parse"></a>
 
 Parses a pattern
-
-**Parameters**
 
 * **`patternName`** String
 * **`setup`** Optional hash array
@@ -15,11 +13,9 @@ Parses a pattern
 
 **Returns:** The parsed pattern, or false if failed.
 
-## out\( patternName, setup, code \)
+## out\( patternName, setup, code \) <a id="out"></a>
 
 Parses a pattern and sets the result as the output response payload.
-
-**Parameters**
 
 * **`patternName`** String
 * **`setup`** Optional hash array: The options to be passed to the [parse](./#parse-patternname-setup) method

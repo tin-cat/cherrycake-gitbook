@@ -114,7 +114,7 @@ The main reason to cache a pattern is to avoid executing it every time it is use
 
 When combined with the ability to create structures of nested patterns, cached patterns can become a powerful tool to create high performance websites.
 
-The main way to specify which patterns you want to cache is by adding them to the `cachedPatterns` key in the [Patterns configuration](../reference/core-modules/patterns/patterns-configuration.md) file, `/config/Patterns.config.php`, like this:
+The main way to specify which patterns you want to cache is by adding them to the `cachedPatterns` key in the [Patterns configuration]() file, `/config/Patterns.config.php`, like this:
 
 ```php
 <?php

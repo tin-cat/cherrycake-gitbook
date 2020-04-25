@@ -1,10 +1,8 @@
 # Actions methods
 
-## getAction\( actionName \)
+## getAction\( actionName \) <a id="getaction"></a>
 
 Returns the action with the given actionName.
-
-**Arguments**
 
 * **`actionName`** String
 
@@ -14,21 +12,17 @@ Returns the action with the given actionName.
 
 Initializes the module, loads the dependent module classes and calls the `mapActions` method on all available modules using [Engine::callMethodOnAllModules](../../core-classes/engine/#callmethodonallmodules-methodname).
 
-## isAction\( actionName \)
+## isAction\( actionName \) <a id="isaction"></a>
 
 Checks if the action with the given actionName has been mapped.
-
-**Arguments**
 
 * **`actionName`** String
 
 **Returns:** Boolean
 
-## mapAction\( actionName, action \)
+## mapAction\( actionName, action \) <a id="mapaction"></a>
 
 Maps an action for a module.
-
-**Arguments**
 
 * **`actionName`** String
 * **`action`** [Action](../../core-classes/action/) object
