@@ -1,3 +1,9 @@
+---
+description: >-
+  Works in conjunction with the Cache module to provide connection to different
+  cache and shared memory providers.
+---
+
 # CacheProvider
 
 {% tabs %}
