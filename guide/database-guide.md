@@ -12,7 +12,7 @@ To connect to database servers you must configure a database provider. Just like
 
 > Cherrycake is currently only compatible with MySQL and MariaDB servers.
 
-Database providers are configured in the configuration file for the Database module, `Database.config.php`.For example, if you want to connect to a MySQL database server, your Cache configuration file would look like this:
+Database providers are configured in the [Database configuration](../reference/core-modules/database/database-configuration.md) file `Database.config.php`.For example, if you want to connect to a MySQL database server, your Cache configuration file would look like this:
 
 ```php
 <?php
