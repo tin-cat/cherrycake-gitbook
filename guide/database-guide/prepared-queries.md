@@ -20,5 +20,9 @@ You replace the values with question marks `?` like so:
 insert into users (name, email) values (?, ?);
 ```
 
-And then pass the values in a separate array to DatabaseProvider::prepareAndExecute, like this:
+And then pass the values in a separate array to [DatabaseProvider::prepareAndExecute](../../reference/core-classes/databaseprovider/databaseprovider-methods.md#prepareandexecute), like this:
+
+```sql
+
+```
 
