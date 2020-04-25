@@ -29,6 +29,7 @@
 * [Database guide](guide/database-guide/README.md)
   * [Basic queries](guide/database-guide/basic-queries.md)
 * [Security guide](guide/security-guide.md)
+* [Session guide](guide/session-guide.md)
 * [Debugging](guide/debugging.md)
 * [Creating an API server](guide/creating-an-api-server.md)
 * [Cherrycake and Vue](guide/cherrycake-and-vue.md)
