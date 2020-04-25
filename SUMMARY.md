@@ -37,7 +37,7 @@
 ## Reference
 
 * [Core modules](reference/core-modules/README.md)
-  * [Actions](reference/core-modules/actions-1.md)
+  * [Actions](reference/core-modules/actions.md)
   * [Browser](reference/core-modules/browser.md)
   * [Cache](reference/core-modules/cache.md)
   * [Css](reference/core-modules/css.md)

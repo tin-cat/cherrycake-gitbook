@@ -24,11 +24,11 @@ if ($e->init(__NAMESPACE__, [
 $e->end();
 ```
 
-When the engine is initialized with [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup), it loads and initializes the modules specified in `baseCoreModules`. Since the [Actions](../../reference/core-modules/actions-1.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
+When the engine is initialized with [Engine::init](../../reference/core-classes/engine.md#init-appnamespace-setup), it loads and initializes the modules specified in `baseCoreModules`. Since the [Actions](../../reference/core-modules/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
 > If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init ](../../reference/core-classes/engine.md#init-appnamespace-setup)line to just `$e->init(__NAMESPACE__)`
 
-During its initialization, the [Actions](../../reference/core-modules/actions-1.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules ](../../reference/core-classes/engine.md#callmethodonallmodules-methodname)method, which goes through all the available modules and executes the specified static method name, like this:
+During its initialization, the [Actions](../../reference/core-modules/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules ](../../reference/core-classes/engine.md#callmethodonallmodules-methodname)method, which goes through all the available modules and executes the specified static method name, like this:
 
 ```php
 $e->callMethodOnAllModules("mapActions");
