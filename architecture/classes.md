@@ -23,6 +23,6 @@ Modules are intended to pack **process-specific** functionality, can be triggere
 
 If you're creating a social networking web application, the code to show the user profile page would go in a **module** you might want to call _ProfilePage_. In the other hand, you might want to have a _User_ **class** to hold the information and the logic for that specific user.
 
-In your architecture, the _ProfilePage_ module will query the [Database](../reference/core-modules/database.md) module for a specific user, and you'll get a _User_ object in return. The _ProfilePage_ module will then take care of building and showing the profile page using that _User_ object, most probably using the [Patterns](../reference/core-modules/patterns/) module.
+In your architecture, the _ProfilePage_ module will query the [Database](../reference/core-modules/database/) module for a specific user, and you'll get a _User_ object in return. The _ProfilePage_ module will then take care of building and showing the profile page using that _User_ object, most probably using the [Patterns](../reference/core-modules/patterns/) module.
 {% endhint %}
 

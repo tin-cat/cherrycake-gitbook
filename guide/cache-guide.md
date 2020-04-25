@@ -59,7 +59,7 @@ $CacheConfig = [
 
 ## Using cache
 
-Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database.md) and [Patterns](../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
+Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database/) and [Patterns](../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
 
 Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache/) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set](../reference/core-classes/cacheprovider/cacheprovider-methods/#set-key-value-ttl) method, like this:
 
