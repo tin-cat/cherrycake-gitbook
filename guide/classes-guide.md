@@ -9,7 +9,7 @@ description: >-
 Classes encapsulate [object-specific logic](../architecture/classes.md), and they also come in two flavors:
 
 * \*\*\*\*[**Core classes**](../reference/core-classes/)\*\*\*\*
-  * Ready-made classes provided by Cherrycake, providing useful object entities to interact with Cherrycake functionalities like the [Action](../reference/core-classes/action.md) or the [RequestParameter](../reference/core-classes/requestparameter.md), and other generalist classes to use throughout your code like the [Item](../reference/core-classes/item.md) or the [Image](../reference/core-classes/image.md) classes.
+  * Ready-made classes provided by Cherrycake, providing useful object entities to interact with Cherrycake functionalities like the [Action](../reference/core-classes/action/) or the [RequestParameter](../reference/core-classes/requestparameter/), and other generalist classes to use throughout your code like the [Item](../reference/core-classes/item.md) or the [Image](../reference/core-classes/image.md) classes.
 * **App classes**
   * Classes created by the developer to encapsulate object logic, often inheriting from core classes like [Item](../reference/core-classes/item.md).
   * For example, in an e-commerce web application you might need a `Product` class, a `ProductCategory` class and perhaps a `CartItem` class, all them might extend the [Item](../reference/core-classes/item.md) core class.
@@ -36,5 +36,5 @@ The App classes you create must be stores in the `/classes` directory of your ap
 
 > Note that file name for classes is case-sensitive.
 
-> You can change the default `/classes` directory for the one of your choice by setting the `appClassesDir` setup key when calling [Engine::init](../reference/core-classes/engine.md)
+> You can change the default `/classes` directory for the one of your choice by setting the `appClassesDir` setup key when calling [Engine::init](../reference/core-classes/engine/#init-appnamespace-setup)
 

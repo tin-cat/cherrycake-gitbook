@@ -71,7 +71,7 @@ For example, the configuration file for the module _Home m_ust be saved in a fil
 {% endtab %}
 
 {% tab title="/patterns" %}
-Contains the HTML files to be used by the [Patterns](../reference/core-modules/patterns.md) module. This directory can be set to anything else by changing the `directory` config key of the [Patterns](../reference/core-modules/patterns.md) module.
+Contains the HTML files to be used by the [Patterns](../reference/core-modules/patterns/) module. This directory can be set to anything else by changing the `directory` config key of the [Patterns](../reference/core-modules/patterns/) module.
 {% endtab %}
 
 {% tab title="/public" %}

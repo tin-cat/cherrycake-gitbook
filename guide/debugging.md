@@ -1,10 +1,10 @@
 # Debugging
 
-[Engine::getStatus]() and [Engine:getStatusHumanReadable]() will give you a hash array with detailed information on Cherrycake, the loaded modules, the mapped actions and some benchmarks.
+[Engine::getStatus](../reference/core-classes/engine/#getstatus) and [Engine:getStatusHumanReadable](../reference/core-classes/engine/#getstatushumanreadable) will give you a hash array with detailed information on Cherrycake, the loaded modules, the mapped actions and some benchmarks.
 
-> Note that the status information will be incomplete if the [`isDevel`]() engine option is not set to true.
+> Note that the status information will be incomplete if the [`isDevel`](../reference/core-classes/engine/#init-appnamespace-setup) engine option is not set to true.
 
-For a convenient way of getting the status of the engine, just use the [Engine:getStatusHtml]() method at the desired point in your code, like this:
+For a convenient way of getting the status of the engine, just use the [Engine:getStatusHtml](../reference/core-classes/engine/#getstatushtml) method at the desired point in your code, like this:
 
 ```php
 echo $e->getStatusHtml();
@@ -66,7 +66,7 @@ This will give show you a status report like this:
 }
 ```
 
-A more usual way of using [Engine:getStatusHtml]() is to call it after all execution has been done, and just before the engine is about to end. Here's a way to do it in your `/public/index.php` file:
+A more usual way of using [Engine:getStatusHtml](../reference/core-classes/engine/#getstatushtml) is to call it after all execution has been done, and just before the engine is about to end. Here's a way to do it in your `/public/index.php` file:
 
 ```php
 <?php
@@ -87,7 +87,7 @@ echo $e->getStatusHtml(); die;
 $e->end();
 ```
 
-Here's some interesting information you'll find in the output of [Engine:getStatusHtml]():
+Here's some interesting information you'll find in the output of [Engine:getStatusHtml](../reference/core-classes/engine/#getstatushtml):
 
 * `runningHrTime` The amount of time it took PHP to run the current request, up to the point where you called the getStatus method.
 * `moduleLoadingHistory` The list modules that were loaded when you called the getStatus method, in the order they were loaded, and including this extra information:
