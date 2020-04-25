@@ -11,7 +11,7 @@ description: >-
 
 To use cache in your application, you must first define a cache provider. Each cache provider connects your app with a different cache mechanism or server, that means your app can make use of different caches at the same time.
 
-Cache providers are configured in the [Cache configuration](../reference/core-modules/cache/cache-configuration.md) file `/config/Cache.config.php`. For example, if you want to use a simple but fast APCu cache provider, your Cache configuration file would look like this:
+Cache providers are configured in the [Cache configuration]() file `/config/Cache.config.php`. For example, if you want to use a simple but fast APCu cache provider, your Cache configuration file would look like this:
 
 ```php
 <?php
@@ -59,9 +59,9 @@ $CacheConfig = [
 
 ## Using cache
 
-Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database/) and [Patterns](../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
+Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database.md) and [Patterns](../reference/core-modules/patterns.md). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
 
-Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache/) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set]() method, like this:
+Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache.md) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set]() method, like this:
 
 ```php
 $value = $e->Cache->fast->set("myKey", "value", \Cherrycake\CACHE_TTL_5_MINUTES);

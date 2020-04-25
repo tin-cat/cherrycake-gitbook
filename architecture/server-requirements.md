@@ -12,7 +12,7 @@
 
 ### Dependency requirements
 
-* If you're going to use databases \([Database](../reference/core-modules/database/) module\)
+* If you're going to use databases \([Database](../reference/core-modules/database.md) module\)
   * **MariaDB Server**, MySQL also supported
   * **pdo\_mysql** and **mysqli** PHP extensions
 * If you're going to use advanced cache

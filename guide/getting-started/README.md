@@ -91,21 +91,21 @@ The second parameter is an optional hash array that lets you configure some impo
 
 * `appName` The name of the application. You can skip this and the default name `CherrycakeApp` will be used.
 * `isDevel` When set to true, the application is put into development mode, meaning you'll get extended error reports and other tricks to help you develop your app. When not specified, this parameter defaults to false.
-* `baseCoreModules` Is an array of the module names that should be loaded upon initialization of the engine. If not specified, only the [Actions](../../reference/core-modules/actions-1/actions.md) module will be loaded.
+* `baseCoreModules` Is an array of the module names that should be loaded upon initialization of the engine. If not specified, only the [Actions]() module will be loaded.
 
 > Check the [Engine::init]() documentation for more configuration parameters when initializing the engine.
 
-Let's take a pause here to see why we've added the [Actions](../../reference/core-modules/actions-1/actions.md) module on the `baseCoreModules` list. We need our app to attend requests \(it would be pretty useless otherwise\), and [Actions](../../reference/core-modules/actions-1/actions.md) is the module in charge of doing exactly that.
+Let's take a pause here to see why we've added the [Actions]() module on the `baseCoreModules` list. We need our app to attend requests \(it would be pretty useless otherwise\), and [Actions]() is the module in charge of doing exactly that.
 
-By including [Actions](../../reference/core-modules/actions-1/actions.md) in `baseCoreModules`, it will be loaded immediately and, as part of the loading process, it will be initialized by calling the [Actions::init](../../reference/core-modules/actions-1/actions.md#init) method. What this method does in the [Actions](../../reference/core-modules/actions-1/actions.md) module, among other things, is to go through all available modules in both the Cherrycake engine and your app, check if they have a method called `mapActions` and run it.
+By including [Actions]() in `baseCoreModules`, it will be loaded immediately and, as part of the loading process, it will be initialized by calling the [Actions::init]() method. What this method does in the [Actions]() module, among other things, is to go through all available modules in both the Cherrycake engine and your app, check if they have a method called `mapActions` and run it.
 
 > It's as if the Actions module asked all other modules: "If you have any actions you would like to map to respond to requests, please let me know now!"
 
-This causes all modules that have some action to map to do so \(by using the [Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction-actionname-action) method\), thus leaving [Actions](../../reference/core-modules/actions-1/actions.md) ready to attend requests.
+This causes all modules that have some action to map to do so \(by using the [Actions::mapAction]() method\), thus leaving [Actions]() ready to attend requests.
 
-> Note that there's actually no need to specify a `baseCoreModules` setup key when initializing the engine. If you skip this parameter, the [Actions](../../reference/core-modules/actions-1/actions.md) module will be loaded by default, which is the most common scenario when developing regular apps.
+> Note that there's actually no need to specify a `baseCoreModules` setup key when initializing the engine. If you skip this parameter, the [Actions]() module will be loaded by default, which is the most common scenario when developing regular apps.
 
-Now, if [Engine::init]() goes well, we run the [Engine::attendWebRequest]() method. What this method does is quite simple: By calling the [Actions::run](../../reference/core-modules/actions-1/actions.md#run) method, it asks the [Actions](../../reference/core-modules/actions-1/actions.md) module to go through all mapped actions and run the one that matches the current request.
+Now, if [Engine::init]() goes well, we run the [Engine::attendWebRequest]() method. What this method does is quite simple: By calling the [Actions::run]() method, it asks the [Actions]() module to go through all mapped actions and run the one that matches the current request.
 
 Lastly, we need to finalize execution by calling the [Engine::end]() method, which in turns calls the `end` methods of all the loaded modules, so they can perform any cleaning tasks like disconnecting from external sources:
 
@@ -146,7 +146,7 @@ This is quite normal, since we haven't yet configured any actions for Cherrycake
 
 Four our setup to be complete, we'll tell Cherrycake to attend requests to the `/` route of your web application and respond by showing a simple HTML "Hello world" message.
 
-To do this, we'll create a module called `HelloWorld` that will map an action into the [Actions](../../reference/core-modules/actions-1/actions.md) module.
+To do this, we'll create a module called `HelloWorld` that will map an action into the [Actions]() module.
 
 Create the file `/modules/HelloWorld/HelloWorld.class.php` and edit it so it declares an empty module structure, like this:
 
@@ -163,7 +163,7 @@ class HelloWorld extends \Cherrycake\Module {
 >
 > Also, don't forget that modules have their own directory inside `/modules`, that directory name must match the module name, even with uppercase and lowercase characters.
 
-To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the [Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction-actionname-action) method, like this:
+To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the [Actions::mapAction]() method, like this:
 
 ```php
 <?php
@@ -235,7 +235,7 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml]() object using the [Output::setResponse](../../reference/core-modules/output/#setresponse-response) method.
+To send our "Hello World" HTML code to the client, we send a [ResponseTextHtml]() object using the [Output::setResponse](../../reference/core-modules/output.md#setresponse-response) method.
 
 And that's it! If you now run your app you should see a boring yet quite welcoming "Hello world" message in your browser.
 

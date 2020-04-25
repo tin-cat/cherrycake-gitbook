@@ -8,7 +8,7 @@ Modules pack the process-specific logic of an app and have some [additional bene
 
 * \*\*\*\*[**Core modules**](../reference/core-modules/)\*\*\*\*
   * Ready-made modules provided by Cherrycake, they implement all the process-specific functionality behind the Cherrycake architecture.
-  * Cherrycake comes with a bunch of [Core modules](../reference/core-modules/) aimed to help you build your app. From the main [Actions](../reference/core-modules/actions-1/actions.md) module that routes the requests to your app to modules to work with [Css](../reference/core-modules/css.md) and [JavaScript](../reference/core-modules/javascript.md) files, to control the user [Session](../reference/core-modules/session.md), to access [Database](../reference/core-modules/database/) and [Cache](../reference/core-modules/cache/) servers, [automate tasks](../reference/core-modules/janitor.md), [store logs](../reference/core-modules/log.md) and much more.
+  * Cherrycake comes with a bunch of [Core modules](../reference/core-modules/) aimed to help you build your app. From the main [Actions]() module that routes the requests to your app to modules to work with [Css](../reference/core-modules/css.md) and [JavaScript](../reference/core-modules/javascript.md) files, to control the user [Session](../reference/core-modules/session.md), to access [Database](../reference/core-modules/database.md) and [Cache](../reference/core-modules/cache.md) servers, [automate tasks](../reference/core-modules/janitor.md), [store logs](../reference/core-modules/log.md) and much more.
 *  **App modules**
   * Modules created by the developer when creating a new application, which will be in charge of all the processes in your App. You'll have to decide a great App module structure based on the needs of your application.
   * A really simple example of an App module would be the `HelloWorld` module we created in the[ Getting started](getting-started/#the-hello-world-module) section, but a more complex scenario like an e-commerce site might need  modules like `Products`, `Cart`, `Payments`, `ProductCategories`, `Search` and so, for example.
@@ -23,7 +23,7 @@ Modules must be loaded before they can be used, they can be loaded in three ways
 
 ## Accessing modules
 
-Once they're loaded, modules are always accessible as properties of the engine. For example, the [Patterns](../reference/core-modules/patterns/) module will be available in your code by doing this:
+Once they're loaded, modules are always accessible as properties of the engine. For example, the [Patterns](../reference/core-modules/patterns.md) module will be available in your code by doing this:
 
 ```php
 global $e;
@@ -55,7 +55,7 @@ For example, if you were to create a module called `Products`, it should be stor
 
 Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init]()
 
-Module configuration files must have a name that matches the module name, even with upper and lowercase characters. For example, the configuration file for the [Database](../reference/core-modules/database/) module must be called `/config/Database.config.php`
+Module configuration files must have a name that matches the module name, even with upper and lowercase characters. For example, the configuration file for the [Database](../reference/core-modules/database.md) module must be called `/config/Database.config.php`
 
 Module configuration files must declare a hash array named in the syntax `$<ModuleName>Config`. For example, this is how a configuration file for the [HtmlDocument](../reference/core-modules/htmldocument.md) module would look:
 
