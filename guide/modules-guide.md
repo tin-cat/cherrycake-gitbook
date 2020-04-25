@@ -8,7 +8,7 @@ Modules pack the process-specific logic of an app and have some [additional bene
 
 * \*\*\*\*[**Core modules**](../reference/core-modules/)\*\*\*\*
   * Ready-made modules provided by Cherrycake, they implement all the process-specific functionality behind the Cherrycake architecture.
-  * Cherrycake comes with a bunch of [Core modules](../reference/core-modules/) aimed to help you build your app. From the main [Actions]() module that routes the requests to your app to modules to work with [Css](../reference/core-modules/css.md) and [JavaScript](../reference/core-modules/javascript.md) files, to control the user [Session](../reference/core-modules/session.md), to access [Database](../reference/core-modules/database.md) and [Cache](../reference/core-modules/cache.md) servers, [automate tasks](../reference/core-modules/janitor.md), [store logs](../reference/core-modules/log.md) and much more.
+  * Cherrycake comes with a bunch of [Core modules](../reference/core-modules/) aimed to help you build your app. From the main [Actions](../reference/core-modules/actions.md) module that routes the requests to your app to modules to work with [Css](../reference/core-modules/css.md) and [JavaScript](../reference/core-modules/javascript.md) files, to control the user [Session](../reference/core-modules/session.md), to access [Database](../reference/core-modules/database.md) and [Cache](../reference/core-modules/cache.md) servers, [automate tasks](../reference/core-modules/janitor.md), [store logs](../reference/core-modules/log.md) and much more.
 *  **App modules**
   * Modules created by the developer when creating a new application, which will be in charge of all the processes in your App. You'll have to decide a great App module structure based on the needs of your application.
   * A really simple example of an App module would be the `HelloWorld` module we created in the[ Getting started](getting-started/#the-hello-world-module) section, but a more complex scenario like an e-commerce site might need  modules like `Products`, `Cart`, `Payments`, `ProductCategories`, `Search` and so, for example.
@@ -17,9 +17,9 @@ Modules pack the process-specific logic of an app and have some [additional bene
 
 Modules must be loaded before they can be used, they can be loaded in three ways:
 
-* As a **Base core module**, when initializing the engine. Base core modules are loaded right when the engine is initialized. You specify your base modules in the `baseCoreModules` setup key of [Engine::init](). See the [Deep lifecycle](../architecture/lifecycle/deep-lifecycle.md) section for more details on this.
+* As a **Base core module**, when initializing the engine. Base core modules are loaded right when the engine is initialized. You specify your base modules in the `baseCoreModules` setup key of [Engine::init](../reference/core-classes/engine.md). See the [Deep lifecycle](../architecture/lifecycle/deep-lifecycle.md) section for more details on this.
 * As a **dependent module**, when they're required by other modules in their [Module::dependentCoreModules](../reference/core-classes/module.md#usddependentcherrycakemodules) or [Module::dependentAppModules](../reference/core-classes/module.md#usddependentappmodules) properties. See [Specifying module dependencies](modules-guide.md#specifying-module-dependencies).
-* At any point in your code, **programmatically**. Just by calling [Engine::loadCoreModule]() or [Engine::loadAppModule]().
+* At any point in your code, **programmatically**. Just by calling [Engine::loadCoreModule](../reference/core-classes/engine.md) or [Engine::loadAppModule](../reference/core-classes/engine.md).
 
 ## Accessing modules
 
@@ -45,7 +45,7 @@ When a module is loaded for the first time during a request, this is what happen
 
 The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.class.php` extension.
 
-> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init]()
+> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine.md)
 
 For example, if you were to create a module called `Products`, it should be stored on the `/modules/Products/Products.class.php` directory.
 
@@ -53,7 +53,7 @@ For example, if you were to create a module called `Products`, it should be stor
 
 ## Modules configuration file
 
-Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init]()
+Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init](../reference/core-classes/engine.md)
 
 Module configuration files must have a name that matches the module name, even with upper and lowercase characters. For example, the configuration file for the [Database](../reference/core-modules/database.md) module must be called `/config/Database.config.php`
 

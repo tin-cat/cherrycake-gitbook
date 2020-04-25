@@ -6,13 +6,13 @@ description: >-
 
 # Actions guide
 
-When using [Actions](), all the modules who will be receiving requests should map their actions in the [Module::mapActions](../reference/core-classes/module.md#mapactions) method, by calling [Actions::mapAction]().
+When using [Actions](../reference/core-modules/actions.md), all the modules who will be receiving requests should map their actions in the [Module::mapActions](../reference/core-classes/module.md#mapactions) method, by calling [Actions::mapAction](../reference/core-modules/actions.md).
 
-> [Actions]() is the default base core module because it is what you'll need in most cases. If you're experimenting with different ways of using Cherrycake, you can specify a different set of base modules in [Engine::init]()
+> Actions is the default base core module because it is what you'll need in most cases. If you're experimenting with different ways of using Cherrycake, you can specify a different set of base modules in [Engine::init](../reference/core-classes/engine.md)
 
-When a request is received, [Actions]() will look through all the mapped actions. If any of them matches the current request, it will load the associated module and run the mapped method.
+When a request is received, Actions will look through all the mapped actions. If any of them matches the current request, it will load the associated module and run the mapped method.
 
-> [Actions]() calls [mapActions](../reference/core-classes/module.md#mapactions) methods on all available modules during its initialization, using the [Engine::callMethodOnAllModules]()
+> Actions calls [mapActions](../reference/core-classes/module.md#mapactions) methods on all available modules during its initialization, using the [Engine::callMethodOnAllModules](../reference/core-classes/engine.md)
 
 For example, the following module maps a simple action named `home` that will call the `viewHome` method when the root page `/` is requested:
 
@@ -184,7 +184,7 @@ When an action is configured as cacheable, when a request is received for that a
 
 To activate caching for an action, set the `isCache` setup key to true when creating the [Action]() object.
 
-To use a different cache provider, TTL or prefix, specify also the `cacheProviderName`, `cacheTtl` or `cachePrefix` [setup keys](). See [Working with Cache](cache-guide.md) for more details on this concepts.
+To use a different cache provider, TTL or prefix, specify also the `cacheProviderName`, `cacheTtl` or `cachePrefix` [setup keys](../reference/core-classes/cacheprovider.md). See [Working with Cache](cache-guide.md) for more details on this concepts.
 
 For example, if we wanted to activate the cache for the action we used in the first example on this section, it would look like this:
 
@@ -238,9 +238,9 @@ Dictionary attacks and other kinds of brute force attacks often rely on the abil
 
 One way of making it difficult for the attackers is to add an intentional delay to the response, so the amount of time needed to try a reasonable amount of passwords rises quickly, hopefully discouraging the attacker.
 
-By setting the `isSensibleToBruteForceAttacks` setup key to true when creating the [Action]() object, Cherrycake will take care of adding this delay to the request.
+By setting the `isSensibleToBruteForceAttacks` setup key to true when creating the [Action](../reference/core-classes/action.md) object, Cherrycake will take care of adding this delay to the request.
 
 The delay is only added when the method called by the action returns `false`. Be sure to return `false` in methods mapped as actions when the sensible task was unsuccessful. For example: If a received  password or key of any kind was checked against a database or any kind of authentication method, and it failed.
 
-> A random delay is used to emulate an unstable connection for added stealthiness. This can be adjusted by setting the `sleepSecondsWhenActionSensibleToBruteForceAttacksFails` configuration key of the [Actions]() module.
+> A random delay is used to emulate an unstable connection for added stealthiness. This can be adjusted by setting the `sleepSecondsWhenActionSensibleToBruteForceAttacksFails` configuration key of the [Actions](../reference/core-modules/actions.md) module.
 

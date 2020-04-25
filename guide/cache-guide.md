@@ -11,7 +11,7 @@ description: >-
 
 To use cache in your application, you must first define a cache provider. Each cache provider connects your app with a different cache mechanism or server, that means your app can make use of different caches at the same time.
 
-Cache providers are configured in the [Cache configuration]() file `/config/Cache.config.php`. For example, if you want to use a simple but fast APCu cache provider, your Cache configuration file would look like this:
+Cache providers are configured in the [Cache configuration](../reference/core-modules/cache.md) file `/config/Cache.config.php`. For example, if you want to use a simple but fast APCu cache provider, your Cache configuration file would look like this:
 
 ```php
 <?php
@@ -61,19 +61,19 @@ $CacheConfig = [
 
 Some Core modules make use of Cache by their own, like [Database](../reference/core-modules/database.md) and [Patterns](../reference/core-modules/patterns.md). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
 
-Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache.md) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set]() method, like this:
+Of course, you can also use cache for whatever other reason you might need. Cache providers are available to use through properties in the [Cache](../reference/core-modules/cache.md) module. For example, to set the key `myKey` into the cache provider `fast`, use the [CacheProvider::set](../reference/core-classes/cacheprovider.md) method, like this:
 
 ```php
 $value = $e->Cache->fast->set("myKey", "value", \Cherrycake\CACHE_TTL_5_MINUTES);
 ```
 
-And [CacheProvider::get]() to set a value into a cache key:
+And [CacheProvider::get](../reference/core-classes/cacheprovider.md) to set a value into a cache key:
 
 ```php
 $value = $e->Cache->fast->get("myKey")
 ```
 
-See [CacheProvider methods]() for other ways of using the cache.
+See [CacheProvider methods](../reference/core-classes/cacheprovider.md) for other ways of using the cache.
 
 ## Time To Live
 
@@ -114,19 +114,19 @@ foreach ($e->Cache->huge->hGetAll($cacheListName) as $listKey)
     $e->Cache->huge->hDel($cacheListName, $listKey);
 ```
 
-Check [Lists methods]() to see more ways to interact with cache lists.
+Check [Lists methods](../reference/core-classes/cacheprovider.md) to see more ways to interact with cache lists.
 
 ## Queues
 
-Queues are ordered lists of values. New values can be appended to the end of a queue with [CacheProviderRedis::rPush](), or prepended to the beginning with [CacheProviderRedis::lPush](). You then can use [CacheProviderRedis::rPop]() to extract a value from the end of the queue and [CacheProvider::lPop]() to extract it from the beginning.
+Queues are ordered lists of values. New values can be appended to the end of a queue with [CacheProviderRedis::rPush](../reference/core-classes/cacheprovider.md), or prepended to the beginning with [CacheProviderRedis::lPush](../reference/core-classes/cacheprovider.md). You then can use [CacheProviderRedis::rPop](../reference/core-classes/cacheprovider.md) to extract a value from the end of the queue and [CacheProvider::lPop](../reference/core-classes/cacheprovider.md) to extract it from the beginning.
 
 > Queues are great to store events in the same order as they arrive. For example, they're a really efficient way of storing an ordered log of page views, even if your pages get a huge amount of traffic. In a separate process that runs automatically every few minutes, you can then retrieve those page view events and store them in a database for persistence.
 
 ## Pools
 
-Pools work a little bit like queues, with the exception of not being ordered. You cannot choose whether to add a value to the beginning of a pool or to the end, you just throw the value into the pool with [CacheProviderRedis::poolAdd](), and it stays there. Also, when you get objects from the pool with [CacheProviderRedis::poolPop](), you can't choose what object you get, you just get a random one.
+Pools work a little bit like queues, with the exception of not being ordered. You cannot choose whether to add a value to the beginning of a pool or to the end, you just throw the value into the pool with [CacheProviderRedis::poolAdd](../reference/core-classes/cacheprovider.md), and it stays there. Also, when you get objects from the pool with [CacheProviderRedis::poolPop](../reference/core-classes/cacheprovider.md), you can't choose what object you get, you just get a random one.
 
-One benefit you get when using pools is that you can check if a certain value is in the pool by using [CacheProviderRedis::isInPool](), and you can also get the number of values in the pool with [CacheProviderRedis::poolCount]().
+One benefit you get when using pools is that you can check if a certain value is in the pool by using [CacheProviderRedis::isInPool](../reference/core-classes/cacheprovider.md), and you can also get the number of values in the pool with [CacheProviderRedis::poolCount](../reference/core-classes/cacheprovider.md).
 
 
 

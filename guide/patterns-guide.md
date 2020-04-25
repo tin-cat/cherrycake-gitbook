@@ -13,7 +13,7 @@ The simplest way of using [Patterns](../architecture/patterns.md) is just callin
 $e->Patterns->out("helloworld.html");
 ```
 
-This will read the file `/patterns/pattern.html`, parse and output it to the client as the `payload` of an [ResponseTextHtml]() response.
+This will read the file `/patterns/pattern.html`, parse and output it to the client as the `payload` of an [ResponseTextHtml](../reference/core-classes/response.md) response.
 
 > You can change the directory where your patterns are stored by setting the `directory` key of the Patterns module configuration file.
 
@@ -114,7 +114,7 @@ The main reason to cache a pattern is to avoid executing it every time it is use
 
 When combined with the ability to create structures of nested patterns, cached patterns can become a powerful tool to create high performance websites.
 
-The main way to specify which patterns you want to cache is by adding them to the `cachedPatterns` key in the [Patterns configuration]() file, `/config/Patterns.config.php`, like this:
+The main way to specify which patterns you want to cache is by adding them to the `cachedPatterns` key in the [Patterns configuration](../reference/core-modules/patterns.md) file, `/config/Patterns.config.php`, like this:
 
 ```php
 <?php

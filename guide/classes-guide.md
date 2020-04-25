@@ -36,5 +36,5 @@ The App classes you create must be stores in the `/classes` directory of your ap
 
 > Note that file name for classes is case-sensitive.
 
-> You can change the default `/classes` directory for the one of your choice by setting the `appClassesDir` setup key when calling [Engine::init]()
+> You can change the default `/classes` directory for the one of your choice by setting the `appClassesDir` setup key when calling [Engine::init](../reference/core-classes/engine.md)
 
