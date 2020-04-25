@@ -12,7 +12,7 @@ To connect to database servers you must configure a database provider. Just like
 
 > Cherrycake is currently only compatible with MySQL and MariaDB servers.
 
-Database providers are configured in the [Database configuration](../../reference/core-modules/database.md) file `Database.config.php`.For example, if you want to connect to a MySQL database server, your Cache configuration file would look like this:
+Database providers are configured in the [Database configuration](../../reference/core-modules/database/database-configuration.md) file `Database.config.php`.For example, if you want to connect to a MySQL database server, your Cache configuration file would look like this:
 
 ```php
 <?php
@@ -38,9 +38,9 @@ $CacheConfig = [
 
 > Note we called our database provider `main`
 
-## Other core modules that depend on Database
+## Modules that depend on Database
 
-Just like Cache, some other modules use Database for many purposes, for example: The [Session](../session-guide.md) module uses a database connection to store information about sessions.
+Just like Cache, some other modules use Database for many purposes, for example: The [Session]() module uses a database connection to store information about sessions.
 
 > That's why in the [Cherrycake Skeleton](../getting-started/skeleton.md) boilerplate you'll find the `/install` directory containing some SQL scripts to create tables some Cherrycake modules need.
 

@@ -2,7 +2,7 @@
 
 
 
-* **`providers`** A hash array of the available [database providers](../../../guide/database-guide.md#database-providers), where the key is the name of the database provider, and the value is a hash array with the following possible keys:
+* **`providers`** A hash array of the available [database providers](../../../guide/database-guide/#database-providers), where the key is the name of the database provider, and the value is a hash array with the following possible keys:
   * **`providerClassName`** The name of the cache provider class, from the available ones:
     * `DatabaseProviderMysql` To connect to MySQL or MariaDB database servers.
   * **`config`** A hash array of configuration options for the database provider, where each different cache provider has different available config keys:
