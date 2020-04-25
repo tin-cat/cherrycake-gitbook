@@ -74,6 +74,8 @@
     * [CacheProvider methods](reference/core-classes/cacheprovider/cacheprovider-methods.md)
   * [DatabaseProvider](reference/core-classes/databaseprovider/README.md)
     * [DatabaseProvider methods](reference/core-classes/databaseprovider/databaseprovider-methods.md)
+  * [DatabaseResult](reference/core-classes/databaseresult/README.md)
+    * [DatabaseResult methods](reference/core-classes/databaseresult/databaseresult-methods.md)
   * [Engine](reference/core-classes/engine/README.md)
     * [Engine methods](reference/core-classes/engine/methods.md)
   * [Module](reference/core-classes/module/README.md)
