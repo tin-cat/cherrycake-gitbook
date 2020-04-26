@@ -30,6 +30,7 @@
   * [Basic queries](guide/database-guide/basic-queries.md)
   * [Prepared queries](guide/database-guide/prepared-queries.md)
   * [Cached queries](guide/database-guide/cached-queries.md)
+  * [Cache key naming](guide/database-guide/cache-key-naming.md)
 * [Security guide](guide/security-guide.md)
 * [Session guide](guide/session-guide.md)
 * [Debugging](guide/debugging.md)
