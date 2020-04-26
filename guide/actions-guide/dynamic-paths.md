@@ -40,7 +40,7 @@ In our example, the `viewProduct` action is triggered when we receive a request 
 
 > Check out [Working with Security](../security-guide.md#security-rules) to learn more about the `securityRules` and filters we can configure when mapping actions with `pathComponents`.
 
-To receive the `productId` value that was passed when the client requested `/product/4739`,  we simply add a `request` parameter to the method triggered by the action \(`Products::view` in the example above\), and we'll get a [Request](../../reference/core-classes/request.md) object that contains, among other useful things, the value of the `productId` path section:
+To receive the `productId` value that was passed when the client requested `/product/4739`,  we simply add a `request` parameter to the method triggered by the action \(`Products::view` in the example above\), and we'll get a [Request](../../reference/core-classes/request/) object that contains, among other useful things, the value of the `productId` path section:
 
 ```php
 function view($request) {

@@ -1,6 +1,6 @@
 # Accept GET or POST parameters
 
-To map actions that receive parameters, pass an array of [RequestParameter](../../reference/core-classes/requestparameter/) objects via the `parameters` key when creating [Request](../../reference/core-classes/request.md) object. For example, mapping an action that receives a `userId` parameter via GET would look like this:
+To map actions that receive parameters, pass an array of [RequestParameter](../../reference/core-classes/requestparameter/) objects via the `parameters` key when creating [Request](../../reference/core-classes/request/) object. For example, mapping an action that receives a `userId` parameter via GET would look like this:
 
 ```php
 ...
