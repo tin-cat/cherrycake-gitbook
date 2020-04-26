@@ -35,7 +35,21 @@ For example, when executing the cached query in the example above:`select * from
 CherrycakeApp_Database_64df95723d106ba80b0cf725bc56ddd1
 ```
 
-This means that you can trust a different cache key will be generated for each different query you perform.
+> When letting Database generate automatically the cache keys, different keys are generated even if a single character of the SQL statement has changed.
+
+This means that you can trust a different cache key will be generated for each different query you perform, so in most simple queries you don't need to care about cache key collisions.
+
+But in certain situations you'll need to cache different queries under the same cache key to get the maximum benefits of using a cached database system. For example, when you're retrieving data from the database relative to the current date and time.
+
+Imagine you want to query all the users that have signed up to your web app during the last 24 hours, and that you want that query to be cached. You could do that like this:
+
+```php
+$timestamp24HoursEarlier = time() - (24 * 60 * 60);
+$result = $e->Database->main->queryCache(
+    "select * from users where dateSignUp >= '".date("Y-n-j H:i:s", $timestamp24HoursEarlier)."'",
+    \Cherrycake\CACHE_TTL_1_MINUTE
+);
+```
 
 
 
