@@ -24,3 +24,7 @@ $PatternsConfig = [
 
 This would cause the `helloworld.html` pattern to be parsed the first time it is used, and then stored in cache for one minute. During that minute, every other time the same pattern is used, the cached parsed result will be used instead. After one minute, the TTL will expire and the pattern will be parsed again on the next use. See [Working with Cache](../cache-guide/) for more details on this concepts.
 
+## Removing a pattern from cache
+
+If you want to remove a pattern from the cache before its TTL expiration time arrives, use the Patterns::clearCache method, here's an example:
+

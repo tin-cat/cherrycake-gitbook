@@ -60,3 +60,47 @@ If you need to remove an action from cache before its TTL expiration time arrive
 $e->Actions->getAction("home")->clearCache();
 ```
 
+For complex actions with variable path components or parameters, you must specify the specific path components or parameters values for which you want to clear the cache as an argument.
+
+For example, for this action that has one fixed and one variable path component to attend requests like `/product/479`:
+
+```php
+$e->Actions->mapAction([
+    "viewProduct",
+    new \Cherrycake\ActionHtml([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "Products",
+        "methodName" => "view",
+        "request" => new \Cherrycake\Request([
+            "pathComponents" => [
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "product"
+                ]),
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_VARIABLE_NUMERIC,
+                    "name" => "productId",
+                    "securityRules" => [
+                        \Cherrycake\SECURITY_RULE_NOT_EMPTY,
+                        \Cherrycake\SECURITY_RULE_INTEGER,
+                        \Cherrycake\SECURITY_RULE_POSITIVE
+                    ]
+                ])
+            ]
+        ])
+    ])
+]);
+```
+
+If we wanted to clear the cache for the request to the product with id `479`, we would do this:
+
+```php
+$e->Actions->getAction("home")->clearCache([
+    "productId" => 479
+]);
+```
+
+
+
+
+
