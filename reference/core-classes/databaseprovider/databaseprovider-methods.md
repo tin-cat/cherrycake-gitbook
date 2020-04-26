@@ -1,5 +1,14 @@
 # DatabaseProvider methods
 
+## clearCacheQuery\( cacheKeyNamingOptions, overrideCacheProviderName \) <a id="clearcachequery"></a>
+
+Clears the cache for the query identified by the given `cacheKeyNamingOptions`
+
+* **`cacheKeyNamingOptions`** An optional hash array with the cache key naming options. [Cache::buildCacheKey](../../core-modules/cache/cache-methods.md#buildcachekey)**\`\`**
+* **`overrideCacheProviderName`** If specified, the cache provider with this name will be used instead of the one in the Database configuration key `cacheProviderName`.
+
+**Returns:** True if the cache could be cleared successfully, false otherwise.
+
 ## execute\( prepareResult, parameters \) <a id="execute"></a>
 
 Executes a previously prepared query with the given parameters.

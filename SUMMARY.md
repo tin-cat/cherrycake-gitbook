@@ -31,7 +31,7 @@
   * [Prepared queries](guide/database-guide/prepared-queries.md)
   * [Cached queries](guide/database-guide/cached-queries.md)
   * [Cache key naming](guide/database-guide/cache-key-naming.md)
-  * [Cached prepared queries](guide/database-guide/cached-prepared-queries.md)
+  * [Removing queries from cache](guide/database-guide/removing-queries-from-cache.md)
 * [Security guide](guide/security-guide.md)
 * [Session guide](guide/session-guide.md)
 * [Debugging](guide/debugging.md)

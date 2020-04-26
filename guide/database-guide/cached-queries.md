@@ -25,5 +25,9 @@ Note here that, even though the results have been randomly ordered thanks to the
 
 > Because the cached results will expire after 1 minute because we set the TTL to `CACHE_TTL_1_MINUTE`, the result order will change if we execute the query when a minute has passed from the first execution.
 
+## Cached prepared queries
+
+To use caching in prepared queries, use the DatabaseProvider::prepareAndExecuteCache method, which works like the normal, non-cached prepared query methods, but adding the additional cache parameters you already know of:
+
 
 
