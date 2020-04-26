@@ -1,4 +1,12 @@
+---
+description: >-
+  Provides a standardized interface to implement caching and shared memory
+  mechanisms into an App by connecting to multiple external cache providers.
+---
+
 # Cache
+
+> See the [Cache guide](../../../guide/cache-guide/) to learn how to work with the Cache module.
 
 ## Configuration
 

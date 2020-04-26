@@ -1,4 +1,13 @@
+---
+description: >-
+  Provides a patterns parser that uses PHP code to integrate your code
+  seamlessly with your template files, providing advanced Cherrycake
+  capabilities to your template structures.
+---
+
 # Patterns
+
+> See the [Patterns guide](../../../guide/patterns-guide/) to learn how to work with the Patterns module.
 
 ## Configuration
 

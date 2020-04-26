@@ -1,10 +1,12 @@
 ---
 description: >-
-  Manage the queries to the engine. It answers to queries by evaluating the
+  Manages the queries to the engine. It answers to queries by evaluating the
   query path and parameters and finding a matching mapped Action.
 ---
 
 # Actions
+
+> See the [Actions guide](../../../guide/actions-guide/) to learn how to work with the Actions module.
 
 ## Configuration
 
