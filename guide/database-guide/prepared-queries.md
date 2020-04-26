@@ -5,7 +5,7 @@ Prepared queries are just like regular queries where the variables are stored an
 Even though prepared queries are a little more verbose to code, they provide a very important extra layer of security against SQL injection attacks, specially when you're using data coming from user input or other untrusted sources.
 
 {% hint style="warning" %}
-Because of the security benefits of prepared queries, you're strongly advised to always use them instead of basic queries when you're inserting or updating information in a database.
+Because of the security benefits of prepared queries, you're strongly advised to always use them instead of basic queries.
 {% endhint %}
 
 In prepared queries, instead of specifying your values in the SQL string like this:
