@@ -14,7 +14,7 @@
   * **`cacheTtl`** The TTL to use when caching this action, defaults to the `defaultActionCacheTtl` config key for the Actions module.
   * **`cachePrefix`** The cache prefix to use when caching this action, defaults to the `defaultActionCachePrefix` config key for the Actions module.
 
-## resetCache\( parameterValues \) <a id="resetcache"></a>
+## clearCache\( parameterValues \) <a id="resetcache"></a>
 
 Removes this action from cache
 
