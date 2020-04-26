@@ -1,6 +1,6 @@
-# Complex routes
+# Complex actions
 
-In the example above, the `pathComponents` is left to false because we wanted the action to respond to requests to the root `/` page. To map actions that respond to more complex routes like `/about/contact`, we pass `pathComponents` an array of [RequestPathComponent](../../reference/core-classes/requestpathcomponent/) objects representing the segments of the path in between the `/` symbols.
+In the previous example, the `pathComponents` is left to false because we wanted the action to respond to requests to the root `/` page. To map actions that respond to more complex routes like `/about/contact`, we use `pathComponents` to pass an array of [RequestPathComponent](../../reference/core-classes/requestpathcomponent/) objects representing the segments of the path.
 
 In this example, we map an action that will respond when the `/about/contact` path is requested:
 
