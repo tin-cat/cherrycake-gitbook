@@ -42,5 +42,5 @@ $result = $e->Database->main->prepareAndExecuteCache(
 );
 ```
 
-
+> Remember that, for security reasons, prepared queries are the recommended way of querying the database, specially when you're using data coming from untrusted sources in your query.
 
