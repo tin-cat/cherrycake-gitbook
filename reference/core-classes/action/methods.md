@@ -18,5 +18,5 @@
 
 Removes this action from cache
 
-* **`parameterValues`** An optional hash array containing the values for the variable path components, parameters and additionalCacheKeys involved in this action's Request. If not specified, the current parameter values will be used.
+* **`parameterValues`** An optional hash array containing the values for the variable path components, parameters and `additionalCacheKeys` involved in this action's [Request](../request/). If not specified, the current parameter values will be used.
 

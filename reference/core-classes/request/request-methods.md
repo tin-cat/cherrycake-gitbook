@@ -4,8 +4,8 @@
 
 * **`setup`** A hash array of optional setup values with the following possible keys
   * **`isSecurityCsrf`** Whether this request must implement CSRF security or not.
-  * **`pathComponents`** An array of RequestPathComponent objects defining the components of this request, in the same order on which they're expected.
-  * **`parameters`** An Array of RequestParameter objects of parameters that might be received by this request.
+  * **`pathComponents`** An array of [RequestPathComponent](../requestpathcomponent/) objects defining the components of this request, in the same order on which they're expected.
+  * **`parameters`** An array of [RequestParameter](../requestparameter/) objects of parameters that might be received by this request.
   * **`additionalCacheKeys`** A hash array containing additional cache keys to make this request's cached contents different depending on the values of those keys.
 
 ## buildUrl\( setup \) <a id="buildurl"></a>
