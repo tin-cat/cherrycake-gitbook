@@ -12,5 +12,3 @@ And [CacheProvider::get](../../reference/core-classes/cacheprovider/cacheprovide
 $value = $e->Cache->fast->get("myKey")
 ```
 
-See [CacheProvider methods](../../reference/core-classes/cacheprovider/cacheprovider-methods.md) for other ways of using the cache.
-
