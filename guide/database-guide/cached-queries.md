@@ -65,6 +65,7 @@ $result = $e->Database->main->queryCache(
     "select * from users where dateSignUp >= '".date("Y-n-j H:i:s", $timestamp24HoursEarlier)."'",
     \Cherrycake\CACHE_TTL_1_HOUR,
     [
+        "uniqueId" => "usersSignedUpLast24Hours"
     ]
 );
 ```
