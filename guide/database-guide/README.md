@@ -8,7 +8,7 @@ description: >-
 
 ## Database providers
 
-To connect to database servers you must configure a database provider. Just like with the [Cache](../cache-guide.md) module, you can configure multiple providers to connect to multiple databases at the same time.
+To connect to database servers you must configure a database provider. Just like with the [Cache](../cache-guide/) module, you can configure multiple providers to connect to multiple databases at the same time.
 
 > Cherrycake is currently only compatible with MySQL and MariaDB servers.
 
