@@ -26,5 +26,9 @@ This would cause the `helloworld.html` pattern to be parsed the first time it is
 
 ## Removing a pattern from cache
 
-If you want to remove a pattern from the cache before its TTL expiration time arrives, use the Patterns::clearCache method, here's an example:
+If you want to remove a pattern from the cache before its TTL expiration time arrives, use the [Patterns::clearCache](../../reference/core-modules/patterns/methods.md#clearcache) method, here's an example:
+
+```php
+$e->Patterns->clearCache("helloworld.html");
+```
 
