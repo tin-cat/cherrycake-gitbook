@@ -27,7 +27,20 @@ Note here that, even though the results have been randomly ordered thanks to the
 
 ## Cached prepared queries
 
-To use caching in prepared queries, use the DatabaseProvider::prepareAndExecuteCache method, which works like the normal, non-cached prepared query methods, but adding the additional cache parameters you already know of:
+To use caching in prepared queries, use the [DatabaseProvider::prepareAndExecuteCache](../../reference/core-classes/databaseprovider/databaseprovider-methods.md#prepareandexecutecache) method, which works like the normal, non-cached prepared query methods, but adding the additional cache parameters you already know of:
+
+```sql
+$result = $e->Database->main->prepareAndExecuteCache(
+    "select name from users where dateSignUp >= ?",
+    [
+        [
+            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_DATETIME,
+            "value" => mktime(0, 0, 0, 1, 1, 2020)
+        ]
+    ],
+    \Cherrycake\CACHE_TTL_1_MINUTE
+);
+```
 
 
 
