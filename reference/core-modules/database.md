@@ -1,4 +1,12 @@
+---
+description: >-
+  Provides a standardized interface to connect to database servers like MySQL
+  and MariaDB.
+---
+
 # Database
+
+> See the [Cache guide](../../guide/database-guide/) to learn how to work with the Database module.
 
 ## Configuration
 
