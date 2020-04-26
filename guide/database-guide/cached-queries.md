@@ -21,9 +21,9 @@ Carl Sagan
 Richard Feynmann
 ```
 
-Note here that, even though the results have been randomly ordered thanks to the  `by rand()` clause in the SQL statement, we get the results in the same order if we execute the query multiple times. This is because the results were stored in the cache, and the query is not actually running, we're just getting the same results the cache system got in the first run.
+Note here that, even though the results have been randomly ordered thanks to the  `by rand()` clause in the SQL statement, we'll always get the results in the same order if we execute the query multiple times. This is because the results were stored in the cache, and the query is not actually running, we're just getting the same results the cache system got in the first run.
 
-> Because the cached results will expire after 1 minute because we set the TTL to `CACHE_TTL_1_MINUTE`, the result order will change if we execute the query when a minute has passed from the first execution.
+> Because the cached results will expire after 1 minute because we set the TTL to `CACHE_TTL_1_MINUTE`, the result order will change if we execute the query when a minute has passed from the first execution, and they will remain in the same order for 1 more minute.
 
 ## Cached prepared queries
 
