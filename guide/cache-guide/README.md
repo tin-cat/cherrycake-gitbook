@@ -63,9 +63,7 @@ Some Core modules make use of Cache by their own, like [Database](../../referenc
 
 ## Other ways of using shared memory
 
-Some specific cache providers like Redis implement other useful ways of working with shared memory. This methods also are designed to store objects in different ways, and stored objects do not have a TTL expiration.
+Some specific cache providers like Redis implement other useful ways of working with shared memory, like [Lists](lists.md), [Queues](queues.md) and [Pools](pools.md). This methods also are designed to store objects in different ways, and stored objects do not have a TTL expiration.
 
 Because this methods also use the shared memory of the cache system, the data you store using them is persistent between requests. This methods are specially suited for high performance operations like the storage of events in a high traffic scenario, or the intermediate storage of data that needs to be accessed extremely fast, lots of times per second.
-
-Let's take a look at the three mechanisms of this type provided by CacheProviderRedis:
 
