@@ -1,4 +1,4 @@
-# Properties
+# Action properties
 
 ## $request <a id="request"></a>
 
