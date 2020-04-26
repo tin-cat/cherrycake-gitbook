@@ -37,3 +37,14 @@ Performs a query to the database.
 * **`query`** The SQL query string
 * **`setup`** An optional hash array with setup options.
 
+## queryCache\( sql, cacheTtl, cacheKeyNamingOptions, overrideCacheProviderName, isStoreInCacheWhenNoResults, setup \) <a id="querycache"></a>
+
+Performs a query to the database implementing a caching mechanism. If the query results are stored in the cache, it retrieves them. If not in cache, it performs the query and stores the results in cache.
+
+* query The SQL statement.
+* cacheTtl The TTL for the cache results. If not specified, the configuration value cacheDefaultTtl is used.
+* cacheKeyNamingOptions An optional hash array with the cache key naming options. Cache::buildCacheKey
+* overrideCacheProviderName If specified, the cache provider with this name will be used instead of the one in the Database configuration.
+* isStoreInCacheWhenNoResults
+* setup
+
