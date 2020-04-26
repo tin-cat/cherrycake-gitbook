@@ -1,6 +1,6 @@
 # Request methods
 
-## buildUrl\( setup \)
+## buildUrl\( setup \) <a id="buildurl"></a>
 
 Builds a valid URL for the request.
 

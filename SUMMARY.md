@@ -86,6 +86,7 @@
 * [Core classes](reference/core-classes/README.md)
   * [Action](reference/core-classes/action/README.md)
     * [Action methods](reference/core-classes/action/methods.md)
+    * [Properties](reference/core-classes/action/properties.md)
   * [CacheProvider](reference/core-classes/cacheprovider/README.md)
     * [CacheProvider methods](reference/core-classes/cacheprovider/cacheprovider-methods.md)
   * [DatabaseProvider](reference/core-classes/databaseprovider/README.md)
