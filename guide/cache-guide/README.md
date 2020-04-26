@@ -61,9 +61,17 @@ $CacheConfig = [
 
 Some Core modules make use of Cache by their own, like [Database](../../reference/core-modules/database.md) and [Patterns](../../reference/core-modules/patterns/). Those modules always accept a configuration key to tell them the name of the cache provider to use, as defined in your `Cache.config.php`
 
+## How long cached objects stay in cache?
+
+The data you store in cache, as well as the objects cached by modules like [Database](../../reference/core-modules/database.md) and [Patterns](../../architecture/patterns.md), are normally persistent between requests, and it's the job of the cache mechanism to keep them there for as long as possible, or until their TTL expiration time arrives.
+
+However, you can not rely on a cache or shared memory system as a persistent way of storing information. Generally, cached objects are deleted when the server restarts, when it runs out of memory, or if it implements certain cache eviction policies, like removing all cached objects that are too old, or that haven't been accessed too much.
+
+> To store information in a persistent way, use [Database](../../reference/core-modules/database.md).
+
 ## Other ways of using shared memory
 
-Some specific cache providers like Redis implement other useful ways of working with shared memory, like [Lists](lists.md), [Queues](queues.md) and [Pools](pools.md). This methods also are designed to store objects in different ways, and stored objects do not have a TTL expiration.
+Some specific cache providers like Redis implement other useful ways of working with shared memory, like [Lists](lists.md), [Queues](queues.md) and [Pools](pools.md).
 
-Because this methods also use the shared memory of the cache system, the data you store using them is persistent between requests. This methods are specially suited for high performance operations like the storage of events in a high traffic scenario, or the intermediate storage of data that needs to be accessed extremely fast, lots of times per second.
+This methods are specially suited for high performance operations like the storage of events in a high traffic scenario, or the intermediate storage of data that needs to be accessed extremely fast, lots of times per second.
 
