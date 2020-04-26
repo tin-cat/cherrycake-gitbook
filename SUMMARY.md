@@ -25,7 +25,7 @@
 * [Classes guide](guide/classes-guide.md)
 * [Actions guide](guide/actions-guide/README.md)
   * [Complex actions](guide/actions-guide/complex-routes.md)
-  * [Dynamic paths](guide/actions-guide/dynamic-paths.md)
+  * [Variable path components](guide/actions-guide/variable-path-components.md)
   * [Accept GET or POST parameters](guide/actions-guide/accept-get-or-post-parameters.md)
   * [Getting the URL of an action](guide/actions-guide/getting-the-url-of-an-action.md)
   * [Cached actions](guide/actions-guide/cached-actions.md)

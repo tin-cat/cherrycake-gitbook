@@ -24,5 +24,107 @@ You can do this directly in your HTML pattern:
 
 Or you can pass the URL as a parameter to your pattern:
 
+```php
+$e->Patterns->out("page.html", [
+    "variables" => [
+        "urlAboutContact" => $e->Actions->getAction("aboutContact")->request->buildUrl()
+    ]
+]);
+```
 
+```markup
+<a href="<?= $urlAboutContact ?>">Contact</a>
+```
+
+## Getting the URL of  actions with variable path components or GET parameters
+
+When you want to get the URL of a more complex action that has some variable path components like `/product/4739`, or maybe accepts some GET parameters like `/user?userId=381`, you pass the `parameterValues` option key to [Request::buildUrl](../../reference/core-classes/request/request-methods.md#buildurl) with the values you need.
+
+For example, for this action that has one fixed and one variable path component:
+
+```php
+$e->Actions->mapAction([
+    "viewProduct",
+    new \Cherrycake\ActionHtml([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "Products",
+        "methodName" => "view",
+        "request" => new \Cherrycake\Request([
+            "pathComponents" => [
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "product"
+                ]),
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_VARIABLE_NUMERIC,
+                    "name" => "productId",
+                    "securityRules" => [
+                        \Cherrycake\SECURITY_RULE_NOT_EMPTY,
+                        \Cherrycake\SECURITY_RULE_INTEGER,
+                        \Cherrycake\SECURITY_RULE_POSITIVE
+                    ]
+                ])
+            ]
+        ])
+    ])
+]);
+```
+
+You would build a valid URL like this:
+
+```php
+echo $e->Actions->getAction("viewProduct")->request->buildUrl([
+    "parameterValues" => [
+        "productId" => 4739
+    ]
+]);
+```
+
+```text
+/product/479
+```
+
+Now consider this more complex action that has one fixed path component and accepts accepts one GET parameter called `userId`:
+
+```php
+$e->Actions->mapAction([
+    "viewUser",
+    new \Cherrycake\ActionHtml([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "Users",
+        "methodName" => "view",
+        "request" => new \Cherrycake\Request([
+            "pathComponents" => [
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "user"
+                ])
+            ],
+            "parameters" => [
+                new \Cherrycake\RequestParameter([
+                    "type" => \Cherrycake\REQUEST_PARAMETER_TYPE_GET,
+    						    "name" => "userId",
+                    "securityRules" => [
+                        \Cherrycake\SECURITY_RULE_TYPICAL_ID
+                    ]
+    						])
+            ]
+        ])
+    ])
+]);
+```
+
+You would build the URL for this action the same way, just specify the right parameter name:
+
+```php
+echo $e->Actions->getAction("viewUser")->request->buildUrl([
+    "parameterValues" => [
+        "userId" => 381
+    ]
+]);
+```
+
+```text
+/user?userId=381
+```
 
