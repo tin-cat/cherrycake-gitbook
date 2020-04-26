@@ -1,2 +1,0 @@
-# Cherrycake and Vue
-

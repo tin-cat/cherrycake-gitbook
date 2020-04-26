@@ -34,7 +34,11 @@
   * [Nested patterns](guide/patterns-guide/nested-patterns.md)
   * [Cached patterns](guide/patterns-guide/cached-patterns.md)
 * [Cache guide](guide/cache-guide/README.md)
+  * [Time To Live](guide/cache-guide/time-to-live.md)
   * [Using cache](guide/cache-guide/using-cache.md)
+  * [Lists](guide/cache-guide/lists.md)
+  * [Queues](guide/cache-guide/queues.md)
+  * [Pools](guide/cache-guide/pools.md)
 * [Database guide](guide/database-guide/README.md)
   * [Basic queries](guide/database-guide/basic-queries.md)
   * [Prepared queries](guide/database-guide/prepared-queries.md)
@@ -44,8 +48,6 @@
 * [Security guide](guide/security-guide.md)
 * [Session guide](guide/session-guide.md)
 * [Debugging](guide/debugging.md)
-* [Creating an API server](guide/creating-an-api-server.md)
-* [Cherrycake and Vue](guide/cherrycake-and-vue.md)
 * [Command line apps](guide/cli.md)
 
 ## Reference
