@@ -47,7 +47,7 @@ Imagine you want to query all the users that have signed up to your web app duri
 $timestamp24HoursEarlier = time() - (24 * 60 * 60);
 $result = $e->Database->main->queryCache(
     "select * from users where dateSignUp >= '".date("Y-n-j H:i:s", $timestamp24HoursEarlier)."'",
-    \Cherrycake\CACHE_TTL_1_MINUTE
+    \Cherrycake\CACHE_TTL_1_HOUR
 );
 ```
 
