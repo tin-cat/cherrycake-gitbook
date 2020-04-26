@@ -41,10 +41,12 @@ Performs a query to the database.
 
 Performs a query to the database implementing a caching mechanism. If the query results are stored in the cache, it retrieves them. If not in cache, it performs the query and stores the results in cache.
 
-* query The SQL statement.
-* cacheTtl The TTL for the cache results. If not specified, the configuration value cacheDefaultTtl is used.
-* cacheKeyNamingOptions An optional hash array with the cache key naming options. Cache::buildCacheKey
-* overrideCacheProviderName If specified, the cache provider with this name will be used instead of the one in the Database configuration.
-* isStoreInCacheWhenNoResults
-* setup
+* **`query`** The SQL statement.
+* **`cacheTtl`** The TTL for the cache results. If not specified, the Database configuration key `cacheDefaultTtl` is used.
+* **`cacheKeyNamingOptions`** An optional hash array with the cache key naming options. [Cache::buildCacheKey](../../core-modules/cache/cache-methods.md#buildcachekey)
+* **`overrideCacheProviderName`** If specified, the cache provider with this name will be used instead of the one in the Database configuration key `cacheProviderName`.
+* **`isStoreInCacheWhenNoResults`** Whether to store results in the cache when the query returned no rows or not.
+* **`setup`** Optional setup keys, as specified in [DatabaseResult::$setup](../databaseresult/databaseresult-properties.md#usdsetup).
+
+**Returns:** A provider-specific [DatabaseResult](../databaseresult/) object if the query was executed or retrieved from cache successfully, false otherwise.
 
