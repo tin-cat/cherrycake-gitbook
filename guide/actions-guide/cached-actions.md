@@ -52,3 +52,11 @@ $e->Actions->mapAction([
 
 The default cache provider is called `engine`, and uses [APCu](https://www.php.net/manual/en/book.apcu.php) for a fast yet basic caching mechanism. See Working with Cache to use other more advanced alternatives like [Redis](https://redis.io).
 
+## Removing an action from cache
+
+If you need to remove an action from cache before its TTL expiration time arrives, use the [Action::clearCache](../../reference/core-classes/action/methods.md#resetcache), like this:
+
+```php
+$e->Actions->getAction("home")->clearCache();
+```
+
