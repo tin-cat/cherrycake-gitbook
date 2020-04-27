@@ -42,5 +42,5 @@ function view($request) {
 }
 ```
 
-> Check out [Working with Security](../security-guide.md#security-rules) to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.a
+> Check out [Working with Security]() to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.a
 
