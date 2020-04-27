@@ -63,7 +63,7 @@ $product = new Product([
 ]);
 ```
 
-Field values for an Item are accessed just like regular properties, like this:
+Field values for an [Item](../../reference/core-classes/item/) are accessed just like regular properties, like this:
 
 ```php
 echo "{$movie->name} ({$movie->year})";
@@ -72,4 +72,6 @@ echo "{$movie->name} ({$movie->year})";
 ```text
 Brainstorm (1984)
 ```
+
+
 
