@@ -32,5 +32,9 @@ class Movie extends \Cherrycake\Item {
 }
 ```
 
+You can optionally add some other properties if you want to change the defaults:
 
+* **`cacheProviderName`** The name of the cache provider to use. Default: `engine`
+* **`cacheTtl`**: The TTL to use when caching data for this Item. Default: `CACHE_TTL_NORMAL`
+* **`cacheSpecificPrefix`**: The key prefix to use when caching data for this item. Default: none
 
