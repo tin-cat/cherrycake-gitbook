@@ -22,6 +22,8 @@ The name of the database provider to use when querying the database for this ite
 
 **Default:** `main`
 
+## $fields
+
 ## $idFieldName <a id="idfieldname"></a>
 
 The name of the field on the table that uniquely identifies this item on the database table with a numeric id. It should be an auto-increment field.
