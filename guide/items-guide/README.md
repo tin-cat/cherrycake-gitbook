@@ -66,10 +66,10 @@ $product = new Product([
 Field values for an Item are accessed just like regular properties, like this:
 
 ```php
-echo $product->name;
+echo "{$movie->name} ({$movie->year})";
 ```
 
 ```text
-"Brainstorm" by 
+Brainstorm (1984)
 ```
 
