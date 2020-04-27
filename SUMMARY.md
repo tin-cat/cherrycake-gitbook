@@ -125,6 +125,8 @@
   * [Request](reference/core-classes/request/README.md)
     * [Request methods](reference/core-classes/request/request-methods.md)
   * [Color](reference/core-classes/color.md)
+* [UI Components](reference/ui-components/README.md)
+  * [UiComponentTableAdmin](reference/ui-components/uicomponenttableadmin.md)
 * [Code conventions](conventions.md)
 * [Contribute](contribute.md)
 * [License](license.md)
