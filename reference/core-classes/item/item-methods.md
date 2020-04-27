@@ -69,7 +69,7 @@ Loads the item identified by the given `id` from the database.
 Updates the data on the database for this Item with the passed `data`, or with the data stored on the object if no `data` is passed.
 
 * **`data`** An optional hash array where each key is the field name to update, and each value the new data to store on that field for this item. If not passed or left to false, the current data stored in the object is used. Default: `false`
-  * For multilanguage fields, a hash array where the keys are language codes and the values are the value in that language can be passed. If a non-array value is passed the currently detected language will be used.
+  * For multilanguage fields, a hash array must be passed as the value, where each key is one of the available [`LANGUAGE_?`](../../core-modules/locale.md#constants) constants and the value is the value in that language. If a non-array value is passed the currently detected language will be used.
 
 **Returns:** True if everything went ok, false otherwise
 
