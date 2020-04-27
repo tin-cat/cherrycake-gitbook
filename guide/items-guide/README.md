@@ -43,8 +43,8 @@ class Movie extends \Cherrycake\Item {
         "year" => [
             "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_YEAR
         ],
-        "dateAdded" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_DATETIME
+        "imdbRating" => [
+            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_FLOAT
         ]
     ];
 }
