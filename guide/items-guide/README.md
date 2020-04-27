@@ -21,6 +21,10 @@ Items always come from a database table, so let's imagine we want to define an [
 | **`year`** | `year` | The year the movie was released. |
 | **`dateAdded`** | `datetime` | The date and time the movie was added to the database. |
 
+Here's an SQL script containing the `movies` tables. You can import it to your database to follow along with the examples:
+
+{% file src="../../.gitbook/assets/movies.sql" caption="movies.sql" %}
+
 Items are [App classes](../classes-guide.md#app-class-files) that extend the Cherrycake's [Item](../../reference/core-classes/item/) core class, so we create the `Movie` class in the file `/classes/Movie.class.php`, and it looks like this:
 
 ```php
