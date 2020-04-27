@@ -6,7 +6,7 @@ description: >-
 
 # Items
 
-Items are Cherrycake's conceptualization of the objects managed by you app that are stored in a database. For example, in an e-commerce site, a product would be an Item, but also would a user, a product category or an invoice.
+Items are Cherrycake's conceptualization of the fundamental objects stored in a database. For example, in an e-commerce site, a product would be an Item, but also would a user, a product category or an invoice.
 
 The most interesting benefits of working with Items in Cherrycake are:
 
