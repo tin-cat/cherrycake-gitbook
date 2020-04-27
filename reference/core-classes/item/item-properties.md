@@ -22,7 +22,25 @@ The name of the database provider to use when querying the database for this ite
 
 **Default:** `main`
 
-## $fields
+## $fields <a id="fields"></a>
+
+Hash array specification of the fields on the database table for this item class, where each key is the field name and the value is a hash array with the following keys:
+
+* **`type`** The type of the field, one of the available DATABASE\_FIELD\_TYPE\_\*
+* **`formItem`**
+* **`isMultiLanguage`**
+* **`title`**
+* **`prefix`**
+* **`postfix`**
+* **`multiplier`**
+* **`decimals`**
+* **`humanizeMethodName`**
+* **`humanizePreMethodName`**
+* **`humanizePostMethodName`**
+* **`representFunction`**
+* **`requestSecurityRules`**
+* **`requestFilters`**
+* **`validationMethod`**
 
 ## $idFieldName <a id="idfieldname"></a>
 
@@ -38,6 +56,10 @@ The method to use when loading this item from the database via an index. Possibl
 * `queryDatabase` Load the item from the database without using cache.
 
 **Default:** `queryDatabase`
+
+## $metaFields <a id="metafields"></a>
+
+
 
 ## $tableName <a id="tablename"></a>
 
