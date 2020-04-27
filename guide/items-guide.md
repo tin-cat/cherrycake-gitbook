@@ -11,7 +11,7 @@ Items are Cherrycake's conceptualization of the fundamental objects stored in a 
 
 ## Creating an Item class
 
-Items always come from a database table, so let's imagine we want to define an [Item](../reference/core-classes/item.md) to work with the products that are stored in our database, in a table called `products` with the following fields:
+Items always come from a database table, so let's imagine we want to define an [Item](../reference/core-classes/item/) to work with the products that are stored in our database, in a table called `products` with the following fields:
 
 | Field name | Specs |  |
 | :--- | :--- | :--- |
@@ -20,7 +20,7 @@ Items always come from a database table, so let's imagine we want to define an [
 | **`description`** | `text` | A description of the product. |
 | **`dateAdded`** | `datetime` | The date and time the product was added to the database. |
 
-Items are [App classes](classes-guide.md#app-class-files) that extend the Cherrycake's [Item](../reference/core-classes/item.md) core class, so we create the Product class in the file `/classes/Product.class.php`, and it looks like this:
+Items are [App classes](classes-guide.md#app-class-files) that extend the Cherrycake's [Item](../reference/core-classes/item/) core class, so we create the Product class in the file `/classes/Product.class.php`, and it looks like this:
 
 ```php
 <?php

@@ -8,7 +8,7 @@ description: >-
 
 Additionally to your own class implementations, Cherrycake provides core classes for entities that are used throughout the engine and that you can use or extend in your application, like the [Result](../reference/core-classes/result.md) class, which represents the result of an operation of any kind, or the [Color](../reference/core-classes/color.md) class, which simply represents a color.
 
-> A more complex example of core classes is the [Item](../reference/core-classes/item.md) class, which provides many useful methods to work with abstractions of objects, or the [Items](../reference/core-classes/items.md) class, which provides methods to work with lists of [Item](../reference/core-classes/item.md) objects.
+> A more complex example of core classes is the [Item](../reference/core-classes/item/) class, which provides many useful methods to work with abstractions of objects, or the [Items](../reference/core-classes/items.md) class, which provides methods to work with lists of [Item](../reference/core-classes/item/) objects.
 
 ### Auto-loading
 
