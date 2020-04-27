@@ -36,13 +36,19 @@ Magic method to set the item data with the given key to the given value
 * **`key`** The key of the data to set, matches the database field name.
 * **`value`** The value
 
+## delete
+
+Deletes this item from the database.
+
+**Returns:** True on success, false on failure.
+
 ## loadFromData\( data \)
 
 Loads the item with the given data.
 
 * **`data`** A hash array containing the data of the item, where each key is the field name as defined in the [Item::$fields](item-properties.md#usdfields) property, and each value is the field value.
 
-**Returns:** True on success, false on error.
+**Returns:** True on success, false on failure.
 
 ## loadFromDatabaseRow\( databaseRow \) <a id="loadfromdatabaserow"></a>
 
