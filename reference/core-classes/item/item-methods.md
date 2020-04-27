@@ -36,11 +36,19 @@ Magic method to set the item data with the given key to the given value
 * **`key`** The key of the data to set, matches the database field name.
 * **`value`** The value
 
+## clearCache\( fieldNames \) <a id="clearcache"></a>
+
+Removes this Item from the cache. Can be overloaded if more additional things have to be cleared from cache in relation to the Item.
+
+* **`fieldNames`** An optional array of field names that have been used to query items by index, so those queries will be cleared from cache. [`idFieldName`](item-properties.md#idfieldname) and other field names commonly used by this object are automatically added to this array and cleared from cache.
+
+**Returns:** `true` on success, `false` on failure.
+
 ## delete
 
 Deletes this item from the database.
 
-**Returns:** True on success, false on failure.
+**Returns:** `true` on success, `false` on failure.
 
 ## loadFromData\( data \)
 
@@ -48,7 +56,7 @@ Loads the item with the given data.
 
 * **`data`** A hash array containing the data of the item, where each key is the field name as defined in the [Item::$fields](item-properties.md#usdfields) property, and each value is the field value.
 
-**Returns:** True on success, false on failure.
+**Returns:** `true` on success, `false` on failure.
 
 ## loadFromDatabaseRow\( databaseRow \) <a id="loadfromdatabaserow"></a>
 
@@ -56,7 +64,7 @@ Loads the item from the given [DatabaseRow](../databaserow.md).
 
 * **`databaseRow`** A [DatabaseRow](../databaserow.md) object containing the data of the item.
 
-**Returns:** True on success, false on error.
+**Returns:** `true` on success, `false` on failure.
 
 ## loadFromId\( id, fieldName method \) <a id="loadfromid"></a>
 
@@ -68,7 +76,7 @@ Loads the item identified by the given `id` from the database.
   * `queryDatabaseCache` Load the item from the database using cache.
   * `queryDatabase` Load the item from the database without using cache.
 
-**Returns:** True if the item was found and loaded successfully, false otherwise.
+**Returns:** `true` if the item was found and loaded successfully, `false` otherwise.
 
 ## update\( data \) <a id="update"></a>
 
@@ -77,7 +85,7 @@ Updates the data on the database for this Item with the passed `data`, or with t
 * **`data`** An optional hash array where each key is the field name to update, and each value the new data to store on that field for this item. If not passed or left to false, the current data stored in the object is used. Default: `false`
   * For multilanguage fields, a hash array must be passed as the value, where each key is one of the available [`LANGUAGE_?`](../../core-modules/locale.md#constants) constants and the value is the value in that language. If a non-array value is passed the currently detected language will be used.
 
-**Returns:** True if everything went ok, false otherwise
+**Returns:** `true` on success, `false` on failure.
 
 
 
