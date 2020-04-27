@@ -89,5 +89,16 @@ $movie->update([
 ]);
 ```
 
-Or we can remove an item with Item::delete
+Changing an Item's property manually and then calling [Item::update](../../reference/core-classes/item/item-methods.md#update) without any parameters also works. This will do the same as the example above:
+
+```php
+$movie->imdbRating = 6.5;
+$movie->update();
+```
+
+To remove an item from the database, use the Item::delete method:
+
+```php
+$movie->delete();
+```
 
