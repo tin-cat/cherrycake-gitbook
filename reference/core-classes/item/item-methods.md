@@ -13,6 +13,29 @@
 
 **Throws:** An Exception if the item could not be constructed or loaded.
 
+## \_\_get\( key \) <a id="__get"></a>
+
+Magic method to return the Item's data corresponding to the given `key`
+
+* **`key`** The key of the data to get, matches the database field name.
+
+**Returns:** The data, or null if `key` didn't exist.
+
+## \_\_isset\( key \) <a id="__isset"></a>
+
+Magic method to check whether the given `key` exists in the item.
+
+* **`key`** The key of the data to check, matches the database field name.
+
+**Returns:** `true` if the key exists, `false` if not.
+
+## \_\_set\( key \)
+
+Magic method to set the item data with the given key to the given value
+
+* **`key`** The key of the data to set, matches the database field name.
+* **`value`** The value
+
 ## loadFromData\( data \)
 
 Loads the item with the given data.
