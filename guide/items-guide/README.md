@@ -89,14 +89,14 @@ We can also update items on the database by using [Item::update](../../reference
 
 ```php
 $movie->update([
-    "imdbRating" => 6.5
+    "imdbRating" => 8.7
 ]);
 ```
 
 Changing an Item's property manually and then calling [Item::update](../../reference/core-classes/item/item-methods.md#update) without any parameters also works. This will do the same as the example above:
 
 ```php
-$movie->imdbRating = 6.5;
+$movie->imdbRating = 8.7;
 $movie->update();
 ```
 
