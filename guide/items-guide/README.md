@@ -50,9 +50,17 @@ class Movie extends \Cherrycake\Item {
 }
 ```
 
-By setting the `tableName` property to the name of the table where the movies are stored, and setting up the `fields` property to reflect the name of the fields and their characteristics, we've already created a functional Item that can now represent a movie in our app with the added benefits of using Cherrycake Items.
+We set some properties of the class to configure it:
 
-> See [Database constants](../../reference/core-modules/database.md#constants) for all the available field types. Also see [Item::$fields](../../reference/core-classes/item/item-properties.md#fields) for more ways to customize fields.
+* **`tableName`** The name of the table where the items are stored.
+* **`fields`** A hash array to specify the field names and field types of the table. See [Database constants](../../reference/core-modules/database.md#constants) for all the available field types. See [Item::$fields](../../reference/core-classes/item/item-properties.md#fields) for more key you can use here to further customize how your Item works.
+
+You can also set this other properties if you'll be using values different from the defaults:
+
+* **`databaseProviderName`** The database provider where this items are stored. Default: `main`
+* **`idFieldName`** The name of the field that contains values to uniquely identify each item in the table.
+
+With this we've already created a functional Item that can now represent a movie in our app with the added benefits of using Cherrycake Items.
 
 Now, what can you do with your new `Movie` class? Let's see how to create a `Movie` object we can manipulate. Let's say we want to load the movie with id `138`:
 
