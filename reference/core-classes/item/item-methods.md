@@ -64,5 +64,9 @@ Loads the item identified by the given `id` from the database.
 
 **Returns:** True if the item was found and loaded successfully, false otherwise.
 
+## update\( data \) <a id="update"></a>
+
+Updates the data on the database for this Item
+
 
 

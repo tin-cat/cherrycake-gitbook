@@ -19,7 +19,7 @@ Database providers are configured in the [Database configuration](../../referenc
 
 namespace Cherrycake;
 
-$CacheConfig = [
+$DatabaseConfig = [
     "providers" => [
         "main" => [
             "providerClassName" => "DatabaseProviderMysql",
