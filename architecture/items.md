@@ -1,8 +1,7 @@
 ---
 description: >-
-  Using Items in your Cherrycake application brings you many benefits when
-  interacting with the primordial objects of your app, like optimized loading,
-  storage, caching and embedded security mechanisms.
+  Cherrycake provides you with an optimized of interacting with the primordial
+  objects of your app
 ---
 
 # Items
