@@ -15,10 +15,10 @@ Items always come from a database table, so let's imagine we want to define an [
 
 | Field name | Specs |  |
 | :--- | :--- | :--- |
-| `id` | `unsigned` `int` `auto_increment` `primary key` | The unique id to identify products. |
-| `name` | `varchar` | The name of the product. |
-| `description` | `text` | A description of the product. |
-| `dateAdded` | `datetime` | The date and time the product was added to the database. |
+| **`id`** | `unsigned` `int` `auto_increment` `primary key` | The unique id to identify products. |
+| **`name`** | `varchar` | The name of the product. |
+| **`description`** | `text` | A description of the product. |
+| **`dateAdded`** | `datetime` | The date and time the product was added to the database. |
 
 Items are [App classes](classes-guide.md#app-class-files) that extend the Cherrycake's [Item](../reference/core-classes/item.md) core class, so we create the Product class in the file `/classes/Product.class.php`, and it looks like this:
 
