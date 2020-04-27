@@ -66,7 +66,11 @@ Loads the item identified by the given `id` from the database.
 
 ## update\( data \) <a id="update"></a>
 
-Updates the data on the database for this Item
+Updates the data on the database for this Item with the passed `data`, or with the data stored on the object if no `data` is passed.
+
+* **`data`** An optional hash array where each key is the field name to update, and each value the new data to store on that field for this item. If not passed or left to false, the current data stored in the object is used. Default: `false`
+
+**Returns:** True if everything went ok, false otherwise
 
 
 
