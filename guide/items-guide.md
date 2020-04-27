@@ -7,5 +7,5 @@ description: >-
 
 # Items guide
 
-Items are Cherrycake's conceptualization of the objects managed by you app. For example, in an e-commerce site, a product would be an Item, but also would a user, a product category and an invoice.
+> See the [Items architecture](../architecture/items.md) section to learn more about Items
 
