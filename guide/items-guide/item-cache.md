@@ -43,9 +43,6 @@ Just like this, whenever you're loading a `Movie`, it will be loaded extremely f
 If you need to remove an item from cache, use the [Item::clearCache](../../reference/core-classes/item/item-methods.md#clearcache) method, like this:
 
 ```php
-$movie->update([
-    "imdbRating" => 8.7
-]);
 $movie->clearCache();
 ```
 
