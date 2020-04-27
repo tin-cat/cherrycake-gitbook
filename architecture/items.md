@@ -15,7 +15,7 @@ The most interesting benefits of working with Items in Cherrycake are:
 * Items get all the [performance](performance.md) and caching benefits of Cherrycake right out of the box.
 * Items support multi language fields, multi-timezone date-time fields, automatic URL slug generation and much more.
 
-> See the [Items guide](../guide/items-guide.md) to learn how to work with Items in Cherrycake
+> See the [Items guide](../guide/items-guide/) to learn how to work with Items in Cherrycake
 
 
 
