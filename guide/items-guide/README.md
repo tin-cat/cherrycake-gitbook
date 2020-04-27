@@ -48,9 +48,24 @@ class Product extends \Cherrycake\Item {
 
 By setting the `tableName` property to the name of the table where the products are stored, and setting up the `fields` property to reflect the name of the fields and their characteristics, we've already created a functional Item that can now represent a product in our app with the added benefits of using Cherrycake Items.
 
-> See the [Advanced item fields](advanced-item-fields.md) section for more ways to customize fields.
+> See [Item::$fields](../../reference/core-classes/item/item-properties.md#fields) for more ways to customize fields.
 
+Now, what can you do with your new `Product` class? Let's see how to create a `Product` object we can manipulate. Let's say we want to load the product with id `138`:
 
+```php
+$product = new Product([
+    "loadMethod" => "fromId",
+    "id" => 138
+]);
+```
 
+Field values for an Item are accessed just like regular properties, like this:
 
+```php
+echo $product->name;
+```
+
+```text
+
+```
 
