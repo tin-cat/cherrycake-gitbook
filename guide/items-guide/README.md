@@ -65,7 +65,7 @@ With this we've already created a functional Item that can now represent a movie
 Now, what can you do with your new `Movie` class? Let's see how to create a `Movie` object we can manipulate. Let's say we want to load the movie with id `138`:
 
 ```php
-$product = new Product([
+$movie = new Product([
     "loadMethod" => "fromId",
     "id" => 138
 ]);
@@ -81,5 +81,13 @@ echo "{$movie->name} ({$movie->year})";
 Brainstorm (1984)
 ```
 
+We can also update items on the database by using [Item::update](../../reference/core-classes/item/item-methods.md#update), for example:
 
+```php
+$movie->update([
+    "imdbRating" => 6.5
+]);
+```
+
+Or we can remove an item with Item::delete
 
