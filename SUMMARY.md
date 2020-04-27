@@ -96,6 +96,7 @@
   * [Action](reference/core-classes/action/README.md)
     * [Action methods](reference/core-classes/action/methods.md)
     * [Action properties](reference/core-classes/action/properties.md)
+  * [AjaxResponseJson](reference/core-classes/ajaxresponsejson.md)
   * [CacheProvider](reference/core-classes/cacheprovider/README.md)
     * [CacheProvider methods](reference/core-classes/cacheprovider/cacheprovider-methods.md)
   * [DatabaseProvider](reference/core-classes/databaseprovider/README.md)
