@@ -66,12 +66,12 @@ You can also set this other properties if you'll be using values different from 
 
 With this we've already created a functional Item that can now represent a movie in our app with the added benefits of using Cherrycake Items.
 
-Now, what can you do with your new `Movie` class? Let's see how to create a `Movie` object we can manipulate. Let's say we want to load the movie with id `138`:
+Now, what can you do with your new `Movie` class? Let's see how to create a `Movie` object we can manipulate. Let's say we want to load the movie with id `15`:
 
 ```php
 $movie = new Product([
     "loadMethod" => "fromId",
-    "id" => 138
+    "id" => 15
 ]);
 ```
 
