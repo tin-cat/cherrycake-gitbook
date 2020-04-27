@@ -36,7 +36,7 @@ Hash array specification of the fields on the database table for this item class
     * **`title`** The title of the select option
     * **`subTitle`** The subtitle of the select option
 * **`isMultiLanguage`**Whether this field stores multi-language data, meaning there are more than one actual fields on the database, one for each available language. As configured in the [Locale](../../core-modules/locale.md) module's setup key `availableLanguages`
-* **`title`** The title of the field, to be used when representing data on UI components like UiComponentTableAdmin.
+* **`title`** The title of the field, to be used when representing data on UI components like [UiComponentTableAdmin](../../ui-components/uicomponenttableadmin.md).
 * **`prefix`** The prefix string to add when humanizing the field value. For example: `USD` for american dollar quantities like `USD300`
 * **`postfix`** The postfix string to add when humanizing the field value. For example: `º` for values in degrees like `32º`
 * **`multiplier`** A multiplier to apply when humanizing the field value.
