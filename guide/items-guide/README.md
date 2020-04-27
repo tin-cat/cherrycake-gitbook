@@ -96,7 +96,7 @@ $movie->imdbRating = 6.5;
 $movie->update();
 ```
 
-To remove an item from the database, use the Item::delete method:
+To remove an item from the database, use the [Item::delete](../../reference/core-classes/item/item-methods.md#delete) method:
 
 ```php
 $movie->delete();
