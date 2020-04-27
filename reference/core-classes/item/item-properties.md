@@ -26,8 +26,13 @@ The name of the database provider to use when querying the database for this ite
 
 Hash array specification of the fields on the database table for this item class, where each key is the field name and the value is a hash array with the following keys:
 
-* **`type`** The type of the field, one of the available DATABASE\_FIELD\_TYPE\_\*
-* **`formItem`**
+* **`type`** The type of the field, one of the available [DATABASE\_FIELD\_TYPE\_?](../../core-modules/database.md#constants)
+* **`formItem`** A hash array containing the specification of this field when used in forms. Used by [ItemAdmin](../../core-modules/itemadmin.md).
+  * **`type`** The type of the form item, one of the available FORM\_ITEM\_TYPE\_?
+  * **`selectType`**
+  * **`items`**
+    * **`title`**
+    * **`subTitle`**
 * **`isMultiLanguage`**
 * **`title`**
 * **`prefix`**
