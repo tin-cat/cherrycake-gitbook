@@ -32,8 +32,8 @@ The name of the field on the table that uniquely identifies this item on the dat
 
 The method to use when loading this item from the database via an index. Possible values:
 
-* `queryDatabaseCache`
-* `queryDatabase`
+* `queryDatabaseCache` Load the item from the database using cache
+* `queryDatabase` Load the item from the database without using cache
 
 **Default:** `queryDatabase`
 
