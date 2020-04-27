@@ -126,6 +126,7 @@
     * [Request methods](reference/core-classes/request/request-methods.md)
   * [Color](reference/core-classes/color.md)
 * [UI Components](reference/ui-components/README.md)
+  * [UiComponentItemAdmin](reference/ui-components/uicomponentitemadmin.md)
   * [UiComponentTableAdmin](reference/ui-components/uicomponenttableadmin.md)
 * [Code conventions](conventions.md)
 * [Contribute](contribute.md)
