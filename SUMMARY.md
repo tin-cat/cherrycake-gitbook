@@ -131,5 +131,5 @@
   * [UiComponentTableAdmin](reference/ui-components/uicomponenttableadmin.md)
 * [Code conventions](conventions.md)
 * [License](license.md)
-* [Contribute](contribute.md)
+* [Extras](extras.md)
 
