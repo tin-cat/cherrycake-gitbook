@@ -14,9 +14,13 @@ Have you created something using Cherrycake? Oh, please let me know! Reach me at
 
 Feel free to use it in your projects!
 
+>
+
 ![](.gitbook/assets/cherrycake-logo.svg)
+
+> Please mention `Cherrycake` and/or link to `cherrycake.io` whenever possible!
 
 {% file src=".gitbook/assets/cherrycake-logo.svg" caption="Download the official Cherrycake logo" %}
 
-> Please mention `Cherrycake` and/or link it to `cherrycake.io` whenever using the logo!
+> The Cherrycake logo has been inspired by the [original work](https://www.flaticon.com/free-icon/cake_609631) of Vectors Market
 
