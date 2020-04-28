@@ -130,6 +130,6 @@
   * [UiComponentItemAdmin](reference/ui-components/uicomponentitemadmin.md)
   * [UiComponentTableAdmin](reference/ui-components/uicomponenttableadmin.md)
 * [Code conventions](conventions.md)
-* [Contribute](contribute.md)
 * [License](license.md)
+* [Contribute](contribute.md)
 

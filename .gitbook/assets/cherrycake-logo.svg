@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="67mm"
+   height="80mm"
+   viewBox="0 0 67 80"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="Cherrycake logo.svg">
+  <title
+     id="title4765">Cherrycake logo</title>
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4759">
+      <stop
+         style="stop-color:#f13455;stop-opacity:1"
+         offset="0"
+         id="stop4755" />
+      <stop
+         style="stop-color:#57cebf;stop-opacity:0;"
+         offset="1"
+         id="stop4757" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4759"
+       id="radialGradient4761"
+       cx="145.31677"
+       cy="141.30486"
+       fx="145.31677"
+       fy="141.30486"
+       r="17.068245"
+       gradientTransform="matrix(1.1972553,0,0,0.49798412,-28.756265,119.67749)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="557.55299"
+     inkscape:cy="280.43098"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="3440"
+     inkscape:window-height="1376"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-global="false"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-grids="false"
+     inkscape:snap-to-guides="false"
+     inkscape:object-paths="false"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-smooth-nodes="false"
+     inkscape:snap-midpoints="false"
+     inkscape:snap-center="true"
+     inkscape:snap-page="true"
+     inkscape:object-nodes="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3749"
+       spacingx="2.6458333"
+       spacingy="2.6458333"
+       snapvisiblegridlinesonly="false"
+       dotted="false"
+       empspacing="5" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Cherrycake logo</dc:title>
+        <cc:license
+           rdf:resource="https://cherrycake.io" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Lorenzo Herrera / lorenzo@tin.cat / https://cherrycake.io</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:date>2020</dc:date>
+        <dc:description>Based on the icon created by Vectors Market (https://www.flaticon.com/free-icon/cake_609631)</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-217)"
+     style="display:inline">
+    <g
+       id="g4547"
+       transform="translate(-111.52917,72.424999)">
+      <path
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         sodipodi:nodetypes="ccscccc"
+         inkscape:connector-curvature="0"
+         id="path3732-3-0"
+         d="m 119.0625,198.59985 v 6.32097 c 1e-5,7.30626 11.84581,13.22916 26.45833,13.22916 14.61252,0 26.45831,-5.9229 26.45833,-13.22916 v -6.40886 l -26.45833,0.27285 z"
+         style="display:inline;fill:#43c8b7;fill-opacity:1;stroke-width:0.26030234" />
+      <path
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         sodipodi:nodetypes="ccscccc"
+         inkscape:connector-curvature="0"
+         id="path3732-3-0-4"
+         d="m 119.0625,192.48444 v 6.08629 c 1e-5,7.30626 11.84581,13.22916 26.45833,13.22916 14.61252,0 26.45832,-5.9229 26.45833,-13.22916 v -6.05314 l -26.45833,-0.14916 z"
+         style="display:inline;fill:#ffffe9;fill-opacity:1;stroke-width:0.26030234" />
+      <path
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         sodipodi:nodetypes="ccscccc"
+         inkscape:connector-curvature="0"
+         id="path3732-3-0-47"
+         d="M 119.0625,185.43761 V 192.4 c 1e-5,7.30626 11.84581,13.22916 26.45833,13.22916 14.61252,0 26.45832,-5.9229 26.45833,-13.22916 v -6.9686 l -26.45833,0.26976 z"
+         style="display:inline;fill:#43c8b7;fill-opacity:1;stroke-width:0.26030234" />
+      <ellipse
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         style="fill:#69d3c5;fill-opacity:1;stroke-width:0.26030234"
+         ry="13.229174"
+         rx="26.458336"
+         cy="185.47057"
+         cx="145.52083"
+         id="path3732-3" />
+      <path
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4681"
+         d="m 145.47617,161.9094 c 0,0 0.70007,-6.11405 7.16353,-9.39209"
+         style="fill:none;stroke:#455a73;stroke-width:1.20000005;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <ellipse
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         ry="10.333252"
+         rx="22.271368"
+         cy="188.17299"
+         cx="145.52083"
+         id="path4712"
+         style="fill:url(#radialGradient4761);fill-opacity:1;stroke:#455a73;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         sodipodi:nodetypes="sssssss"
+         inkscape:connector-curvature="0"
+         id="path4676"
+         d="m 165.24617,174.40807 c 0,9.85932 -8.83134,17.85188 -19.72534,17.85188 -10.894,0 -19.72534,-7.99256 -19.72534,-17.85188 0,-6.52272 3.85034,-14.28485 11.74549,-14.28485 4.16214,0 5.33402,1.80046 7.97985,1.80046 2.64583,0 3.77061,-1.80731 7.94373,-1.80731 7.93127,0 11.78161,7.7642 11.78161,14.2917 z"
+         style="fill:#ed5968;fill-opacity:1;stroke-width:0.26458332" />
+      <ellipse
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         transform="rotate(-20.331702)"
+         ry="4.2656245"
+         rx="2.6718748"
+         cy="213.64232"
+         cx="87.251961"
+         id="path4708"
+         style="fill:#fff5f5;fill-opacity:1;stroke:#455a73;stroke-width:0;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="600.13678"
+         inkscape:export-xdpi="600.13678"
+         inkscape:connector-curvature="0"
+         id="path4676-1"
+         d="m 128.41438,165.25499 c -1.75183,2.69043 -2.61896,6.06032 -2.61896,9.15293 0,9.85932 8.83141,17.85214 19.72541,17.85214 5.34483,0 10.18985,-1.92705 13.74231,-5.05137 a 23.997436,23.997436 0 0 1 -6.88743,1.03042 23.997436,23.997436 0 0 1 -23.96133,-22.98412 z"
+         style="display:inline;fill:#e84a58;fill-opacity:1;stroke-width:0.26458332" />
+    </g>
+  </g>
+</svg>
