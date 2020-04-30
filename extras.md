@@ -14,8 +14,6 @@ Have you created something using Cherrycake? Oh, please let me know! Reach me at
 
 Feel free to use it in your projects!
 
->
-
 ![](.gitbook/assets/cherrycake-logo.svg)
 
 > Please mention `Cherrycake` and/or link to `cherrycake.io` whenever possible!
