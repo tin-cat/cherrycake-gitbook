@@ -20,5 +20,3 @@ Feel free to use it in your projects!
 
 {% file src=".gitbook/assets/cherrycake-logo.svg" caption="Download the official Cherrycake logo" %}
 
-> The Cherrycake logo has been inspired by the [original work](https://www.flaticon.com/free-icon/cake_609631) of Vectors Market
-
