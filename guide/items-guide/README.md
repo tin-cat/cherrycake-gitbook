@@ -11,13 +11,13 @@ Items are Cherrycake's conceptualization of the fundamental objects stored in a 
 
 ## Creating an Item class
 
-Items always come from a database table, so let's imagine we want to define an [Item](../../reference/core-classes/item/) to work with the movies that are stored in our database, in a table called `movies` with the following fields:
+Items always come from a database table, so let's imagine we have a database of movies and we want to define an [Item](../../reference/core-classes/item/) to work with the movies that are stored in our database, in a table called `movies` with the following fields:
 
 | Field name | Specs |  |
 | :--- | :--- | :--- |
 | **`id`** | `unsigned` `int` `auto_increment` `primary key` | The unique id to identify movies. |
 | **`title`** | `varchar` | The name of the movie. |
-| **`summary`** | `text` | A description of the product. |
+| **`summary`** | `text` | A summary of the movie plot. |
 | **`year`** | `year` | The year the movie was released. |
 | **`dateAdded`** | `datetime` | The date and time the movie was added to the database. |
 
@@ -69,7 +69,7 @@ With this we've already created a functional Item that can now represent a movie
 Now, what can you do with your new `Movie` class? Let's see how to create a `Movie` object we can manipulate. Let's say we want to load the movie with id `15`:
 
 ```php
-$movie = new Product([
+$movie = new Movie([
     "loadMethod" => "fromId",
     "id" => 15
 ]);
