@@ -57,7 +57,6 @@
 * [Stats guide](guide/stats-guide.md)
 * [Janitor guide](guide/janitor-guide.md)
 * [CSS and JavaScript guide](guide/css-and-javascript-guide.md)
-* [UI Components](guide/ui-components.md)
 * [Debugging](guide/debugging.md)
 * [Command line apps](guide/cli.md)
 
