@@ -52,15 +52,7 @@ With this in place, our `Movies` object can now work with movies from a specific
 $movies = new Movies([
     "fillMethod" => "fromParameters",
     "p" => [
-        "wheres" => [
-            "sqlPart" => "movies.year = ?",
-            "values" => [
-                [
-                    "type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER,
-                    "value" => $p["year"]
-                ]
-            ]
-        ]
+        "year" => 1968
     ]
 ]);
 

@@ -29,7 +29,24 @@ In the example we're using the [BasicObject::treatParameters](../../reference/co
 
 > Without using [treatParameters](../../reference/core-classes/basicobject/basicobject-methods.md#treatparameters-and-usdparameters-usdsetup), `$p["orders"]["released"] = "movies.year asc";` would've done almost the same.
 
+And that's it, now we can use the Movies class to retrieve lists of movies ordered by their release year like this:
 
+```php
+$movies = new Movies([
+    "fillMethod" => "fromParameters",
+    "p" => [
+        "order" => ["released"]
+    ]
+]);
+
+foreach ($movies as $movie)
+    echo "{$movie->title} ({$movie->year})\n";
+```
+
+```text
+2001: A Space Odyssey (1968)
+Planet of the Apes (1968)
+```
 
 
 
