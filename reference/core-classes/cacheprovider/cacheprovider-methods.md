@@ -22,7 +22,7 @@ Stores a value into the cache
 
 ## List methods
 
-## hGet\( listName, key \) <a id="hget"></a>
+## listGet\( listName, key \) <a id="listget"></a>
 
 Retrieves an object from a list
 
@@ -31,7 +31,7 @@ Retrieves an object from a list
 
 **Returns:** The stored value, or null if it doesn't exists.
 
-## hGetKeys\( listName \)
+## listGetKeys\( listName \) <a id="listgetkeys"></a>
 
 Retrieves all the keys in a list
 
@@ -39,7 +39,7 @@ Retrieves all the keys in a list
 
 **Returns:** An array containing all the keys in the list, an empty array if the list was empty or false if the list didn't exist.
 
-## hSet\( listName, key, value\) <a id="hset"></a>
+## listSet\( listName, key, value\) <a id="listset"></a>
 
 Adds an object to a list
 
@@ -51,7 +51,7 @@ Adds an object to a list
 
 ## Queue methods
 
-## lPop\( queueName \) <a id="lpop"></a>
+## queueLPop\( queueName \) <a id="queuelpop"></a>
 
 Returns the element at the beginning of a queue and removes it.
 
@@ -59,7 +59,7 @@ Returns the element at the beginning of a queue and removes it.
 
 **Returns:** The value that was a the beginning of the queue, or null if the queue was empty.
 
-## lPush\( queueName, value \) <a id="lpush"></a>
+## queueLPush\( queueName, value \) <a id="queuelpush"></a>
 
 Prepends a value to the beginning of a queue.
 
@@ -68,7 +68,7 @@ Prepends a value to the beginning of a queue.
 
 **Returns:** True if everything went ok, false otherwise
 
-## rPop\( queueName \) <a id="rpop"></a>
+## queueRPop\( queueName \) <a id="queuerpop"></a>
 
 Returns the element at the end of a queue and removes it.
 
@@ -76,7 +76,7 @@ Returns the element at the end of a queue and removes it.
 
 **Returns:** The value that was a the end of the queue, or null if the queue was empty.
 
-## rPush\( queueName, value \) <a id="rpush"></a>
+## queueRPush\( queueName, value \) <a id="queuerpush"></a>
 
 Appends a value to the end of a queue.
 
