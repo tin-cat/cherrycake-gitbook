@@ -124,5 +124,5 @@ Blade Runner (1982)
 Brainstorm (1983)
 ```
 
-> This is equivalent to the `limit [start row], [number of rows]` SQL statement.
+> This is equivalent to the `limit [start row], [number of rows]` SQL statement. Also remember that pages start at zero, not at 1.
 
