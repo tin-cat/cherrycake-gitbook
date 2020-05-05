@@ -4,7 +4,7 @@ We've just seen how to retrieve very simple lists of Item objects from the datab
 
 To do so, overload the `fillFromParameters` method of your `Items` class to take care of any additional filtering, ordering or querying you might need for your Item listings.
 
-> The [Items::fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method is in charge of requesting the database for your [Item](../../reference/core-classes/item/) objects and loading them. It is called internally whenever you instantiate your [Items](../../architecture/items.md) object, but it can also be called manually after instantiating an object if you need it.
+> The [Items::fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method is in charge of requesting the database and loading the [Item](../../reference/core-classes/item/) objects in the list. It is called internally whenever you create your [Items](../../architecture/items.md) object with a `fromParameters` `fillMethod` , but it can also be called manually after instantiating an object if you need it.
 
 For example, let's say we wanted a way to get movie listings containing only movies released on a specific year. We would overload the `fillFromParameters` method of our `Movies` object to look like this:
 
