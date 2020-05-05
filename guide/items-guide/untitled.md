@@ -14,12 +14,14 @@ class Movies extends \Cherrycake\Items {
     protected $itemClassName = "\CherrycakeApp\Movie";
     
     function fillFromParameters($p = false) {
+        // Treat parameters
         self::treatParameters($p, [
             "year" => [
                 "default" => false
             ]
         ]);
         
+        // Modify $p accordingly
         if ($p["year"]) {
             $p["wheres"][] = [
                 "sqlPart" => "movies.year = ?",
@@ -32,9 +34,12 @@ class Movies extends \Cherrycake\Items {
             ];
         }
         
+        // Call the parent fillFromParameters to perform the actual work
         return parent::fillFromParameters($p);
     }
     
 }
 ```
+
+
 
