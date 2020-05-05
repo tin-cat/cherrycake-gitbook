@@ -6,7 +6,7 @@ description: Item lists are groups of Item objects retrieved from the database.
 
 Working with Items becomes a lot more powerful when in conjunction with Item lists. Items allows you to retrieve multiple Items at once from the database and work with them as you would do with a regular list.
 
-Just like when creating single Item classes, Item lists are [App classes](../classes-guide.md#app-class-files) that extend the Cherrycake's [Items](../../reference/core-classes/items.md) core class. Let's say we want to create an Item list class to work with lists of movies. To do so, so we create the `Movies` class in the file `/classes/Movies.class.php`, and it looks like this:
+Just like when creating single Item classes, Item lists are [App classes](../classes-guide.md#app-class-files) that extend the Cherrycake's [Items](../../reference/core-classes/items/) core class. Let's say we want to create an Item list class to work with lists of movies. To do so, so we create the `Movies` class in the file `/classes/Movies.class.php`, and it looks like this:
 
 
 
