@@ -2,7 +2,7 @@
 
 We've just seen how to retrieve very simple lists of Item objects from the database, but what about when you need to filter the results, join tables, specify extra SQL statements or get an ordered list of Items?
 
-To do so, overload the `fillFromParameters` method of your `Items` class to take care of any additional filtering, ordering or querying you might need for your Item listings.
+To do so, you can overload the `fillFromParameters` method of your `Items` class to take care of any additional filtering, ordering or querying you might need for your Item listings.
 
 > The [Items::fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method is in charge of requesting the database and loading the [Item](../../reference/core-classes/item/) objects in the list. It is called internally whenever you create your [Items](../../architecture/items.md) object with the `fillMethod` key set as `fromParameters` .
 
@@ -52,7 +52,15 @@ With this in place, our `Movies` object can now work with movies from a specific
 $movies = new Movies([
     "fillMethod" => "fromParameters",
     "p" => [
-        "year" => 1968
+        "wheres" => [
+            "sqlPart" => "movies.year = ?",
+            "values" => [
+                [
+                    "type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER,
+                    "value" => $p["year"]
+                ]
+            ]
+        ]
     ]
 ]);
 
@@ -64,6 +72,4 @@ foreach ($movies as $movie)
 2001: A Space Odyssey (1968)
 Planet of the Apes (1968)
 ```
-
-\*\*\*\*
 
