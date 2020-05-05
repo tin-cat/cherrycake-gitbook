@@ -37,7 +37,6 @@ class Movies extends \Cherrycake\Items {
         // Call the parent fillFromParameters
         return parent::fillFromParameters($p);
     }
-    
 }
 ```
 
