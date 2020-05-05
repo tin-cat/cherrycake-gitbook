@@ -41,7 +41,7 @@ echo "{$movies->count()} Movies found";
 ```
 
 ```text
-18 Movies found
+30 Movies found
 ```
 
 You can automatically fill your `Movies` object with `Movie` items when creating it by passing the `fillMethod` key as you see in the example above.
@@ -56,7 +56,7 @@ foreach ($movies as $movie)
 ```
 
 ```text
-18 Movies foundAlien (1979)
+Alien (1979)
 The Thing (1982)
 Silent Running (1972)
 Arrival (2016)
@@ -74,6 +74,18 @@ Brainstorm (1983)
 The Hitchhiker’s Guide to the Galaxy (2005)
 Blade Runner 2049 (2017)
 Prometheus (2012)
+The Last Starfighter (1984)
+Enemy Mine (1985)
+Explorers (1985)
+Tron (1982)
+WarGames (1983)
+Close Encounters of the Third Kind (1977)
+The War of the Worlds (1953)
+The Day the Earth Stood Still (1951)
+E.T. the Extra-Terrestrial (1982)
+The Abyss (1989)
+War of the Worlds (2005)
+Super 8 (2011)
 ```
 
 ## Limit results
@@ -92,7 +104,7 @@ foreach ($movies as $movie)
 ```
 
 ```text
-3 Movies foundAlien (1979)
+Alien (1979)
 The Thing (1982)
 Silent Running (1972)
 ```
