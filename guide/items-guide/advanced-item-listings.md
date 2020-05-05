@@ -46,7 +46,7 @@ There are three important things we did here:
 2. **Modify $p accordingly**: Because we'll be sending the `$p` parameters array to the parent [fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method that does all the work, we compose it now according to our special parameters. In this case, if we've got a `year` parameter, we add a new `where` statement to `$p` that will cause the SQL statement to only request movies from the specified year.
 3. **Call the parent fillFromParameters:** Because we're overloading the [fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method to add our own Movie-specific logic, we now call the parent [fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method, which is the one that does the actual work.
 
-With this in place, our `Movies` object can now accept requests to retrieve movies from a specific year, like this:
+With this in place, our `Movies` object can now work with movies from a specific year, like this:
 
 ```php
 $movies = new Movies([
