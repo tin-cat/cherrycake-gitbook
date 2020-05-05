@@ -61,7 +61,7 @@ We set some properties of the class to configure it:
 
 You can also set this other properties if you'll be using values different from the defaults:
 
-* **`databaseProviderName`** The database provider where this items are stored. The default is `main`
+* **`databaseProviderName`** The database provider name where this items are stored. The default is `main`
 * **`idFieldName`** The name of the field that contains values to uniquely identify each item in the table. Defaults to `id`
 
 With this we've already created a functional Item that can now represent a movie in our app with the added benefits of using Cherrycake Items.
