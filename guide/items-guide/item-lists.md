@@ -35,8 +35,14 @@ We're now ready to start retrieving Movie lists from the database. Let's see how
 ```php
 $movies = new Movies([
     "fillMethod" => "fromParameters",
-    "p" => [
-    ]
+    "p" => []
 ]);
+echo "{$movies->count()} Movies found";
 ```
+
+```text
+18 Movies found
+```
+
+You can automatically fill your Movies object with Movie items when creating it by passing the `fillMethod` key as you see in the example above. 
 
