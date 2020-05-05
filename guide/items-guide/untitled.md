@@ -34,12 +34,31 @@ class Movies extends \Cherrycake\Items {
             ];
         }
         
-        // Call the parent fillFromParameters to perform the actual work
+        // Call the parent fillFromParameters
         return parent::fillFromParameters($p);
     }
     
 }
 ```
 
+There are three important things we did here:
 
+* **Treat parameters:** We use the [BasicObject::treatParameters](../../reference/core-classes/basicobject/basicobject-methods.md#treatparameters-and-usdparameters-usdsetup) method to treat the parameters passed via `$p`. In this case, we simply set up a default value of `false` for the `year` parameter. This way of treating parameters might come specially in handy when you have many parameters with default values and requisites.
+* **Modify $p accordingly**: Because we'll be sending the `$p` parameters array to the parent [fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method that does all the work, we compose it now according to our special parameters. In this case, if we've got a `year` parameter, we add a new `where` statement to `$p` that will cause the SQL statement to only request movies from the specified year.
+* **Call the parent fillFromParameters:** Because we're overloading the [fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method to add our own Movie-specific logic, we now call the parent [fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method, which is the one that does the actual work.
+
+With this in place, our `Movies` object can now accept requests to retrieve movies from a specific year, like this:
+
+```php
+class Movies extends \Cherrycake\Items {
+    protected $tableName = "movies";
+    protected $itemClassName = "\CherrycakeApp\Movie";
+    
+    function fillFromParameters($p = false) {
+        // Treat parameters
+        self::treatParameters($p, [
+          
+```
+
+\*\*\*\*
 
