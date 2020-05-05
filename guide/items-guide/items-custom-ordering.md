@@ -13,7 +13,7 @@ class Movies extends \Cherrycake\Items {
         // Treat parameters
         self::treatParameters($p, [
             "orders" => ["addArrayKeysIfNotExist" => [
-                "released" => "movies.year desc"
+                "released" => "movies.year asc"
             ]]
     		]);
         
@@ -27,9 +27,9 @@ This time, the only modification we did was to add a new ordering method to the 
 
 In the example we're using the [BasicObject::treatParameters](../../reference/core-classes/basicobject/basicobject-methods.md#treatparameters-and-usdparameters-usdsetup) helper method that allows us to treat parameter hash arrays like `$p` more easily, specially when you have lots many parameters to treat.
 
-Without using [treatParameters](../../reference/core-classes/basicobject/basicobject-methods.md#treatparameters-and-usdparameters-usdsetup), this line would've done almost the same:
+> Without using [treatParameters](../../reference/core-classes/basicobject/basicobject-methods.md#treatparameters-and-usdparameters-usdsetup), `$p["orders"]["released"] = "movies.year asc";` would've done almost the same.
 
-```php
-$p["orders"]["released"] = "movies.year desc";
-```
+
+
+
 
