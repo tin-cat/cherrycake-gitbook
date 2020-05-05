@@ -50,7 +50,7 @@
 * [Items guide](guide/items-guide/README.md)
   * [Item cache](guide/items-guide/item-cache.md)
   * [Item lists](guide/items-guide/item-lists.md)
-  * [Complex item listings](guide/items-guide/untitled.md)
+  * [Advanced item listings](guide/items-guide/advanced-item-listings.md)
   * [Item lists cache](guide/items-guide/item-lists-cache.md)
 * [Locale guide](guide/locale-guide.md)
 * [Session guide](guide/session-guide.md)
