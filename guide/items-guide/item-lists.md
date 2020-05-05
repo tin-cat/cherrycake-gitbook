@@ -97,8 +97,6 @@ The Thing (1982)
 Silent Running (1972)
 ```
 
-> This is equivalent to the `limit [number of rows]` SQL statement.
-
 ## Results pagination
 
 There's also a simple way of paginating results by specifying the `itemsPerPage` and `page` keys. Let's say you're dividing your movie listing in pages containing five movies each, and you want to get the third page. You would do it like this:
@@ -124,5 +122,7 @@ Blade Runner (1982)
 Brainstorm (1983)
 ```
 
-> This is equivalent to the `limit [start row], [number of rows]` SQL statement. Also remember that pages start at zero, not at 1.
+> Remember that pages start at zero, not at 1.
+
+
 
