@@ -20,7 +20,7 @@ class Movies extends \Cherrycake\Items {
             ]
         ]);
         
-        if ($p["year"])
+        if ($p["year"]) {
             $p["wheres"][] = [
                 "sqlPart" => "movies.year = ?",
                 "values" => [
@@ -30,6 +30,9 @@ class Movies extends \Cherrycake\Items {
                     ]
                 ]
             ];
+        }
+        
+        return parent::fillFromParameters($p);
     }
     
 }
