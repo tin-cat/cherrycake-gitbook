@@ -82,7 +82,7 @@ echo "{$movie->name} ({$movie->year})";
 ```
 
 ```text
-Brainstorm (1984)
+Brainstorm (1983)
 ```
 
 We can also update items on the database by using [Item::update](../../reference/core-classes/item/item-methods.md#update), for example:
