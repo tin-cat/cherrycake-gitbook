@@ -124,20 +124,3 @@ Brainstorm (1983)
 
 > Remember that pages start at zero, not at 1.
 
-## Item lists cache
-
-Item lists are just as easily cacheable as individual Items. Just set the `isCache` property to `true` in your Items object definition:
-
-```php
-class Movies extends \Cherrycake\Items {
-    protected $tableName = "movies";
-    protected $itemClassName = "\CherrycakeApp\Movie";
-    protected $isCache = true;
-}
-```
-
-You can also add this other properties if you can to change the default values for caching Items:
-
-* **`cacheProviderName`** The name of the cache provider to use. Default: `engine`
-* **`cacheTtl`**: The TTL to use when caching data for this Item. Default: `CACHE_TTL_NORMAL`
-
