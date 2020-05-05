@@ -17,7 +17,7 @@ namespace CherrycakeApp;
 
 class Movies extends \Cherrycake\Items {
     protected $tableName = "movies";
-    protected $itemClassName = "Movie";
+    protected $itemClassName = "\CherrycakeApp\Movie";
 }
 ```
 
@@ -29,4 +29,14 @@ Just by setting these two properties we'll have a working `Movies` class:
 You can also set some other properties if you need to change the defaults:
 
 * **`databaseProviderName`** The database provider name where this items are stored. Defaults to `main`
+
+We're now ready to start retrieving Movie lists from the database. Let's see how we could simply get a list of all the movies on the database:
+
+```php
+$movies = new Movies([
+    "fillMethod" => "fromParameters",
+    "p" => [
+    ]
+]);
+```
 
