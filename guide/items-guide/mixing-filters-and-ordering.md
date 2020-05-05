@@ -49,7 +49,7 @@ class Movies extends \Cherrycake\Items {
 }
 ```
 
-That's it, did you get it? Now we can use our new Movies class to get a neat list of Movies released in the glorious 80's, ordered by their release year and title, check this out:
+That's it, did you get it? Now we can use our new `Movies` class to get a neat list of movies released in the glorious 80's, ordered by their release year and title, check this out:
 
 ```php
 $movies = new Movies([
