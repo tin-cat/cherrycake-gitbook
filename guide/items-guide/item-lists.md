@@ -44,5 +44,33 @@ echo "{$movies->count()} Movies found";
 18 Movies found
 ```
 
-You can automatically fill your Movies object with Movie items when creating it by passing the `fillMethod` key as you see in the example above. 
+You can automatically fill your `Movies` object with `Movie` items when creating it by passing the `fillMethod` key as you see in the example above. Since we're not specifying any parameters in the `p` key, we'll simply get all movies in the database at once.
+
+Let's see how we could iterate through the results to show all the movie titles and their release years:
+
+```php
+foreach ($movies as $movie)
+    echo "{$movie->title} ({$movie->year})\n";
+```
+
+```text
+18 Movies foundAlien (1979)
+The Thing (1982)
+Silent Running (1972)
+Arrival (2016)
+Interstellar (2014)
+Ex Machina (2014)
+2001: A Space Odyssey (1968)
+The Martian (2015)
+Planet of the Apes (1968)
+Moon (2009)
+Contact (1997)
+The Man from Earth (2007)
+Dune (1984)
+Blade Runner (1982)
+Brainstorm (1983)
+The Hitchhiker’s Guide to the Galaxy (2005)
+Blade Runner 2049 (2017)
+Prometheus (2012)
+```
 
