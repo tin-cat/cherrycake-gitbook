@@ -20,8 +20,9 @@ Items always come from a database table, so let's imagine we have a database of 
 | **`summary`** | `text` | A summary of the movie plot. |
 | **`year`** | `year` | The year the movie was released. |
 | **`dateAdded`** | `datetime` | The date and time the movie was added to the database. |
+| **`directorId`** | `unsigned` `int` | The id of the director in the `directors` table. |
 
-Here's an SQL script containing the `movies` tables. You can import it to your database to follow along with the examples:
+Here's an SQL script containing the `movies` table and some other related tables. You can import it to your database to follow along with the examples:
 
 {% file src="../../.gitbook/assets/movies.sql" caption="movies.sql" %}
 

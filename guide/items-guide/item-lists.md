@@ -110,6 +110,7 @@ $movies = new Movies([
         "page" => 2
     ]
 ]);
+
 foreach ($movies as $movie)
     echo "{$movie->title} ({$movie->year})\n";
 ```

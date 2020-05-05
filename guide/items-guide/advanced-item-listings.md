@@ -55,6 +55,7 @@ $movies = new Movies([
         "year" => 1968
     ]
 ]);
+
 foreach ($movies as $movie)
     echo "{$movie->title} ({$movie->year})\n";
 ```
