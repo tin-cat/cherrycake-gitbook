@@ -15,8 +15,21 @@ class Movies extends \Cherrycake\Items {
     
     function fillFromParameters($p = false) {
         self::treatParameters($p, [
-            
+            "year" => [
+                "default" => false
+            ]
         ]);
+        
+        if ($p["year"])
+            $p["wheres"][] = [
+                "sqlPart" => "movies.year = ?",
+                "values" => [
+                    [
+                        "type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER,
+                        "value" => $p["year"]
+                    ]
+                ]
+            ];
     }
     
 }
