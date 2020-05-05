@@ -76,5 +76,5 @@ Arrival (2016)
 Blade Runner 2049 (2017)
 ```
 
-
+> Note that, when instantiating the Movies object, the order `key` is an array. This is because we can pass more than one orders to get lists ordered by multiple criteria at the same time. For example, ordering movies first by their release year, and then by their title. Take a look at [Mixing filters and ordering](mixing-filters-and-ordering.md) for an example.
 

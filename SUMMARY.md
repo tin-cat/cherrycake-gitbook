@@ -52,6 +52,7 @@
   * [Item lists](guide/items-guide/item-lists.md)
   * [Items custom filters](guide/items-guide/items-custom-filters.md)
   * [Items custom ordering](guide/items-guide/items-custom-ordering.md)
+  * [Mixing filters and ordering](guide/items-guide/mixing-filters-and-ordering.md)
   * [Item lists cache](guide/items-guide/item-lists-cache.md)
 * [Locale guide](guide/locale-guide.md)
 * [Session guide](guide/session-guide.md)
