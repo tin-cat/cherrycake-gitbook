@@ -97,7 +97,7 @@ The Thing (1982)
 Silent Running (1972)
 ```
 
-> This is equivalent to the `limit [n]` SQL statement.
+> This is equivalent to the `limit [number of rows]` SQL statement.
 
 ## Results pagination
 
@@ -123,4 +123,6 @@ Dune (1984)
 Blade Runner (1982)
 Brainstorm (1983)
 ```
+
+> This is equivalent to the `limit [start row], [number of rows]` SQL statement.
 
