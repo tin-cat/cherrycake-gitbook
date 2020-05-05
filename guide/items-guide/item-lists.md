@@ -44,7 +44,9 @@ echo "{$movies->count()} Movies found";
 18 Movies found
 ```
 
-You can automatically fill your `Movies` object with `Movie` items when creating it by passing the `fillMethod` key as you see in the example above. Since we're not specifying any parameters in the `p` key, we'll simply get all movies in the database at once.
+You can automatically fill your `Movies` object with `Movie` items when creating it by passing the `fillMethod` key as you see in the example above.
+
+> Since we're not specifying any parameters in the `p` key, we'll simply get all movies in the database at once.
 
 Let's see how we could iterate through the results to show all the movie titles and their release years:
 
@@ -72,5 +74,53 @@ Brainstorm (1983)
 The Hitchhiker’s Guide to the Galaxy (2005)
 Blade Runner 2049 (2017)
 Prometheus (2012)
+```
+
+## Limit results
+
+To get only the first `n` results instead of all of them, you can specify the `limit` key when creating your `Movies` object, like this:
+
+```php
+$movies = new Movies([
+    "fillMethod" => "fromParameters",
+    "p" => [
+        "limit" => 3
+    ]
+]);
+foreach ($movies as $movie)
+    echo "{$movie->title} ({$movie->year})\n";
+```
+
+```text
+3 Movies foundAlien (1979)
+The Thing (1982)
+Silent Running (1972)
+```
+
+> This is equivalent to the `limit [n]` SQL statement.
+
+## Results pagination
+
+There's also a simple way of paginating results by specifying the `itemsPerPage` and `page` keys. Let's say you're dividing your movie listing in pages containing five movies each, and you want to get the third page. You would do it like this:
+
+```php
+$movies = new Movies([
+    "fillMethod" => "fromParameters",
+    "p" => [
+        "isPaging" => true,
+        "itemsPerPage" => 5,
+        "page" => 2
+    ]
+]);
+foreach ($movies as $movie)
+    echo "{$movie->title} ({$movie->year})\n";
+```
+
+```text
+Contact (1997)
+The Man from Earth (2007)
+Dune (1984)
+Blade Runner (1982)
+Brainstorm (1983)
 ```
 
