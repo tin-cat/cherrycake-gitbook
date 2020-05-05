@@ -1,7 +1,5 @@
 ---
-description: >-
-  Item lists are groups of Item objects retrieved from the database that you can
-  easily manage.
+description: Item lists are groups of Item objects retrieved from the database.
 ---
 
 # Item lists
