@@ -1,6 +1,6 @@
 # Items properties
 
-## cachedKeysPoolName
+## $cachedKeysPoolName <a id="cachedkeyspoolname"></a>
 
 The CachedKeysPool mechanism allows for the wiping of multiple cached queries at once that are related to the same Items set.
 
@@ -12,29 +12,29 @@ It uses the same `cacheProviderName` as the rest of the Items functionalities.
 
 **Default:** `false`
 
-## cacheProviderName
+## $cacheProviderName <a id="cacheprovidername"></a>
 
 The name of the cache provider to use on the fillFromParameters method.
 
 **Default:** `engine`
 
-## databaseProviderName
+## $databaseProviderName <a id="databaseprovidername"></a>
 
 The database provider name to use on the fillFromParameters method.
 
 **Default:** `main`
 
-## isCache
+## $isCache <a id="iscache"></a>
 
 Whether to cache the result or not on the fillFromParameters method.
 
 **Default:** `false`
 
-## itemClassName
+## $itemClassName <a id="itemclassname"></a>
 
 The name of the Item class to use.
 
-## tableName
+## $tableName <a id="tablename"></a>
 
 The name of the table where this items reside on the database.
 
