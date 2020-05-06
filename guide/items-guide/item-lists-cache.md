@@ -65,5 +65,9 @@ class Movies extends \Cherrycake\Items {
 }
 ```
 
+So from now on, calling the [clearCachedKeysPool](../../reference/core-classes/items/items-methods.md#clearcachedkeyspool) method will ensure all the cache related to queries performed using the `Movies` object are cleared:
 
+```php
+$movies->clearCachedKeysPool();
+```
 
