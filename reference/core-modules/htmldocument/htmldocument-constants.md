@@ -1,0 +1,2 @@
+# HtmlDocument constants
+
