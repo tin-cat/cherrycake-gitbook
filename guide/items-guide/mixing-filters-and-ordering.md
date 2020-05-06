@@ -79,5 +79,5 @@ Explorers (1985)
 The Abyss (1989)
 ```
 
-> Note that to get a listing ordered both by release year and title at the same time, instead of creating adding one single order to do so in the `fillFromParameters` method, we've added two, and then we've applied both of them when instantiating our `Movies` object, by passing the array `["released", "title"]` in the `order` key.
+> Note that to get a listing ordered both by release year and title at the same time, instead of defining a single order in the `fillFromParameters` method, we define two, and then we apply both of them when instantiating our `Movies` object, by passing the array `["released", "title"]` in the `order` key.
 
