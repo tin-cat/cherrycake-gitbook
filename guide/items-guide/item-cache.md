@@ -14,19 +14,19 @@ class Movie extends \Cherrycake\Item {
     protected $loadFromIdMethod = "queryDatabaseCache";
     protected $fields = [
         "id" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_INTEGER
+            "type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER
         ],
         "title" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_STRING
+            "type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING
         ],
         "summary" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_TEXT
+            "type" => \Cherrycake\DATABASE_FIELD_TYPE_TEXT
         ],
         "year" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_YEAR
+            "type" => \Cherrycake\DATABASE_FIELD_TYPE_YEAR
         ],
         "imdbRating" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_FLOAT
+            "type" => \Cherrycake\DATABASE_FIELD_TYPE_FLOAT
         ]
     ];
 }

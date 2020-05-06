@@ -20,14 +20,23 @@ class Director extends \Cherrycake\Item {
     protected $tableName = "directors";
     protected $fields = [
         "id" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_INTEGER
+            "type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER
         ],
         "name" => [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_STRING
+            "type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING
         ]
     ];
 }
 ```
 
+Now, we add a method to our `Movie` class that allows us to get a `Director` object:
 
+```php
+class Movie extends \Cherrycake\Item {
+    ...
+    
+    function getDirector() {
+    }
+}
+```
 
