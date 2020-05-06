@@ -13,7 +13,7 @@ class Movies extends \Cherrycake\Items {
 You can also add this other properties if you can to change the default values for caching Items:
 
 * **`cacheProviderName`** The name of the cache provider to use. Default: `engine`
-* **`cacheTtl`**: The TTL to use when caching data for this Item. Default: `CACHE_TTL_NORMAL`
+* **`cacheTtl`** The TTL to use when caching data for this Item. Default: `CACHE_TTL_NORMAL`
 
 Now, all the Movies queried using your `Movies` object will benefit of the caching performance improvements.
 
