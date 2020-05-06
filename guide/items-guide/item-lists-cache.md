@@ -46,7 +46,7 @@ $movies->clearCache([
 ]);
 ```
 
-## Clearing Items global cache
+## Clearing Items global cache with the CachedKeysPool mechanism
 
 But what if we wanted to clear all the cached requests an Items object has done? Clearing the Items cache for a specific request like we did above does not clears the cache for requests with different parameters.
 
@@ -54,7 +54,16 @@ But what if we wanted to clear all the cached requests an Items object has done?
 
 This is solved by activating the CachedKeysPool mechanism of our Items object, which will keep track of all the different requests made, and will allow us to clear them all at once by calling the [clearCachedKeysPool](../../reference/core-classes/items/items-methods.md#clearcachedkeyspool) method.
 
-To do so, we set the [cachedKeysPoolName](../../reference/core-classes/items/items-properties.md#cachedkeyspoolname) property of our Items object to some pool name to identify this Item's cached keys, like so:
+To activate the CachedKeysPool mechanism, we set the [cachedKeysPoolName](../../reference/core-classes/items/items-properties.md#cachedkeyspoolname) property of our `Items` class to some pool name to identify this Item's cached keys, like so:
+
+```php
+class Movies extends \Cherrycake\Items {
+    protected $tableName = "movies";
+    protected $itemClassName = "\CherrycakeApp\Movie";
+    protected $isCache = true;
+    
+}
+```
 
 
 
