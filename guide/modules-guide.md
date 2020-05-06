@@ -87,6 +87,24 @@ To get a configuration value from a module, use the [Module::getConfig ](../refe
 $this->getConfig("title");
 ```
 
+## Modules constants file
+
+Modules can have a constants file specifically aimed to hold their related constants declarations so they will be available anywhere in your code even if the module has not been loaded or initialized. Use them to store constants that are intended to be used outside the module itself.
+
+For example, the [Cache](../reference/core-modules/cache/#constants) module declares some useful constants in its constants file like `CACHE_TTL_SHORT`, `CACHE_TTL_NORMAL` and `CACHE_TTL_LONG`.
+
+Constants files are stored in the same directory as the module file, and the file name has to be match the exact name of you module, plus the `.constants.php` extension. For example, the constants file for the `Products` module would be stored in `/modules/Products/Products.constants.php`, and it might look like this:
+
+```php
+<?php
+
+namespace CherrycakeApp;
+
+const PRODUCTS_SIZE_SMALL = 0;
+const PRODUCTS_SIZE_MEDIUM = 1;
+const PRODUCTS_SIZE_SMALL = 2;
+```
+
 ## Specifying module dependencies
 
 When your module makes use of another modules regularly, you should specify them as a dependency.
