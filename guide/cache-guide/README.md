@@ -63,7 +63,7 @@ Some Core modules make use of Cache by their own, like [Database](../../referenc
 
 ## How long cached objects stay in cache?
 
-The data you store in cache, as well as the objects cached by modules like [Database](../../reference/core-modules/database.md) and [Patterns](../../architecture/patterns.md), are normally persistent between requests, and it's the job of the cache mechanism to keep them there for as long as possible, or until their TTL expiration time arrives.
+The data you store in cache, as well as the objects cached by modules like [Database](../../reference/core-modules/database.md) and [Patterns](../../architecture/patterns/), are normally persistent between requests, and it's the job of the cache mechanism to keep them there for as long as possible, or until their TTL expiration time arrives.
 
 However, you can not rely on a cache or shared memory system as a persistent way of storing information. Generally, cached objects are deleted when the server restarts, when it runs out of memory, or if it implements certain cache eviction policies, like removing all cached objects that are too old, or that haven't been accessed too much.
 

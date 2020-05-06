@@ -1,6 +1,6 @@
 # Nested patterns
 
-One of the most powerful ideas behind template systems like [Patterns](../../architecture/patterns.md) is the ability to include patterns within patterns, this opens many new ways of organizing and re-using your code.
+One of the most powerful ideas behind template systems like [Patterns](../../architecture/patterns/) is the ability to include patterns within patterns, this opens many new ways of organizing and re-using your code.
 
 Maybe the first idea that comes to mind is to put the header and the footer of your HTML document in two separate patterns because they're almost always the same in all the pages of your website. Let's do it.
 

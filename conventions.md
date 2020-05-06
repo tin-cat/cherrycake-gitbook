@@ -31,7 +31,7 @@ $objectName = new ClassName;
 
 ### File naming
 
-Class names, module names and directories follow the same **PascalCase** convention, take a look at the [Files structure](architecture/app-files-structure.md) section for more information.
+Class names, module names and directories follow the same **PascalCase** convention, take a look at the [Files structure](architecture/patterns/app-files-structure.md) section for more information.
 
 {% hint style="warning" %}
 Please note that class auto-loading might not work properly if you don't follow this naming conventions.

@@ -8,8 +8,6 @@ Working with Items becomes a lot more powerful when in conjunction with Item lis
 
 Just like when creating single Item classes, Item lists are [App classes](../classes-guide.md#app-class-files) that extend the Cherrycake's [Items](../../reference/core-classes/items/) core class. Let's say we want to create an Item list class to work with lists of movies. To do so, so we create the `Movies` class in the file `/classes/Movies.class.php`, and it looks like this:
 
-
-
 ```php
 <?php
 

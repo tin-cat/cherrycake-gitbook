@@ -7,7 +7,7 @@ description: >-
 
 # Patterns guide
 
-The simplest way of using [Patterns](../../architecture/patterns.md) is just calling the [Patterns::out](../../reference/core-modules/patterns/#out-patternname-setup-code) method to send a pattern to the browser:
+The simplest way of using [Patterns](../../architecture/patterns/) is just calling the [Patterns::out](../../reference/core-modules/patterns/#out-patternname-setup-code) method to send a pattern to the browser:
 
 ```php
 $e->Patterns->out("helloworld.html");

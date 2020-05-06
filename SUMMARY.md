@@ -12,9 +12,9 @@
   * [Deep lifecycle](architecture/lifecycle/deep-lifecycle.md)
 * [Performance](architecture/performance.md)
 * [Security](architecture/security.md)
-* [Patterns](architecture/patterns.md)
+* [Patterns](architecture/patterns/README.md)
+  * [Files structure](architecture/patterns/app-files-structure.md)
 * [Items](architecture/items.md)
-* [Files structure](architecture/app-files-structure.md)
 * [Server requirements](architecture/server-requirements.md)
 
 ## Guide
@@ -53,7 +53,8 @@
   * [Items custom filters](guide/items-guide/items-custom-filters.md)
   * [Items custom ordering](guide/items-guide/items-custom-ordering.md)
   * [Mixing filters and ordering](guide/items-guide/mixing-filters-and-ordering.md)
-  * [Item lists cache](guide/items-guide/item-lists-cache.md)
+  * [Items cache](guide/items-guide/items-cache.md)
+  * [Items table relationships](guide/items-guide/items-table-relationships.md)
 * [Locale guide](guide/locale-guide.md)
 * [Session guide](guide/session-guide.md)
 * [Login guide](guide/login-guide.md)
