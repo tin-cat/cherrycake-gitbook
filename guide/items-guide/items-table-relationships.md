@@ -36,6 +36,10 @@ class Movie extends \Cherrycake\Item {
     ...
     
     function getDirector() {
+        return new Director([
+            "loadMethod" => "fromId",
+            "id" => $this->directorId
+        ]);
     }
 }
 ```
