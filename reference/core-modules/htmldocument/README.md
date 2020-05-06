@@ -11,7 +11,7 @@ description: Helps you create standard HTML headers and footers.
 * **`title`** The page title
 * **`description`** The page description
 * **`copyright`**The page copyright info
-* **`keywords`** The page keywords
+* **`keywords`** An array of the page keywords
 * **`charset`** The page character set. Default: `utf-8`
 * **`isAllowRobotsIndex`** Whether to allow robots to index the document. Default: `true`
 * **`isAllowRobotsFollow`**Whether to allow robots to follow links on the document. Default: `true`

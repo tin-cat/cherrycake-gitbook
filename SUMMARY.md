@@ -79,7 +79,6 @@
   * [Email](reference/core-modules/email.md)
   * [Errors](reference/core-modules/errors.md)
   * [HtmlDocument](reference/core-modules/htmldocument/README.md)
-    * [HtmlDocument constants](reference/core-modules/htmldocument/htmldocument-constants.md)
     * [HtmlDocument methods](reference/core-modules/htmldocument/htmldocument-methods.md)
   * [ItemAdmin](reference/core-modules/itemadmin.md)
   * [Janitor](reference/core-modules/janitor.md)
