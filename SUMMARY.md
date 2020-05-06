@@ -126,6 +126,7 @@
     * [Item properties](reference/core-classes/item/item-properties.md)
   * [Items](reference/core-classes/items/README.md)
     * [Items methods](reference/core-classes/items/items-methods.md)
+    * [Items properties](reference/core-classes/items/items-properties.md)
   * [Image](reference/core-classes/image.md)
   * [Result](reference/core-classes/result.md)
   * [Request](reference/core-classes/request/README.md)
