@@ -50,9 +50,9 @@ $movies->clearCache([
 
 But what if we wanted to clear all the cached requests an Items object has done? Clearing the Items cache for a specific request like we did above does not clears the cache for requests with different parameters.
 
-> Following the example above, clearing the cache for movies released between 1980 and 1989 will not clear the cache for movies between different years, or ordered differently.
+> Clearing the cache for movies released between 1980 and 1989 like we did above will not clear the cache for movies between different years, or ordered differently.
 
-This is solved by activating the CachedKeysPool mechanism of our Items object, which will keep track of all the different requests made, and will allow us to clear them all at once by calling the [clearCachedKeysPool](../../reference/core-classes/items/items-methods.md#clearcachedkeyspool) method.
+This is solved by activating the CachedKeysPool mechanism of our Items object, which will keep track of the cache keys of all the requests made, and will allow us to clear them all at once by calling the [clearCachedKeysPool](../../reference/core-classes/items/items-methods.md#clearcachedkeyspool) method.
 
 To activate the CachedKeysPool mechanism, we set the [cachedKeysPoolName](../../reference/core-classes/items/items-properties.md#cachedkeyspoolname) property of our `Items` class to some pool name to identify this Item's cached keys, like so:
 
