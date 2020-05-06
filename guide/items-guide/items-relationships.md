@@ -137,19 +137,20 @@ $movies = new Movies([
 
 foreach ($movies as $movie)
     echo
-        $movie->title.
+        "\"{$movie->title}\"".
         " directed by ".
         $movie->getDirector()->name.
-        " at age ".($movie->year - $movie->getDirector()->birthYear).
+        " at age ".
+        ($movie->year - $movie->getDirector()->birthYear).
         "\n";
 ```
 
 ```text
-The Thing directed by John Carpenter at age 34
-Silent Running directed by Douglas Trumbull at age 30
-The Hitchhiker’s Guide to the Galaxy directed by Garth Jennings at age 33
-Tron directed by Steven Lisberger at age 31
-Close Encounters of the Third Kind directed by Steven Spielberg at age 31
-The Abyss directed by James Cameron at age 35
+"The Thing" directed by John Carpenter at age 34
+"Silent Running" directed by Douglas Trumbull at age 30
+"The Hitchhiker’s Guide to the Galaxy" directed by Garth Jennings at age 33
+"Tron" directed by Steven Lisberger at age 31
+"Close Encounters of the Third Kind" directed by Steven Spielberg at age 31
+"The Abyss" directed by James Cameron at age 35
 ```
 
