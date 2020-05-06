@@ -97,6 +97,7 @@ $movies = new Movies([
         "limit" => 3
     ]
 ]);
+
 foreach ($movies as $movie)
     echo "{$movie->title} ({$movie->year})\n";
 ```

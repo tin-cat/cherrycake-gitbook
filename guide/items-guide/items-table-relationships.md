@@ -44,3 +44,34 @@ class Movie extends \Cherrycake\Item {
 }
 ```
 
+So now, whenever we have a `Movie` object, we can get its Director by calling the `getDirector` method, for example:
+
+```php
+$movies = new Movies([
+    "fillMethod" => "fromParameters",
+    "p" => [
+        "limit" => 5,
+        "order" => ["random"]
+    ]
+]);
+
+foreach ($movies as $movie)
+    echo "{$movie->title} directed by {$movie->getDirector()->name}\n";
+```
+
+```text
+Explorers directed by Joe Dante
+E.T. the Extra-Terrestrial directed by Steven Spielberg
+Tron directed by Steven Lisberger
+Close Encounters of the Third Kind directed by Steven Spielberg
+Arrival directed by Denis Villeneuve
+```
+
+Getting the director's name was this straightforward: `$movie->getDirector()->name`
+
+> Note that in this example we've also applied the `random` order, which is always available in addition to your custom orders, to simply randomize the order of the resulting [Item](../../reference/core-classes/item/) objects.
+
+## Custom filtering with relationships
+
+Here's another wa
+
