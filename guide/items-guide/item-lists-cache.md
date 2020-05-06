@@ -54,5 +54,7 @@ But what if we wanted to clear all the cached requests an Items object has done?
 
 This is solved by activating the CachedKeysPool mechanism of our Items object, which will keep track of all the different requests made, and will allow us to clear them all at once by calling the [clearCachedKeysPool](../../reference/core-classes/items/items-methods.md#clearcachedkeyspool) method.
 
-To do so, we set the cachedKeysPoolName property of our Items object
+To do so, we set the [cachedKeysPoolName](../../reference/core-classes/items/items-properties.md#cachedkeyspoolname) property of our Items object to some pool name to identify this Item's cached keys, like so:
+
+
 
