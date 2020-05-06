@@ -12,6 +12,7 @@ description: Helps you create standard HTML headers and footers.
 * **`description`** The page description
 * **`copyright`**The page copyright info
 * **`keywords`** An array of the page keywords
+* **`languageCode`** The language code of the page, from the ISO 639-1 standard \([https://www.w3schools.com/tags/ref\_language\_codes.asp](https://www.w3schools.com/tags/ref_language_codes.asp)\). Default: `en`
 * **`charset`** The page character set. Default: `utf-8`
 * **`isAllowRobotsIndex`** Whether to allow robots to index the document. Default: `true`
 * **`isAllowRobotsFollow`**Whether to allow robots to follow links on the document. Default: `true`
@@ -31,7 +32,7 @@ description: Helps you create standard HTML headers and footers.
 * **`appleApplicationInfo`** Application info for Apple standards \(i.e: When adding the web as a shortcut in iOs devices, or to hint the users about the App store APP for this site\)
   * `name` The name of the app
   * `iTunesAppId`
-  * `icons` A hash array of icon sizes where the key is in the \[width\]x\[height\] syntax and the value is the icon URL in png format. Some of the standard keys are:`57x57` ,`114x114` ,`72x72` ,`144x144` ,`60x60` ,`120x120` ,`76x76` and `152x152`.
+  * `icons` A hash array of icon sizes where the key is in the \[width\]x\[height\] syntax and the value is the icon URL in png format. The standard keys to use here are:`57x57` ,`114x114` ,`72x72` ,`144x144` ,`60x60` ,`120x120` ,`76x76` and `152x152`. Default: `false`
 * **`iTunesAppId`** The id of a corresponding App in the Apple store. Default: `false`
-* **`favIcons`** A hash array of icon sizes where the key is in the \[width\]x\[height\] syntax and the value is the icon URL in png format. Some of the standard keys are:`196x196`, `160x160`, `96x96`, `16x16` and `32x32`.
+* **`favIcons`** A hash array of icon sizes where the key is in the \[width\]x\[height\] syntax and the value is the icon URL in png format. The standard keys to use here are:`196x196`, `160x160`, `96x96`, `16x16` and `32x32`. Default: `false`
 
