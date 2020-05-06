@@ -1,32 +1,33 @@
 CREATE TABLE `directors` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birthYear` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `directors` (`id`, `name`) VALUES
-(1, 'Robert Wise'),
-(2, 'Byron Haskin'),
-(3, 'Stanley Kubrick'),
-(4, 'Franklin J. Schaffner'),
-(5, 'Douglas Trumbull'),
-(6, 'Steven Spielberg'),
-(7, 'Ridley Scott'),
-(8, 'John Carpenter'),
-(9, 'Steven Lisberger'),
-(10, 'John Badham'),
-(11, 'David Lynch'),
-(12, 'Nick Castle'),
-(13, 'Wolfgang Petersen'),
-(14, 'Joe Dante'),
-(15, 'James Cameron'),
-(16, 'Robert Zemeckis'),
-(17, 'Garth Jennings'),
-(18, 'Richard Schenkman'),
-(19, 'Duncan Jones'),
-(20, 'J.J. Abrams'),
-(21, 'Christopher Nolan'),
-(22, 'Alex Garland'),
-(23, 'Denis Villeneuve');
+INSERT INTO `directors` (`id`, `name`, `birthYear`) VALUES
+(1, 'Robert Wise', 1914),
+(2, 'Byron Haskin', 1899),
+(3, 'Stanley Kubrick', 1928),
+(4, 'Franklin J. Schaffner', 1920),
+(5, 'Douglas Trumbull', 1942),
+(6, 'Steven Spielberg', 1946),
+(7, 'Ridley Scott', 1937),
+(8, 'John Carpenter', 1948),
+(9, 'Steven Lisberger', 1951),
+(10, 'John Badham', 1939),
+(11, 'David Lynch', 1946),
+(12, 'Nick Castle', 1947),
+(13, 'Wolfgang Petersen', 1941),
+(14, 'Joe Dante', 1946),
+(15, 'James Cameron', 1954),
+(16, 'Robert Zemeckis', 1951),
+(17, 'Garth Jennings', 1972),
+(18, 'Richard Schenkman', 1958),
+(19, 'Duncan Jones', 1971),
+(20, 'J.J. Abrams', 1966),
+(21, 'Christopher Nolan', 1970),
+(22, 'Alex Garland', 1970),
+(23, 'Denis Villeneuve', 1967);
 
 CREATE TABLE `movies` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -75,6 +76,7 @@ ALTER TABLE `directors`
 ALTER TABLE `movies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `directorId` (`directorId`);
+
 
 ALTER TABLE `directors`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
