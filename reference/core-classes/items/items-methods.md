@@ -23,6 +23,14 @@ Builds a suitable `cacheKeyNamingOptions` array for performing queries and also 
 
 **Returns:** A `cacheKeyNamingOptions` hash array suitable to be used when performing queries to the database or clearing the queries cache.
 
+## clearCache\( p \)
+
+Clears the cache for the query represented by the given `p` parameters, just as they were passed to [buildCacheKeyNamingOptions](items-methods.md#buildcachekeynamingoptions), the [constructor](items-methods.md#__construct) or, most probably, the [fillFromParameters](items-methods.md#fillfromparameters) method.
+
+* **`p`** A hash array of parameters that will be used to build the cache key to clear, so it has to be the same as the parameters passed to [buildCacheKeyNamingOptions](items-methods.md#buildcachekeynamingoptions) \(and also to [fillFromParameters](items-methods.md#fillfromparameters), and to the [constructor](items-methods.md#__construct), if that's the case\)
+
+**Returns:** True if cache was cleared successfully, false otherwise
+
 ## fillFromParameters\( p \) <a id="fillfromparameters"></a>
 
 Fills the list with items loaded according to the given parameters. Intended to be overloaded and called from a parent class.

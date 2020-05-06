@@ -19,7 +19,30 @@ Now, all the Movies queried using your `Movies` object will benefit of the cachi
 
 ## Clearing the cache
 
-There are many situations on which you'll need to clear an Items list cache. For example, whenever a new item is added to the database, you'll need to clear the cache so it will show up the next time the Items list is requested.
+There are many situations on which you'll need to clear an Items list cache. For example, whenever a new item is added to the database, you'll need to clear the cache so the new item it will show up the next time the Items list is requested.
 
 To clear an Items list cache, just call the clearCache method passing the same value you passed the `p` key when instantiating your Items object, or when you called the [Items::fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) method.
+
+For example, let's take the [last example](mixing-filters-and-ordering.md) of our Movies object, where we've got a list of movies released in the 80's, ordered by release year and title:
+
+```php
+$movies = new Movies([
+    "fillMethod" => "fromParameters",
+    "p" => [
+        "minYear" => 1980,
+        "maxYear" => 1989,
+        "order" => ["released", "title"]
+    ]
+]);
+```
+
+If we wanted to clear the cache for this specific request, we would do this:
+
+```php
+        "minYear" => 1980,
+        "maxYear" => 1989,
+        "order" => ["released", "title"]
+    ]
+]);
+```
 
