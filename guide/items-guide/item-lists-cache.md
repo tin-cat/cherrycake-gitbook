@@ -39,10 +39,10 @@ $movies = new Movies([
 If we wanted to clear the cache for this specific request, we would do this:
 
 ```php
+$movies->clearCache([
         "minYear" => 1980,
         "maxYear" => 1989,
         "order" => ["released", "title"]
-    ]
 ]);
 ```
 
