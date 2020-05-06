@@ -76,9 +76,9 @@ Getting the director's name was this straightforward: `$movie->getDirector()->na
 
 ## Custom filtering with relationships
 
-More than once you'll need to look for data in other tables when using your [Items](../../architecture/items.md) classes. For example, let's say we want to be able to get all the movies whose director was less than 35 years old when they were released.
+Quite often you'll need to look for data in other tables when using your [Items](../../architecture/items.md) classes. For example, let's say we want to be able to get all the movies whose director was less than 35 years old when they were released.
 
-This is done by [adding a custom filter](items-custom-filters.md) to our Items class, but because the director's `birthYear` is in the `director` table and not in the `movies` table, we'll need some way to access another table in this new `Movies` custom filter.
+This is done by [adding a custom filter](items-custom-filters.md) to our Items class, but because the director's `birthYear` is in the `directors` table and not in the `movies` table, we'll need some way to access it in the new `Movies` custom filter.
 
 We'll call this filter `releasedWhenDirectorWasYoungerThan`, and here's how it would be done:
 
