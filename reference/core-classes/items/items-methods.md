@@ -31,6 +31,12 @@ Clears the cache for the query represented by the given `p` parameters, just as 
 
 **Returns:** True if cache was cleared successfully, false otherwise
 
+## clearCachedKeysPool
+
+When using the CachedKeysPool mechanism, this method removes all the cache entries corresponding to each stored key from cache, effectively clearing all the cached queries related to this Items object.
+
+**Returns:** True if the cachedKeysPool could be cleared, false otherwise
+
 ## fillFromParameters\( p \) <a id="fillfromparameters"></a>
 
 Fills the list with items loaded according to the given parameters. Intended to be overloaded and called from a parent class.
