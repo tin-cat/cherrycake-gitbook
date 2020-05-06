@@ -61,7 +61,7 @@ class Movies extends \Cherrycake\Items {
     protected $tableName = "movies";
     protected $itemClassName = "\CherrycakeApp\Movie";
     protected $isCache = true;
-    
+    protected $cachedKeysPoolName = "movies";
 }
 ```
 
