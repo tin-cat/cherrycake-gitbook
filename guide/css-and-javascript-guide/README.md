@@ -90,7 +90,14 @@ $CssConfig = [
 
 ## Linking the CSS and JavaScript to your HTML document
 
-If you're using the HtmlDocument module to build your HTML document, the proper
+If you're using the [HtmlDocument](../htmldocument-guide.md) module to build your HTML document, the proper links to get the required CSS and JavaScript sets are already being added automatically to the `<head>` section of the document:
+
+```markup
+...
+<link rel="stylesheet" type="text/css" href="/css?set=coreUiComponents:718d83f2e5ae92b539f90f7dc7e3ba24" />
+<script type="text/javascript" src="/js?set=coreUiComponents:d41d8cd98f00b204e9800998ecf8427e"></script>
+...
+```
 
 > If you're creating your own HTML document structure instead of using the HtmlDocument module, you can call the [Css::getSetUrl](../../reference/core-modules/css/css-methods.md#getseturl) and [Javascript::getSetUrl](../../reference/core-modules/javascript/javascript-methods.md#getseturl) methods that will give you the proper URLs for your document to request the CSS and JavaScript code.
 
