@@ -13,7 +13,60 @@ The [Css](../../reference/core-modules/css/) and [Javascript](../../reference/co
 
 When using the [Css](../../reference/core-modules/css/) or the [Javascript](../../reference/core-modules/javascript.md) modules, you first define at least one set that will contain the `*.css` and `*.js` files you'll be using.
 
-Sets are defined in the Css and Javascript modules configuration files: `/config/Css.config.php` and `/config/Javascript.config.php`.
+Sets are defined in the [Css module configuration file](../../reference/core-modules/css/#configuration) `/config/Css.config.php` and in the [Javascript module configuration file](../../reference/core-modules/javascript.md#configuration) `/config/Javascript.config.php`.
 
-Each set gets its files from the directory you've configured. Even though you can add CSS or JavaScript files to your sets directly in the configuration file.
+Let's take a look at a typical `Css.config.php` configuration file:
+
+```php
+<?php
+
+namespace Cherrycake;
+
+$CssConfig = [
+    "sets" => [
+        "main" => [
+            "directory" => "res/css/main"
+        ]
+    ]
+];
+```
+
+The `Javascript.config.php` configuration file looks quite similar:
+
+
+
+```php
+<?php
+
+namespace Cherrycake;
+
+$JavascriptConfig = [
+    "sets" => [
+        "main" => [
+            "directory" => "res/javascript/main"
+        ]
+    ]
+];
+```
+
+> Each set can only load files from the directory you've configured.
+
+You can add files to each set directly in the configuration file. Let's say we want to add the CSS file `base.css` to the `main` set, we would modify `Css.config.php` to look like this:
+
+```php
+<?php
+
+namespace Cherrycake;
+
+$CssConfig = [
+    "sets" => [
+        "main" => [
+            "directory" => "res/css/main",
+            "files" => [
+                "base.css"
+            ]
+        ]
+    ]
+];
+```
 
