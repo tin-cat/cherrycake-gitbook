@@ -9,5 +9,7 @@ The [Css](../../reference/core-modules/css/) and [Javascript](../../reference/co
 * CSS and JavaScript dependencies via modules.
 * Works in conjunction with [HtmlDocument](../../reference/core-modules/htmldocument/) to automatically link the needed CSS/JavaScript resources in the HTML document.
 
+## Css and Javascript sets
 
+When using the [Css](../../reference/core-modules/css/) or the [Javascript](../../reference/core-modules/javascript.md) modules, you first define at least one set that will contain the files
 
