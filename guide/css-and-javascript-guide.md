@@ -1,2 +1,0 @@
-# CSS and JavaScript guide
-
