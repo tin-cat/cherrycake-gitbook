@@ -7,5 +7,7 @@ The [Css](../../reference/core-modules/css.md) and [Javascript](../../reference/
 * Cached CSS and JavaScript.
 * Modules inject the CSS and JavaScript code they themselves.
 * CSS and JavaScript dependencies via modules.
-* Works in conjunction with HtmlDocument to automatically link the needed CSS/JavaScript resources.
+* Works in conjunction with [HtmlDocument](../../reference/core-modules/htmldocument/) to automatically link the needed CSS/JavaScript resources in the HTML document.
+
+
 
