@@ -8,6 +8,7 @@ The [Css](../../reference/core-modules/css/) and [Javascript](../../reference/co
 * Modules inject the CSS and JavaScript code they themselves.
 * CSS and JavaScript dependencies via modules.
 * Works in conjunction with [HtmlDocument](../../reference/core-modules/htmldocument/) to automatically link the needed CSS/JavaScript resources in the HTML document.
+* Only the required CSS and JavaScript code is loaded.
 
 ## Css and Javascript sets
 
