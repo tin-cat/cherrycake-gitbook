@@ -1,6 +1,6 @@
 # Css and Javascript guide
 
-The [Css](../../reference/core-modules/css/) and [Javascript](../../reference/core-modules/javascript.md) core modules allow you to easily work with CSS and JavaScript files in your web page project with some neat additional features:
+The [Css](../../reference/core-modules/css/) and [Javascript](../../reference/core-modules/javascript/) core modules allow you to easily work with CSS and JavaScript files in your web page project with some neat additional features:
 
 * CSS and JavaScript files are parsed as [patterns](../../architecture/patterns/).
 * Automatic minimization and single-request serving of multiple files.
@@ -11,9 +11,9 @@ The [Css](../../reference/core-modules/css/) and [Javascript](../../reference/co
 
 ## Css and Javascript sets
 
-When using the [Css](../../reference/core-modules/css/) or the [Javascript](../../reference/core-modules/javascript.md) modules, you first define at least one set that will contain the `*.css` and `*.js` files you'll be using.
+When using the [Css](../../reference/core-modules/css/) or the [Javascript](../../reference/core-modules/javascript/) modules, you first define at least one set that will contain the `*.css` and `*.js` files you'll be using.
 
-Sets are defined in the [Css module configuration file](../../reference/core-modules/css/#configuration) `/config/Css.config.php` and in the [Javascript module configuration file](../../reference/core-modules/javascript.md#configuration) `/config/Javascript.config.php`.
+Sets are defined in the [Css module configuration file](../../reference/core-modules/css/#configuration) `/config/Css.config.php` and in the [Javascript module configuration file](../../reference/core-modules/javascript/#configuration) `/config/Javascript.config.php`.
 
 Let's take a look at a typical `Css.config.php` configuration file:
 
@@ -89,7 +89,7 @@ $CssConfig = [
 
 ## Linking the CSS and JavaScript to your HTML document
 
-asdf
+If you're using the HtmlDocument module to build your HTML document, the proper
 
-> If you're creating your own HTML document structure instead of using the HtmlDocument module, you can call the Css::getSetUrl and Javascript::getSetUrl methods that will give you the proper URLs for your document to request the CSS and JavaScript code.
+> If you're creating your own HTML document structure instead of using the HtmlDocument module, you can call the [Css::getSetUrl](../../reference/core-modules/css/css-methods.md#getseturl) and [Javascript::getSetUrl](../../reference/core-modules/javascript/javascript-methods.md#getseturl) methods that will give you the proper URLs for your document to request the CSS and JavaScript code.
 
