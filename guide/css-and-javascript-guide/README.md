@@ -94,8 +94,8 @@ If you're using the [HtmlDocument](../htmldocument-guide.md) module to build you
 
 ```markup
 ...
-<link rel="stylesheet" type="text/css" href="/css?set=coreUiComponents:718d83f2e5ae92b539f90f7dc7e3ba24" />
-<script type="text/javascript" src="/js?set=coreUiComponents:d41d8cd98f00b204e9800998ecf8427e"></script>
+<link rel="stylesheet" type="text/css" href="/css?set=coreUiComponents:718d83f2e5ae92b539f90f7dc7e3ba24-main:90deae3cd3e3bc042e83c0404f30c69f" />
+<script type="text/javascript" src="/js?set=coreUiComponents:d41d8cd98f00b204e9800998ecf8427e-main:d41d8cd98f00b204e9800998ecf8427e"></script>
 ...
 ```
 
