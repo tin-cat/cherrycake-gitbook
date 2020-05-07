@@ -11,5 +11,9 @@ The [Css](../../reference/core-modules/css/) and [Javascript](../../reference/co
 
 ## Css and Javascript sets
 
-When using the [Css](../../reference/core-modules/css/) or the [Javascript](../../reference/core-modules/javascript.md) modules, you first define at least one set that will contain the files
+When using the [Css](../../reference/core-modules/css/) or the [Javascript](../../reference/core-modules/javascript.md) modules, you first define at least one set that will contain the `*.css` and `*.js` files you'll be using.
+
+Sets are defined in the Css and Javascript modules configuration files: `/config/Css.config.php` and `/config/Javascript.config.php`.
+
+Each set gets its files from the directory you've configured. Even though you can add CSS or JavaScript files to your sets directly in the configuration file.
 
