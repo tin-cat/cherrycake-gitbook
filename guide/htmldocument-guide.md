@@ -31,7 +31,9 @@ Hello world!</body>
 </html>
 ```
 
-Take a look at the[ configuration of the HtmlDocument](../reference/core-modules/htmldocument/), where you can configure the title of your page, the description, keywords, and many other important aspects of your HTML document structure.
+Take a look at the[ configuration of the HtmlDocument](../reference/core-modules/htmldocument/), where you can configure the title of your page, description, keywords, and many other important aspects of your HTML document structure.
 
-> See how HtmlDocument also took care of including a CSS stylesheet and a JavaScript script automatically. This will come in handy when you start using the [CSS and Javacript modules](css-and-javascript-guide.md).
+> See how HtmlDocument also took care of including a CSS stylesheet and a JavaScript script automatically. This will come in handy when you start using the [CSS and Javascript modules](css-and-javascript-guide.md).
+
+
 
