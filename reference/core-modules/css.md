@@ -6,7 +6,7 @@ description: >-
 
 # Css
 
-> Se the [Css and Javascript guide](../../guide/css-and-javascript-guide/) to learn how to work with the Css module.
+> See the [Css and Javascript guide](../../guide/css-and-javascript-guide/) to learn how to work with the Css module.
 
 ## Configuration
 
