@@ -26,7 +26,7 @@ namespace Cherrycake;
 $CssConfig = [
     "sets" => [
         "main" => [
-            "directory" => "res/css/main"
+            "directory" => APP_DIR."/css"
         ]
     ]
 ];
@@ -42,7 +42,7 @@ namespace Cherrycake;
 $JavascriptConfig = [
     "sets" => [
         "main" => [
-            "directory" => "res/javascript/main"
+            "directory" => APP_DIR."/javascript"
         ]
     ]
 ];
