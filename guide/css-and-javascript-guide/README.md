@@ -88,6 +88,28 @@ $CssConfig = [
 
 > This works exactly the same for the `Javascript.config.php` file.
 
+## CSS and JavaScript minification
+
+To activate minification, set the `isMinify` key to `true` in the configuration file of the [Css](../../reference/core-modules/css/#configuration) or the [Javascript](../../reference/core-modules/javascript/#configuration) module:
+
+```php
+<?php
+
+namespace Cherrycake;
+
+$CssConfig = [
+    "isMinify" => true,
+    "sets" => [
+        "main" => [
+            "directory" => APP_DIR."/css",
+            "isIncludeAllFilesInDirectory" => true
+        ]
+    ]
+];
+```
+
+## CSS and JavaScript Caching
+
 ## Linking the CSS and JavaScript to your HTML document
 
 If you're using the [HtmlDocument](../htmldocument-guide.md) module to build your HTML document, the proper links to get the required CSS and JavaScript sets are already being added automatically to the `<head>` section of the document:

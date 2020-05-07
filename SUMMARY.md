@@ -57,7 +57,6 @@
   * [Items cache](guide/items-guide/items-cache.md)
 * [HtmlDocument guide](guide/htmldocument-guide.md)
 * [Css and Javascript guide](guide/css-and-javascript-guide/README.md)
-  * [Caching CSS and JavaScript](guide/css-and-javascript-guide/caching-css-and-javascript.md)
   * [Modules injecting CSS and JavaScript](guide/css-and-javascript-guide/modules-injecting-css-and-javascript.md)
   * [CSS and JavaScript dependencies via modules](guide/css-and-javascript-guide/css-and-javascript-dependencies-via-modules.md)
 * [Locale guide](guide/locale-guide.md)
