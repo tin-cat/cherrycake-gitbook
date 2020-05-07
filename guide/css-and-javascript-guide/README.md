@@ -87,5 +87,9 @@ $CssConfig = [
 
 > This works exactly the same for the `Javascript.config.php` file.
 
+## Linking the CSS and JavaScript to your HTML document
 
+asdf
+
+> If you're creating your own HTML document structure instead of using the HtmlDocument module, you can call the Css::getSetUrl and Javascript::getSetUrl methods that will give you the proper URLs for your document to request the CSS and JavaScript code.
 
