@@ -70,3 +70,24 @@ $CssConfig = [
 ];
 ```
 
+You can also just set `isIncludeAllFilesInDirectory` to `true`, and all the `*.css` files in the specified `directory` will be added to the set:
+
+```php
+<?php
+
+namespace Cherrycake;
+
+$CssConfig = [
+    "sets" => [
+        "main" => [
+            "directory" => "res/css/main",
+            "isIncludeAllFilesInDirectory" => true
+        ]
+    ]
+];
+```
+
+> This works exactly the same for the `Javascript.config.php` file.
+
+
+
