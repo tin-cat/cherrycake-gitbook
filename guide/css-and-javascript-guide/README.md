@@ -79,7 +79,7 @@ namespace Cherrycake;
 $CssConfig = [
     "sets" => [
         "main" => [
-            "directory" => APP_DIR."/javascript",
+            "directory" => APP_DIR."/css",
             "isIncludeAllFilesInDirectory" => true
         ]
     ]
@@ -99,5 +99,5 @@ If you're using the [HtmlDocument](../htmldocument-guide.md) module to build you
 ...
 ```
 
-> If you're creating your own HTML document structure instead of using the HtmlDocument module, you can call the [Css::getSetUrl](../../reference/core-modules/css/css-methods.md#getseturl) and [Javascript::getSetUrl](../../reference/core-modules/javascript/javascript-methods.md#getseturl) methods that will give you the proper URLs for your document to request the CSS and JavaScript code.
+> If you're creating your own HTML document structure instead of using the [HtmlDocument](../htmldocument-guide.md) module, you can call the [Css::getSetUrl](../../reference/core-modules/css/css-methods.md#getseturl) and [Javascript::getSetUrl](../../reference/core-modules/javascript/javascript-methods.md#getseturl) methods to retrieve the proper URLs to request the CSS and JavaScript code.
 
