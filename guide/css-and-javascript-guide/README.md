@@ -33,8 +33,6 @@ $CssConfig = [
 
 The `Javascript.config.php` configuration file looks quite similar:
 
-
-
 ```php
 <?php
 
