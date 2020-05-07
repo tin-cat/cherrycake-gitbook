@@ -14,7 +14,7 @@ $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
 ]));
 ```
 
-This would open the following HTML code:
+This would output the following HTML code:
 
 ```markup
 <!DOCTYPE html>
@@ -35,5 +35,23 @@ Take a look at the[ configuration of the HtmlDocument](../reference/core-modules
 
 > See how HtmlDocument also took care of including a CSS stylesheet and a JavaScript script automatically. This will come in handy when you start using the [CSS and Javascript modules](css-and-javascript-guide.md).
 
+## Common usage with Patterns
 
+You might find quite helpful to use the [header](../reference/core-modules/htmldocument/htmldocument-methods.md#header) and [footer](../reference/core-modules/htmldocument/htmldocument-methods.md#footer) [HtmlDocument](../reference/core-modules/htmldocument/) methods in your HTML [patterns](patterns-guide/). Just call them at the beginning and at the end of your pattern and you'll get a complete HTML document. 
+
+For example, take a look at this HTML pattern named `home.html`:
+
+```markup
+<?= $e->HtmlDocument->header() ?>
+Hello world!
+<?= $e->HtmlDocument->footer() ?>
+```
+
+Now we parse it and send it to the user's browser with [Patterns::out](../reference/core-modules/patterns/methods.md#out):
+
+```php
+$e->Patterns->out("home.html");
+```
+
+And we get exactly the same "Hello World!" HTML page as above.
 
