@@ -36,17 +36,17 @@ By doing so,  that code will only be loaded when the modules that need those Css
 
 ## Optimizing number of requests vs. CSS and JavaScript re-usability
 
-A problem shows up when you start optimizing your site so certain Css or JavaScript only gets loaded in certain pages. Because Cherrycake joins all your CSS and JavaScript code in a single request to optimize loading times, you might find the browser loading different versions of the Css and JavaScript files on each page of your app, defeating the purpose of using a cache and actually loading pieces of code that were already loaded in other requests with different CSS or JavaScript set configurations.
+A problem shows up when you start optimizing your site so certain Css or JavaScript only gets loaded in certain pages. Because Cherrycake joins all your CSS and JavaScript code in a single request to optimize loading times, you might find the browser loading different versions of the Css and JavaScript files on each page of your app when you have modules adding their own CSS and JavaScript files, defeating the purpose of using a cache and actually loading pieces of code that were already loaded in other requests with different CSS or JavaScript set configurations.
 
 The question is: Shall I make the browser load all the CSS and JavaScript on the first page so the upcoming pages take advantage of the cache, or it's better to distribute my CSS and JavaScript in separate requests to different sets, so only the code needed for each page is loaded?
 
-This are the options Cherrycake gives you to solve this problem the way you decide to:
+These are the options Cherrycake gives you to solve this problem:
 
 * Setup the CSS and JavaScript files you want to load in your web app by listing them in the `Css.config.php` or `Javascript.config.php` files, or just set the `isIncludeAllFilesInDirectory` to `true` there, [as seen here](./). All files in the specified directories will be loaded in the first request to your web app, and subsequent requests will take advantage of the browser's caching mechanism.
-* Let your modules add the CSS and JavaScript they need by overloading the init method as you've seen [above](modules-injecting-css-and-javascript.md#loading-css-and-javascript-only-where-its-needed). Certain Css and JavaScript will only be loaded when the browser requests the pages that need them, but you might lose caching and re-usability benefits if not done carefully.
+* Let your modules add the CSS and JavaScript they need by overloading the init method as you've seen [above](modules-injecting-css-and-javascript.md#loading-css-and-javascript-only-where-its-needed). Certain Css and JavaScript will only be loaded when the browser requests the pages that need them, but you might lose performance, caching and re-usability benefits if not done carefully.
 * You can control which sets get joined in a single request, and divide them in different requests to further customize your CSS and JavaScript loading strategy by using the [HtmlDocument `cssSets` and `javascriptSets` configuration keys](../../reference/core-modules/htmldocument/#configuration).
 
-If you're really looking to optimize your loading strategy, a good solution is often use a combination of the three approaches above:
+If you're really looking to optimize your loading strategy, a good solution is to use a combination of the three approaches above:
 
 * Manually add to the config files the CSS and JavaScript files you know you'll be reusing throughout your entire app, in the `main` set.
 * Create one or more additional sets to hold other files used by modules that need special functionality, and load those files from the [init](../../reference/core-classes/module/methods.md#init) method of those modules.
