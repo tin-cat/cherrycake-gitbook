@@ -24,6 +24,17 @@ description: >-
 * **`canonicalLocale`** The locale to consider canonical, used i.e. in the [HtmlDocument](htmldocument/) module to set the `rel="canonical"` meta tag, in order to let search engines understand that there are different pages in different languages that represent the same content.
 * **`availableLanguages`** An array of the languages that are available for the app. The specified`textsTableName` should contain at least the proper `text_<language code>` fields for this languages. From the available `LANGUAGE_`? constants.
 * **`geolocationMethod`** The method to use to determine the user's geographical location, one of the available `GEOLOCATION_METHOD_?` constants.
+* **`textsTableName`** The name of the table where multilingual localized texts are stored. See the `cherrycake_locale_texts` table in the [Cherrycake skeleton database](../../guide/getting-started/#setting-up-the-skeleton-database). Default: `cherrycake_locale_texts`
+* **`textsDatabaseProviderName`** The name of the database provider where the localized multilingual texts are found. Default: `main`
+* **`textCategoriesTableName`** The name of the table where text categories are stored. See the `cherrycake_locale_textCategories` table in the [Cherrycake skeleton database](../../guide/getting-started/#setting-up-the-skeleton-database). Default: `cherrycake_locale_textCategories`
+* **`textCacheProviderName`** The name of the cache provider that will be used to cache localized multilingual texts. Default: `engine`
+* **`textCacheKeyPrefix`** The prefix of the keys when storing texts into cache. Default: `LocaleText`
+* **`textCacheDefaultTtl`** The default TTL for texts stored into cache. Default: `CACHE_TTL_NORMAL`
+* **`timeZonesTableName`** The name of the table where the timezones are stored. See the `cherrycake_location_timezones` table in the [Cherrycake skeleton database](../../guide/getting-started/#setting-up-the-skeleton-database). Default: `cherrycake_location_timezones`
+* **`timeZonesDatabaseProviderName`** The name of the database provider where the timezones are found. Default: `main`
+* **`timeZonesCacheProviderName`** The name of the cache provider that will be user to cache timezones. Default: `engine`
+* **`timeZonesCacheKeyPrefix`** The prefix of the keys when storing timezones into cache. Default:`LocaleTimeZone`
+* **`timeZonesCacheDefaultTtl`** The default TTL for timezones stored into cache. Default: `CACHE_TTL_NORMAL`
 
 ## Constants
 
