@@ -12,6 +12,7 @@ A simple way of doing it is by calling the [Css::addFileToSet](../../reference/c
 namespace CherrycakeApp;
 
 class Home extends \Cherrycake\Module {
+
     function init() {
         if (!parent::init())
             return false;
@@ -19,6 +20,7 @@ class Home extends \Cherrycake\Module {
         $e->Css->addFileToSet("main", "home.css");
         return true;
     }
+    
 }
 ```
 
