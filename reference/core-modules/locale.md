@@ -20,6 +20,10 @@ description: >-
   * **`decimalMark`** The type character used when separating decimal digits in this localization, one of the available `DECIMAL_MARK_?` constants.
   * **`measurementSystem`** The measurement system used in this localization, one of the available `MEASUREMENT_SYSTEM_?` constants.
   * **`timeZone`** The timezone id used in this localization, from the `cherrycake_location_timezones` table of the Cherrycake skeleton database.
+* **`defaultLocale`** The locale name to use when it can not be auto-detected.
+* **`canonicalLocale`** The locale to consider canonical, used i.e. in the [HtmlDocument](htmldocument/) module to set the `rel="canonical"` meta tag, in order to let search engines understand that there are different pages in different languages that represent the same content.
+* **`availableLanguages`** An array of the languages that are available for the app. The specified`textsTableName` should contain at least this languages. From the available `LANGUAGE_`? constants.
+* **`geolocationMethod`** The method to use to determine the user's geographical location, one of the available `GEOLOCATION_METHOD_?` constants.
 
 ## Constants
 
@@ -70,7 +74,7 @@ description: >-
 
 
 
-* **`LOCALE_GEOLOCATION_METHOD_CLOUDFLARE`**
+* **`GEOLOCATION_METHOD_CLOUDFLARE`**
 
 
 

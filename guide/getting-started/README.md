@@ -46,6 +46,12 @@ RewriteRule (.*) - [L]
 RewriteRule (.*) / [L]
 ```
 
+## Setting up the skeleton database
+
+It's not required, but some of the most interesting Cherrycake features need a database to work, you'll discover them while you dive in the rest of this guides.
+
+If you're going to use this features, you'll need to install the skeleton database by importing some SQL scripts into your MySQL or MariaDB database server. You'll find this scripts in the official [Cherrycake skeleton repository](https://github.com/tin-cat/cherrycake-skeleton), in the `/install/database` directory.
+
 ## Creating the index.php
 
 The `/public/index.php` file will receive all the requests to your app and will be in charge of starting up the Cherrycake engine. Create it now and let's go step by step:
