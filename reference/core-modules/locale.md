@@ -1,4 +1,15 @@
+---
+description: >-
+  Provides localization functionalities for a multilingual site: Database-based
+  multilingual texts, currency and dates formatting, timezones and other locale
+  settings
+---
+
 # Locale
+
+> See the [Css and Javascript guide](../../guide/css-and-javascript-guide/) to learn how to work with the Javascript module.
+
+## Configuration
 
 ## Constants
 
