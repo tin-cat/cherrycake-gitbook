@@ -108,11 +108,11 @@ $CssConfig = [
 ];
 ```
 
-## CSS and JavaScript Caching
+## CSS and JavaScript Caching and versioning
 
-CSS and JavaScript are always cached except when you're working in [development mode](../getting-started/), but  you can change the cache configuration defaults by setting the `cacheProviderName`, `cacheTtl` and `cachePrefix` keys in the configuration file. This works for both the [Css](../../reference/core-modules/css/#configuration) and the [Javascript](../../reference/core-modules/javascript/#configuration) module.
+CSS and JavaScript are always cached automatically, and file versioning is automatically taken care of using content-based unique ids. Cherrycake ensures the browser caches the CSS and JavaScript requests, and that it is always receiving their latest versions if they have changed in the last update.
 
-
+> This ultimately means that you don't need to take care of implementing a caching policy or versioning for your CSS or JavaScript files, and the visitors to your website won't need to clear their caches to see load the proper updated CSS and JavaScript files.
 
 ## Linking the CSS and JavaScript to your HTML document
 
