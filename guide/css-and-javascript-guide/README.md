@@ -112,7 +112,7 @@ $CssConfig = [
 
 CSS and JavaScript are always cached automatically, and file versioning is automatically taken care of using content-based unique ids. Cherrycake ensures the browser caches the CSS and JavaScript requests, and that it is always receiving their latest versions if they have changed in the last update.
 
-> This ultimately means that you don't need to take care of implementing a caching policy or versioning for your CSS or JavaScript files, and the visitors to your website won't need to clear their caches to see load the proper updated CSS and JavaScript files.
+> This ultimately means that you don't need to take care of implementing a caching policy or versioning for your CSS or JavaScript files, and the visitors to your website won't need to clear their caches to load the proper updated CSS and JavaScript files.
 
 ## Linking the CSS and JavaScript to your HTML document
 
