@@ -11,6 +11,16 @@ description: >-
 
 ## Configuration
 
+* **`availableLocales`** A hash array of available localisations the app supports, where each key is the locale name, and each value a hash array with the following keys:
+  * **`domains`** An array of domains that will trigger this localization when the request to the app comes from one of them.
+  * **`language`** The language used in this localization, one of the available `LANGUAGE_?` constants.
+  * **`dateFormat`** The date format used in this localization, one of the available `DATE_FORMAT_?` constants.
+  * **`temperatureUnits`** The temperature units used in this localization, one of the available `TEMPERATURE_UNITS_?` constants.
+  * **`currency`** The currency used in this localization, one of the available `CURRENCY_?` constants.
+  * **`decimalMark`** The type character used when separating decimal digits in this localization, one of the available `DECIMAL_MARK_?` constants.
+  * **`measurementSystem`** The measurement system used in this localization, one of the available `MEASUREMENT_SYSTEM_?` constants.
+  * **`timeZone`** The timezone id used in this localization, from the `cherrycake_location_timezones` table of the Cherrycake skeleton database.
+
 ## Constants
 
 * **`LANGUAGE_ENGLISH`**
