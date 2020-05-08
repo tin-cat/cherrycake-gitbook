@@ -58,7 +58,6 @@
 * [HtmlDocument guide](guide/htmldocument-guide.md)
 * [Css and Javascript guide](guide/css-and-javascript-guide/README.md)
   * [Modules injecting CSS and JavaScript](guide/css-and-javascript-guide/modules-injecting-css-and-javascript.md)
-  * [CSS and JavaScript dependencies via modules](guide/css-and-javascript-guide/css-and-javascript-dependencies-via-modules.md)
 * [Locale guide](guide/locale-guide.md)
 * [Session guide](guide/session-guide.md)
 * [Login guide](guide/login-guide.md)
