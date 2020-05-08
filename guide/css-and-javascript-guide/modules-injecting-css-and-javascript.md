@@ -26,7 +26,11 @@ class Home extends \Cherrycake\Module {
 
 By doing this, you'll also get the benefits of dependencies: Whenever a module depends on another module, that module's CSS and JavaScript will also be loaded.
 
-Specially when certain areas of your web app depend on specific CSS or JavaScript code that is not used in any other part of the app, it makes sense to make those modules load their own files instead of adding them manually in the `Css.config.php` or `Javascript.config.php` files, so that code will only be loaded by the client's browser when he's visiting the areas that need them.
+## Loading Css and JavaScript only where it's needed
+
+Specially when certain areas of your web app depend on specific CSS or JavaScript code that is not used in any other part of the app, it makes sense to make those modules load their own files instead of adding them manually in the `Css.config.php` or `Javascript.config.php` files, so that code will only be loaded when the modules that need those Css and JavaScript files are loaded. That is: when the user is visiting the areas in your web app that need them.
+
+
 
  
 
