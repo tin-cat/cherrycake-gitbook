@@ -110,6 +110,8 @@ $CssConfig = [
 
 ## CSS and JavaScript Caching
 
+CSS and JavaScript are always cached except when you're working in development mode, but  you can change the cache defaults by setting the `cacheProviderName`, `cacheTtl` and `cachePrefix` keys in the configuration file of the [Css](../../reference/core-modules/css/#configuration) or the [Javascript](../../reference/core-modules/javascript/#configuration) module.
+
 ## Linking the CSS and JavaScript to your HTML document
 
 If you're using the [HtmlDocument](../htmldocument-guide.md) module to build your HTML document, the proper links to get the required CSS and JavaScript sets are already being added automatically to the `<head>` section of the document:
