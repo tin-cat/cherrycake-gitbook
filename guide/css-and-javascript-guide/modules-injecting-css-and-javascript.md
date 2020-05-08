@@ -44,8 +44,13 @@ This are the options Cherrycake gives you to solve this problem the way you deci
 
 * Setup the CSS and JavaScript files you want to load in your web app by listing them in the `Css.config.php` or `Javascript.config.php` files, or just set the `isIncludeAllFilesInDirectory` to `true` there, [as seen here](./). All files in the specified directories will be loaded in the first request to your web app, and subsequent requests will take advantage of the browser's caching mechanism.
 * Let your modules add the CSS and JavaScript they need by overloading the init method as you've seen [above](modules-injecting-css-and-javascript.md#loading-css-and-javascript-only-where-its-needed). Certain Css and JavaScript will only be loaded when the browser requests the pages that need them, but you might lose caching and re-usability benefits if not done carefully.
+* You can control which sets get joined in a single request, and divide them in different requests to further customize your CSS and JavaScript loading strategy by using the [HtmlDocument `cssSets` and `javascriptSets` configuration keys](../../reference/core-modules/htmldocument/#configuration).
 
-> You can control which sets get joined in a single request, and divide them in different requests to further customize your CSS and JavaScript loading strategy by using the [HtmlDocument `cssSets` and `javascriptSets` configuration keys](../../reference/core-modules/htmldocument/#configuration).
+If you're really looking to optimize your loading strategy, a good solution is often use a combination of the three approaches above:
+
+* Manually add to the config files the CSS and JavaScript files you know you'll be reusing throughout your entire app, in the `main` set.
+* Create one or more additional sets to hold other files used by modules that need special functionality, and load those files from the [init](../../reference/core-classes/module/methods.md#init) method of those modules.
+* Force the main set to be loaded in its own request, and the rest of the sets in another request, using the [HtmlDocument `cssSets` and `javascriptSets` configuration keys](../../reference/core-modules/htmldocument/#configuration).
 
  
 
