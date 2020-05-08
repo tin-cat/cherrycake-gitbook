@@ -11,7 +11,6 @@ description: >-
 ## Configuration
 
 * **`cacheProviderName`** The name of the cache provider to use. Default: `engine`
-* **`cachePrefix`** The cache prefix to use when storing CSS code. Default: `Css`
 * **`cacheTtl`**The TTL to use for the cache. Default `CACHE_TTL_LONGEST`
 * **`isHttpCache`** Whether to send HTTP Cache headers or not. Default: `false`
 * **`httpCacheMaxAge`** The TTL of the HTTP Cache. Default: `CACHE_TTL_LONGEST`

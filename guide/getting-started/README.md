@@ -89,9 +89,9 @@ if ($e->init(__NAMESPACE__, [
 
 The second parameter is an optional hash array that lets you configure some important parameters of the Cherrycake engine. The ones we're using here are: 
 
-* `appName` The name of the application. You can skip this and the default name `CherrycakeApp` will be used.
-* `isDevel` When set to true, the application is put into development mode, meaning you'll get extended error reports and other tricks to help you develop your app. When not specified, this parameter defaults to false.
-* `baseCoreModules` Is an array of the module names that should be loaded upon initialization of the engine. If not specified, only the [Actions](../../reference/core-modules/actions-1/actions.md) module will be loaded.
+* **`appName`** The name of the application. You can skip this and the default name `CherrycakeApp` will be used.
+* **`isDevel`** When set to true, the application is put into development mode, meaning you'll get extended error reports and other tricks to help you develop your app. When not specified, this parameter defaults to false.
+* **`baseCoreModules`** Is an array of the module names that should be loaded upon initialization of the engine. If not specified, only the [Actions](../../reference/core-modules/actions-1/actions.md) module will be loaded.
 
 > Check the [Engine::init](../../reference/core-classes/engine/methods.md#init) documentation for more configuration parameters when initializing the engine.
 
