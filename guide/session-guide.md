@@ -73,7 +73,7 @@ Now, let's say we want to show how many times the visitor has seen the Hello Wor
 function show() {
     global $e;
     
-    $e->Session->numberOfTimesViewed += 1;
+    $e->Session->numberOfTimesViewed ++;
     
     $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
         "code" => \Cherrycake\RESPONSE_OK,
