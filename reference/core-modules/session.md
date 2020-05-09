@@ -20,3 +20,15 @@ The `JanitorTaskSession` is required to be run in order to do this maintenance w
 
 ## Configuration
 
+* **`sessionDatabaseProviderName`** The name of the database provider to use for storing sessions. Default: `main`
+* **`sessionTableName`** The name of the table used to store sessions. Default: `cherrycake_session`
+* **`sessionCacheProviderName`** The name of the cache provider to use to store sessions and the counter of created sessions. Default: `engine`
+* **`sessionCacheTtl`** The TTL of cached sessions, one of the available [`CACHE_TTL_?`](cache/#constants). Default: `CACHE_TTL_SHORT`.
+* **`cachePrefix`** The cache prefix to use when storing sessions into cache. Default: `Session`
+* **`cookieName`** The name of the cookie. Recommended to be changed. Defaut: `cherrycake`
+* **`cookiePath`** The path of the cookie. If set to "/", it will be available within the entire domain. Default: `/`
+* **`cookieSecure`** If set to true, the cookie will only be sent when the current request is secure \(SSL\). Default: `false`
+* **`cookieHttpOnly`** If set to true, the cookie only will be sent when an HTTP request is made. Default: `false`
+* **`sessionDuration`** The duration of the session in seconds. If set to zero, the session will last until the browser is closed. Default: `2592000` \(one month\)
+* **`isSessionRenew`** When set to true, the duration of the session will be renewed to a new `sessionDuration` every time a request is made. If set to false, the cookie will expire after `sessionDuration`, no matter how many times the session is requested. Default: `true`
+
