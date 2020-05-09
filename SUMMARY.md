@@ -61,9 +61,9 @@
 * [Session guide](guide/session-guide.md)
 * [Login guide](guide/login-guide.md)
 * [Locale guide](guide/locale-guide.md)
+* [Janitor guide](guide/janitor-guide.md)
 * [SystemLog guide](guide/systemlog-guide.md)
 * [Stats guide](guide/stats-guide.md)
-* [Janitor guide](guide/janitor-guide.md)
 * [Debugging](guide/debugging.md)
 * [Command line apps](guide/cli.md)
 
