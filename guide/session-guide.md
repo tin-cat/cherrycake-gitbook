@@ -44,13 +44,9 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-Now, to use the Session module, you just need to add it to the list of your core module dependencies, like this:
+Now, to use the [Session](../reference/core-modules/session.md) module, you first need to add it to the list of your core [module dependencies](modules-guide.md#specifying-module-dependencies), like this:
 
 ```php
-<?php
-
-namespace CherrycakeApp\Modules;
-
 class HelloWorld extends \Cherrycake\Module {
     protected $dependentCoreModules = [
         "Session"
@@ -59,4 +55,6 @@ class HelloWorld extends \Cherrycake\Module {
     ...    
 }
 ```
+
+
 
