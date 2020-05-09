@@ -110,7 +110,7 @@ This directory holds the HTML files the [Errors](../../reference/core-modules/er
 {% tab title="/install" %}
 Some Cherrycake modules make use of the database. This directory contains the SQL files needed to create the database tables needed for those Cherrycake modules.
 
-For example, if you plan to use the [Session](../../reference/core-modules/session.md) module to manage your web app user sessions, you'll need to create the `cherrycake_session` table in your database by using the script `session.sql` you'll find in this directory.
+For example, if you plan to use the [Session](../../reference/core-modules/session/) module to manage your web app user sessions, you'll need to create the `cherrycake_session` table in your database by using the script `session.sql` you'll find in this directory.
 {% endtab %}
 
 {% tab title="/vendor" %}
