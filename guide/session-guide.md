@@ -67,8 +67,6 @@ The [Session](../reference/core-modules/session/) module also needs a table on t
 
 Now, let's say we want to show how many times the visitor has seen the Hello World page. We'll do this by storing the views counter in the visitor's session, like this:
 
-
-
 ```php
 function show() {
     global $e;
@@ -83,5 +81,11 @@ function show() {
             $e->HtmlDocument->footer()
     ]));
 }
+```
+
+Now, every time a visitor reloads the page they'll see the counter growing:
+
+```text
+You've seen this page 2 times
 ```
 
