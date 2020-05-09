@@ -65,3 +65,23 @@ But that's not all. The [Session](../reference/core-modules/session/) module dep
 
 The [Session](../reference/core-modules/session/) module also needs a table on the database with a certain structure, you need to import the `session.sql` file from the [Cherrycake database skeleton](getting-started/#setting-up-the-skeleton-database) to create that table.
 
+Now, let's say we want to show how many times the visitor has seen the Hello World page. We'll do this by storing the views counter in the visitor's session, like this:
+
+
+
+```php
+function show() {
+    global $e;
+    
+    $e->Session->numberOfTimesViewed += 1;
+    
+    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+        "code" => \Cherrycake\RESPONSE_OK,
+        "payload" =>
+            $e->HtmlDocument->header().
+            "You've seen this page {$e->Session->numberOfTimesViewed} times".
+            $e->HtmlDocument->footer()
+    ]));
+}
+```
+
