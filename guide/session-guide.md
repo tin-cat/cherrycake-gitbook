@@ -56,7 +56,7 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-But that's not all. The [Session](../reference/core-modules/session.md) module depends on the [Database](../reference/core-modules/database.md) module himself, and needs a database table with a certain structure. To do so, you need to setup your database connection by creating a `/config/Database.config.php` file just like we did in the [Database guide](database-guide/).
+But that's not all. The [Session](../reference/core-modules/session.md) module depends on the [Database](../reference/core-modules/database.md) module himself. Because of that, if you haven't done it before, you need to setup your database connection by creating a `/config/Database.config.php` file just like we did in the [Database guide](database-guide/).
 
-Also, you need to import the `session.sql` file to create the table needed by the [Session](../reference/core-modules/session.md) module. You'll find this file in the [Cherrycake database skeleton](getting-started/#setting-up-the-skeleton-database).
+The [Session](../reference/core-modules/session.md) module also needs a table on the database with a certain structure, you need to import the `session.sql` file to create that table. You'll find this file in the [Cherrycake database skeleton](getting-started/#setting-up-the-skeleton-database).
 
