@@ -31,6 +31,10 @@ description: >-
 * **`textCacheKeyPrefix`** The prefix of the keys when storing texts into cache. Default: `LocaleText`
 * **`textCacheDefaultTtl`** The default TTL for texts stored into cache. Default: `CACHE_TTL_NORMAL`
 * **`timeZonesTableName`** The name of the table where the timezones are stored. See the `cherrycake_location_timezones` table in the [Cherrycake skeleton database](../../guide/getting-started/#setting-up-the-skeleton-database). Default: `cherrycake_location_timezones`
+* **`timeZonesDatabaseProviderName`** The name of the database provider where the timezones are found. Default: `main`
+* **`timeZonesCacheProviderName`** The name of the cache provider that will be user to cache timezones. Default: `engine`
+* **`timeZonesCacheKeyPrefix`** The prefix of the keys when storing timezones into cache. Default:`LocaleTimeZone`
+* **`timeZonesCacheDefaultTtl`** The default TTL for timezones stored into cache. Default: `CACHE_TTL_NORMAL`
 
 ## Constants
 
@@ -81,7 +85,7 @@ description: >-
 
 
 
-* **`GEOLOCATION_METHOD_CLOUDFLARE`**
+* **`GEOLOCATION_METHOD_CLOUDFLARE`** Uses [Cloudflare IP geolocation](https://support.cloudflare.com/hc/en-us/articles/200168236-Configuring-Cloudflare-IP-Geolocation) by reading the `CF-IPCountry` HTTP header added by Cloudflare when this option is enabled.
 
 
 
