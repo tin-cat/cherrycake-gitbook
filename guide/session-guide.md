@@ -44,5 +44,19 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-you have to add the Session core module to the list of your module dependencies, so it gets loaded when 
+Now, to use the Session module, you just need to add it to the list of your core module dependencies, like this:
+
+```php
+<?php
+
+namespace CherrycakeApp\Modules;
+
+class HelloWorld extends \Cherrycake\Module {
+    protected $dependentCoreModules = [
+        "Session"
+    ];
+
+    ...    
+}
+```
 
