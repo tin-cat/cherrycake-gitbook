@@ -233,7 +233,7 @@ class HelloWorld extends \Cherrycake\Module {
     function show() {
         global $e;
         $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
-            "code" => \Cherrycake\Modules\RESPONSE_OK,
+            "code" => \Cherrycake\RESPONSE_OK,
             "payload" => "<html><body>Hello world</body></html>"
         ]));
     }
