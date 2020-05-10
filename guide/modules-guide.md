@@ -55,6 +55,14 @@ For example, if you were to create a module called `Products`, it should be stor
 
 Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init](../reference/core-classes/engine/methods.md#init)
 
+For a module to work with its own configuration file, the `isConfigFile` property of the module class must be set to true, like this:
+
+```php
+class MyModule extends \Cherrycake\Module {
+    protected $isConfigFile = true;
+}
+```
+
 Module configuration files must have a name that matches the module name, even with upper and lowercase characters. For example, the configuration file for the [Database](../reference/core-modules/database.md) module must be called `/config/Database.config.php`
 
 Module configuration files must declare a hash array named in the syntax `$<ModuleName>Config`. For example, this is how a configuration file for the [HtmlDocument](../reference/core-modules/htmldocument/) module would look:
