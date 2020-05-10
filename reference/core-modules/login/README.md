@@ -15,3 +15,23 @@ description: >-
 * **`isLoadUserOnInit`** Whether to check for a logged user and get it on this module's init sequence. Default: `true`
 * **`sleepOnErrorSeconds`** Seconds to delay execution when a wrong login is requested, to make things difficult for bombing attacks. Default: `1`
 
+## Constants
+
+* `LOGIN_PASSWORD_ENCRYPTION_METHOD_PBKDF2`
+
+
+
+* `LOGIN_RESULT_OK`
+* `LOGIN_RESULT_FAILED`
+* `LOGIN_RESULT_FAILED_UNKNOWN_USER`
+* `LOGIN_RESULT_FAILED_WRONG_PASSWORD`
+
+
+
+* `LOGOUT_RESULT_OK`
+* `LOGOUT_RESULT_FAILED`
+
+
+
+
+
