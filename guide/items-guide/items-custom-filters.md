@@ -65,3 +65,5 @@ foreach ($movies as $movie)
 Planet of the Apes (1968)
 ```
 
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/custom-filters`
+

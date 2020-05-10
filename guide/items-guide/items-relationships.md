@@ -74,6 +74,8 @@ Getting the director's name was this straightforward: `$movie->getDirector()->na
 
 > Note that in this example we've also applied the `random` order, which is always available in addition to your custom orders, to simply randomize the order of the resulting [Item](../../reference/core-classes/item/) objects.
 
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/relationships`
+
 ## Custom filtering with relationships
 
 Quite often you'll need to look for data in other tables when using your [Items](../../architecture/items.md) classes. For example, let's say we want to be able to get all the movies whose director was less than 35 years old when they were released.
@@ -153,4 +155,6 @@ foreach ($movies as $movie)
 "Close Encounters of the Third Kind" directed by Steven Spielberg at age 31
 "The Abyss" directed by James Cameron at age 35
 ```
+
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/filters-with-relationships`
 
