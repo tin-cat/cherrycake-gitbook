@@ -74,6 +74,7 @@ You can set default configuration values that will be used if the configuration 
 
 ```php
 class MyModule extends \Cherrycake\Module {
+    protected $isConfigFile = true;
     protected $config = [
         "title" => "Default title",
         "description" => "Default description"
@@ -86,6 +87,8 @@ To get a configuration value from a module, use the [Module::getConfig ](../refe
 ```php
 $this->getConfig("title");
 ```
+
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ModulesGuide` module, and runs by requesting a URL like `/modules-guide/configuration-file`
 
 ## Modules constants file
 
