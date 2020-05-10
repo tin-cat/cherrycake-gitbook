@@ -31,7 +31,9 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-Next thing to do is creating a class to represent a user in our app. This class must extend the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/), and it must also implement the `LoginUser` interface. Our `User` class will end looking like this:
+Next thing to do is creating a class to represent a user in our app. This class must extend the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/), and it must also implement the `LoginUser` interface. Our `User` class will start looking like this:
+
+But for our User class to work properly with the Login module, we need to implement at least the interfaced methods `loadFromUserNameField` and `getEncryptedPassword`:
 
 
 
