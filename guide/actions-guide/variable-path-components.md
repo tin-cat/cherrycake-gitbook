@@ -5,7 +5,7 @@ A lot of times we'll need to respond to requests where some component of the pat
 ```php
 ...
 
-$e->Actions->mapAction([
+$e->Actions->mapAction(
     "viewProduct",
     new \Cherrycake\ActionHtml([
         "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
@@ -29,7 +29,7 @@ $e->Actions->mapAction([
             ]
         ])
     ])
-]);
+);
 
 ...
 ```
