@@ -44,3 +44,5 @@ So now, the browser shows this:
 Here's a gift for you: 🧸
 ```
 
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `PatternsGuide` module, and runs by requesting the URL `/patterns-guide/passing-variables`
+

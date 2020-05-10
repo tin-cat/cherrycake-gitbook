@@ -42,5 +42,5 @@ function viewUser($request) {
 }
 ```
 
-> Check out [Working with Security]() to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.a
+> Check out the [Security](../../reference/core-modules/security/) module to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.a
 

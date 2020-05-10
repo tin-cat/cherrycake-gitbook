@@ -29,7 +29,3 @@ $parsedContents = $e->Patterns->parse("helloworld.html");
 Since patterns are parsed as PHP code, you're strongly advised against parsing files that are uploaded by the user or coming from untrusted sources.
 {% endhint %}
 
-{% hint style="info" %}
-The examples of this guide can be found in the [Cherrycake documentation examples](https://github.com/tin-cat/cherrycake-documentation-examples) repository, in the `PatternsGuide` module.
-{% endhint %}
-
