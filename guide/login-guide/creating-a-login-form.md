@@ -72,5 +72,52 @@ class LoginGuide extends \Cherrycake\Module {
 }
 ```
 
-Notice that the page shows the message `You are logged in` or `You are not logged in`. To determine whether the current user is logged in, we use the Login::isLogged method.
+Notice that the page shows the message `You are logged in` or `You are not logged in`. To determine whether the current user is logged in, we use the [Login::isLogged](../../reference/core-modules/login/login-methods.md#islogged) method.
+
+Now we'll add another action that will show a login form:
+
+```php
+...
+$e->Actions->mapAction(
+    "loginGuideLoginPage",
+    new \Cherrycake\ActionHtml([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "LoginGuide",
+        "methodName" => "loginPage",
+        "request" => new \Cherrycake\Request([
+            "pathComponents" => [
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "login-guide"
+                ]),
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "login-page"
+                ])
+            ]
+        ])
+    ])
+);
+...
+```
+
+```php
+function home() {
+    global $e;
+
+    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+        "code" => \Cherrycake\RESPONSE_OK,
+        "payload" =>
+            $e->HtmlDocument->header().
+            "
+                <form method=post action=\"{$e->Actions->getAction("loginGuideDoLogin")->request->buildUrl()}\">
+                    <input name=email type=text name=email placeholder=\"Email\" />
+                    <input name=password type=password name=password placeholder=\"Password\" />
+                    <input type=submit value=\"Login\"/>
+                </form>
+            ".
+            $e->HtmlDocument->footer()
+    ]));
+}
+```
 
