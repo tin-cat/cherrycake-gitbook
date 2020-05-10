@@ -16,5 +16,15 @@ while ($row = $result->getRow()) {
 }
 ```
 
-Rows are returned as [DatabaseRow](../../reference/core-classes/databaserow.md) objects which, as you can see in the example above, allow you to retrieve information from each row in the results.
+Rows are returned as [DatabaseRow](../../reference/core-classes/databaserow.md) objects which, as you can see in the example above, allow you to retrieve information from each row in the results. Here's the result:
+
+```text
+Douglas Engelbart
+John Horton Conway
+Frank Abagnale
+Carl Sagan
+Richard Feynmann
+```
+
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `DatabaseGuide` module, and runs by requesting the URL `/database-guide/basic-queries`
 
