@@ -22,7 +22,7 @@ Items always come from a database table, so let's imagine we have a database of 
 | **`dateAdded`** | `datetime` | The date and time the movie was added to the database. |
 | **`directorId`** | `unsigned` `int` | The id of the director in the `directors` table. |
 
-> You can get an SQL script to create this table, along with some movies, in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `/install/database/movies.sql` file.
+> You can get an SQL script to create this table, along with some movies, in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the [`/install/database/movies.sql`](https://github.com/tin-cat/cherrycake-documentation-examples/blob/master/install/database/movies.sql) file.
 
 Items are [App classes](../classes-guide.md#app-class-files) that extend the Cherrycake's [Item](../../reference/core-classes/item/) core class, so we create the `Movie` class in the file `/classes/Movie.class.php`, and it looks like this:
 
