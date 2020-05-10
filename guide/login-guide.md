@@ -31,14 +31,14 @@ class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-Next thing to do is creating a class to represent a user in our app. This class must extend the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/), and it must also implement the `LoginUser` interface. Our `User` class will start looking like this:
+Next thing to do is creating a class to represent a user in our app. This class must extend the `LoginUser` class, which in turn also extends the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/). Our `User` class will start looking like this:
 
 ```php
 <?php
 
 namespace CherrycakeApp;
 
-class User extends \Cherrycake\Item implements \Cherrycake\LoginUser {
+class User extends \Cherrycake\LoginUser {
     protected $tableName = "users";
     
     protected $fields = [
@@ -50,17 +50,17 @@ class User extends \Cherrycake\Item implements \Cherrycake\LoginUser {
 }
 ```
 
-But for our User class to work properly with the Login module, we need to implement at least the interfaced methods `loadFromUserNameField` and `getEncryptedPassword`.
-
-Implementing the required `loadFromUserNameField` method is easy. Since we want the email to be the username when login in our application, we can use the [Item::loadFromId](../reference/core-classes/item/item-methods.md#loadfromid) method, which allows us to optionally specify in the second parameter the field name we're using to uniquely identify users. It would look like this:
+For our `User` class to work properly with the [Login](../reference/core-modules/login.md) module, we need to add two properties: The `userNameFieldName`, which is the name of the field that holds the user name we want our users to identify with, and `encryptedPasswordFieldName`, which is the name of the field that holds the encrypted password of the users. It would look like this:
 
 ```php
 <?php
 
 namespace CherrycakeApp;
 
-class User extends \Cherrycake\Item implements \Cherrycake\LoginUser {
+class User extends \Cherrycake\LoginUser {
     protected $tableName = "users";
+    protected $userNameFieldName = "email";
+    protected $encryptedPasswordFieldName = "passwordHash";
     
     protected $fields = [
         "id" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER],
@@ -68,37 +68,6 @@ class User extends \Cherrycake\Item implements \Cherrycake\LoginUser {
         "email" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING],
         "passwordHash" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING]
     ];
-    
-    function loadFromUserNameField($userName) {
-        return $this->loadFromId($userName, "email");
-    }
-}
-```
-
-Now, implementing the `getEncryptedPassword` in our basic login example is even easier. Since the encrypted password is stored in the `passwordHash` field on the table, we simply return this:
-
-```php
-<?php
-
-namespace CherrycakeApp;
-
-class User extends \Cherrycake\Item implements \Cherrycake\LoginUser {
-    protected $tableName = "users";
-    
-    protected $fields = [
-        "id" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER],
-        "name" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING],
-        "email" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING],
-        "passwordHash" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING]
-    ];
-    
-    function loadFromUserNameField($userName) {
-        return $this->loadFromId($userName, "email");
-    }
-    
-    function getEncryptedPassword() {
-        return $this->passwordHash;
-    }
 }
 ```
 
