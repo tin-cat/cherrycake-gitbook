@@ -1,7 +1,7 @@
 ---
 description: >-
   The Login module provides a standardized method for implementing secure user
-  identification workflows.
+  identification workflows for web apps.
 ---
 
 # Login
