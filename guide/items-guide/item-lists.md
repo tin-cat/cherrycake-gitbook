@@ -46,6 +46,8 @@ You can automatically fill your `Movies` object with `Movie` items when creating
 
 > Since we're not specifying any parameters in the `p` key, we'll simply get all movies in the database at once.
 
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/item-lists`
+
 Let's see how we could iterate through the results to show all the movie titles and their release years:
 
 ```php
@@ -85,6 +87,55 @@ The Abyss (1989)
 War of the Worlds (2005)
 Super 8 (2011)
 ```
+
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/iterate`
+
+## Iterating Items in a pattern
+
+Since we already learned how to [pass variables to a pattern](../patterns-guide/passing-variables-to-a-pattern.md), why don't we pass the `$movies` object to a pattern, and iterate it there to create a nice `<UL>` list? This is how it can be done:
+
+We output the pattern using the [Patterns::out](../../reference/core-modules/patterns/methods.md#out) method, passing the `$movies` variable along:
+
+```php
+$movies = new Movies([
+    "fillMethod" => "fromParameters",
+    "limit" => 5
+]);
+
+$e->Patterns->out("MoviesList.html", [
+    "variables" => [
+        "movies" => $movies
+    ]
+]);
+```
+
+We create the pattern `MoviesList.html` like this:
+
+```markup
+<html><body>
+
+<ul>
+    <?php foreach ($movies as $movie) { ?>
+        <li><?=$movie->title?> (<?=$movie->year?>)</li>
+    <?php } ?>
+</ul>
+
+</body></html>
+```
+
+And this is the result:
+
+{% tabs %}
+{% tab title="Browser" %}
+* Alien \(1979\)
+* The Thing \(1982\)
+* Silent Running \(1972\)
+* Arrival \(2016\)
+* Interstellar \(2014\)
+{% endtab %}
+{% endtabs %}
+
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/iterate-in-pattern`
 
 ## Limit results
 
