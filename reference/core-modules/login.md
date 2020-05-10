@@ -1,5 +1,7 @@
 ---
-description: Implements a secure user identification mechanism.
+description: >-
+  The Login module provides a standardized method for implementing secure user
+  identification workflows.
 ---
 
 # Login
