@@ -74,7 +74,7 @@ class LoginGuide extends \Cherrycake\Module {
 
 Notice that the page shows the message `You are logged in` or `You are not logged in`. To determine whether the current user is logged in, we use the [Login::isLogged](../../reference/core-modules/login/login-methods.md#islogged) method.
 
-Now we'll add another action that will show a login form in the `/login-guide/login-page` url:
+Now we'll add another action that will show a login form in the `/login-guide/login-page` URL:
 
 ```php
 ...
@@ -143,4 +143,49 @@ function home() {
 ```
 
 See how, instead of linking directly to `/login-guide/login-page`, we've used the [Actions::getAction](../../reference/core-modules/actions-1/actions.md#getaction) and the [Request::buildUrl](../../reference/core-classes/request/request-methods.md#buildurl) methods in chain to obtain the URL for the action that triggers the login page, as you've learned in the [Actions guide](../actions-guide/getting-the-url-of-an-action.md).
+
+So now, when we access the /login-guide page, this appears:
+
+![](../../.gitbook/assets/image%20%281%29.png)
+
+And when we click the Login button, the `/login-guide/login-page` appears:
+
+![](../../.gitbook/assets/image.png)
+
+> Clicking the `Login` button does nothing because we haven't yet set the `action` property of the form HTML element.
+
+Now let's create an action that will be triggered when the `Login` button is clicked. This action will use the Login module to check the received `email` and `password`, and act accordingly afterwards.
+
+We'll call this action `loginGuideDoLogin`:
+
+```php
+...
+$e->Actions->mapAction(
+    "loginGuideDoLogin",
+    new \Cherrycake\ActionHtml([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "LoginGuide",
+        "methodName" => "doLogin",
+        "request" => new \Cherrycake\Request([
+            "isSecurityCsrf" => true,
+            "pathComponents" => [
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "login-guide"
+                ]),
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "do-login"
+                ])
+            ]
+        ]),
+        "isSensibleToBruteForceAttacks" => true
+    ])
+);
+...
+```
+
+> We've set the [`isSensibleToBruteForceAttacks`](../../reference/core-classes/action/methods.md#__construct) parameter to true when creating the [Action](../../reference/core-classes/action/) to improve the resistance of this request to brute force attacks. We've also set the [`isSecurityCsrf`](../../reference/core-classes/request/request-methods.md#__construct) parameter to true when creating the [Request](../../reference/core-classes/request/), which adds protection against Cross-Site Request Forgery-type attacks to this request.
+
+
 
