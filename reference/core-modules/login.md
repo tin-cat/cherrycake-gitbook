@@ -1,5 +1,5 @@
 ---
-description: Implements a user identification mechanism.
+description: Implements a secure user identification mechanism.
 ---
 
 # Login
