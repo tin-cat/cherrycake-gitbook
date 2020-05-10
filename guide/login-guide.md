@@ -19,7 +19,19 @@ Let's imagine we have in our database the following table called `users`, where 
 | **`email`** | `varchar` | The email of the user. |
 | **`passwordHash`** | `varchar` | The hashed password. |
 
-First thing to do is creating a class to represent a user in our app. This class must extend the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/), and it must also implement the `LoginUser` interface. Our User class will end looking like this:
+To use the [Login](../reference/core-modules/login.md) module, you'll need to add it to the list of your core [module dependencies](modules-guide.md#specifying-module-dependencies) in the modules where you'll be using it, like this:
+
+```php
+class HelloWorld extends \Cherrycake\Module {
+    protected $dependentCoreModules = [
+        "Login"
+    ];
+
+    ...    
+}
+```
+
+Next thing to do is creating a class to represent a user in our app. This class must extend the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/), and it must also implement the `LoginUser` interface. Our `User` class will end looking like this:
 
 
 
