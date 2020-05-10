@@ -110,12 +110,33 @@ function home() {
         "payload" =>
             $e->HtmlDocument->header().
             "
-                <form method=post action=\"{$e->Actions->getAction("loginGuideDoLogin")->request->buildUrl()}\">
+                <form method=post>
                     <input name=email type=text name=email placeholder=\"Email\" />
                     <input name=password type=password name=password placeholder=\"Password\" />
                     <input type=submit value=\"Login\"/>
                 </form>
             ".
+            $e->HtmlDocument->footer()
+    ]));
+}
+```
+
+And we'll add a button right next to the `You are not logged in` message, that will link to this login page:
+
+```php
+function home() {
+    global $e;
+
+    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+        "code" => \Cherrycake\RESPONSE_OK,
+        "payload" =>
+            $e->HtmlDocument->header().
+            ($e->Login->isLogged() ?
+                "You are logged in"
+            :
+                "You are not logged in".
+                "<a href=\"{$e->Actions->getAction("loginGuideLoginPage")->request->buildUrl()}\" class=button>Login</a>"
+            ).
             $e->HtmlDocument->footer()
     ]));
 }
