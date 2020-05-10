@@ -22,7 +22,7 @@ Items always come from a database table, so let's imagine we have a database of 
 | **`dateAdded`** | `datetime` | The date and time the movie was added to the database. |
 | **`directorId`** | `unsigned` `int` | The id of the director in the `directors` table. |
 
-> You can get an SQL script to create this table, along with some movies, in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the [`/install/database/movies.sql`](https://github.com/tin-cat/cherrycake-documentation-examples/blob/master/install/database/movies.sql) file.
+> You can get an SQL script to create this table in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the [`/install/database/movies.sql`](https://github.com/tin-cat/cherrycake-documentation-examples/blob/master/install/database/movies.sql) file.
 
 Items are [App classes](../classes-guide.md#app-class-files) that extend the Cherrycake's [Item](../../reference/core-classes/item/) core class, so we create the `Movie` class in the file `/classes/Movie.class.php`, and it looks like this:
 
@@ -77,12 +77,14 @@ $movie = new Movie([
 Field values for an [Item](../../reference/core-classes/item/) are accessed just like regular properties, like this:
 
 ```php
-echo "{$movie->name} ({$movie->year})";
+echo "{$movie->title} ({$movie->year})";
 ```
 
 ```text
 Brainstorm (1983)
 ```
+
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/basic-usage`
 
 We can also update items on the database by using [Item::update](../../reference/core-classes/item/item-methods.md#update), for example:
 
