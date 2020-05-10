@@ -33,7 +33,47 @@ class HelloWorld extends \Cherrycake\Module {
 
 Next thing to do is creating a class to represent a user in our app. This class must extend the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/), and it must also implement the `LoginUser` interface. Our `User` class will start looking like this:
 
-But for our User class to work properly with the Login module, we need to implement at least the interfaced methods `loadFromUserNameField` and `getEncryptedPassword`:
+```php
+<?php
+
+namespace CherrycakeApp;
+
+class User extends \Cherrycake\Item implements \Cherrycake\LoginUser {
+    protected $tableName = "users";
+    
+    protected $fields = [
+        "id" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER],
+        "name" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING],
+        "email" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING],
+        "passwordHash" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING]
+    ];
+}
+```
+
+But for our User class to work properly with the Login module, we need to implement at least the interfaced methods `loadFromUserNameField` and `getEncryptedPassword`.
+
+Implementing the required `loadFromUserNameField` method is easy. Since we want the email to be the username when login in our application, we can use the Item::loadFromId method, like this:
+
+```php
+<?php
+
+namespace CherrycakeApp;
+
+class User extends \Cherrycake\Item implements \Cherrycake\LoginUser {
+    protected $tableName = "users";
+    
+    protected $fields = [
+        "id" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_INTEGER],
+        "name" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING],
+        "email" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING],
+        "passwordHash" => ["type" => \Cherrycake\DATABASE_FIELD_TYPE_STRING]
+    ];
+    
+    function loadFromUserNameField($userName) {
+        return $this->loadFromId($userName, "email");
+    }
+}
+```
 
 
 
