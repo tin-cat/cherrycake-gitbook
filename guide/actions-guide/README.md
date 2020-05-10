@@ -47,3 +47,7 @@ class Home extends \Cherrycake\Module {
 }
 ```
 
+{% hint style="info" %}
+You'll find the examples used on this guide in the [Cherrycake documentation examples](https://github.com/tin-cat/cherrycake-documentation-examples) repository, under the `ActionsGuide` module.
+{% endhint %}
+

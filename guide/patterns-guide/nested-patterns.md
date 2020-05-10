@@ -19,7 +19,7 @@ And your footer.html looks like this:
 </html>
 ```
 
-Then, you simply include those patterns in your main pattern. Because patterns have access to the Cherrycake engine, this is done by simply calling the [Patterns::parse ](../../reference/core-modules/patterns/methods.md#parse)method you already know of, but this time inside your `helloworld.html` pattern:
+Then, you simply include those patterns in your main pattern. Because patterns have access to the Cherrycake engine, this is done by simply calling the [Patterns::parse ](../../reference/core-modules/patterns/methods.md#parse)method you already know of, but this time inside your pattern:
 
 ```markup
 <?= $e->Patterns->parse("header.html") ?>

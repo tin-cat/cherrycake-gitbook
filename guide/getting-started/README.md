@@ -249,3 +249,7 @@ And that's it! If you now run your app you should see a boring yet quite welcomi
 
 Bear with me with the rest of this guide and you'll find this architecture to really come in handy when what you want to accomplish with your app is much more complex than a "Hello World"!
 
+{% hint style="info" %}
+All the examples used in this guides are available in the [Cherrycake documentation examples](https://github.com/tin-cat/cherrycake-documentation-examples) repository.
+{% endhint %}
+
