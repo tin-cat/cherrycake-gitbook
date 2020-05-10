@@ -44,3 +44,5 @@ function viewUser($request) {
 
 > Check out the [Security](../../reference/core-modules/security/) module to learn more about the `securityRules` and `filters` you can configure when mapping actions with `parameters`.a
 
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ActionsGuide` module, and runs by requesting a URL like `/actions-guide/user?userId=381`
+
