@@ -6,7 +6,7 @@ description: >-
 
 # Login
 
-> See the [Login guide](../../guide/login-guide.md) to learn how to work with the Login module.
+> See the [Login guide](../../guide/login-guide/) to learn how to work with the Login module.
 
 ## Configuration
 

@@ -6,7 +6,7 @@ description: The Session module provides a session tracking and session storage 
 
 When using the [Session](../reference/core-modules/session/) module, each visitor to your web app is assigned a random and secure unique identifier, and you'll be able to keep track of their activity across requests, and store visitor-specific data.
 
-The most obvious use of a session mechanism like this is to implement a login system to let your users identify themselves with some sort of password, and give them access to their private sections and functionalities. This is exactly what the [Login module](login-guide.md) does using [Session](../reference/core-modules/session/).
+The most obvious use of a session mechanism like this is to implement a login system to let your users identify themselves with some sort of password, and give them access to their private sections and functionalities. This is exactly what the [Login module](login-guide/) does using [Session](../reference/core-modules/session/).
 
 But you can use the [Session](../reference/core-modules/session/) module for many other purposes. Let's see how. First, let's remember our simple [Hello world web app](getting-started/#the-hello-world-module), which worked with this basic `HelloWorld` app module:
 
