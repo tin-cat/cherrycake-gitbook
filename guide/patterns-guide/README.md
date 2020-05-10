@@ -30,6 +30,6 @@ Since patterns are parsed as PHP code, you're strongly advised against parsing f
 {% endhint %}
 
 {% hint style="info" %}
-You'll find the examples used on this guide in the [Cherrycake documentation examples](https://github.com/tin-cat/cherrycake-documentation-examples) repository, under the `PatternsGuide` module.
+The examples of this guide can be found in the [Cherrycake documentation examples](https://github.com/tin-cat/cherrycake-documentation-examples) repository, in the `PatternsGuide` module.
 {% endhint %}
 
