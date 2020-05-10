@@ -19,19 +19,7 @@ Let's imagine we have in our database the following table called `users`, where 
 | **`email`** | `varchar` | The email of the user. |
 | **`passwordHash`** | `varchar` | The hashed password. |
 
-To use the [Login](../reference/core-modules/login.md) module, you'll need to add it to the list of your core [module dependencies](modules-guide.md#specifying-module-dependencies) in the modules where you'll be using it, like this:
-
-```php
-class HelloWorld extends \Cherrycake\Module {
-    protected $dependentCoreModules = [
-        "Login"
-    ];
-
-    ...    
-}
-```
-
-Next thing to do is creating a class to represent a user in our app. This class must extend the `LoginUser` class, which in turn also extends the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/). Our `User` class will start looking like this:
+First thing to do is creating a class to represent a user in our app. This class must extend the `LoginUser` class, which in turn also extends the [Item](../reference/core-classes/item/) class just as we learned in the [Items guide](items-guide/), so it will be also the [Item](../reference/core-classes/item/) class that will represent an individual user in your app. Our `User` class will start looking like this:
 
 ```php
 <?php
@@ -50,7 +38,12 @@ class User extends \Cherrycake\LoginUser {
 }
 ```
 
-For our `User` class to work properly with the [Login](../reference/core-modules/login.md) module, we need to add two properties: The `userNameFieldName`, which is the name of the field that holds the user name we want our users to identify with, and `encryptedPasswordFieldName`, which is the name of the field that holds the encrypted password of the users. It would look like this:
+For our `User` class to work properly with the [Login](../reference/core-modules/login.md) module, we need to add two properties:
+
+* **`userNameFieldName`** The name of the field that holds the user name we want our users to identify with.
+* **`encryptedPasswordFieldName`** The name of the field that holds the encrypted password of the users.
+
+It would end looking like this:
 
 ```php
 <?php
@@ -71,5 +64,15 @@ class User extends \Cherrycake\LoginUser {
 }
 ```
 
+Now, to access the logged user and perform login/logout operations, you need to add the [Login](../reference/core-modules/login.md) module to the list of [core module dependencies](modules-guide.md#specifying-module-dependencies), in the modules where you'll be using it, like this:
 
+```php
+class HelloWorld extends \Cherrycake\Module {
+    protected $dependentCoreModules = [
+        "Login"
+    ];
+
+    ...    
+}
+```
 
