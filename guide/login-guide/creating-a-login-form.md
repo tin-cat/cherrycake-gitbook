@@ -208,5 +208,5 @@ function doLogin($request) {
 }
 ```
 
-Note we've used the Login::doLogin method to check the passed email and password. If the login failed, we show a simple error page. If it was successful, we redirect the user to the login home using [Output::setResponse](../../reference/core-modules/output/methods.md#setresponse) with a [RESPONSE\_REDIRECT\_FOUND](../../reference/core-modules/output/#constants) code.
+Note we've used the [Login::doLogin](../../reference/core-modules/login/login-methods.md#dologin) method to check the passed email and password. If the login failed, we show a simple error page. If it was successful, we redirect the user to the login home using [Output::setResponse](../../reference/core-modules/output/methods.md#setresponse) with a [RESPONSE\_REDIRECT\_FOUND](../../reference/core-modules/output/#constants) code.
 
