@@ -1,6 +1,6 @@
 # Creating a login form
 
-The [Login](../../reference/core-modules/login.md) module provides the logic for a user authentication mechanism, but it's up to you to build a form to ask the user for his credentials, or to implement any kind of interface for a user to authenticate in your web app.
+The [Login](../../reference/core-modules/login/) module provides the logic for a user authentication mechanism, but it's up to you to build a form to ask the user for his credentials, or to implement any kind of interface for a user to authenticate in your web app.
 
 We'll analyze step by step the example provided in the [Cherrycake documentation examples](https://github.com/tin-cat/cherrycake-documentation-examples) repository, in the module called `LoginGuide`.
 
@@ -19,7 +19,7 @@ class LoginGuide extends \Cherrycake\Module {
 }
 ```
 
-> See how we've already added the [HtmlDocument](../../reference/core-modules/htmldocument/) and [Login](../../reference/core-modules/login.md) dependencies, we'll need them soon.
+> See how we've already added the [HtmlDocument](../../reference/core-modules/htmldocument/) and [Login](../../reference/core-modules/login/) dependencies.
 
 Now we'll [define an action](../actions-guide/) that will show a welcome page when the user visits the `/login-guide` URL:
 
@@ -62,7 +62,7 @@ class LoginGuide extends \Cherrycake\Module {
             "payload" =>
                 $e->HtmlDocument->header().
                 ($e->Login->isLogged() ?
-                    "Your are logged in"
+                    "You are logged in"
                 :
                     "You are not logged in"
                 ).
@@ -71,4 +71,6 @@ class LoginGuide extends \Cherrycake\Module {
     }
 }
 ```
+
+Notice that the page shows the message `You are logged in` or `You are not logged in`. To determine whether the current user is logged in, we use the Login::isLogged method.
 

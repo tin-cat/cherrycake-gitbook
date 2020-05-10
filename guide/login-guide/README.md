@@ -6,9 +6,9 @@ description: >-
 
 # Login guide
 
-Using the [Login](../../reference/core-modules/login.md) module, you're able to start implementing a secure password-based user authentication mechanism to your app.
+Using the [Login](../../reference/core-modules/login/) module, you're able to start implementing a secure password-based user authentication mechanism to your app.
 
-Instead of implementing a complete user authentication workflow, the [Login](../../reference/core-modules/login.md) module provides you a standardized method that you can adopt to create your authentication workflow, where things like the login form, the user database structure or the logout button are still up to you to implement to your liking.
+Instead of implementing a complete user authentication workflow, the [Login](../../reference/core-modules/login/) module provides you a standardized method that you can adopt to create your authentication workflow, where things like the login form, the user database structure or the logout button are still up to you to implement to your liking.
 
 Let's imagine we have in our database the following table called `users`, where we store all the users of our app, along with their login credentials:
 
@@ -40,7 +40,7 @@ class User extends \Cherrycake\LoginUser {
 }
 ```
 
-For our `User` class to work properly with the [Login](../../reference/core-modules/login.md) module, we need to add two properties:
+For our `User` class to work properly with the [Login](../../reference/core-modules/login/) module, we need to add two properties:
 
 * **`userNameFieldName`** The name of the field that holds the user name we want our users to identify with.
 * **`encryptedPasswordFieldName`** The name of the field that holds the encrypted password of the users.
@@ -66,5 +66,5 @@ class User extends \Cherrycake\LoginUser {
 }
 ```
 
-Now we're ready to authenticate users in our web app, follow along in the next sections to learn how to implement a complete login mechanism using the [Login](../../reference/core-modules/login.md) module.
+Now we're ready to authenticate users in our web app, follow along in the next sections to learn how to implement a complete login mechanism using the [Login](../../reference/core-modules/login/) module.
 

@@ -6,7 +6,7 @@ description: >-
 
 # Database
 
-> See the [Cache guide](../../guide/database-guide/) to learn how to work with the Database module.
+> See the [Database guide](../../guide/database-guide/) to learn how to work with the Database module.
 
 ## Configuration
 
