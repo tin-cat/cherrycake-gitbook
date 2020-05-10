@@ -38,7 +38,7 @@ In this case, instead of passing a `string` like we do with the `REQUEST_PATH_CO
 
 In our example, the `viewProduct` action is triggered when we receive a request like `/product/4739`, and we specify that `4739` will be stored as `productId`, that it cannot be empty and that it has to be a positive integer.
 
-> Check out [Working with Security]() to learn more about the `securityRules` and filters we can configure when mapping actions with `pathComponents`.
+> Check out the [Security](../../reference/core-modules/security/) module to learn more about the `securityRules` and filters we can configure when mapping actions with `pathComponents`.
 
 To receive the `productId` value that was passed when the client requested `/product/4739`,  we simply add a `request` parameter to the method triggered by the action \(`Products::view` in the example above\), and we'll get a [Request](../../reference/core-classes/request/) object that contains, among other useful things, the value of the `productId` path section:
 
