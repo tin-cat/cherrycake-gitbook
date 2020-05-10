@@ -10,7 +10,7 @@ $e->Actions->mapAction([
     new \Cherrycake\ActionHtml([
         "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
         "moduleName" => "Users",
-        "methodName" => "view",
+        "methodName" => "viewUser",
         "request" => new \Cherrycake\Request([
             "pathComponents" => [
                 new \Cherrycake\RequestPathComponent([
@@ -37,7 +37,7 @@ $e->Actions->mapAction([
 This action will be triggered when URLs like `/user?userId=381` are requested. You can then get the `userId` value just like we did above for dynamic paths:
 
 ```php
-function view($request) {
+function viewUser($request) {
     echo "The requested user id ".$request->userId;
 }
 ```
