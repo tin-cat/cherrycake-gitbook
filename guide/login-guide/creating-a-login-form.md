@@ -77,7 +77,6 @@ Notice that the page shows the message `You are logged in` or `You are not logge
 Now we'll add another action that will show a login form in the `/login-guide/login-page` URL:
 
 ```php
-...
 $e->Actions->mapAction(
     "loginGuideLoginPage",
     new \Cherrycake\ActionHtml([
@@ -98,7 +97,6 @@ $e->Actions->mapAction(
         ])
     ])
 );
-...
 ```
 
 ```php
@@ -159,7 +157,6 @@ Now let's create an action that will be triggered when the `Login` button is cli
 We'll call this action `loginGuideDoLogin`:
 
 ```php
-...
 $e->Actions->mapAction(
     "loginGuideDoLogin",
     new \Cherrycake\ActionHtml([
@@ -182,10 +179,34 @@ $e->Actions->mapAction(
         "isSensibleToBruteForceAttacks" => true
     ])
 );
-...
 ```
 
 > We've set the [`isSensibleToBruteForceAttacks`](../../reference/core-classes/action/methods.md#__construct) parameter to true when creating the [Action](../../reference/core-classes/action/) to improve the resistance of this request to brute force attacks. We've also set the [`isSecurityCsrf`](../../reference/core-classes/request/request-methods.md#__construct) parameter to true when creating the [Request](../../reference/core-classes/request/), which adds protection against Cross-Site Request Forgery-type attacks to this request.
 
+And here's how the `doLogin` method looks:
 
+```php
+function doLogin($request) {
+    global $e;
+    $result = $e->Login->doLogin($request->email, $request->password);
+    if (
+        $result == \Cherrycake\LOGIN_RESULT_FAILED_UNKNOWN_USER
+        ||
+        $result == \Cherrycake\LOGIN_RESULT_FAILED_WRONG_PASSWORD
+    ) {
+        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+            "code" => \Cherrycake\RESPONSE_OK,
+            "payload" => $e->HtmlDocument->header()."Login error".$e->HtmlDocument->footer()
+        ]));
+    }
+    else {
+        $e->Output->setResponse(new \Cherrycake\Response([
+            "code" => \Cherrycake\RESPONSE_REDIRECT_FOUND,
+            "url" => $e->Actions->getAction("loginGuideHome")->request->buildUrl()
+        ]));
+    }
+}
+```
+
+Note we've used the Login::doLogin method to check the passed email and password. If the login failed, we show a simple error page. If it was successful, we redirect the user to the login home using [Output::setResponse](../../reference/core-modules/output/methods.md#setresponse) with a [RESPONSE\_REDIRECT\_FOUND](../../reference/core-modules/output/#constants) code.
 
