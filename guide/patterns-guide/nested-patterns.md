@@ -29,3 +29,5 @@ Then, you simply include those patterns in your main pattern. Because patterns h
 <?= $e->Patterns->parse("footer.html") ?>
 ```
 
+> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `PatternsGuide` module, and runs by requesting the URL `/patterns-guide/nested-patterns`
+
