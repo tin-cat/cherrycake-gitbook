@@ -74,7 +74,7 @@ class LoginGuide extends \Cherrycake\Module {
 
 Notice that the page shows the message `You are logged in` or `You are not logged in`. To determine whether the current user is logged in, we use the [Login::isLogged](../../reference/core-modules/login/login-methods.md#islogged) method.
 
-Now we'll add another action that will show a login form:
+Now we'll add another action that will show a login form in the `/login-guide/login-page` url:
 
 ```php
 ...
@@ -141,4 +141,6 @@ function home() {
     ]));
 }
 ```
+
+See how, instead of linking directly to `/login-guide/login-page`, we've used the [Actions::getAction](../../reference/core-modules/actions-1/actions.md#getaction) and the [Request::buildUrl](../../reference/core-classes/request/request-methods.md#buildurl) methods in chain to obtain the URL for the action that triggers the login page.
 
