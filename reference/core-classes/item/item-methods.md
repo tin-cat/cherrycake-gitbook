@@ -66,12 +66,12 @@ Loads the item from the given [DatabaseRow](../databaserow.md).
 
 **Returns:** `true` on success, `false` on failure.
 
-## loadFromId\( id, fieldName method \) <a id="loadfromid"></a>
+## loadFromId\( id, fieldName, method \) <a id="loadfromid"></a>
 
 Loads the item identified by the given `id` from the database.
 
 * **`id`** The id
-* **`fieldName`** The name of the field containing the ids, as defined in the [Item::$fields](item-properties.md#usdfields) property. Should be a field that uniquely identifies a row on the database.
+* **`fieldName`** The name of the field containing the id, as defined in the [Item::$fields](item-properties.md#usdfields) property. Should be a field that uniquely identifies a row on the database.
 * **`method`** The loading method to use. If not specified, it uses the default [Item::$loadFromIdMethod](item-properties.md#loadfromidmethod). One of the following values:
   * `queryDatabaseCache` Load the item from the database using cache.
   * `queryDatabase` Load the item from the database without using cache.
