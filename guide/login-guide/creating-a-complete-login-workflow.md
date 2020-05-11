@@ -100,7 +100,7 @@ $e->Actions->mapAction(
 ```
 
 ```php
-function home() {
+function loginPage() {
     global $e;
 
     $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
@@ -183,6 +183,20 @@ $e->Actions->mapAction(
 
 > We've set the [`isSensibleToBruteForceAttacks`](../../reference/core-classes/action/methods.md#__construct) parameter to true when creating the [Action](../../reference/core-classes/action/) to improve the resistance of this request to brute force attacks. We've also set the [`isSecurityCsrf`](../../reference/core-classes/request/request-methods.md#__construct) parameter to true when creating the [Request](../../reference/core-classes/request/), which adds protection against Cross-Site Request Forgery-type attacks to this request.
 
+Now we need to modify the login form in the `loginPage` method to make it request this `loginGuideDoLogin` action URL whenever its posted. We've already seen how to retrieve the URL of an action above. In this case, we'll do it like this: `$e->Actions->getAction("loginGuideDoLogin")->request->buildUrl();`
+
+And this is how it looks when implemented in the form:
+
+```php
+"
+    <form method=post action=\"{$e->Actions->getAction("loginGuideDoLogin")->request->buildUrl()}\">
+        <input name=email type=text name=email placeholder=\"Email\" />
+        <input name=password type=password name=password placeholder=\"Password\" />
+        <input type=submit value=\"Login\"/>
+    </form>
+"
+```
+
 And here's how the `doLogin` method looks:
 
 ```php
@@ -230,7 +244,7 @@ To login with the example users in the Cherrycake documentation examples skeleto
   * Password: `137`
 {% endhint %}
 
-
+Now, when you login with a correct email and password, you'll get redirected to the Login guide home, and the message `You are logged in` will be shown.
 
 
 
