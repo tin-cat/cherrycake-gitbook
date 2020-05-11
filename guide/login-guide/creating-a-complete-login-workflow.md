@@ -314,5 +314,5 @@ function logout() {
 }
 ```
 
-This calls the Login::logoutUser method and then redirects them to the login home page.
+This calls the [Login::logoutUser](../../reference/core-modules/login/login-methods.md#logoutuser) method and then redirects them to the login home page.
 
