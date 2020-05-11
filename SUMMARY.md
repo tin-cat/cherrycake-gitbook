@@ -60,7 +60,7 @@
   * [Modules injecting CSS and JavaScript](guide/css-and-javascript-guide/modules-injecting-css-and-javascript.md)
 * [Session guide](guide/session-guide.md)
 * [Login guide](guide/login-guide/README.md)
-  * [Creating a login form](guide/login-guide/creating-a-login-form.md)
+  * [Creating a complete login workflow](guide/login-guide/creating-a-complete-login-workflow.md)
 * [Locale guide](guide/locale-guide.md)
 * [Janitor guide](guide/janitor-guide.md)
 * [SystemLog guide](guide/systemlog-guide.md)
