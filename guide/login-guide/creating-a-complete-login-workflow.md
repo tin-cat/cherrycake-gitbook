@@ -316,3 +316,7 @@ function logout() {
 
 This calls the [Login::logoutUser](../../reference/core-modules/login/login-methods.md#logoutuser) method and then redirects them to the login home page.
 
+## Encrypting user passwords
+
+You're in charge of adding new users to your database and storing their credentials in the fields you've specified when [creating your User class](./#creating-the-user-class). The [Login](../../reference/core-modules/login/) module uses a very secure salted password hashing mechanism which uses the [Password-Based Key Derivation Function](https://en.wikipedia.org/wiki/PBKDF2) method, a [Key stretching](https://en.wikipedia.org/wiki/Key_stretching) algorithm. This method is compliant with the PBKDF2 test vectors specified in the [RFC 6070](https://www.ietf.org/rfc/rfc6070.txt), and is based on the [implementation](https://github.com/defuse/password-hashing) by [Taylor Hornby](https://github.com/defuse) from [Defuse.ca](https://defuse.ca).
+
