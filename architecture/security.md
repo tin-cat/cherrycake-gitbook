@@ -22,6 +22,10 @@ Cherrycake implements a [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_
 
 Cherrycake can log all attacks and keep track of suspicious IPs, automatically blacklisting clients that have passed a configured threshold.
 
+### Secure user authentication and session tracking
+
+Cherrycake provides a secure user authentication and session tracking mechanisms using modern password encryption and server-based session data storage.
+
 ### Scalability
 
 Thanks to a thorough [lifecycle](lifecycle/) and its modular structure, Cherrycake allows for the easy implementation of new security mechanisms and the improvement of the existing attack detection routines. We encourage you to contribute your suggestions, ideas and security improvements through the official [GitHub](https://github.com/tin-cat/cherrycake-engine) repository.
