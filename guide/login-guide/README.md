@@ -66,5 +66,5 @@ class User extends \Cherrycake\LoginUser {
 }
 ```
 
-Now we're ready to authenticate users in our web app, follow along in the next sections to learn how to implement a complete login mechanism using the [Login](../../reference/core-modules/login/) module.
+Now we're ready to authenticate users in our web app, follow along in the next section to learn how to implement a complete login workflow using the [Login](../../reference/core-modules/login/) module.
 
