@@ -320,7 +320,7 @@ This calls the [Login::logoutUser](../../reference/core-modules/login/login-meth
 
 You're in charge of adding new users to your database and storing their credentials in the fields you've specified when [creating your User class](./#creating-the-user-class).
 
-The [Login](../../reference/core-modules/login/) module uses by default a very secure salted password hashing mechanism which uses the [Password-Based Key Derivation Function](https://en.wikipedia.org/wiki/PBKDF2) method, a [Key stretching](https://en.wikipedia.org/wiki/Key_stretching) algorithm. This method is compliant with the PBKDF2 test vectors specified in the [RFC 6070](https://www.ietf.org/rfc/rfc6070.txt), and is based on the [implementation](https://github.com/defuse/password-hashing) by [Taylor Hornby](https://github.com/defuse) from [Defuse.ca](https://defuse.ca).
+The [Login](../../reference/core-modules/login/) module uses by default a very secure salted password hashing mechanism which implements a [Password-Based Key Derivation Function](https://en.wikipedia.org/wiki/PBKDF2) method, a [Key stretching](https://en.wikipedia.org/wiki/Key_stretching) algorithm. This method is compliant with the PBKDF2 test vectors specified in the [RFC 6070](https://www.ietf.org/rfc/rfc6070.txt), and is based on the [implementation](https://github.com/defuse/password-hashing) by [Taylor Hornby](https://github.com/defuse) from [Defuse.ca](https://defuse.ca).
 
 To generate a password hash to be stored in the database, use the [Login::encryptPassword](../../reference/core-modules/login/login-methods.md#encryptpassword) method, like this:
 
