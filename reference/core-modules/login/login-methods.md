@@ -9,6 +9,14 @@ Checks the given credentials in the database, and logs in the user if they're fo
 
 **Returns:** One of the available [`LOGIN_RESULT_?`](./#constants) constants signifying the result of the login operation.
 
+## encryptPassword\( password \) <a id="encryptpassword"></a>
+
+Encrypts the given password with the configured password encryption method.
+
+* **`password`** The password to encrypt
+
+**Returns:** The encrypted string, or false if the password could not be encrypted
+
 ## isLogged
 
 Checks whether there is a logged user or not.
