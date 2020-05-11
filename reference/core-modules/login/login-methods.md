@@ -15,3 +15,9 @@ Checks whether there is a logged user or not.
 
 **Returns:** True if the current user is logged or false if it's not.
 
+## logoutUser
+
+Logs out the current user.
+
+**Returns:** One of the available [`LOGOUT_RESULT_?`](./#constants) constants signifying the result of the logout operation.
+

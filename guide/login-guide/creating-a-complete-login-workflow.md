@@ -246,5 +246,73 @@ To login with the example users in the Cherrycake documentation examples skeleto
 
 Now, when you login with a correct email and password, you'll get redirected to the Login guide home, and the message `You are logged in` will be shown.
 
+What if we wanted to show the user name there? Something like `You are logged in as <user name>`. Well, since the [Login](../../reference/core-modules/login/) module does all the work of retrieving the logged user for you, as long as you have the [Login](../../reference/core-modules/login/) module as a dependency in your modules, you'll be able to access the logged `User` object at any time via `$e->Login->user`. This is how we would modify the `home` method in our example to include the user name:
 
+```php
+"You are logged in as {$e->Login->user->name}"
+```
+
+## Adding a logout button
+
+Let's add a logout button now. First, we'll create a new action to perform the logout operation, we'll call it `loginGuideLogout`, and it will be triggered with the `/login-guide/logout` URL:
+
+```php
+$e->Actions->mapAction(
+    "loginGuideLogout",
+    new \Cherrycake\ActionHtml([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "LoginGuide",
+        "methodName" => "logout",
+        "request" => new \Cherrycake\Request([
+            "pathComponents" => [
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "login-guide"
+                ]),
+                new \Cherrycake\RequestPathComponent([
+                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                    "string" => "logout"
+                ])
+            ]
+        ])
+    ])
+);
+```
+
+Now, just like we did before, we add a logout button in the `home` method that will appear along the `Your are logged in as ...` message. This time, to get the logout URL we use `$e->Actions->getAction("loginGuideLogout")->request->buildUrl();`
+
+```php
+function home() {
+    global $e;
+
+    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+        "code" => \Cherrycake\RESPONSE_OK,
+        "payload" =>
+            $e->HtmlDocument->header().
+            ($e->Login->isLogged() ?
+                "You are logged in as {$e->Login->user->name}".
+                "<a href=\"{$e->Actions->getAction("loginGuideLogout")->request->buildUrl()}\" class=button>Logout</a>"
+            :
+                "You are not logged in".
+                "<a href=\"{$e->Actions->getAction("loginGuideLoginPage")->request->buildUrl()}\" class=button>Login</a>"
+            ).
+            $e->HtmlDocument->footer()
+    ]));
+}
+```
+
+And now we implement the `logout` method like this:
+
+```php
+function logout() {
+    global $e;
+    $e->Login->logoutUser();
+    $e->Output->setResponse(new \Cherrycake\Response([
+        "code" => \Cherrycake\RESPONSE_REDIRECT_FOUND,
+        "url" => $e->Actions->getAction("loginGuideHome")->request->buildUrl()
+    ]));
+}
+```
+
+This calls the Login::logoutUser method and then redirects them to the login home page.
 
