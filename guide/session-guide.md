@@ -89,5 +89,7 @@ Now, every time a visitor reloads the page they'll see the counter growing:
 You've seen this page 2 times
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `SessionGuide` module, and runs by requesting the URL `/session-guide`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/sessionGuideExample) site.
+{% endhint %}
 

@@ -84,7 +84,9 @@ echo "{$movie->title} ({$movie->year})";
 Brainstorm (1983)
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/basic-usage`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/itemsGuideBasicUsage) site.
+{% endhint %}
 
 We can also update items on the database by using [Item::update](../../reference/core-classes/item/item-methods.md#update), for example:
 

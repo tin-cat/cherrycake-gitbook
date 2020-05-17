@@ -249,5 +249,7 @@ And that's it! If you now run your app you should see a boring yet quite welcomi
 
 Bear with me with the rest of this guide and you'll find this architecture to really come in handy when what you want to accomplish with your app is much more complex than a "Hello World"!
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `HelloWorld` module, and runs by requesting the URL `/hello-world`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/helloWorld) site.
+{% endhint %}
 

@@ -48,5 +48,7 @@ function view($request) {
 }
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ActionsGuide` module, and runs by requesting a URL like `/actions-guide/product/4739`
+{% hint style="success" %}
+See this example working in the [Cherrycake Documentation examples](https://documentation-examples.cherrycake.io/example/actionsGuideVariablePathComponents) site.
+{% endhint %}
 

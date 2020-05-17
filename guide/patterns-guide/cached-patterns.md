@@ -32,5 +32,7 @@ If you want to remove a pattern from the cache before its TTL expiration time ar
 $e->Patterns->clearCache("helloworld.html");
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `PatternsGuide` module, and runs by requesting the URL `/patterns-guide/cached-patterns`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/patternsGuideCachedPatterns) page.
+{% endhint %}
 

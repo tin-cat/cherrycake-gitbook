@@ -26,5 +26,7 @@ Carl Sagan
 Richard Feynmann
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `DatabaseGuide` module, and runs by requesting the URL `/database-guide/basic-queries`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples ](https://documentation-examples.cherrycake.io/example/databaseGuideBasicQueries)site.
+{% endhint %}
 

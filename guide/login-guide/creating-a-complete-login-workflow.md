@@ -2,7 +2,11 @@
 
 The [Login](../../reference/core-modules/login/) module provides the logic for a user authentication mechanism, but it's up to you to build a form to ask the user for his credentials, or to implement any kind of interface for a user to authenticate in your web app.
 
-We'll analyze step by step the example provided in the [Cherrycake documentation examples](https://github.com/tin-cat/cherrycake-documentation-examples) repository, in the module called `LoginGuide`.
+We'll analyze step by step the example provided in the Cherrycake documentation examples [repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the module called `LoginGuide`.
+
+{% hint style="success" %}
+See this complete login workflow working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/loginGuideHome) site.
+{% endhint %}
 
 First we'll create our module in `/modules/LoguinGuide/LoginGuide.class.php`:
 

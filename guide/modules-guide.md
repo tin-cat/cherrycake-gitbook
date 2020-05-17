@@ -96,7 +96,9 @@ To get a configuration value from a module, use the [Module::getConfig ](../refe
 $this->getConfig("title");
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ModulesGuide` module, and runs by requesting a URL like `/modules-guide/configuration-file`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/modulesGuideConfigurationFile) site.
+{% endhint %}
 
 ## Modules constants file
 

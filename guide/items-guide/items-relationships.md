@@ -74,7 +74,9 @@ Getting the director's name was this straightforward: `$movie->getDirector()->na
 
 > Note that in this example we've also applied the `random` order, which is always available in addition to your custom orders, to simply randomize the order of the resulting [Item](../../reference/core-classes/item/) objects.
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/relationships`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/itemsGuideRelationships) site.
+{% endhint %}
 
 ## Custom filtering with relationships
 
@@ -156,5 +158,7 @@ foreach ($movies as $movie)
 "The Abyss" directed by James Cameron at age 35
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/filters-with-relationships`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/itemsGuideFiltersWithRelationships) site.
+{% endhint %}
 

@@ -81,5 +81,7 @@ The Abyss (1989)
 
 > Note that to get a listing ordered both by release year and title at the same time, instead of defining a single order in the `fillFromParameters` method, we define two, and then we apply both of them when instantiating our `Movies` object, by passing the array `["released", "title"]` in the `order` key.
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/filters-and-ordering`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/itemsGuideFiltersAndOrdering) site.
+{% endhint %}
 

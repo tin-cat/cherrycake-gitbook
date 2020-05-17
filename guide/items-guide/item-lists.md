@@ -46,7 +46,9 @@ You can automatically fill your `Movies` object with `Movie` items when creating
 
 > Since we're not specifying any parameters in the `p` key, we'll simply get all movies in the database at once.
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/item-lists`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/itemsGuideItemLists) site.
+{% endhint %}
 
 Let's see how we could iterate through the results to show all the movie titles and their release years:
 
@@ -88,7 +90,9 @@ War of the Worlds (2005)
 Super 8 (2011)
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/iterate`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/itemsGuideIterate) site.
+{% endhint %}
 
 ## Limit results
 
@@ -185,5 +189,7 @@ And this is the result:
 {% endtab %}
 {% endtabs %}
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/items-guide/iterate-in-pattern`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/itemsGuideIterateInPattern) site.
+{% endhint %}
 

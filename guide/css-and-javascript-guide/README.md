@@ -127,5 +127,7 @@ If you're using the [HtmlDocument](../htmldocument-guide.md) module to build you
 
 > If you're creating your own HTML document structure instead of using the [HtmlDocument](../htmldocument-guide.md) module, you can call the [Css::getSetUrl](../../reference/core-modules/css/css-methods.md#getseturl) and [Javascript::getSetUrl](../../reference/core-modules/javascript/javascript-methods.md#getseturl) methods to retrieve the proper URLs to request the CSS and JavaScript code.
 
-> A basic example working with CSS and JavaScript can be found in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ItemsGuide` module, and runs by requesting the URL `/css-and-javascript-guide/basic-example`
+{% hint style="success" %}
+A basic example of the usage of the Css module can be seen working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/cssAndJavascriptBasicExample) site.
+{% endhint %}
 

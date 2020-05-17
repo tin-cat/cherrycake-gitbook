@@ -25,7 +25,9 @@ Note here that, even though the results have been randomly ordered thanks to the
 
 > Because the cached results will expire after 1 minute because we set the TTL to `CACHE_TTL_1_MINUTE`, the result order will change if we execute the query when a minute has passed from the first execution, and they will remain in the same order for 1 more minute.
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `DatabaseGuide` module, and runs by requesting the URL `/database-guide/cached-queries`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/databaseGuideCachedQueries) site.
+{% endhint %}
 
 ## Cached prepared queries
 

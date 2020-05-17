@@ -100,7 +100,9 @@ $e->Actions->getAction("home")->clearCache([
 ]);
 ```
 
-> This example is implemented in the [Cherrycake documentation examples repository](https://github.com/tin-cat/cherrycake-documentation-examples), in the `ActionsGuide` module, and runs by requesting a URL like `/actions-guide/cached-action`
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/actionsGuideCachedAction) site.
+{% endhint %}
 
 
 
