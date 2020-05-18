@@ -94,3 +94,11 @@ Gets a text from the multilingual texts database.
 
 **Returns:** The text.
 
+## setLocale\( localeName \)
+
+Sets the locale to use
+
+* **`localeName`** The name of the locale to use, as specified in the [`availableLocales`](./#configuration) config key.
+
+**Returns:** `true` if the locale could be set, `false` if the locale wasn't configured in the [`availableLocales`](./#configuration) config key.
+
