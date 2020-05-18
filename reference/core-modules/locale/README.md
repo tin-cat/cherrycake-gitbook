@@ -6,7 +6,7 @@ description: >-
 
 # Locale
 
-> See the [Locale guide](../../../guide/locale-guide.md) to learn how to work with the Locale module.
+> See the [Locale guide](../../../guide/locale-guide/) to learn how to work with the Locale module.
 
 ## Configuration
 
