@@ -28,7 +28,7 @@ Add translated texts as rows to the `cherrycake_locale_texts` table, with this c
 * **`description`** Describe this text, and the context where it will be used.
 * **`text_en`** The text in english.
 
-### Adding new languages
+## Adding new languages
 
 To add new languages, just add new columns to the cherrycake\_locale\_texts table. The column name must follow the syntax  `text_<language code>` For example, to add a text field for spanish, add the a field named `text_es`.
 
