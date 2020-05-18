@@ -1,8 +1,7 @@
 ---
 description: >-
-  Provides localization functionalities for a multilingual site: Database-based
-  multilingual texts, currency and dates formatting, timezones and other locale
-  settings.
+  The Locale module provides a mechanism to build apps that adapt to users using
+  different languages, timezones, currencies and other local unit standards.
 ---
 
 # Locale

@@ -6,9 +6,42 @@ description: >-
 
 # Locale guide
 
-The [Locale](../reference/core-modules/locale/) module provides a mechanism to build apps that adapt to users using different languages, timezones, currencies and other local unit standards. 
+To allow your app to work with different languages and localization settings, you must at least set up the `availableLocales`, `defaultLocale`, `canonicalLocale` and `availableLanguages` [configuration keys](../reference/core-modules/locale/#configuration) in the `config/Locale.config.php` file like this:
 
-When you're using the [Locale](../reference/core-modules/locale/) module by including it in the [`dependentModules`](modules-guide.md#specifying-module-dependencies) list of your app module, 
+```php
+<?php
+
+namespace Cherrycake;
+
+$LocaleConfig = [
+	"availableLocales" => [
+		"main" => [
+			"domains" => false,
+			"language" => \Cherrycake\Modules\LANGUAGE_ENGLISH,
+			"dateFormat" => \Cherrycake\Modules\DATE_FORMAT_MIDDLE_ENDIAN,
+			"temperatureUnits" => \Cherrycake\Modules\TEMPERATURE_UNITS_FAHRENHEIT,
+			"currency" => \Cherrycake\Modules\CURRENCY_USD,
+			"decimalMark" => \Cherrycake\Modules\DECIMAL_MARK_POINT,
+			"measurementSystem" => \Cherrycake\Modules\MEASUREMENT_SYSTEM_IMPERIAL,
+			"timeZone" => 216
+		]
+	],
+	"defaultLocale" => "main",
+	"canonicalLocale" => "main",
+	"availableLanguages" => [\Cherrycake\Modules\LANGUAGE_ENGLISH]
+];
+```
+
+* **`availableLocales`** A hash array of available localizations the app supports, where each key is the locale name and each value a hash array of options. See the [Locale configuration](../reference/core-modules/locale/#configuration) for an explanation of the available options.
+* defaultLocale
+
+> If you don't setup your own `availableLocales`,  a default locale named `main` is set with the [default configuration values](../reference/core-modules/locale/#configuration).
+
+When you're using the [Locale](../reference/core-modules/locale/) module by including it in the [`dependentModules`](modules-guide.md#specifying-module-dependencies) list of your app module.
 
 ## Domain based site localization
+
+## Automatic language detection
+
+Because [Google doesn't recommend](https://support.google.com/webmasters/answer/182192) performing an automatic redirection to the user's perceived language, Locale doesn't implement such a mechanism. Instead, you might want to show the user the option to switch to another language/localization, specially if you've detected that it's different than the one he is currently visiting.
 
