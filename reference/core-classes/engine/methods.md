@@ -48,7 +48,7 @@ Initializes the Cherrycake engine.
   * **`appModulesDir`** The directory where app modules are stored
   * **`appClassesDir`** The directory where app classes are stored
   * **`timezoneName`** The system's timezone. All modules, including Database for date/time retrievals/saves will be made taking this timezone into account. The server is expected to run on this timezone. Default: `Etc/UTC`
-  * **`timezoneId`** The system's timezone. The same as `timezoneName`, but the matching id on the Cherrycake timezones database table. Default: `532`
+  * **`timezoneId`** The system's timezone. The same as `timezoneName`, but the matching id on the Cherrycake timezones database table. Default: `532` \(532 is the id for the Etc/UTC time zone\)
   * **`baseCoreModules`** An ordered array of the base Core module names that has to be always loaded on application start. Defaults to \["Actions"\]. This list should include the [Actions](../../core-modules/actions-1/actions.md) module to provide some kind of functionality to the app, since otherwise it wouldn't be answering any requests and will be completely unusable, except if you're experimenting with different ways of using the Cherrycake engine. See [Working with Actions](../../../guide/actions-guide/).
   * **`baseAppModules`** An ordered array of the base App module names that has to be always loaded on application start.
   * **`additionalAppConfigFiles`** An ordered array of any additional App config file names to load from the App config directory.
