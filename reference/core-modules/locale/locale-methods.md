@@ -19,6 +19,19 @@ Formats the given date.
 
 **Returns:** The formatted date.
 
+## formatNumber
+
+Formats the given number.
+
+* **`number`**
+* **`setup`** An optional hash array with options, with the following possible keys:
+  * **`decimals`** The number of decimals to show. Default: `0`
+  * **`decimalMark`** The decimal mark to use, either DECIMAL\_MARK\_POINT or DECIMAL\_MARK\_COMMA. Defaults to the current locale setting.
+  * **`isSeparateThousands`** Whether to separate thousands or not. Default: `false`
+  * **`multiplier`** A multiplier, or false if no multiplier should be applied. Default: `false`
+
+**Returns:** The formatted number.
+
 ## formatTimestamp\( timestamp, setup \) <a id="formattimestamp"></a>
 
 Formats the given date/time according to current locale settings.
