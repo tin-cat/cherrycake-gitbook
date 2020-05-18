@@ -10,6 +10,16 @@ Converts a given timestamp from one timezone to another.
 
 **Returns:** The converted timestamp, or `false` if it couldn't be converted.
 
+## formatCurrency\( amount, setup \) <a id="formatcurrency"></a>
+
+Formats the given amount as a currency.
+
+* **`amount`**
+* **`setup`** An optional hash array with setup options, with the following possible keys:
+  * **`currency`** The currency to format the given amount to. One of the available [`CURRENCY_?`](./#constants). If not specified, the current [Locale](./) setting is used.
+
+**Returns:** The formatted amount.
+
 ## formatDate\( dateTimestamp, setup \) <a id="formatdate"></a>
 
 Formats the given date.
@@ -19,7 +29,7 @@ Formats the given date.
 
 **Returns:** The formatted date.
 
-## formatNumber
+## formatNumber\( number, setup \) <a id="formatnumber"></a>
 
 Formats the given number.
 
