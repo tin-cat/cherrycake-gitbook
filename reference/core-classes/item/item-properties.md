@@ -35,7 +35,7 @@ Hash array specification of the fields on the database table for this item class
   * **`items`** When using the `FORM_ITEM_TYPE_SELECT` `type`, a hash array of the items available to be selected, where each key is the field value, and each value is a hash array with the following possible keys:
     * **`title`** The title of the select option
     * **`subTitle`** The subtitle of the select option
-* **`isMultiLanguage`**Whether this field stores multi-language data, meaning there are more than one actual fields on the database, one for each available language. As configured in the [Locale](../../core-modules/locale.md) module's setup key `availableLanguages`
+* **`isMultiLanguage`**Whether this field stores multi-language data, meaning there are more than one actual fields on the database, one for each available language. As configured in the [Locale](../../core-modules/locale/) module's setup key `availableLanguages`
 * **`title`** The title of the field, to be used when representing data on UI components like [UiComponentTableAdmin]().
 * **`prefix`** The prefix string to add when humanizing the field value. For example: `USD` for american dollar quantities like `USD300`
 * **`postfix`** The postfix string to add when humanizing the field value. For example: `º` for values in degrees like `32º`
