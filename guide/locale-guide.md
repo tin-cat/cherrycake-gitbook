@@ -7,3 +7,5 @@ description: >-
 
 # Locale guide
 
+## Domain based site localization
+
