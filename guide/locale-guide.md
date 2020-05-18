@@ -16,7 +16,6 @@ namespace Cherrycake;
 $LocaleConfig = [
 	"availableLocales" => [
 		"main" => [
-			"domains" => false,
 			"language" => \Cherrycake\Modules\LANGUAGE_ENGLISH,
 			"dateFormat" => \Cherrycake\Modules\DATE_FORMAT_MIDDLE_ENDIAN,
 			"temperatureUnits" => \Cherrycake\Modules\TEMPERATURE_UNITS_FAHRENHEIT,
@@ -32,10 +31,12 @@ $LocaleConfig = [
 ];
 ```
 
-* **`availableLocales`** A hash array of available localizations the app supports, where each key is the locale name and each value a hash array of options. See the [Locale configuration](../reference/core-modules/locale/#configuration) for an explanation of the available options.
-* defaultLocale
+* **`availableLocales`** The different localizations your app will support. See the [Locale configuration](../reference/core-modules/locale/#configuration) for an explanation of the available options.
+* **`defaultLocale`** The name of the locale to use as default.
+* **`canonicalLocale`** The name of the locale to be considered the main locale of the app.
+* **`availableLanguages`** An array of the languages that will be available in the app, from the available [`LANGUAGE_?`](../reference/core-modules/locale/#constants) constants.
 
-> If you don't setup your own `availableLocales`,  a default locale named `main` is set with the [default configuration values](../reference/core-modules/locale/#configuration).
+> If you don't setup your own `availableLocales`, or if you don't create a [Locale](../reference/core-modules/locale/) configuration file at all,  a default locale named `main` is set with the [default configuration values](../reference/core-modules/locale/#configuration).
 
 When you're using the [Locale](../reference/core-modules/locale/) module by including it in the [`dependentModules`](modules-guide.md#specifying-module-dependencies) list of your app module.
 
