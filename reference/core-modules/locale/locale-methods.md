@@ -29,3 +29,5 @@ Gets a text from the multilingual texts database.
   * **`forceTextCacheTtl`** Use this TTL for the text cache instead of the module configuration variable `textCacheDefaultTtl`.
   * **`isPurifyVariables`** Whether to purify values from specified variables for security purposes or not. Defaults to `true`.
 
+**Returns:** The text.
+
