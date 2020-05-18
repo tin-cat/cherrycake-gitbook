@@ -38,7 +38,12 @@ $LocaleConfig = [
 
 > If you don't setup your own `availableLocales`, or if you don't create a [Locale](../../reference/core-modules/locale/) configuration file at all,  a default locale named `main` will be used with the [default configuration values](../../reference/core-modules/locale/#configuration).
 
-Once your `availableLocales` are in place, you can choose the locale to use by calling the [Locale::setLocale](../../reference/core-modules/locale/locale-methods.md#setlocale-localename) method. From that point on, all the texts, dates, timezones and other localized data will be retrieved using that locale's setup.
+Once your `availableLocales` are in place, you can choose the locale to use by calling the [Locale::setLocale](../../reference/core-modules/locale/locale-methods.md#setlocale-localename) method. From that point on, all the texts, dates, timezones and other localized data will be retrieved using that locale's setup. For example:
+
+```php
+echo $e->Locale->formatTimestamp(time());
+echo $e->Locale->formatCurrency(19.50);
+```
 
 
 
