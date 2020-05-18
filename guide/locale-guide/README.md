@@ -88,3 +88,27 @@ $LocaleConfig = [
 ];
 ```
 
+Now, we can switch the working locale whenever we need, and Locale will act accordingly:
+
+```php
+echo $e->Locale->formatTimestamp(time());
+echo $e->Locale->formatCurrency(19.5);
+echo $e->Locale->getTimeZoneName();
+
+$e->Locale->setLocale("spain");
+
+echo $e->Locale->formatTimestamp(time());
+echo $e->Locale->formatCurrency(19.5);
+echo $e->Locale->getTimeZoneName();
+```
+
+```text
+5/18/20
+USD19.50
+Etc/UTC
+
+18/5/20
+19,50€
+Europe/Madrid
+```
+
