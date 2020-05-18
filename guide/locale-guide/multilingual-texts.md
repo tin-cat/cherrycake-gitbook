@@ -83,3 +83,7 @@ echo $e->Locale->getText("general/newMessages", [
 You have 5 new messages.
 ```
 
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/localeGuideVariablesInMultilingualTexts) site.
+{% endhint %}
+
