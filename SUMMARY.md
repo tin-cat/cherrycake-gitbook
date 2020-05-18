@@ -62,6 +62,7 @@
 * [Login guide](guide/login-guide/README.md)
   * [Creating a complete login workflow](guide/login-guide/creating-a-complete-login-workflow.md)
 * [Locale guide](guide/locale-guide/README.md)
+  * [Multilingual texts](guide/locale-guide/multilingual-texts.md)
   * [Domain based site localization](guide/locale-guide/domain-based-site-localization.md)
   * [Localization language detection](guide/locale-guide/localization-language-detection.md)
 * [Janitor guide](guide/janitor-guide.md)
