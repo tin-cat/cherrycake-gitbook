@@ -1,12 +1,46 @@
 # Locale methods
 
-## convertTimestamp\( timestamp, toTimeZone, fromTimeZone \)
+## convertTimestamp\( timestamp, toTimeZone, fromTimeZone \) <a id="converttimestamp"></a>
 
 Converts a given timestamp from one timezone to another.
 
-* **`timestamp`** The timestamp to convert. Expected to be in the given `fromTimezone`. The default cherrycake TIMEZONE configuration is considered as `fromTimezone` if not specified \(Usually `Etc/UTC`\)
+* **`timestamp`** The timestamp to convert. Expected to be in the given `fromTimezone`. 
+* **`toTimeZone`** The desired timezone, one of the PHP constants as specified in [http://php.net/manual/en/timezones.php](http://php.net/manual/en/timezones.php). If none specified, the current [Locale](./) timezone is used.
+* **`fromTimeZone`** The timezone on which the given `timestamp` is considered to be in. If not specified the default cherrycake timezone is used, as set in [Engine::init](../../core-classes/engine/methods.md#init)
 
-## getLanguageCode\( language \)
+**Returns:** The converted timestamp, or `false` if it couldn't be converted.
+
+## formatDate\( dateTimestamp, setup \) <a id="formatdate"></a>
+
+Formats the given date.
+
+* **`dateTimestamp`** The timestamp to use, in UNIX timestamp format. The hours, minutes and seconds are considered irrelevant.
+* **`setup`** A hash array with setup options, just like the [Locale::formatTimestamp](locale-methods.md#formattimestamp) method.
+
+**Returns:** The formatted date.
+
+## formatTimestamp\( timestamp, setup \) <a id="formattimestamp"></a>
+
+Formats the given date/time according to current locale settings.
+
+* **`timestamp`** The timestamp to use, in UNIX timestamp format. Considered to be in the engine's default timezone configured in [Engine::init](../../core-classes/engine/methods.md#init), except if the `fromTimeZone` is given via `setup`.
+* **`setup`** A hash array of setup options with the following possible keys:
+  * **`fromTimezone`** Considers the given timestamp to be in this timezone. If not specified, the timestamp is considered to be in the current [Locale](./) timestamp. Default: `false`.
+  * **`toTimezone`** Converts the given timestamp to this timezone. If not specified, the given timestamp is converted to the current [Locale](./) timestamp except if the `fromTimeZone` setup key has been set to `false`. Default: `false`.
+  * **`language`** If specified, this language will be used instead of the detected one. One of the available [`LANGUAGE_?`](./#constants).
+  * **`style`** The formatting style, one of the available [`TIMESTAMP_FORMAT_?`](./#constants) constants.
+  * **`isShortYear`** Whether to abbreviate the year whenever possible. For example: `17` instead of `2017.` Default: `true`
+  * **`isDay`** Whether to include the day. Default: `true`
+  * **`isHours`** Whether to include hours and minutes. Default: `false`
+  * **`hoursFormat`** The format of the hours. One of the available [`HOURS_FORMAT_?`](./#constants). Default: `HOURS_FORMAT_24`
+  * **`isSeconds`** Whether to include seconds. Default: `false`
+  * **`isAvoidYearIfCurrent`** Whether to avoid the year if it's the current one. Default: `false`
+  * **`isBrief`** Whether to use a brief formatting whenever possible. Default: false.
+  * **`format`** If specified this format as used in the date PHP function is used instead of internal formatting. Default: `false`
+
+**Returns:** The formatted timestamp.
+
+## getLanguageCode\( language \) <a id="getlanguagecode"></a>
 
 Gets the code of a language.
 
@@ -14,7 +48,7 @@ Gets the code of a language.
 
 **Returns:** The language code, or `false` if the specified language is not configured.
 
-## getLanguageName\( language, setup \)
+## getLanguageName\( language, setup \) <a id="getlanguagename"></a>
 
 Gets the name of a language.
 
@@ -24,7 +58,7 @@ Gets the name of a language.
 
 **Returns:** The language name, `false` if the specified language is not configured.
 
-## getText\( code, setup \)
+## getText\( code, setup \) <a id="gettext"></a>
 
 Gets a text from the multilingual texts database.
 
