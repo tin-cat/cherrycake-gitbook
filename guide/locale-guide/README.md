@@ -16,18 +16,18 @@ namespace Cherrycake;
 $LocaleConfig = [
 	"availableLocales" => [
 		"main" => [
-			"language" => \Cherrycake\Modules\LANGUAGE_ENGLISH,
-			"dateFormat" => \Cherrycake\Modules\DATE_FORMAT_MIDDLE_ENDIAN,
-			"temperatureUnits" => \Cherrycake\Modules\TEMPERATURE_UNITS_FAHRENHEIT,
-			"currency" => \Cherrycake\Modules\CURRENCY_USD,
-			"decimalMark" => \Cherrycake\Modules\DECIMAL_MARK_POINT,
-			"measurementSystem" => \Cherrycake\Modules\MEASUREMENT_SYSTEM_IMPERIAL,
-			"timeZone" => 216
+			"language" => LANGUAGE_ENGLISH,
+			"dateFormat" => DATE_FORMAT_MIDDLE_ENDIAN,
+			"temperatureUnits" => TEMPERATURE_UNITS_FAHRENHEIT,
+			"currency" => CURRENCY_USD,
+			"decimalMark" => DECIMAL_MARK_POINT,
+			"measurementSystem" => MEASUREMENT_SYSTEM_IMPERIAL,
+			"timeZone" => TIMEZONE_ID_ETC_UTC
 		]
 	],
 	"defaultLocale" => "main",
 	"canonicalLocale" => "main",
-	"availableLanguages" => [\Cherrycake\Modules\LANGUAGE_ENGLISH]
+	"availableLanguages" => [LANGUAGE_ENGLISH]
 ];
 ```
 
@@ -51,8 +51,6 @@ echo $e->Locale->getTimeZoneName()
 USD19.50
 Etc/UTC
 ```
-
-## Formatting dates
 
 
 
