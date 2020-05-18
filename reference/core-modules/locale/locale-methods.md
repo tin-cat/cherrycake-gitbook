@@ -15,7 +15,7 @@ Converts a given timestamp from one timezone to another.
 Formats the given date.
 
 * **`dateTimestamp`** The timestamp to use, in UNIX timestamp format. The hours, minutes and seconds are considered irrelevant.
-* **`setup`** A hash array with setup options, just like the [Locale::formatTimestamp](locale-methods.md#formattimestamp) method.
+* **`setup`** An optional hash array with setup options, just like the [Locale::formatTimestamp](locale-methods.md#formattimestamp) method.
 
 **Returns:** The formatted date.
 
