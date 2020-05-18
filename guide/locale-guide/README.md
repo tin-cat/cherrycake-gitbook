@@ -42,10 +42,15 @@ Once your `availableLocales` are in place, you can choose the locale to use by c
 
 ```php
 echo $e->Locale->formatTimestamp(time());
-echo $e->Locale->formatCurrency(19.50);
+echo $e->Locale->formatCurrency(19.5);
+echo $e->Locale->getTimeZoneName()
 ```
 
-
+```text
+5/18/20
+USD19.50
+Etc/UTC
+```
 
 ## Formatting dates
 
