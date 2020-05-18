@@ -55,6 +55,10 @@ Hello world
 Hola mundo
 ```
 
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/localeGuideMultilingualTexts) site.
+{% endhint %}
+
 ## Adding new languages
 
 To add new languages, just add new columns to the cherrycake\_locale\_texts table. The column name must follow the syntax  `text_<language code>` For example, to add a text field for spanish, add the a field named `text_es`.
