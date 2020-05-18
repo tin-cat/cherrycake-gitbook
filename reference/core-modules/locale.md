@@ -2,12 +2,12 @@
 description: >-
   Provides localization functionalities for a multilingual site: Database-based
   multilingual texts, currency and dates formatting, timezones and other locale
-  settings
+  settings.
 ---
 
 # Locale
 
-> See the [Css and Javascript guide](../../guide/css-and-javascript-guide/) to learn how to work with the Javascript module.
+> See the [Locale guide](../../guide/locale-guide.md) to learn how to work with the Locale module.
 
 ## Configuration
 
