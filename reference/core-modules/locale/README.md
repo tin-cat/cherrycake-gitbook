@@ -74,9 +74,9 @@ description: >-
 
 
 
-* **`TIMESTAMP_FORMAT_BASIC`**
-* **`TIMESTAMP_FORMAT_HUMAN`**
-* **`TIMESTAMP_FORMAT_RELATIVE_HUMAN`**
+* **`TIMESTAMP_FORMAT_BASIC`** Basic formatting, like `5/18/2020`
+* **`TIMESTAMP_FORMAT_HUMAN`** Human readable formatting, like `may 18th, 2020`
+* **`TIMESTAMP_FORMAT_RELATIVE_HUMAN`** Formatting relative to now, like `10 hours ago`
 
 
 
