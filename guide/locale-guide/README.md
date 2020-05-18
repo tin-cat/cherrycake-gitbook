@@ -43,7 +43,7 @@ Once your `availableLocales` are in place, you can choose the locale to use by c
 ```php
 echo $e->Locale->formatTimestamp(time());
 echo $e->Locale->formatCurrency(19.5);
-echo $e->Locale->getTimeZoneName()
+echo $e->Locale->getTimeZoneName();
 ```
 
 ```text
@@ -111,4 +111,8 @@ Etc/UTC
 19,50€
 Europe/Madrid
 ```
+
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/localeGuideBasic) site.
+{% endhint %}
 
