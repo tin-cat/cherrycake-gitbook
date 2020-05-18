@@ -122,6 +122,7 @@
   * [DatabaseRow](reference/core-classes/databaserow.md)
   * [Engine](reference/core-classes/engine/README.md)
     * [Engine methods](reference/core-classes/engine/methods.md)
+    * [Engine properties](reference/core-classes/engine/engine-properties.md)
   * [Gradient](reference/core-classes/gradient.md)
   * [Module](reference/core-classes/module/README.md)
     * [Module methods](reference/core-classes/module/methods.md)

@@ -1,5 +1,11 @@
 # Locale methods
 
+## convertTimestamp\( timestamp, toTimeZone, fromTimeZone \)
+
+Converts a given timestamp from one timezone to another.
+
+* **`timestamp`** The timestamp to convert. Expected to be in the given `fromTimezone`. The default cherrycake TIMEZONE configuration is considered as `fromTimezone` if not specified \(Usually `Etc/UTC`\)
+
 ## getLanguageCode\( language \)
 
 Gets the code of a language.
