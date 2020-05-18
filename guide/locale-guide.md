@@ -36,7 +36,7 @@ $LocaleConfig = [
 * **`canonicalLocale`** The name of the locale to be considered the main locale of the app.
 * **`availableLanguages`** An array of the languages that will be available in the app, from the available [`LANGUAGE_?`](../reference/core-modules/locale/#constants) constants.
 
-> If you don't setup your own `availableLocales`, or if you don't create a [Locale](../reference/core-modules/locale/) configuration file at all,  a default locale named `main` is set with the [default configuration values](../reference/core-modules/locale/#configuration).
+> If you don't setup your own `availableLocales`, or if you don't create a [Locale](../reference/core-modules/locale/) configuration file at all,  a default locale named `main` will be used with the [default configuration values](../reference/core-modules/locale/#configuration).
 
 When you're using the [Locale](../reference/core-modules/locale/) module by including it in the [`dependentModules`](modules-guide.md#specifying-module-dependencies) list of your app module.
 
