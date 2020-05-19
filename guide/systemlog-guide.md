@@ -1,6 +1,6 @@
 # SystemLog guide
 
-The [SystemLog](../reference/core-modules/systemlog/) module stores events in a persistent log as they occur, aimed at monitoring failures, warnings and other issues that might happen during the execution of the app.
+The [SystemLog](../reference/core-modules/systemlog/) module stores events in a persistent log as they occur, aimed at monitoring failures, warnings and other events that might happen during the execution of the app.
 
 Events are stored in the `cherrycake_systemLog` database table using a shared-memory buffer and a programmed [Janitor](janitor-guide.md) commit task for optimal performance, resulting in a system capable of ingesting many events per second without a noticeable performance impact.
 
@@ -42,5 +42,42 @@ Many core modules use [SystemLog](../reference/core-modules/systemlog/) when ava
 
 ## Create your own SystemLog events
 
-You can create your own SystemLog events whenever you need, so you'll be able to differentiate them when analyzing the database. To do so, just create a new class that extends the base [SystemLogEvent](../reference/core-classes/systemlogevent/) class. Imagine that you 
+You can create your own [SystemLog](../reference/core-modules/systemlog/) events to differentiate them when analyzing the database, or to provide additional logic to the way your events are described using the additional event data. To do so, create a new class that extends the base [SystemLogEvent](../reference/core-classes/systemlogevent/) class.
+
+Imagine you've created a function that uses the [OMDb API](https://www.omdbapi.com) to request details about movies, and want to log every request made to the API. You could create a new [SystemLogEvent](../reference/core-classes/systemlogevent/) called `SystemLogEventOmdbRequest` by creating the file `classes/SystemLogEventOmdbRequest.class.php` like this:
+
+```php
+<?php
+
+namespace Cherrycake;
+
+class SystemLogEventOmdbRequest extends SystemLogEvent {
+}
+```
+
+And you'd be ready to trigger this event every time a request to the OMDb API is done, like this:
+
+```php
+$e->SystemLog->event(new SystemLogEventOmdbRequest);
+```
+
+Let's modify the `SystemLogEventOmdbRequest` class so it accepts a movie title on its constructor and stores it in the data payload of the event:
+
+
+
+```php
+<?php
+
+namespace Cherrycake;
+
+class SystemLogEventOmdbRequest extends SystemLogEvent {
+    function __construct($movieTitle) {
+        parent::__construct([
+            "data" => [
+                "movieTitle" => $movieTitle
+            ]
+        ]);
+    }
+}
+```
 
