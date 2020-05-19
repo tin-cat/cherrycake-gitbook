@@ -2,7 +2,7 @@
 
 [Locale](../../reference/core-modules/locale/) can automatically determine which one of the configured [`availableLocales`](../../reference/core-modules/locale/#configuration) to use based on the domain the user is visiting. To do this, just add the [`domains`](../../reference/core-modules/locale/#configuration) key when configuring your `availableLocales`.
 
-For example, imagine the main english version of your web site runs on the domain [`litmind.com`](https://litmind.com), and you want the spanish version of the website to run under [es.litmind.com](https://es.litmind.com). Your `Locale.config.php` might look something like this:
+For example, imagine the main english version of your web site runs on the domain [`litmind.com`](https://litmind.com), and you want the spanish version of the website to run under [`es.litmind.com`](https://es.litmind.com). Your `Locale.config.php` might look something like this:
 
 ```php
 <?php
@@ -34,7 +34,7 @@ $LocaleConfig = [
 	],
 	"defaultLocale" => "main",
 	"canonicalLocale" => "main",
-	"availableLanguages" => [LANGUAGE_ENGLISH]
+	"availableLanguages" => [LANGUAGE_ENGLISH, LANGUAGE_SPANISH]
 ];
 ```
 
