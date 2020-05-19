@@ -42,5 +42,9 @@ With this setup, the `main` locale will be automatically selected when visiting 
 
 > Separating your website locales in different domains like this is one of the ways [Google recommends](https://support.google.com/webmasters/answer/182192#locale-specific-urls) to organize multilingual web sites for optimal SEO.
 
+## Automatically redirecting users to the matching locale domain
 
+[Google doesn't recommend](https://support.google.com/webmasters/answer/182192) performing an automatic redirection based on the user's perceived language or the geotargeting based on the client IP, and [Locale](../../reference/core-modules/locale/) doesn't implement such a mechanism for that reason.
+
+Instead, you might want to show the user the option to switch to another language/localization, specially if you've detected that it's different than the one he is currently visiting.
 
