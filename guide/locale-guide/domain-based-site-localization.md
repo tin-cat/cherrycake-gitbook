@@ -46,5 +46,9 @@ With this setup, the `main` locale will be automatically selected when visiting 
 
 [Google doesn't recommend](https://support.google.com/webmasters/answer/182192) performing an automatic redirection based on the user's perceived language or the geotargeting based on the client IP, and [Locale](../../reference/core-modules/locale/) doesn't implement such a mechanism for that reason.
 
-Instead, you might want to show the user the option to switch to another language/localization, specially if you've detected that it's different than the one he is currently visiting.
+Instead, you might want to give the user the option to switch to another language/localization of your site, specially if you've detected that it's different than the one he is currently visiting.
+
+## Let Google discover the different versions of your site
+
+For SEO purposes, it's quite important to help Google discover the different versions of your site when you have multilingual sites. One of the [recommended ways](https://support.google.com/webmasters/answer/189077) of doing so is by specifying `alternate` meta tags in your HTML `HEAD` section.
 
