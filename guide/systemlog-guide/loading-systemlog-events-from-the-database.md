@@ -37,5 +37,7 @@ foreach ($systemLogEvents as $systemLogEvent) {
 [5/16/20 16:28.42] SystemLogEventError: Unknown example
 ```
 
-
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/systemLogGuideLoadingEvents) site.
+{% endhint %}
 
