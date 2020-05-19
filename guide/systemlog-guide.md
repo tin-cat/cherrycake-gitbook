@@ -61,9 +61,7 @@ And you'd be ready to trigger this event every time a request to the OMDb API is
 $e->SystemLog->event(new SystemLogEventOmdbRequest);
 ```
 
-Let's modify the `SystemLogEventOmdbRequest` class so it accepts a movie title on its constructor and stores it in the data payload of the event:
-
-
+Now let's modify the `SystemLogEventOmdbRequest` class so it accepts a movie title on its constructor and stores it in the data payload of the event:
 
 ```php
 <?php
@@ -79,5 +77,11 @@ class SystemLogEventOmdbRequest extends SystemLogEvent {
         ]);
     }
 }
+```
+
+So now we can trigger the event like this, and the movie title will be stored along with it:
+
+```php
+$e->SystemLog->event(new SystemLogEventOmdbRequest("Blade Runner"));
 ```
 
