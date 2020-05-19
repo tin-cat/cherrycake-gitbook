@@ -6,7 +6,7 @@ Events are stored in the `cherrycake_systemLog` database table using a shared-me
 
 > You can create the SystemLog table in your database by importing the `systemLog.sql` file you'll find in the [Cherrycake skeleton repository](https://github.com/tin-cat/cherrycake-skeleton), under the `install/database` directory.
 
-Events are stored as objects that extend the base [SystemLogEvent](../../reference/core-classes/systemlogevent/) class. These are the pre-defined event classes:
+[SystemLog](../../reference/core-modules/systemlog/) events are stored as objects that extend the base [SystemLogEvent](../../reference/core-classes/systemlogevent/) class. These are the pre-defined event classes:
 
 * **`SystemLogEventCritical`** Critical events that might interrupt the normal execution of the app.
 * **`SystemLogEventError`** Error events that might not interrupt the normal execution of the app.
