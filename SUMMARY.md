@@ -64,9 +64,9 @@
 * [Locale guide](guide/locale-guide/README.md)
   * [Multilingual texts](guide/locale-guide/multilingual-texts.md)
   * [Domain based site localization](guide/locale-guide/domain-based-site-localization.md)
-* [Janitor guide](guide/janitor-guide.md)
 * [SystemLog guide](guide/systemlog-guide.md)
 * [Stats guide](guide/stats-guide.md)
+* [Janitor guide](guide/janitor-guide.md)
 * [Debugging](guide/debugging.md)
 * [Command line apps](guide/cli.md)
 
