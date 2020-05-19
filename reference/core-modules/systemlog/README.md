@@ -7,7 +7,7 @@ description: >-
 
 # SystemLog
 
-> See the [SystemLog guide](../../../guide/systemlog-guide.md) to learn how to work with the SystemLog module.
+> See the [SystemLog guide](../../../guide/systemlog-guide/) to learn how to work with the SystemLog module.
 
 ## Configuration
 
