@@ -1,6 +1,6 @@
 # SystemLog guide
 
-The [SystemLog](../reference/core-modules/systemlog/) module stores a log events as they occur, aimed at monitoring failures, warnings and other issues that might happen during the execution of the app.
+The [SystemLog](../reference/core-modules/systemlog/) module stores events in a persistent log as they occur, aimed at monitoring failures, warnings and other issues that might happen during the execution of the app.
 
 Many core modules use [SystemLog](../reference/core-modules/systemlog/) when available to store logs of events. For example:
 

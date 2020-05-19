@@ -1,8 +1,8 @@
 ---
 description: >-
-  The SystemLog module stores a log events as they occur, aimed at monitoring
-  failures, warnings and other issues that might happen during the execution of
-  the app.
+  The SystemLog module stores events in a persistent log as they occur, aimed at
+  monitoring failures, warnings and other issues that might happen during the
+  execution of the app.
 ---
 
 # SystemLog
