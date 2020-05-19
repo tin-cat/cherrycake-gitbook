@@ -1,6 +1,6 @@
 # Stats guide
 
-The [Stats](../reference/core-modules/stats.md) module stores statistical events in a persistent log as they occur, aimed at providing insight about the activity in your app, like counting visits, views, or any other statistical data.
+The [Stats](../reference/core-modules/stats.md) module stores statistical events in a persistent log as they occur, aimed at providing insight about the activity in your app like the number of received visits in a web page, page views, or any other statistical data.
 
 Events are stored in the `cherrycake_stats` database table using a shared-memory buffer and a programmed [Janitor](janitor-guide.md) commit task for optimal performance, resulting in a system capable of ingesting many events per second without a noticeable performance impact.
 
