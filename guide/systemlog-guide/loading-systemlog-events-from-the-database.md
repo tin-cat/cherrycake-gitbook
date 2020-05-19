@@ -5,9 +5,37 @@ Since the [SystemLogEvent](../../reference/core-classes/systemlogevent/) class e
 For example, let's load the last fifty [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects from the [SystemLog](../../reference/core-modules/systemlog/) database, using what we learned in the [Item lists](../items-guide/item-lists.md) section of the [Items guide](../items-guide/):
 
 ```php
-$systemLogEvents = new SystemLogEvents([
-    "fillMethod" => "fromParameters",
-    "p" => []
+$systemLogEvents = new \Cherrycake\SystemLogEvents([
+	"fillMethod" => "fromParameters",
+	"p" => [
+		"limit" => 50,
+		"orders" => [
+			"chronological" => "dateAdded desc"
+		],
+		"order" => ["chronological"]
+	]
 ]);
+
+foreach ($systemLogEvents as $systemLogEvent) {
+    echo
+        "[".$e->Locale->formatTimestamp($systemLogEvent->dateAdded, ["isHours" => true, "isSeconds" => true])."] ".
+        $systemLogEvent->type.
+        ": ".
+        $systemLogEvent->description.
+        "\n";
+}
 ```
+
+```text
+[5/19/20 14:00.50] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
+[5/19/20 14:00.48] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
+[5/18/20 16:34.57] SystemLogEventError: Requested timezone not found
+[5/18/20 16:33.38] SystemLogEventError: Requested timezone not found
+[5/18/20 16:28.14] SystemLogEventError: Requested timezone not found
+[5/18/20 16:28.13] SystemLogEventError: Requested timezone not found
+[5/16/20 16:28.48] SystemLogEventError: Unknown example
+[5/16/20 16:28.42] SystemLogEventError: Unknown example
+```
+
+
 
