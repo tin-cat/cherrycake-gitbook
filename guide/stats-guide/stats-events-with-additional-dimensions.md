@@ -15,7 +15,7 @@ class StatsEventUserLogin extends \Cherrycake\StatsEvent {
 }
 ```
 
-And trigger it whenever the user logs in. If we do this in the example we saw in the [Creating a complete login workflow](../login-guide/creating-a-complete-login-workflow.md) section, we would trigger the `StatsEventUserLogin` in the `doLogin` method, like this:
+To trigger this StatsEvent in the example we saw in the [Creating a complete login workflow](../login-guide/creating-a-complete-login-workflow.md) section, we would do it in the `doLogin` method, like this:
 
 ```php
 function doLogin($request) {
@@ -25,15 +25,15 @@ function doLogin($request) {
         $result == \Cherrycake\LOGIN_RESULT_FAILED_UNKNOWN_USER
         ||
         $result == \Cherrycake\LOGIN_RESULT_FAILED_WRONG_PASSWORD
-    ) {
-        $e->Stats->trigger(new StatsEventUserLogin);
-    
+    ) {    
         $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
             "code" => \Cherrycake\RESPONSE_OK,
             "payload" => $e->HtmlDocument->header()."Login error".$e->HtmlDocument->footer()
         ]));
     }
     else {
+        $e->Stats->trigger(new StatsEventUserLogin);
+        
         $e->Output->setResponse(new \Cherrycake\Response([
             "code" => \Cherrycake\RESPONSE_REDIRECT_FOUND,
             "url" => $e->Actions->getAction("loginGuideHome")->request->buildUrl()
