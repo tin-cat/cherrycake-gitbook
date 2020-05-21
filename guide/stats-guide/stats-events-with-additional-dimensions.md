@@ -42,7 +42,7 @@ function doLogin($request) {
 }
 ```
 
-But what if we wanted to keep track of the times each individual user logs in, instead of all the users? That's exactly what an additional dimension would do here. In this case, the user id would be the additional dimension.
+But what if we wanted to keep track of the times each individual user logs in? That's exactly what an additional dimension would do. In this case, the additional dimension would be the user's id.
 
 To add the user id as an additional dimension to the `StatsEventUserLogin` class, we would modify it like this:
 
