@@ -65,7 +65,7 @@ class StatsEventUserLogin extends \Cherrycake\StatsEvent {
 }
 ```
 
-Notice we've added the `$isSecondaryId` and `$secondaryIdDescription` properties, and we overloaded the `StatsEvent::loadInline` method to retrieve the passed `userId` key and assign it to the `secondary_id` property. Don't forget to call the parent constructor at the end.
+Notice we've added the `$isSecondaryId` and `$secondaryIdDescription` properties, and we overloaded the `StatsEvent::loadInline` method to retrieve the passed `userId` key and assign it to the `secondary_id` property. Don't forget to call the parent constructor at the end there.
 
 So now, when triggering the `StatsEventUserLogin` event, we can pass the user's id like this:
 
