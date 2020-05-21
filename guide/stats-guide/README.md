@@ -23,7 +23,7 @@ class StatsEventHomeView extends \Cherrycake\StatsEvent {
 }
 ```
 
-Note that we specified [`STATS_EVENT_TIME_RESOLUTION_DAY`](../../reference/core-classes/statsevent/#constants) as the `timeResolution` for our `StatsEventHomeView`. This will cause this event to be counted in a daily basis, meaning only one row will be stored in the database for each different day, storing a count of the number of times the event has been triggered during that day.
+Note that we specified [`STATS_EVENT_TIME_RESOLUTION_DAY`](../../reference/core-classes/statsevent/#constants) as the `timeResolution` for our `StatsEventHomeView`. This will cause this event to be counted in a daily basis, meaning only one row will be stored in the database for each different day, along containing a counter of the number of times the event has been triggered during that day.
 
 You can specify other time resolutions as well, all of them are self-explanatory:
 
