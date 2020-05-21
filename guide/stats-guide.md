@@ -6,7 +6,11 @@ Events are stored in the `cherrycake_stats` database table using a shared-memory
 
 > You can create the Stats table in your database by importing the `stats.sql` file you'll find in the [Cherrycake skeleton repository](https://github.com/tin-cat/cherrycake-skeleton), under the `install/database` directory.
 
+## Creating a StatsEvent
+
 [Stats](../reference/core-modules/stats.md) events are stored as objects that extend the base StatsEvent class. You must create one StatsEvent class per each statistical data point you want to store.
+
+Let's say you want to keep track of the number of views received by the home page of your web site app every day. To do so we'll create a new class called `StatsEventHomeView` in the `classes/StatsEventHomeView.class.php` file, like this:
 
 ## What's the difference between a SystemLogEvent and a StatsEvent?
 
