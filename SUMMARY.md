@@ -142,7 +142,6 @@
   * [RequestPathComponent](reference/core-classes/requestpathcomponent/README.md)
     * [RequestPathComponent methods](reference/core-classes/requestpathcomponent/methods.md)
   * [StatsEvent](reference/core-classes/statsevent/README.md)
-    * [StatsEvent methods](reference/core-classes/statsevent/statsevent-methods.md)
     * [StatsEvent properties](reference/core-classes/statsevent/statsevent-properties.md)
   * [StatsEvents](reference/core-classes/statsevents/README.md)
     * [StatsEvents methods](reference/core-classes/statsevents/statsevents-methods.md)

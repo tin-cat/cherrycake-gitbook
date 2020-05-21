@@ -52,16 +52,26 @@ To add the user id as an additional dimension to the `StatsEventUserLogin` class
 namespace CherrycakeApp;
 
 class StatsEventUserLogin extends \Cherrycake\StatsEvent {
-	protected $timeResolution = \Cherrycake\STATS_EVENT_TIME_RESOLUTION_DAY;
+    protected $timeResolution = \Cherrycake\STATS_EVENT_TIME_RESOLUTION_DAY;
     protected $typeDescription = "User login";
     protected $isSecondaryId = true;
     protected $secondaryIdDescription = "User id";
 
     function loadInline($data = false) {
-		if ($data["userId"] ?? false)
-			$this->secondary_id = $data["userId"];		
-		return parent::loadInline($data);
-	}
+        if ($data["userId"] ?? false)
+            $this->secondary_id = $data["userId"];		
+        return parent::loadInline($data);
+    }
 }
 ```
+
+Notice we've added the `$isSecondaryId` and `$secondaryIdDescription` properties, and we overloaded the `StatsEvent::loadInline` method to retrieve the passed `userId` key and assign it to the `secondary_id` property. Don't forget to call the parent constructor at the end.
+
+So now, when triggering the `StatsEventUserLogin` event, we can pass the user's id like this:
+
+```php
+$e->Stats->trigger(new StatsEventUserLogin(["userId" => $e->Login->user->id]));
+```
+
+> You can create another additional dimension by setting the `$isTertiaryId` and `$tertiaryIdDescription` properties, and updating the `loadInline` method accordingly.
 
