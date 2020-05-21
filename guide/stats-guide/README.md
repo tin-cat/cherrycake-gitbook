@@ -45,6 +45,10 @@ In the part of your code where you want to trigger the stats event, call the [St
 $e->Stats->trigger(new StatsEventHomeView);
 ```
 
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/statsGuideTriggeringEvent) site.
+{% endhint %}
+
 ## What's the difference between a SystemLogEvent and a StatsEvent?
 
 [SystemLog](../../reference/core-modules/systemlog/) stores an object in the database for each logged event, allowing individual events to hold their own unique data, but causing the database to grow rapidly when lots of [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects are stored.
