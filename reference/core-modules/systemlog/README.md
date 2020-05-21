@@ -11,12 +11,7 @@ description: >-
 
 ## Configuration
 
-* **`eventsToLog`** An array of the [SystemLogEvent](../../core-classes/systemlogevent/) class names to be stored in the log. The events not listed here will not be logged even if they're triggered. Default:
-  * `SystemLogEventInfo`
-  * `SystemLogEventWarning`
-  * `SystemLogEventError`
-  * `SystemLogEventCritical`
-  * `SystemLogEventHack`
+* **`eventsToLog`** An array of the [SystemLogEvent](../../core-classes/systemlogevent/) class names to be stored in the log. The events not listed here will not be logged even if they're triggered. Set it to false to log all events. Default: `false`
 * **`tableName`** The name of the table in the database where the log events will be stored. Default: `cherrycake_systemLog`.
 * **`cacheProviderName`** The name of the cache provider to use. Default: `engine`.
 * **`databaseProviderName`** The name of the database provider to use. Default: `main`.

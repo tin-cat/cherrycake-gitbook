@@ -37,6 +37,12 @@ You should choose the time resolution that better fits your needs, keeping in mi
 
 > If you need a precise log of events instead of the statistical approach of counting the times an event is triggered within a time frame, use the [SystemLog](systemlog-guide/) module instead.
 
+## Triggering a Stats event
+
+Triggering a Stats event is quite easy: In the part of your code where you want to trigger the event, call the Stats::trigger method like this:
+
+
+
 ## What's the difference between a SystemLogEvent and a StatsEvent?
 
 [SystemLog](../reference/core-modules/systemlog/) stores an object in the database for each logged event, allowing individual events to hold their own unique data, but causing the database to grow rapidly when lots of [SystemLogEvent](../reference/core-classes/systemlogevent/) objects are stored.
