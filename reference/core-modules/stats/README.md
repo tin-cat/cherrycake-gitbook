@@ -6,7 +6,7 @@ description: >-
 
 # Stats
 
-> See the [Stats guide](../../../guide/stats-guide.md) to learn how to work with the Stats module.
+> See the [Stats guide](../../../guide/stats-guide/) to learn how to work with the Stats module.
 
 ## Configuration
 
