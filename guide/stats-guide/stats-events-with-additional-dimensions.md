@@ -78,7 +78,7 @@ $e->Stats->trigger(new StatsEventUserLogin(["userId" => $e->Login->user->id]));
 Using additional dimensions like this will add multiple rows to the database per each time frame and different dimension value, take into account that this will of course cause the stats table to grow exponentially faster.
 
 {% hint style="success" %}
-See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/statsGuideTriggeringEvent) site.
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/statsGuideAdditionalDimensions) site.
 {% endhint %}
 
 ## Application examples
