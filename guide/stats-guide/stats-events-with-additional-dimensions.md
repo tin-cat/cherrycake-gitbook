@@ -75,3 +75,5 @@ $e->Stats->trigger(new StatsEventUserLogin(["userId" => $e->Login->user->id]));
 
 > You can create another additional dimension by setting the `$isTertiaryId` and `$tertiaryIdDescription` properties, and updating the `loadInline` method accordingly.
 
+
+
