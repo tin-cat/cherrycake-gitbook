@@ -39,7 +39,7 @@ You should choose the time resolution that better fits your needs, keeping in mi
 
 ## Triggering a Stats event
 
-Triggering a Stats event is quite easy: In the part of your code where you want to trigger the event, call the [Stats::trigger](../reference/core-modules/stats/stats-methods.md#trigger-statsevent) method like this:
+In the part of your code where you want to trigger the stats event, call the [Stats::trigger](../reference/core-modules/stats/stats-methods.md#trigger-statsevent) method like this:
 
 ```php
 $e->Stats->trigger(new StatsEventHomeView);
