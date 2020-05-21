@@ -17,7 +17,7 @@ Events are stored in the `cherrycake_systemLog` database table using a shared-me
 Here's how you trigger a [SystemLog](../../reference/core-modules/systemlog/) event:
 
 ```php
-$e->SystemLog->event(new SystemLogEventError([
+$e->SystemLog->event(new \Cherrycake\SystemLogEventError([
 	"description" => "Error when trying to curl Mailboxlayer API to validate an email"
 ]));
 ```
