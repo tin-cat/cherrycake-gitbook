@@ -81,3 +81,8 @@ Using additional dimensions like this will add multiple rows to the database per
 See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/statsGuideTriggeringEvent) site.
 {% endhint %}
 
+## Application examples
+
+Some scenarios where additional dimensions could come in handy:
+
+* 
