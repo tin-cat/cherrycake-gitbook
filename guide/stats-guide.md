@@ -8,9 +8,20 @@ Events are stored in the `cherrycake_stats` database table using a shared-memory
 
 ## Creating a StatsEvent
 
-[Stats](../reference/core-modules/stats.md) events are stored as objects that extend the base StatsEvent class. You must create one StatsEvent class per each statistical data point you want to store.
+[Stats](../reference/core-modules/stats.md) events are stored as objects that extend the base [StatsEvent](../reference/core-classes/statsevent/) class. You must create one [StatsEvent](../reference/core-classes/statsevent/) class per each statistical data point you want to store.
 
 Let's say you want to keep track of the number of views received by the home page of your web site app every day. To do so we'll create a new class called `StatsEventHomeView` in the `classes/StatsEventHomeView.class.php` file, like this:
+
+```php
+<?php
+
+namespace CherrycakeApp;
+
+class StatsEventHomeView extends \Cherrycake\StatsEvent {
+	protected $timeResolution = \Cherrycake\STATS_EVENT_TIME_RESOLUTION_DAY;
+	protected $typeDescription = "Home view";
+}
+```
 
 ## What's the difference between a SystemLogEvent and a StatsEvent?
 
