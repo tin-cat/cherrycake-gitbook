@@ -6,14 +6,9 @@ For example, let's load the last fifty [SystemLogEvent](../../reference/core-cla
 
 ```php
 $systemLogEvents = new \Cherrycake\SystemLogEvents([
-	"fillMethod" => "fromParameters",
-	"p" => [
-		"limit" => 50,
-		"orders" => [
-			"chronological" => "dateAdded desc"
-		],
-		"order" => ["chronological"]
-	]
+    "p" => [
+		    "limit" => 50
+		]
 ]);
 
 foreach ($systemLogEvents as $systemLogEvent) {
