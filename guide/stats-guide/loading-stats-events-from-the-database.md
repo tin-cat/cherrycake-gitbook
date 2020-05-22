@@ -28,14 +28,8 @@ As you can see, the [StatsEvents](../../reference/core-classes/statsevents/stats
 * **`toTimestamp`** Retrieves [StatsEvent](../../reference/core-classes/statsevent/) objects triggered up to this timestamp.
 
 ```text
-[5/19/20 14:00.50] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
-[5/19/20 14:00.48] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
-[5/18/20 16:34.57] SystemLogEventError: Requested timezone not found
-[5/18/20 16:33.38] SystemLogEventError: Requested timezone not found
-[5/18/20 16:28.14] SystemLogEventError: Requested timezone not found
-[5/18/20 16:28.13] SystemLogEventError: Requested timezone not found
-[5/16/20 16:28.48] SystemLogEventError: Unknown example
-[5/16/20 16:28.42] SystemLogEventError: Unknown example
+5/21/20: Home view: 90
+5/22/20: Home view: 1
 ```
 
 {% hint style="success" %}
