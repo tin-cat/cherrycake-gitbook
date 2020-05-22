@@ -12,13 +12,12 @@ $statsEventItems = new \Cherrycake\StatsEvents([
     ]
 ]);
 
-foreach ($systemLogEvents as $systemLogEvent) {
+foreach ($statsEventItems as $statsEvent) {
     echo
-        "[".$e->Locale->formatTimestamp($systemLogEvent->dateAdded, ["isHours" => true, "isSeconds" => true])."] ".
-        $systemLogEvent->type.
-        ": ".
-        $systemLogEvent->description.
-        "\n";
+        $e->Locale->formatTimestamp($statsEvent->timestamp).
+        ": ".$statsEvent->typeDescription.
+        ": ".$statsEvent->count.
+				"\n";
 }
 ```
 
