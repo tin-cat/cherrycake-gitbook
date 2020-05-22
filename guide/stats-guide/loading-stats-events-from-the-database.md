@@ -39,3 +39,7 @@ As you can see, the [StatsEvents](../../reference/core-classes/statsevents/stats
 [5/16/20 16:28.42] SystemLogEventError: Unknown example
 ```
 
+{% hint style="success" %}
+See examples of loading StatsEvent object from the database in the [Triggering a stats event ](https://documentation-examples.cherrycake.io/example/statsGuideTriggeringEvent)and [Events with additional dimensions](https://documentation-examples.cherrycake.io/example/statsGuideAdditionalDimensions) examples.
+{% endhint %}
+
