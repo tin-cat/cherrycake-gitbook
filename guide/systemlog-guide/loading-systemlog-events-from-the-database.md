@@ -21,6 +21,12 @@ foreach ($systemLogEvents as $systemLogEvent) {
 }
 ```
 
+The [SystemLogEvents](../../reference/core-classes/systemlogevents/systemlogevents-methods.md#fillfromparameters) class accepts some additional keys on top of the usual [Items::fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) keys:
+
+* **`type`** Retrieves only [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects of this class name. Must include the full namespace route to the class.
+* **`fromTimestamp`** Retrieves [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects triggered after this timestamp.
+* **`toTimestamp`** Retrieves [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects triggered up to this timestamp.
+
 ```text
 [5/19/20 14:00.50] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
 [5/19/20 14:00.48] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
