@@ -1,5 +1,5 @@
 ---
-description: Allows an app to program tasks to be executed automatically and periodically.
+description: Allows an app to program tasks to be executed periodically.
 ---
 
 # Janitor
