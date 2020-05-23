@@ -4,14 +4,14 @@ description: Allows an app to program tasks to be executed automatically and per
 
 # Janitor
 
-> See the [Janitor guide](../../guide/janitor-guide.md) to learn how to work with the Janitor module.
+> See the [Janitor guide](../../../guide/janitor-guide.md) to learn how to work with the Janitor module.
 
 ## Constants
 
-* **`JANITORTASK_EXECUTION_RETURN_WARNING`** Return code for [JanitorTask](../core-classes/janitortask/) run when task returned a warning.
-* **`JANITORTASK_EXECUTION_RETURN_ERROR`** Return code for [JanitorTask](../core-classes/janitortask/) run when task returned an error.
-* **`JANITORTASK_EXECUTION_RETURN_CRITICAL`** Return code for [JanitorTask](../core-classes/janitortask/) run when task returned a critical error.
-* **`JANITORTASK_EXECUTION_RETURN_OK`** Return code for [JanitorTask](../core-classes/janitortask/) run when task was executed without errors.
+* **`JANITORTASK_EXECUTION_RETURN_WARNING`** Return code for [JanitorTask](../../core-classes/janitortask/) run when task returned a warning.
+* **`JANITORTASK_EXECUTION_RETURN_ERROR`** Return code for [JanitorTask](../../core-classes/janitortask/) run when task returned an error.
+* **`JANITORTASK_EXECUTION_RETURN_CRITICAL`** Return code for [JanitorTask](../../core-classes/janitortask/) run when task returned a critical error.
+* **`JANITORTASK_EXECUTION_RETURN_OK`** Return code for [JanitorTask](../../core-classes/janitortask/) run when task was executed without errors.
 
 
 

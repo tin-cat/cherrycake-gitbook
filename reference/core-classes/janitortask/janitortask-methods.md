@@ -22,6 +22,6 @@ Performs the tasks for what this JanitorTask is meant. Must be overloaded by a h
 
 **Returns:** An array with the following values:
 
-* One of the [`JANITORTASK_EXECUTION_RETURN_?`](../../core-modules/janitor.md#constants) available constants indicating the result of the task execution.
+* One of the [`JANITORTASK_EXECUTION_RETURN_?`](../../core-modules/janitor/#constants) available constants indicating the result of the task execution.
 * The description of the task result, or a hash array of information on the result of the task execution.
 
