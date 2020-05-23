@@ -141,6 +141,7 @@
     * [Items properties](reference/core-classes/items/items-properties.md)
   * [Image](reference/core-classes/image.md)
   * [JanitorTask](reference/core-classes/janitortask/README.md)
+    * [JanitorTask methods](reference/core-classes/janitortask/janitortask-methods.md)
     * [JanitorTask properties](reference/core-classes/janitortask/janitortask-properties.md)
   * [Module](reference/core-classes/module/README.md)
     * [Module methods](reference/core-classes/module/methods.md)

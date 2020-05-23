@@ -12,15 +12,15 @@ Holds the default configuration for this JanitorTask, intended to be overloaded 
 
 ## $isConfigFile <a id="isconfigfile"></a>
 
-Whether this JanitorTask has its own configuration file.
+Whether this JanitorTask has its own configuration file. Intended to be overloaded by specific tasks.
 
 **Default:** false
 
 ## $name <a id="name"></a>
 
-The name of the task.
+The name of the task. Intended to be overloaded by specific tasks.
 
 ## $description <a id="description"></a>
 
-The description of the task.
+The description of the task. Intended to be overloaded by specific tasks.
 
