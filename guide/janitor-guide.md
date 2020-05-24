@@ -16,7 +16,9 @@ Some examples of the kind of tasks you might want to automate with [Janitor](../
 
 ## Janitor tasks
 
-To set up a task to be executed by the [Janitor](../reference/core-modules/janitor/) module, you first create a new class that extends the [JanitorTask](../reference/core-classes/janitortask/) core class. Imagine you wanted to create a task to update the IMDB rating of the movies in the database every day, we would create the file `classes/JanitorTaskMoviesUpdateImdbRating.class.php` like this:
+To set up a task to be executed by the [Janitor](../reference/core-modules/janitor/) module, you first create a new class that extends the [JanitorTask](../reference/core-classes/janitortask/) core class.
+
+Imagine you wanted to create a task to update the IMDB rating of the movies in the database every day, we would create the file `classes/JanitorTaskMoviesUpdateImdbRating.class.php` like this:
 
 ```php
 <?php
