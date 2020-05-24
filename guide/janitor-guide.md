@@ -18,7 +18,7 @@ Some examples of the kind of tasks you might want to automate with [Janitor](../
 
 To set up a task to be executed by the [Janitor](../reference/core-modules/janitor/) module, you first create a new class that extends the [JanitorTask](../reference/core-classes/janitortask/) core class.
 
-Imagine you wanted to create a task to update the IMDB rating of the movies in the database every day, we would create the file `classes/JanitorTaskMoviesUpdateImdbRating.class.php` like this:
+Imagine we wanted to create a task to update the IMDB rating of the movies in the database every day. To do so, we would create the file `classes/JanitorTaskMoviesUpdateImdbRating.class.php` like this:
 
 ```php
 <?php
@@ -45,7 +45,7 @@ class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
 
 In the config property, we set the `executionPeriodicity` key to `JANITORTASK_EXECUTION_PERIODICITY_HOURS`, and the `periodicityHours` to `["00:00"]`. This will cause this task to run once at each one of the times specified in the `periodicityHours` array. In this case, at midnight precisely.
 
-With `JANITORTASK_EXECUTION_PERIODICITY_HOURS`, you can specify more times for tasks to be executed more than once a day. For example, if you set `periodicityHours` to `["00:00", "12:00"]`, the task will be executed every day at `midnight` and at `noon`.
+With `JANITORTASK_EXECUTION_PERIODICITY_HOURS`, you can specify more times for tasks to be executed more than once a day. For example, if you set `periodicityHours` to `["00:00", "12:00"]`, the task will be executed every day at midnight and at noon.
 
 There are also other execution periodicities you can use:
 
