@@ -4,7 +4,7 @@
 
 Logs the given `LogEvent`.
 
-* **`logEvent`** The [LogEvent](../../core-classes/logevent.md) object to log.
+* **`logEvent`** The [LogEvent](../../core-classes/logevent/) object to log.
 
 **Returns:** A boolean indicating whether the event could be logged or not
 

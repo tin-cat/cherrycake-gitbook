@@ -1,4 +1,4 @@
-# SystemLogEvent methods
+# LogEvent methods
 
 ## getEventDescription
 
@@ -8,7 +8,7 @@ Builds the event description, if it has more complexity than just the event clas
 
 ## loadInline\( data \) <a id="loadinline"></a>
 
-Inherited from the Item class, loads the item when no `loadMethod` has been provided on construction. Intended to be overloaded for events that require extra complexity. This is the usual way of creating [SystemLogEvent](./) objects for logging.
+Inherited from the Item class, loads the item when no `loadMethod` has been provided on construction. Intended to be overloaded for events that require extra complexity. This is the usual way of creating [LogEvent](./) objects for logging.
 
 * **`data`** A hash array with the event data.
 
