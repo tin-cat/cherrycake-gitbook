@@ -66,6 +66,8 @@ In our task class, the `run` method is the one that will be executed when the ta
 
 ## Adding up Janitor tasks to be executed
 
+The last step to having your Janitor tasks automatically executed, is creating the `config/Janitor.config.php` file and  adding them to the `appJanitorTasks` configuration key.
+
 ## Cherrycake core Janitor tasks
 
 ## Setting up the Janitor cron job
