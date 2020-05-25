@@ -22,5 +22,16 @@ description: Allows an app to program tasks to be executed periodically.
 * **`JANITORTASK_EXECUTION_PERIODICITY_HOURS`** The task must be executed on the given hours of each day. Desired hours/minute are specified as an array in the `periodicityHours` config key with the syntax: `["hour:minute", "hour:minute", "hour:minute"]`
 * **`JANITORTASK_EXECUTION_PERIODICITY_DAYSOFMONTH`** The task must be executed on the given days of each month. Desired days/hour/minute are specified as an array in the `periodicityDaysOfMonth` config key with the syntax: `["day@hour:minute", "day@hour:minute", "day@hour:minute"]` \(Take into account days of month that do not exist\)
 
+## Configuration
 
+* **`logDatabaseProviderName`** The name of the DatabaseProvider to use for storing Janitor log. Defaults to `main`.
+* **`logTableName`** The name of the table used to store Janitor log. Defaults to `cherrycake_janitor_log`
+* **`cherrycakeJanitorTasks`** An array of names of the Cherrycake core [JanitorTask](../../core-classes/janitortask/) classes to run. Defaults to an array with the following elements:
+  * `JanitorTaskJanitorPurge`
+  * `JanitorTaskSystemLogPurge`
+  * `JanitorTaskSystemLogCommit`
+  * `JanitorTaskSessionPurge`
+  * `JanitorTaskStatsCommit`
+  * `JanitorTaskLogCommit`
+* **`appJanitorTasks`** An array of names of App JanitorTask classes to run.
 
