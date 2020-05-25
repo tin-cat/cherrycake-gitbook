@@ -26,7 +26,7 @@ description: Allows an app to program tasks to be executed periodically.
 
 * **`logDatabaseProviderName`** The name of the DatabaseProvider to use for storing Janitor log. Defaults to `main`.
 * **`logTableName`** The name of the table used to store Janitor log. Defaults to `cherrycake_janitor_log`
-* **`cherrycakeJanitorTasks`** An array of names of the Cherrycake core [JanitorTask](../../core-classes/janitortask/) classes to run. Defaults to an array with the following elements:
+* **`coreJanitorTasks`** An array of names of the Cherrycake core [JanitorTask](../../core-classes/janitortask/) classes to run. Defaults to an array with the following elements:
   * `JanitorTaskJanitorPurge`
   * `JanitorTaskSystemLogPurge`
   * `JanitorTaskSystemLogCommit`
