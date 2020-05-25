@@ -14,6 +14,12 @@ Some examples of the kind of tasks you might want to automate with [Janitor](../
 * Cache flushes, like periodically clearing certain cached data.
 * Buffer commits, like committing data stored in a shared memory buffer to a database for persistence.
 
+## Setting up the Janitor database table
+
+Janitor uses the `cherrycake_janitor_log` database table to store information about the executed tasks.
+
+> You can create the Janitor table in your database by importing the `janitor.sql` file you'll find in the [Cherrycake skeleton repository](https://github.com/tin-cat/cherrycake-skeleton), under the `install/database` directory.
+
 ## Janitor tasks
 
 To set up a task to be executed by the [Janitor](../reference/core-modules/janitor/) module, you first create a new class that extends the [JanitorTask](../reference/core-classes/janitortask/) core class.
