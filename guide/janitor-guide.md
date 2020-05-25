@@ -89,11 +89,11 @@ $JanitorConfig = [
 Cherrycake itself sets up by default the following core Janitor tasks:
 
 * **`JanitorTaskJanitorPurge`** Performs maintenance tasks related to the [Janitor](../reference/core-modules/janitor/) module itself, like purging old log items from the database.
-* **`JanitorTaskSystemLogPurge`** Performs maintenance tasks related to the [SystemLog](../reference/core-modules/systemlog/) module, like purging old log items from the database.
-* **`JanitorTaskSystemLogCommit`** Commits the [SystemLog](../reference/core-modules/systemlog/) events stored in the cache shared memory to the database for persistence and for optimal performance.
+* **`JanitorTaskSystemLogPurge`** Performs maintenance tasks related to the [SystemLog](../reference/core-modules/systemlog.md) module, like purging old log items from the database.
+* **`JanitorTaskSystemLogCommit`** Commits the [SystemLog](../reference/core-modules/systemlog.md) events stored in the cache shared memory to the database for persistence and for optimal performance.
 * **`JanitorTaskSessionPurge`** Performs maintenance tasks related to the [Session](../reference/core-modules/session/) module, like purging old sessions.
 * **`JanitorTaskStatsCommit`** Commits the [Stats](../reference/core-modules/stats/) events stored in the cache shared memory to the database for persistence and for optimal performance.
-* **`JanitorTaskLogCommit`** Commits the [Log](../reference/core-modules/log.md) events stored in the cache shared memory to the database for persistence and for optimal performance.
+* **`JanitorTaskLogCommit`** Commits the [Log](../reference/core-modules/log/) events stored in the cache shared memory to the database for persistence and for optimal performance.
 
 ## Setting up the Janitor cron job
 

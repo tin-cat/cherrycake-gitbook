@@ -1,6 +1,6 @@
 # Loading Stats events from the database
 
-Just like when [loading SystemLogEvents from the database](../systemlog-guide/loading-systemlog-events-from-the-database.md), you can use the provided [StatsEvents](../../reference/core-classes/statsevents/) class to retrieve and work with lists of [StatsEvent](../../reference/core-classes/statsevent/) objects.
+Just like when [loading SystemLogEvents from the database](../log-guide/loading-systemlog-events-from-the-database.md), you can use the provided [StatsEvents](../../reference/core-classes/statsevents/) class to retrieve and work with lists of [StatsEvent](../../reference/core-classes/statsevent/) objects.
 
 For example, let's load the last fifty `StatsEventHomeView` objects from our [earlier example](./), using what we learned in the [Item lists](../items-guide/item-lists.md) section of the [Items guide](../items-guide/):
 

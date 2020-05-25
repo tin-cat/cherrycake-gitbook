@@ -37,7 +37,7 @@ You can specify other time resolutions as well, all of them are self-explanatory
 
 You should choose the time resolution that better fits your needs, keeping in mind that events defined with a smaller time resolution will need more rows in the database.
 
-> If you need a precise log of events instead of the statistical approach of counting the times an event is triggered within a time frame, use the [SystemLog](../systemlog-guide/) module instead.
+> If you need a precise log of events instead of the statistical approach of counting the times an event is triggered within a time frame, use the [SystemLog](../log-guide/) module instead.
 
 ## Triggering a Stats event
 
@@ -53,7 +53,7 @@ See this example working in the [Cherrycake documentation examples](https://docu
 
 ## What's the difference between a SystemLogEvent and a StatsEvent?
 
-[SystemLog](../../reference/core-modules/systemlog/) stores an object in the database for each logged event, allowing individual events to hold their own unique data, but causing the database to grow rapidly when lots of [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects are stored.
+[SystemLog](../../reference/core-modules/systemlog.md) stores an object in the database for each logged event, allowing individual events to hold their own unique data, but causing the database to grow rapidly when lots of [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects are stored.
 
 [Stats](../../reference/core-modules/stats/), in the other hand, stores a single object in the database for all the events triggered during a certain period. This doesn't allows for individual [Stats](../../reference/core-modules/stats/) events to hold their own differentiating data because it only stores the number of times a certain event has been triggered, but makes [Stats](../../reference/core-modules/stats/) a more suitable solution to store big amounts of events, and it's an ideal solution to store statistical data of any kind.
 
