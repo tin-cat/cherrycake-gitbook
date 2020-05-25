@@ -2,6 +2,8 @@
 
 The [Stats](../../reference/core-modules/stats/) module stores statistical events in a persistent log as they occur, aimed at providing insight about the activity in your app like the number of received visits in a web page, page views, or any other statistical data.
 
+## Setting up the Stats database table
+
 Events are stored in the `cherrycake_stats` database table using a shared-memory buffer and a programmed [Janitor](../janitor-guide.md) commit task for optimal performance, resulting in a system capable of ingesting many events per second without a noticeable performance impact.
 
 > You can create the Stats table in your database by importing the `stats.sql` file you'll find in the [Cherrycake skeleton repository](https://github.com/tin-cat/cherrycake-skeleton), under the `install/database` directory.

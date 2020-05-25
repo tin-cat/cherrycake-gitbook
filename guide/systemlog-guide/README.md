@@ -2,7 +2,11 @@
 
 The [SystemLog](../../reference/core-modules/systemlog/) module stores events in a persistent log as they occur, aimed at monitoring failures, warnings and other events that might happen during the execution of the app.
 
+## Setting up the SystemLog database table
+
 Events are stored in the `cherrycake_systemLog` database table using a shared-memory buffer and a programmed [Janitor](../janitor-guide.md) commit task for optimal performance, resulting in a system capable of ingesting many events per second without a noticeable performance impact.
+
+## 
 
 > You can create the SystemLog table in your database by importing the `systemLog.sql` file you'll find in the [Cherrycake skeleton repository](https://github.com/tin-cat/cherrycake-skeleton), under the `install/database` directory.
 
