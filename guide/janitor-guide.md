@@ -64,3 +64,25 @@ There are also other execution periodicities you can use:
 
 In our task class, the `run` method is the one that will be executed when the task is due, so it's where you should put your task code. Like in our example, if you need to work with core or app modules there, use  [Engine::loadCoreModule](../reference/core-classes/engine/methods.md#loadcoremodule) or [Engine::loadAppModule](../reference/core-classes/engine/methods.md#loadappmodule).
 
+## Adding up Janitor tasks to be executed
+
+## Cherrycake core Janitor tasks
+
+## Setting up the Janitor cron job
+
+To let [Janitor](../reference/core-modules/janitor/) do its job, the action named `janitorRun` must be executed every minute automatically by the operating system in the server. This is usually done by setting up a cron job in Linux that does it by using the Cherrycake [command line CLI interface](cli.md).
+
+In Linux, you would set up the Janitor cron job by editing your crontab with the command:
+
+```bash
+crontab -e
+```
+
+And adding a line like this:
+
+```text
+* * * * * /var/www/app/cherrycake janitorRun
+```
+
+> When using the [Cherrycake Docker project](getting-started/docker.md) to run your Cherrycake app, this cron job is already set up and running.
+
