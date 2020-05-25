@@ -86,6 +86,15 @@ $JanitorConfig = [
 
 ## Cherrycake core Janitor tasks
 
+Cherrycake itself sets up by default the following core Janitor tasks:
+
+* **`JanitorTaskJanitorPurge`** Performs maintenance tasks related to the [Janitor](../reference/core-modules/janitor/) module itself, like purging old log items from the database.
+* **`JanitorTaskSystemLogPurge`** Performs maintenance tasks related to the [SystemLog](../reference/core-modules/systemlog/) module, like purging old log items from the database.
+* **`JanitorTaskSystemLogCommit`** Commits the [SystemLog](../reference/core-modules/systemlog/) events stored in the cache shared memory to the database for persistence and for optimal performance.
+* **`JanitorTaskSessionPurge`** Performs maintenance tasks related to the [Session](../reference/core-modules/session/) module, like purging old sessions.
+* **`JanitorTaskStatsCommit`** Commits the [Stats](../reference/core-modules/stats/) events stored in the cache shared memory to the database for persistence and for optimal performance.
+* **`JanitorTaskLogCommit`** Commits the [Log](../reference/core-modules/log.md) events stored in the cache shared memory to the database for persistence and for optimal performance.
+
 ## Setting up the Janitor cron job
 
 To let [Janitor](../reference/core-modules/janitor/) do its job, the [CLI action](cli.md#cli-actions) named `janitorRun` must be executed every minute automatically by the operating system in the server. This is usually done by setting up a cron job in Linux that does it by using the Cherrycake [Command line interface](cli.md).
