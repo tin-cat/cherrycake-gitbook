@@ -70,7 +70,7 @@ In our task class, the `run` method is the one that will be executed when the ta
 
 ## Setting up the Janitor cron job
 
-To let [Janitor](../reference/core-modules/janitor/) do its job, the action named `janitorRun` must be executed every minute automatically by the operating system in the server. This is usually done by setting up a cron job in Linux that does it by using the Cherrycake [command line CLI interface](cli.md).
+To let [Janitor](../reference/core-modules/janitor/) do its job, the [CLI action](cli.md#cli-actions) named `janitorRun` must be executed every minute automatically by the operating system in the server. This is usually done by setting up a cron job in Linux that does it by using the Cherrycake [Command line interface](cli.md).
 
 In Linux, you would set up the Janitor cron job by editing your crontab with the command:
 
@@ -83,6 +83,8 @@ And adding a line like this:
 ```text
 * * * * * /var/www/app/cherrycake janitorRun
 ```
+
+If you've not used the [Cherrycake Skeleton](getting-started/skeleton.md) to build your project, take a look at the [Command line interface](cli.md) section to learn how to call CLI actions from the Linux command line.
 
 > When using the [Cherrycake Docker project](getting-started/docker.md) to run your Cherrycake app, this cron job is already set up and running.
 
