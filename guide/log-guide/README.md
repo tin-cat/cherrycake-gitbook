@@ -40,7 +40,7 @@ $e->Log->logEvent(new LogEventMovieSearch([
 ]));
 ```
 
-## Simplifying log events with additional data
+## Simplifying Log events with additional data
 
 You can further simplify the way you trigger Log events by overloading your event's constructor. Let's say instead of passing the whole `additionalData` hash array like we did above, we wanted to be able to just pass the movie title and let the constructor take care of it. We would do it like this:
 
@@ -51,6 +51,7 @@ namespace CherrycakeApp;
 
 class LogEventMovieSearch extends \Cherrycake\LogEvent {
     protected $typeDescription = "Movie search";
+    
     function __construct($movieTitle) {
         parent::__construct([
             "additionalData" => [
@@ -70,4 +71,32 @@ $e->Log->logEvent(new LogEventMovieSearch("Blade Runner"));
 {% hint style="success" %}
 See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/movieSearch) site.
 {% endhint %}
+
+## Storing outher ids in Log events
+
+Sometimes you might want to store ids from items in other tables from your database in your Log events, so you're later able to query the log events database with relationships.
+
+For example, let's say that, as long as the user has logged in to your app, whenever he searches for a movie like we did in the example above, its user id gets also stored in the `LogEventMovieSearch`. That will allow us to know, for example, which users performed more searches. To do it, we would modify the `LogEventMovieSearch` class like this:
+
+```php
+<?php
+
+namespace CherrycakeApp;
+
+class LogEventMovieSearch extends \Cherrycake\LogEvent {
+    protected $typeDescription = "Movie search";
+    protected $outherIdDescription = "Logged user id";
+    
+    function __construct($movieTitle) {
+        global $e;
+        $e->loadCoreModule("Login");
+        parent::__construct([
+            "outher_id" => $e->Login->isLogged() ? $e->Login->user->id : false,
+            "additionalData" => [
+                "movieTitle" => $movieTitle
+            ]
+        ]);
+    }
+}
+```
 
