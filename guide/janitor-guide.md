@@ -43,9 +43,15 @@ class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
     function run($baseTimestamp) {
         global $e;
         $e->loadCoreModule("Database");
+        
         $movies = new Movies;
         foreach ($movies as $movie)
             $movie->updateImdbRating();
+        
+        return [
+    			JANITORTASK_EXECUTION_RETURN_OK,
+		    	$movies->count()." movies updated"
+        ];
     }
 }
 ```
@@ -64,6 +70,8 @@ There are also other execution periodicities you can use:
 * **`JANITORTASK_EXECUTION_PERIODICITY_ONLY_MANUAL`** The task can only be executed when calling the Janitor run process with an specific task parameter.
 
 In our task class, the `run` method is the one that will be executed when the task is due, so it's where you should put your task code. Like in our example, if you need to work with core or app modules there, use  [Engine::loadCoreModule](../reference/core-classes/engine/methods.md#loadcoremodule) or [Engine::loadAppModule](../reference/core-classes/engine/methods.md#loadappmodule).
+
+Just like you see on the example above, the `run` method must return an array containing at least one element, being one of the available [JANITORTASK\_EXECUTION\_RETURN\_?](../reference/core-modules/janitor/#constants) constants. You can add a second element containing a description of the task execution result.
 
 ## Adding up Janitor tasks to be executed
 
