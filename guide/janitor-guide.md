@@ -73,7 +73,7 @@ In our task class, the `run` method is the one that will be executed when the ta
 
 Just like you see on the example above, the `run` method must return an array containing at least one element, being one of the available [JANITORTASK\_EXECUTION\_RETURN\_?](../reference/core-modules/janitor/#constants) constants. You can add a second element containing a description of the task execution result.
 
-## Adding up Janitor tasks to be executed
+## Adding Janitor tasks to be executed
 
 The last step to having your Janitor tasks automatically executed, is creating the `config/Janitor.config.php` file and  adding them to the [`appJanitorTasks`](../reference/core-modules/janitor/#configuration) configuration key.
 
