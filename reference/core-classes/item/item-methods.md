@@ -78,6 +78,14 @@ Loads the item identified by the given `id` from the database.
 
 **Returns:** `true` if the item was found and loaded successfully, `false` otherwise.
 
+## loadInline\( data \) <a id="loadinline"></a>
+
+Loads the item when no `loadMethod` has been provided on construction. Intended to be overloaded when needed.
+
+* **`data`** A hash array with the data. Default: `false`
+
+**Returns:** `true` on success, `false` on error.
+
 ## update\( data \) <a id="update"></a>
 
 Updates the data on the database for this Item with the passed `data`, or with the data stored on the object if no `data` is passed.

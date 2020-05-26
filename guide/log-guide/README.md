@@ -42,7 +42,7 @@ $e->Log->logEvent(new LogEventMovieSearch([
 
 ## Simplifying Log events with additional data
 
-You can further simplify the way you trigger Log events by overloading your event's constructor. Let's say instead of passing the whole `additionalData` hash array like we did above, we wanted to be able to just pass the movie title and let the constructor take care of it. We would do it like this:
+You can further simplify the way you trigger Log events by overloading your event's [loadInline](../../reference/core-classes/item/item-methods.md#loadinline) method. Let's say instead of passing the whole `additionalData` hash array like we did above, we wanted to be able to just pass the movie title and let the constructor take care of it. We would do it like this:
 
 ```php
 <?php
@@ -52,8 +52,8 @@ namespace CherrycakeApp;
 class LogEventMovieSearch extends \Cherrycake\LogEvent {
     protected $typeDescription = "Movie search";
     
-    function __construct($movieTitle) {
-        parent::__construct([
+    function loadInline($movieTitle = false) {
+        parent::loadInline([
             "additionalData" => [
                 "movieTitle" => $movieTitle
             ]
@@ -74,9 +74,9 @@ See this example working in the [Cherrycake documentation examples](https://docu
 
 ## Storing outher ids in Log events
 
-Sometimes you might want to store ids from items in other tables from your database in your Log events, so you're later able to query the log events database with relationships.
+Sometimes you might want to store ids from items in other tables from your database in your Log events.
 
-For example, let's say that, as long as the user has logged in to your app, whenever he searches for a movie like we did in the example above, its user id gets also stored in the `LogEventMovieSearch`. That will allow us to know, for example, which users performed more searches. To do it, we would modify the `LogEventMovieSearch` class like this:
+For example, let's say that whenever a user that has logged in to your app searches for a movie like we did in the example above, its user id gets also stored in the `LogEventMovieSearch`. To do it, we would modify the `LogEventMovieSearch` class like this:
 
 ```php
 <?php
