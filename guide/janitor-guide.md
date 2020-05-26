@@ -32,12 +32,13 @@ Imagine we wanted to create a task to update the IMDB rating of the movies in th
 namespace CherrycakeApp;
     
 class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
+    protected $name = "Movies update IMDB rating";
+    protected $description = "Updates the IMDB rating of all the movies in the database";
+    
     protected $config = [
     		"executionPeriodicity" => \Cherrycake\JANITORTASK_EXECUTION_PERIODICITY_HOURS,
 		    "periodicityHours" => ["00:00"]
     ];
-    protected $name = "Movies update IMDB rating";
-    protected $description = "Updates the IMDB rating of all the movies in the database";
 
     function run($baseTimestamp) {
         global $e;
