@@ -78,7 +78,7 @@ $HtmlDocumentConfig = [
 ];
 ```
 
-You can set default configuration values that will be used if the configuration file didn't exist, or if a specific configuration key was not set on the configuration file. To do so, set the Module::config property of your module, like this:
+You can set default configuration values that will be used if the configuration file didn't exist, or if a specific configuration key was not set on the configuration file. To do so, set the [Module::config](../reference/core-classes/module/properties.md#usdconfig) property of your module, like this:
 
 ```php
 class MyModule extends \Cherrycake\Module {

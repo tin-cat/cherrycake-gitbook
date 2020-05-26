@@ -25,7 +25,11 @@ Janitor task configuration files must declare a hash array named in the syntax `
 namespace Cherrycake;
 
 $JanitorTaskMoviesUpdateImdbRatingConfig = [
-    "ImdbAPIKey" => "mfu9873n94hosdaonfo3289"
+    "imdbAPIKey" => "mfu9873n94hosdaonfo3289"
 ];
 ```
+
+The values you set in the [JanitorTask::config](../../reference/core-classes/janitortask/janitortask-properties.md#config) property of your task class will be used if no configuration file is used, or if the configuration key has not been set in the configuration file.
+
+
 
