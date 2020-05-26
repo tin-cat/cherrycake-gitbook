@@ -31,5 +31,9 @@ $JanitorTaskMoviesUpdateImdbRatingConfig = [
 
 The values you set in the [JanitorTask::config](../../reference/core-classes/janitortask/janitortask-properties.md#config) property of your task class will be used if no configuration file is used, or if the configuration key has not been set in the configuration file.
 
+To get a configuration value from a [JanitorTask](../../reference/core-classes/janitortask/), use the [JanitorTask::getConfig](../../reference/core-classes/janitortask/janitortask-methods.md#getconfig) method, for example:
 
+```php
+$this->getConfig("imdbAPIKey");
+```
 
