@@ -14,7 +14,7 @@ A data storage mechanism is provided to store basic information within each sess
 
 > The sessions table must be maintained often in order to remove old sessions. Otherwise, a point will be reached where all possible session ids are used and the module will remove the oldest session from the database in order to make room for the new one, effectively generating stress on the database. This will most probably happen a while after the maximum entropy point has been reached and all the stars in the universe have gone extinct.
 
-The `JanitorTaskSession` is required to be run in order to do this maintenance work, so be sure to [add it](../../../guide/janitor-guide.md) to your `Janitor.config.php`.
+The `JanitorTaskSession` is required to be run in order to do this maintenance work, so be sure to [add it](../../../guide/janitor-guide/) to your `Janitor.config.php`.
 
 > See the [Session guide](../../../guide/session-guide.md) to learn how to work with the Session module.
 

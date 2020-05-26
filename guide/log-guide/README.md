@@ -4,7 +4,7 @@ The [Log](../../reference/core-modules/log/) module stores app-related events in
 
 ## Setting up the Log database table
 
-Events are stored in the `log` database table using a shared-memory buffer and a programmed [Janitor](../janitor-guide.md) commit task for optimal performance, resulting in a system capable of ingesting many events per second without a noticeable performance impact.
+Events are stored in the `log` database table using a shared-memory buffer and a programmed [Janitor](../janitor-guide/) commit task for optimal performance, resulting in a system capable of ingesting many events per second without a noticeable performance impact.
 
 > You can create the `log` table in your database by importing the `log.sql` file you'll find in the [Cherrycake skeleton repository](https://github.com/tin-cat/cherrycake-skeleton), under the `install/database` directory.
 

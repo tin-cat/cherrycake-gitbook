@@ -4,7 +4,7 @@ description: Allows an app to program tasks to be executed periodically.
 
 # Janitor
 
-> See the [Janitor guide](../../../guide/janitor-guide.md) to learn how to work with the Janitor module.
+> See the [Janitor guide](../../../guide/janitor-guide/) to learn how to work with the Janitor module.
 
 ## Constants
 

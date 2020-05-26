@@ -69,7 +69,8 @@
 * [Stats guide](guide/stats-guide/README.md)
   * [Stats events with additional dimensions](guide/stats-guide/stats-events-with-additional-dimensions.md)
   * [Loading Stats events from the database](guide/stats-guide/loading-stats-events-from-the-database.md)
-* [Janitor guide](guide/janitor-guide.md)
+* [Janitor guide](guide/janitor-guide/README.md)
+  * [Janitor tasks configuration files](guide/janitor-guide/janitor-tasks-configuration-files.md)
 * [Command line interface](guide/cli.md)
 * [Debugging](guide/debugging.md)
 
