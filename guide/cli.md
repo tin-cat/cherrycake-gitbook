@@ -1,4 +1,4 @@
-# Command line apps
+# Command line interface
 
 ## CLI Actions
 
