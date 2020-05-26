@@ -56,9 +56,9 @@ class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
 }
 ```
 
-In the config property, we set the `executionPeriodicity` key to `JANITORTASK_EXECUTION_PERIODICITY_HOURS`, and the `periodicityHours` to `["00:00"]`. This will cause this task to run once at each one of the times specified in the `periodicityHours` array. In this case, at midnight precisely.
+In the config property, we set the `executionPeriodicity` key to [`JANITORTASK_EXECUTION_PERIODICITY_HOURS`](../reference/core-modules/janitor/#constants), and the `periodicityHours` to `["00:00"]`. This will cause this task to run once at each one of the times specified in the `periodicityHours` array. In this case, at midnight precisely.
 
-With `JANITORTASK_EXECUTION_PERIODICITY_HOURS`, you can specify more times for tasks to be executed more than once a day. For example, if you set `periodicityHours` to `["00:00", "12:00"]`, the task will be executed every day at midnight and at noon.
+With [`JANITORTASK_EXECUTION_PERIODICITY_HOURS`](../reference/core-modules/janitor/#constants), you can specify more times for tasks to be executed more than once a day. For example, if you set `periodicityHours` to `["00:00", "12:00"]`, the task will be executed every day at midnight and at noon.
 
 There are also other execution periodicities you can use:
 
@@ -71,7 +71,7 @@ There are also other execution periodicities you can use:
 
 In our task class, the `run` method is the one that will be executed when the task is due, so it's where you should put your task code. Like in our example, if you need to work with core or app modules there, use  [Engine::loadCoreModule](../reference/core-classes/engine/methods.md#loadcoremodule) or [Engine::loadAppModule](../reference/core-classes/engine/methods.md#loadappmodule).
 
-Just like you see on the example above, the `run` method must return an array containing at least one element, being one of the available [JANITORTASK\_EXECUTION\_RETURN\_?](../reference/core-modules/janitor/#constants) constants. You can add a second element containing a description of the task execution result.
+Just like you see on the example above, the `run` method must return an array containing at least one element, being one of the available [`JANITORTASK_EXECUTION_RETURN_?`](../reference/core-modules/janitor/#constants) constants. You can add a second element containing a description of the task execution result.
 
 ## Adding Janitor tasks to be executed
 
