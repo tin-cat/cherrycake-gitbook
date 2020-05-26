@@ -7,7 +7,7 @@ If you want to join the development team, contribute your improvements to Cherry
 Also, we'll be happy to welcome you in the [Discord server](https://discord.gg/naQprV6) where you'll be able to contribute your ideas, suggestions, and ask other developers for help.
 
 {% hint style="success" %}
-Have you created something using Cherrycake? Oh, please let me know! Reach me at`loren@tin.cat`
+Have you created something using Cherrycake? Oh, please let me know! Reach me at[`loren@tin.cat`](mailto:loren@tin.cat)\`\`
 {% endhint %}
 
 ## The Cherrycake logo
