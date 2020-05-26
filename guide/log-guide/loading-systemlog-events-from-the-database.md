@@ -1,44 +1,37 @@
 # Loading Log events from the database
 
-Since the [LogEvent](../../reference/core-classes/logevent/) class extends the [Item](../../reference/core-classes/item/) class, and the LogEvents class extends the [Items](../../reference/core-classes/items/) class, you can use them to load individual or lists of [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects from the database to work with.
+Since the [LogEvent](../../reference/core-classes/logevent/) class extends the [Item](../../reference/core-classes/item/) class, and the [LogEvents](../../reference/core-classes/logevents/) class extends the [Items](../../reference/core-classes/items/) class, you can use them to load lists of [LogEvent](../../reference/core-classes/logevent/) objects from the database to work with.
 
-For example, let's load the last fifty [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects from the [SystemLog](../../reference/core-modules/systemlog.md) database, using what we learned in the [Item lists](../items-guide/item-lists.md) section of the [Items guide](../items-guide/):
+For example, let's load the last fifty [LogEvent](../../reference/core-classes/logevent/) objects from the [Log](../../reference/core-modules/log/) database, using what we learned in the [Item lists](../items-guide/item-lists.md) section of the [Items guide](../items-guide/):
 
 ```php
-$systemLogEvents = new \Cherrycake\SystemLogEvents([
-    "p" => [
-		    "limit" => 50
-		]
+$logEvents = new \Cherrycake\LogEvents([
+	"p" => [
+		"limit" => 50
+	]
 ]);
 
-foreach ($systemLogEvents as $systemLogEvent) {
-    echo
-        "[".$e->Locale->formatTimestamp($systemLogEvent->dateAdded, ["isHours" => true, "isSeconds" => true])."] ".
-        $systemLogEvent->type.
-        ": ".
-        $systemLogEvent->description.
-        "\n";
+foreach ($logEvents as $logEvent) {
+	echo
+		"[".$e->Locale->formatTimestamp($logEvent->dateAdded, ["isHours" => true, "isSeconds" => true])."] ".
+		$logEvent->type.
+		"\n";
 }
 ```
 
-The [SystemLogEvents](../../reference/core-classes/systemlogevents/systemlogevents-methods.md#fillfromparameters) class accepts some additional keys on top of the usual [Items::fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) keys:
+The [LogEvents](../../reference/core-classes/logevents/) class accepts some additional keys on top of the usual [Items::fillFromParameters](../../reference/core-classes/items/items-methods.md#fillfromparameters) keys:
 
-* **`type`** Retrieves only [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects of this class name. Must include the full namespace route to the class.
-* **`fromTimestamp`** Retrieves [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects triggered after this timestamp.
-* **`toTimestamp`** Retrieves [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects triggered up to this timestamp.
+* **`type`** Retrieves only [LogEvent](../../reference/core-classes/logevent/) objects of this class name. Must include the full namespace route to the class.
+* **`fromTimestamp`** Retrieves [LogEvent](../../reference/core-classes/logevent/) objects triggered after this timestamp.
+* **`toTimestamp`** Retrieves [LogEvent](../../reference/core-classes/logevent/) objects triggered up to this timestamp.
 
 ```text
-[5/19/20 14:00.50] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
-[5/19/20 14:00.48] SystemLogEventError: App class or module "SystemLogEvents" could not be loaded automatically
-[5/18/20 16:34.57] SystemLogEventError: Requested timezone not found
-[5/18/20 16:33.38] SystemLogEventError: Requested timezone not found
-[5/18/20 16:28.14] SystemLogEventError: Requested timezone not found
-[5/18/20 16:28.13] SystemLogEventError: Requested timezone not found
-[5/16/20 16:28.48] SystemLogEventError: Unknown example
-[5/16/20 16:28.42] SystemLogEventError: Unknown example
+[5/26/20 11:22.24] CherrycakeApp\LogEventMovieSearch
+[5/26/20 10:55.28] CherrycakeApp\LogEventMovieSearch
+[5/26/20 10:55.25] CherrycakeApp\LogEventMovieSearch
 ```
 
 {% hint style="success" %}
-See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/systemLogGuideLoadingEvents) site.
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/movieSearchLog) site.
 {% endhint %}
 
