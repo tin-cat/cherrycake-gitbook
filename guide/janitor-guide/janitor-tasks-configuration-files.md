@@ -17,3 +17,15 @@ class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
 
 Janitor task configuration files must be stored in the `config` directory of your app, and must have a name that matches the task name, even with upper and lowercase characters. For example, the configuration file for our `JanitorTaskMoviesUpdateImdbRating` task must be called `/config/JanitorTaskMoviesUpdateImdbRating.config.php`
 
+Janitor task configuration files must declare a hash array named in the syntax `$<JanitorTaskName>Config`. For example, this the configuration file for our `JanitorTaskMoviesUpdateImdbRating` task:
+
+```php
+<?php
+
+namespace Cherrycake;
+
+$JanitorTaskMoviesUpdateImdbRatingConfig = [
+    "ImdbAPIKey" => "mfu9873n94hosdaonfo3289"
+];
+```
+
