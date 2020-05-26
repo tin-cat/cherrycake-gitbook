@@ -147,6 +147,8 @@
   * [LogEvent](reference/core-classes/logevent/README.md)
     * [LogEvent methods](reference/core-classes/logevent/logevent-methods.md)
     * [LogEvent Properties](reference/core-classes/logevent/logevent-properties.md)
+  * [LogEvents](reference/core-classes/logevents/README.md)
+    * [LogEvents methods](reference/core-classes/logevents/logevents-methods.md)
   * [Module](reference/core-classes/module/README.md)
     * [Module methods](reference/core-classes/module/methods.md)
     * [Module properties](reference/core-classes/module/properties.md)

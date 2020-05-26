@@ -1,6 +1,6 @@
 # Loading Log events from the database
 
-Since the [SystemLogEvent](../../reference/core-classes/systemlogevent/) class extends the [Item](../../reference/core-classes/item/) class, and the [SystemLogEvents](../../reference/core-classes/systemlogevents/) class extends the [Items](../../reference/core-classes/items/) class, you can use them to load individual or lists of [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects from the database to work with.
+Since the [LogEvent](../../reference/core-classes/logevent/) class extends the [Item](../../reference/core-classes/item/) class, and the LogEvents class extends the [Items](../../reference/core-classes/items/) class, you can use them to load individual or lists of [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects from the database to work with.
 
 For example, let's load the last fifty [SystemLogEvent](../../reference/core-classes/systemlogevent/) objects from the [SystemLog](../../reference/core-modules/systemlog.md) database, using what we learned in the [Item lists](../items-guide/item-lists.md) section of the [Items guide](../items-guide/):
 
