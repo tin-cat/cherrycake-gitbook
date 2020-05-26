@@ -1,6 +1,6 @@
 # Stats guide
 
-The [Stats](../../reference/core-modules/stats/) module stores statistical events in a persistent log as they occur, aimed at providing insight about the activity in your app like the number of received visits in a web page, page views, or any other statistical data.
+The [Stats](../../reference/core-modules/stats/) module stores statistical events in a persistent log as they occur, aimed at providing insight about the activity in your app like the number of received visits in a web page, page views, clicks, hits or other similar statistical data.
 
 ## Setting up the Stats database table
 
