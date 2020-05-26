@@ -40,7 +40,7 @@ $e->Log->logEvent(new LogEventMovieSearch([
 ]));
 ```
 
-## Simplifying log events
+## Simplifying log events with additional data
 
 You can further simplify the way you trigger Log events by overloading your event's constructor. Let's say instead of passing the whole `additionalData` hash array like we did above, we wanted to be able to just pass the movie title and let the constructor take care of it. We would do it like this:
 
@@ -66,4 +66,8 @@ So now we can trigger the event in this simplified way, and the movie title will
 ```php
 $e->Log->logEvent(new LogEventMovieSearch("Blade Runner"));
 ```
+
+{% hint style="success" %}
+See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/movieSearch) site.
+{% endhint %}
 
