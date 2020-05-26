@@ -91,6 +91,8 @@ $JanitorConfig = [
 ];
 ```
 
+## Janitor tasks with configuration files
+
 ## Cherrycake core Janitor tasks
 
 Cherrycake itself sets up by default the following core Janitor tasks:
@@ -121,4 +123,61 @@ And adding a line like this:
 If you've not used the [Cherrycake Skeleton](getting-started/skeleton.md) to build your project, take a look at the [Command line interface](cli.md) section to learn how to call CLI actions from the Linux command line.
 
 > When using the [Cherrycake Docker project](getting-started/docker.md) to run your Cherrycake app, this cron job is already set up and running.
+
+## Checking the status of the Janitor
+
+The Janitor logs all its activity on the `cherrycake_janitor_log`, so you can check there to see what's happening in real time.
+
+You can also execute the `janitorStatus` [CLI command](cli.md), which will show you the current status of all the tasks in your app, plus information about the last time they were executed. It looks like this:
+
+```text
+Task: Janitor purge
+Description: Purges old Janitor log items
+Result: Ok
+Periodicity: Every 86400 seconds
+Last execution: 26/5/2020 15:10:59 (Etc/UTC) took 0 ms.
+. Log entries older than 31536000 seconds purged: 0
+
+Task: Log commit
+Description: Stores cache-queded events into database and purges the queue cache
+Result: Ok
+Periodicity: Every 60 seconds
+Last execution: 26/5/2020 15:12:01 (Etc/UTC) took 0 ms.
+. 
+Task: Session purge
+Description: Purges discarded sessions from the Session module
+Result: Ok
+Periodicity: Every 86400 seconds
+Last execution: 26/5/2020 15:10:59 (Etc/UTC) took 2 ms.
+. Sessions older than 86400 seconds without data purged: 0
+. Sessions older than 31536000 seconds with data purged: 0
+
+Task: Stats commit
+Description: Stores cache-queded stats events into database and purges the queue cache
+Result: Ok
+Periodicity: Every 60 seconds
+Last execution: 26/5/2020 15:12:01 (Etc/UTC) took 1 ms.
+. numberOfFlushedItems: 0
+
+Task: System log commit
+Description: Stores cache-queded system log events into database and purges the queue cache
+Result: Ok
+Periodicity: Every 120 seconds
+Last execution: 26/5/2020 15:10:59 (Etc/UTC) took 1 ms.
+. numberOfFlushedItems: 0
+
+Task: System log purge
+Description: Purges old System log items
+Result: Ok
+Periodicity: Every 240 seconds
+Last execution: 26/5/2020 15:10:59 (Etc/UTC) took 1 ms.
+. Log entries older than  seconds purged: 0
+
+Task: Movies update IMDB rating
+Description: Updates the IMDB rating of all the movies in the database
+Result: Ok
+Periodicity: Daily at hours 00:00
+Last execution: 26/5/2020 15:10:59 (Etc/UTC) took 13 ms.
+. 30 movies updated
+```
 
