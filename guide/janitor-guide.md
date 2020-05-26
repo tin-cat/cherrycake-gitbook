@@ -44,12 +44,12 @@ class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
         global $e;
         $e->loadCoreModule("Database");
         
-        $movies = new Movies;
+        $movies = new Movies(["fillMethod" => "fromParameters"]);
         foreach ($movies as $movie)
             $movie->updateImdbRating();
         
         return [
-    			JANITORTASK_EXECUTION_RETURN_OK,
+    			\Cherrycake\JANITORTASK_EXECUTION_RETURN_OK,
 		    	$movies->count()." movies updated"
         ];
     }
@@ -78,8 +78,6 @@ Just like you see on the example above, the `run` method must return an array co
 The last step to having your Janitor tasks automatically executed, is creating the `config/Janitor.config.php` file and  adding them to the [`appJanitorTasks`](../reference/core-modules/janitor/#configuration) configuration key.
 
 In our example, the `config/Janitor.config.php` would look like this:
-
-
 
 ```php
 <?php
