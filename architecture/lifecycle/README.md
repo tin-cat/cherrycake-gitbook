@@ -22,7 +22,7 @@ Let's say the browser requested the home of our website by requesting the `/` ro
 
 ![](../../.gitbook/assets/cherrycakediagramlifecycle3.svg)
 
-_Home_ is an app module \(as opposed to a core module\), and is in charge of showing the home page of the website. To do so, _Home_ uses the [Patterns](../../reference/core-modules/patterns/) core module to load an HTML file from disk and then send it to the browser. Since the Patterns module has not been loaded yet, Cherrycake loads it automatically:
+_Home_ is an app module \(as opposed to a core module\), and is in charge of showing the home page of the website. To do so, _Home_ uses the [Patterns](../../reference/core-modules/patterns/) core module to load an HTML file from disk and then send it to the browser. Since the [Patterns](../patterns/) module has not been loaded yet, Cherrycake loads it automatically:
 
 ![](../../.gitbook/assets/cherrycakediagramlifecycle4.svg)
 

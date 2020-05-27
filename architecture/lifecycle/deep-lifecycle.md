@@ -6,7 +6,7 @@ description: Let's take a deep dive on a typical request lifecycle.
 
 To deeper understand the lifecycle of a request, we'll use the same example as in the [Lifecycle](./) section, but this time we'll stop and see with greater detail everything that happens behind the scenes, this will give you a better understanding of the Cherrycake architecture.
 
-When a request is received, the `index.php` file in your App's public directory is executed. This is the entry point for all requests to your Cherrycake application, and all it does is loading Cherrycake, initialize it and launch [Engine::attendWebRequest](../../reference/core-classes/engine/methods.md#attendwebrequest). This looks something like this:
+When a request is received, the `index.php` file in your App's public directory is executed. This is the entry point for all requests to your Cherrycake application, and all it does is loading Cherrycake, initialize it and call the [Engine::attendWebRequest](../../reference/core-classes/engine/methods.md#attendwebrequest) method. This looks something like this:
 
 ```php
 namespace CherrycakeApp;
@@ -15,9 +15,7 @@ require "vendor/tin-cat/cherrycake-engine/load.php"
 $e = new \Cherrycake\Engine;
 
 if ($e->init(__NAMESPACE__, [
-    "baseCoreModules" => [
-        "Actions"
-    ]
+    "baseCoreModules" => ["Actions"]
 ]))
     $e->attendWebRequest();
 
@@ -26,7 +24,7 @@ $e->end();
 
 When the engine is initialized with [Engine::init](../../reference/core-classes/engine/methods.md#init), it loads and initializes the modules specified in `baseCoreModules`. Since the [Actions](../../reference/core-modules/actions-1/actions.md) modules is the one in charge of receiving and handling requests, you should at least specify this module on the list.
 
-> If you only need the Actions module as your `baseCoreModules`, you can skip this key on the hash array and it will be included automatically. In our example, this means we can simplify the [Engine::init](../../reference/core-classes/engine/methods.md#init) line to just `$e->init(__NAMESPACE__)`
+> The default value for the `baseCoreModules` key is `["Actions"]`, so if you only need the Actions module like in our example, you can skip this key on the hash array and it will be included automatically. In the example, this means we can simplify the [Engine::init](../../reference/core-classes/engine/methods.md#init) line to just `$e->init(__NAMESPACE__)`
 
 During its initialization, the [Actions](../../reference/core-modules/actions-1/actions.md) module loops through all available modules and asks them to map whatever actions they might need. It does so by using the [Engine::callMethodOnAllModules](../../reference/core-classes/engine/methods.md#callmethodonallmodules) method, which goes through all the available modules and executes the specified static method name, like this:
 
