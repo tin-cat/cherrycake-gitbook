@@ -7,7 +7,7 @@ description: Let's take a deep dive on a typical request lifecycle.
 To deeper understand the lifecycle of a request, we'll use the same example as in the [Lifecycle](./) section, but this time we'll stop and see with greater detail everything that happens behind the scenes, this will give you a better understanding of the Cherrycake architecture.
 
 {% hint style="info" %}
-If you'd rather prefer to start working with Cherrycake and skip this section about the inner workings of Cherrycake, go straight to the [Getting started](../../guide/getting-started/) guide.
+If you'd rather prefer to start working with Cherrycake and skip this section about the inner workings of Cherrycake, go straight to the [Getting started](../../guide/getting-started/) guide, or keep on learning about the Cherrycake architecture in the [Performance](../performance.md) section.
 {% endhint %}
 
 When a request is received, the `index.php` file in your App's public directory is executed. This is the entry point for all requests to your Cherrycake application, and all it does is loading Cherrycake, initialize it and call the [Engine::attendWebRequest](../../reference/core-classes/engine/methods.md#attendwebrequest) method. This looks something like this:
