@@ -4,7 +4,7 @@ description: A simple guide to build a simple "Hello world" application with Che
 
 # Getting started
 
-For this guide we'll be creating a simple web application with Cherrycake that shows the globally known "Hello world" message in the browser. We won't be using any boilerplates, or assisting tools, so we'll write all the code you need line by line, so you can understand the basics of how Cherrycake works.
+In this guide we'll be creating a simple web application with Cherrycake that shows the well known "Hello world" message in the browser. We won't be using any boilerplates or assisting tools, we'll write all the code you need line by line so you'll learn the very basics of how Cherrycake works.
 
 First of all, check that your web server meets the [minimum requirements](../../architecture/server-requirements.md) and create a folder for your project.
 
@@ -24,7 +24,7 @@ For security reasons, we'll put all the files that will be served publicly to th
 
 ## Setting up the web server
 
-Setting up a web server to work with a Cherrycake application it's almost exactly the same as with any other application, except for one detail: We need to tell the web server to redirect all the queries to the index.php file instead of the usual server behavior.
+Setting up a web server to work with a Cherrycake application it's almost exactly the same as with any other application, except for one detail: We need to tell the web server to redirect all the queries to the index.php file instead of the usual server behavior. This is how it's done:
 
 **For NGINX:** Add the following to your virtual host configuration file:
 
@@ -76,7 +76,7 @@ Now we can instantiate the engine. We use the `$e` variable as a convention:
 $e = new \Cherrycake\Engine;
 ```
 
-> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace that you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here.
+> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here.
 
 Now we call the [Engine::init](../../reference/core-classes/engine/methods.md#init) method to start it up:
 
@@ -95,8 +95,8 @@ if ($e->init(__NAMESPACE__, [
 
 The second parameter is an optional hash array that lets you configure some important parameters of the Cherrycake engine. The ones we're using here are: 
 
-* **`appName`** The name of the application. You can skip this and the default name `CherrycakeApp` will be used.
-* **`isDevel`** When set to true, the application is put into development mode, meaning you'll get extended error reports and other tricks to help you develop your app. When not specified, this parameter defaults to false.
+* **`appName`** The name of the application. You can skip this and one will be generated automatically.
+* **`isDevel`** When set to true, the application works in development mode, meaning you'll get extended error reports and other tricks to help you develop your app. When not specified, this parameter defaults to `false`.
 * **`baseCoreModules`** Is an array of the module names that should be loaded upon initialization of the engine. If not specified, only the [Actions](../../reference/core-modules/actions-1/actions.md) module will be loaded.
 
 > Check the [Engine::init](../../reference/core-classes/engine/methods.md#init) documentation for more configuration parameters when initializing the engine.
@@ -138,7 +138,7 @@ if ($e->init(__NAMESPACE__, [
 $e->end();
 ```
 
-> Note that because we're ok with the default configuration parameters for the [Engine::init ](../../reference/core-classes/engine/methods.md#init)call, we've simplified it.
+> Note that because we're ok with the default configuration parameters for the [Engine::init ](../../reference/core-classes/engine/methods.md#init)call, we've simplified it and only the `isDevel` configuration key remains.
 
 Your Cherrycake app setup is ready, but if you run it now by browsing to your web server address, you'll get an error:
 
@@ -159,14 +159,14 @@ Create the file `/modules/HelloWorld/HelloWorld.class.php` and edit it so it dec
 ```php
 <?php
 
-namespace CherrycakeApp\Modules;
+namespace CherrycakeApp;
 
 class HelloWorld extends \Cherrycake\Module {
 }
 ```
 
-> Remember to use the same namespace you choose for your application in the `/public/index.php` file, plus the \Modules at the end.
->
+> Remember to use the same namespace you choose for your application in the `/public/index.php` file.
+
 > Also, don't forget that modules have their own directory inside `/modules`, that directory name must match the module name, even with uppercase and lowercase characters.
 
 To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the[ Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction) method, like this:
@@ -174,7 +174,7 @@ To map an action for the `HelloWorld` module so it will respond to requests, dec
 ```php
 <?php
 
-namespace CherrycakeApp\Modules;
+namespace CherrycakeApp;
 
 class HelloWorld extends \Cherrycake\Module {
 
@@ -205,12 +205,12 @@ If we run our app now, we'll get this error:
 Mapped method HelloWorld::show not found
 {% endhint %}
 
-Which is quite understandable, because we haven't yet created the show method we told the Action to run. Let's add it now:
+Which is quite understandable, because we haven't yet created the `show` method we told the [Action](../../reference/core-classes/action/) to run. Let's add it now:
 
 ```php
 <?php
 
-namespace CherrycakeApp\Modules;
+namespace CherrycakeApp;
 
 class HelloWorld extends \Cherrycake\Module {
 
@@ -247,7 +247,7 @@ And that's it! If you now run your app you should see a boring yet quite welcomi
 
 > This seems to be a somewhat overkill way of doing what could've been done with a simple `echo "Hello world"` line, isn't it?
 
-Bear with me with the rest of this guide and you'll find this architecture to really come in handy when what you want to accomplish with your app is much more complex than a "Hello World"!
+Bear with me with the rest of the guides and you'll find this architecture to really come in handy when what you want to accomplish with your app is much more complex than a "Hello World"!
 
 {% hint style="success" %}
 See this example working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/helloWorld) site.
