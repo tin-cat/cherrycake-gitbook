@@ -8,7 +8,7 @@ description: >-
 
 ### Request security
 
-All requests are predefined with a specification of parameters, their expected types and validation methods. This makes for a strong first security layer that blocks anything that doesn't looks like a request our App would expect.
+All requests are predefined with a specification of parameters, their expected types and validation methods. This makes for a strong first security layer that blocks anything that doesn't looks like a request our app would expect.
 
 ### Injection prevention
 

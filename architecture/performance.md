@@ -24,7 +24,7 @@ Cherrycake comes with a solid caching system, implemented in three levels throug
 * **Database level cache**
   * For your convenience, all SELECT operations in a database can be cached really easily. You can model your caching logic for database retrieval around your specific needs.
 
-Also, you can use the [Cache](../reference/core-modules/cache/) system yourself for any other needs you might have. Besides the usual key-value caching methods, it provides a connection-agnostic abstraction layer, object caching, push-pop lists and pooling.
+Also, you can use the [Cache](../reference/core-modules/cache/) system yourself for any other needs you might have. Besides the usual key-value caching methods, it provides a connection-agnostic abstraction layer, object caching, queue lists, push-pop lists and cache pools.
 
 ### Web optimizations
 
