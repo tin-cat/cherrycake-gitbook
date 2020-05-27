@@ -68,6 +68,8 @@ For example, the configuration file for the module _Home m_ust be saved in a fil
 `/config/Home.config.php`
 
 > Check the [Module config files](../../guide/modules-guide.md#modules-config-file) documentation for more information
+
+This directory also holds the configuration files for [Janitor Tasks](../../guide/janitor-guide/janitor-tasks-configuration-files.md).
 {% endtab %}
 
 {% tab title="/patterns" %}

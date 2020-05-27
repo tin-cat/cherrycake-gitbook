@@ -1,7 +1,7 @@
 ---
 description: >-
-  Cherrycake provides you with an optimized of interacting with the primordial
-  objects of your app
+  Cherrycake provides you with an optimized way of interacting with the
+  primordial objects of your app.
 ---
 
 # Items
