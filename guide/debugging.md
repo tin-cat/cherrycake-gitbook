@@ -82,7 +82,7 @@ if ($e->init(__NAMESPACE__, [
 ]))
     $e->attendWebRequest();
 
-echo $e->getStatusHtml(); die;
+echo $e->getStatusHtml();
 
 $e->end();
 ```
