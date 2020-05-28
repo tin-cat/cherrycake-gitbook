@@ -1,5 +1,9 @@
 # Engine methods
 
+## attendCliRequest
+
+Attends the request received from the CLI interface.
+
 ## attendWebRequest
 
 Attends the request received from a web server by calling Actions::run with the requested URI string
@@ -57,6 +61,8 @@ Initializes the Cherrycake engine.
 
 ## loadAppModule\( moduleName, requiredByModuleName \) <a id="loadappmodule"></a>
 
+Loads an [App module](../../../architecture/modules.md).
+
 * **`moduleName`** The name of the module.
 * **`requiredByModuleName`** Optional name of the module that required to load the module.
 
@@ -66,6 +72,4 @@ Loads a Core [module](../../../guide/modules-guide.md).
 
 * **`moduleName`** The name of the module.
 * **`requiredByModuleName`** Optional name of the module that required to load the module.
-
-Loads an [App module](../../../architecture/modules.md).
 
