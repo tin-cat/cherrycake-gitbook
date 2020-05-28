@@ -11,4 +11,5 @@
 * **`ResponseTextCss`**
 * **`ResponseTextHtml`**
 * **`ResponseTextPlain`**
+* **`ResponseCli`**
 

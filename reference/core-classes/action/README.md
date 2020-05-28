@@ -7,6 +7,7 @@
 * **`ActionHtml`**
 * **`ActionCss`**
 * **`ActionAjax`**
+* **`ActionCli`**
 
 ## Constants
 
