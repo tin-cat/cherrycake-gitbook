@@ -69,5 +69,53 @@ php -f ./cli.php helloWorldCli
 Hello World from the Cli interface
 ```
 
+## Passing parameters to CLI actions
 
+Just like regular Actions can receive GET and POST parameters, CLI actions can receive command line parameters. To map an [ActionCli](../reference/core-classes/action/#subclasses) that receives parameters, you pass the `parameters` array when creating the [Request](../reference/core-classes/request/) object just like you already did in the [Accept GET or POST parameters](actions-guide/accept-get-or-post-parameters.md) of the [Actions Guide](actions-guide/), except this time you use the [`REQUEST_PARAMETER_TYPE_CLI`](../reference/core-classes/requestparameter/#constants) parameter type instead of `REQUEST_PARAMETER_TYPE_GET` or `REQUEST_PARAMETER_TYPE_POST`, like this:
+
+```php
+$e->Actions->mapAction(
+    "userFlushCache",
+    new \Cherrycake\ActionCli([
+        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+        "moduleName" => "Users",
+        "methodName" => "flushUserCacheCli",
+        "parameters" => [
+            new \Cherrycake\RequestParameter([
+                "type" => \Cherrycake\REQUEST_PARAMETER_TYPE_CLI,
+                "name" => "userId",
+                "securityRules" => [
+                    \Cherrycake\SECURITY_RULE_TYPICAL_ID
+                ]
+            ])
+        ]
+    ])
+);
+```
+
+And you receive the parameters just like you do with GET or POST:
+
+```php
+function flushUserCacheCli($request) {
+    global $e;
+    $user = new User([
+        "loadMethod" => "fromId",
+        "id" => $request->id
+    ]);
+    $user->clearCache();
+    $e->Output->setResponse(new \Cherrycake\ResponseCli([
+        "payload" => "Cache for user ".$request->userId." flushed"
+    ]));
+}
+```
+
+Now, to call a CLI action that accepts parameters from the command line, you use the regular UNIX parameters syntax after the action name, like this:
+
+```bash
+php -f ./cli.php userFlushCache --userId=832
+```
+
+```text
+Cache for user 832 flushed
+```
 
