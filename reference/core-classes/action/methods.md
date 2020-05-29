@@ -20,3 +20,7 @@ Removes this action from cache
 
 * **`parameterValues`** An optional hash array containing the values for the variable path components, parameters and `additionalCacheKeys` involved in this action's [Request](../request/). If not specified, the current parameter values will be used.
 
+## isCli
+
+**Returns:** A boolean indicating whether this Action is intended for a command line request or not
+
