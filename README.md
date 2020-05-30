@@ -33,7 +33,3 @@ Very often, this need of control, more than a rational or optimal decision, is s
 
 In that sense, even though Cherrycake also provides many higher level modules, it's defined as a low-level framework because instead of aiming to provide a suite of ready-made solutions for an optimized development cycle, it focuses on providing a strong foundation for you to create them.
 
-{% hint style="warning" %}
-This documentation web site is under construction.
-{% endhint %}
-
