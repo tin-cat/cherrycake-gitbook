@@ -1,3 +1,7 @@
+---
+description: Manages the final output produced by the app.
+---
+
 # Output
 
 ## Constants

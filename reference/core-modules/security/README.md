@@ -1,4 +1,12 @@
+---
+description: >-
+  Provides security mechanisms used by other modules to detect, prevent, log and
+  block attacks like SQL injection, XSS and CSRF.
+---
+
 # Security
+
+> CSRF features require the [Session](../session/) module.
 
 ## Constants
 

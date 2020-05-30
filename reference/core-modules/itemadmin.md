@@ -1,4 +1,10 @@
+---
+description: A module to admin Items.
+---
+
 # ItemAdmin
+
+It allows the creation of HTML forms in conjunction with the UiComponentItemAdmin, and also simplifies the process of receiving data for an Item via a request, validating the values and storing them.
 
 ## Constants
 
