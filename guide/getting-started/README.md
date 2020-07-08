@@ -101,7 +101,7 @@ The second parameter is an optional hash array that lets you configure some impo
 
 > Check the [Engine::init](../../reference/core-classes/engine/methods.md#init) documentation for more configuration parameters when initializing the engine.
 
-Let's take a pause here to see why we've added the [Actions](../../reference/core-modules/actions-1/actions.md) module on the `baseCoreModules` list. We need our app to attend requests \(it would be pretty useless otherwise\), and [Actions](../../reference/core-modules/actions-1/actions.md) is the module in charge of doing exactly that.
+Let's take a pause here to see why we've added the [Actions](../../reference/core-modules/actions-1/actions.md) module on the `baseCoreModules` list: We need our app to attend requests \(it would be pretty useless otherwise\), and [Actions](../../reference/core-modules/actions-1/actions.md) is the module in charge of doing exactly that.
 
 By including [Actions](../../reference/core-modules/actions-1/actions.md) in `baseCoreModules`, it will be loaded immediately and, as part of the loading process, it will be initialized by calling the [Actions::init](../../reference/core-modules/actions-1/actions.md#init) method. What this method does in the [Actions](../../reference/core-modules/actions-1/actions.md) module, among other things, is to go through all available modules in both the Cherrycake engine and your app, check if they have a method called `mapActions` and run it.
 
