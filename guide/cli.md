@@ -42,7 +42,7 @@ $e = new \Cherrycake\Engine;
 if ($e->init(__NAMESPACE__, [
     "isDevel" => true
 ]))
-    $e->attendWebRequest();
+    $e->attendCliRequest();
 
 $e->end();
 ```
