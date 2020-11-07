@@ -113,7 +113,7 @@ This causes all modules that have some action to map to do so \(by using the [Ac
 
 Now, if [Engine::init](../../reference/core-classes/engine/methods.md#init) goes well, we run the [Engine::attendWebRequest](../../reference/core-classes/engine/methods.md#attendwebrequest) method. What this method does is quite simple: By calling the [Actions::run](../../reference/core-modules/actions-1/actions.md#run) method, it asks the [Actions](../../reference/core-modules/actions-1/actions.md) module to go through all mapped actions and run the one that matches the current request.
 
-Lastly, we need to finalize execution by calling the [Engine::end ](../../reference/core-classes/engine/methods.md#end)method, which in turns calls the `end` methods of all the loaded modules, so they can perform any cleaning tasks like disconnecting from external sources:
+Lastly, we need to finalize execution by calling the [Engine::end ](../../reference/core-classes/engine/methods.md#end)method, which in turn calls the `end` methods of all the loaded modules, so they can perform any cleaning tasks like disconnecting from external sources:
 
 ```php
 $e->end();
