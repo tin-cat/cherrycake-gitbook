@@ -33,3 +33,9 @@ Very often, this need of control, more than a rational or optimal decision, is s
 
 In that sense, even though Cherrycake also provides many higher level modules, it's defined as a low-level framework because instead of aiming to provide a suite of ready-made solutions for an optimized development cycle, it focuses on providing a strong foundation for you to create them.
 
+## Purpose
+
+Cherrycake is not a replacement for fully-fledged, widely-supported and well-known frameworks like Laravel or Symfony. If you're looking for alternatives to those frameworks, you're looking in the wrong place!
+
+In its current state, Cherrycake is aimed to curious developers and students in the mood of creating a new framework or learning about techniques to do so. If you're one of those, Cherrycake can bring you inspiration, and maybe even a foundational layer you can build upon.
+
