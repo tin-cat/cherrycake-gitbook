@@ -37,4 +37,8 @@ description: Helps you create standard HTML headers and footers.
 * **`favIcons`** A hash array of icon sizes where the key is in the \[width\]x\[height\] syntax and the value is the icon URL in png format. The standard keys to use here are:`196x196`, `160x160`, `96x96`, `16x16` and `32x32`. Default: `false`
 * **`cssSets`** An array of the Css set names to link in the HTML document in a single request, or, to add different Css requests instead of one, an array where each item represents a single request, and is an array of Css set names that will be included in each single request. If set to `false`, all available sets will be linked in a single request. Default: `false`
 * **`javascriptSets`** An array of the Javascript set names to link in the HTML document in a single request, or, to add different Javascript requests instead of one, an array where each item represents a single request, and is an array of Javascript set names that will be included in each single request. If set to `false`, all available sets will be linked in a single request. Default: `false`
+* **`googleFonts`**An array of the Google fonts to include, where each item is a hash array containing the following keys:
+  * `family` The font family \(i.e: `Duru Sans`\)
+  * `weight` The font weight \(i.e: `300`\)
+  * `subset` The subset \(i.e: `latin`\)
 
