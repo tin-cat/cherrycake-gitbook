@@ -87,7 +87,7 @@ Gets the main domain name for the current locale, or for the specified locale
 
 * **`localeName`**  The name of the locale for which to get the main domain
 
-**Returns:** The main domain for the specified locale, or for the current locale if no `locale` specified
+**Returns:** The main domain for the specified locale, or for the current locale if no `locale` specified. `false` if the locale was not found.
 
 ## getText\( code, setup \) <a id="gettext"></a>
 
