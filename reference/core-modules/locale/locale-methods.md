@@ -81,6 +81,14 @@ Gets the name of a language.
 
 **Returns:** The language name, `false` if the specified language is not configured.
 
+## getMainDomain\( localeName \)
+
+Gets the main domain name for the current locale, or for the specified locale
+
+* **`localeName`**  The name of the locale for which to get the main domain
+
+**Returns:** The main domain for the specified locale, or for the current locale if no `locale` specified
+
 ## getText\( code, setup \) <a id="gettext"></a>
 
 Gets a text from the multilingual texts database.

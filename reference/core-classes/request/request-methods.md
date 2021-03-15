@@ -13,6 +13,7 @@
 Builds a valid URL for the request.
 
 * **`setup`** A hash array with the following possible keys
+  * **`locale`** An optional string indicating the locale name for which to build the Url. If not specified, the current locale's domain will be used when isAbsolute is true. When specified, returned Url will be absolute.
   * **`parameterValues`** An optional hash array containing the values for the variable path components and for the GET parameters, if any.
   * **`isIncludeUrlParameters`** Includes the GET parameters in the URL. The passed `parameterValues` will be used, or the current request's parameters if no `parameterValues` are specified. Defaults to `true`.
   * **`isAbsolute`** Whether to generate an absolute URL containing additionally http\(s\):// and the domain of the App. Defaults to `false`
