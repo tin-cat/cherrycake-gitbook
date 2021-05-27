@@ -18,6 +18,20 @@ composer require tin-cat/cherrycake-engine dev-master
 
 This will create the `/vendor` directory in your project, and will install there the Cherrycake engine and all its dependencies.
 
+## Setting up autoload
+
+To allow your own classes and modules to be loaded automatically, add this to your `composer.json`file:
+
+```javascript
+"autoload": {
+    "psr-4": {
+        "CherrycakeApp\\": "src/"
+    }
+}
+```
+
+> If you want to use a namespace other than `CherrycakeApp`for your App, modify the snippet above to match it.
+
 ## The public directory
 
 For security reasons, we'll put all the files that will be served publicly to the Internet in a subdirectory called `/public`. Create this subdirectory now.
@@ -64,10 +78,10 @@ Cherrycake apps need to be declared in a namespace of your choice, or you can us
 namespace CherrycakeApp;
 ```
 
-Now we load the engine. Since it has been installed by composer in a previous step, we do it by including the engine's loader file, called `load.php`:
+Now we load the engine, along with any other additional packages. Since Cherrycake works with [composer](https://getcomposer.org), this is done just by including the `autoload.php` file, like this:
 
 ```php
-require "../vendor/tin-cat/cherrycake-engine/load.php";
+require "../vendor/autoload.php";
 ```
 
 Now we can instantiate the engine. We use the `$e` variable as a convention:
@@ -76,7 +90,7 @@ Now we can instantiate the engine. We use the `$e` variable as a convention:
 $e = new \Cherrycake\Engine;
 ```
 
-> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here.
+> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here, or add a `use Cherrycake;` statement at the top of your code.
 
 Now we call the [Engine::init](../../reference/core-classes/engine/methods.md#init) method to start it up:
 
