@@ -9,18 +9,18 @@ In this example, we map an action that will respond when the `/about/contact` pa
 
 $e->Actions->mapAction([
     "aboutContact",
-    new \Cherrycake\ActionHtml([
-        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+    new \Cherrycake\ActionsActionHtml([
+        "moduleType" => ACTION_MODULE_TYPE_APP,
         "moduleName" => "About",
         "methodName" => "viewContact",
-        "request" => new \Cherrycake\Request([
+        "request" => new \Cherrycake\Actions\Request([
             "pathComponents" => [
-                new \Cherrycake\RequestPathComponent([
-                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                new \Cherrycake\Actions\RequestPathComponent([
+                    "type" => REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "about"
                 ]),
-                new \Cherrycake\RequestPathComponent([
-                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                new \Cherrycake\Actions\RequestPathComponent([
+                    "type" => REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "contact"
                 ])
             ]

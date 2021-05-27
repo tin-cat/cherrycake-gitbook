@@ -43,11 +43,11 @@ When a module is loaded for the first time during a request, this is what happen
 
 ## App module files
 
-The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.class.php` extension.
+The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.php` extension.
 
 > You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine/methods.md#init)
 
-For example, if you were to create a module called `Products`, it should be stored on the `/modules/Products/Products.class.php` directory.
+For example, if you were to create a module called `Products`, it should be stored on the `/src/Products/Products.php` directory.
 
 > Note that both the subdirectory and the file name itself are case-sensitive.
 
@@ -125,6 +125,8 @@ When your module makes use of another modules regularly, you should specify them
 Set the [dependentCoreModules](../reference/core-classes/module/#usddependentcoremodules) property of your module to specify which Core modules are required by yours, and the [dependentAppModules](../reference/core-classes/module/#usddependentappmodules) to specify dependencies between your own modules, here's an example:
 
 ```php
+namespace CherrycakeApp\MyModule;
+
 class MyModule extends \Cherrycake\Module {
     protected $dependentCoreModules = [
         "Database",

@@ -19,7 +19,7 @@ For example, the following module maps a simple action named `home` that will ca
 ```php
 <?php
 
-namespace CherrycakeApp\Modules;
+namespace CherrycakeApp\Home;
 
 class Home extends \Cherrycake\Module {
 
@@ -28,11 +28,11 @@ class Home extends \Cherrycake\Module {
         
         $e->Actions->mapAction([
             "home",
-            new \Cherrycake\ActionHtml([
-                "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+            new \Cherrycake\Actions\ActionHtml([
+                "moduleType" => ACTION_MODULE_TYPE_APP,
                 "moduleName" => "Home",
                 "methodName" => "viewHome",
-                "request" => new \Cherrycake\Request([
+                "request" => new \Cherrycake\Actions\Request([
                     "pathComponents" => false
                 ])
             ])

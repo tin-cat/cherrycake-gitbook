@@ -7,23 +7,23 @@ A lot of times we'll need to respond to requests where some component of the pat
 
 $e->Actions->mapAction(
     "viewProduct",
-    new \Cherrycake\ActionHtml([
-        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+    new \Cherrycake\Actions\ActionHtml([
+        "moduleType" => ACTION_MODULE_TYPE_APP,
         "moduleName" => "Products",
         "methodName" => "view",
-        "request" => new \Cherrycake\Request([
+        "request" => new \Cherrycake\Actions\Request([
             "pathComponents" => [
-                new \Cherrycake\RequestPathComponent([
-                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                new \Cherrycake\Actions\RequestPathComponent([
+                    "type" => REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "product"
                 ]),
-                new \Cherrycake\RequestPathComponent([
-                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_VARIABLE_NUMERIC,
+                new \Cherrycake\Actions\RequestPathComponent([
+                    "type" => REQUEST_PATH_COMPONENT_TYPE_VARIABLE_NUMERIC,
                     "name" => "productId",
                     "securityRules" => [
-                        \Cherrycake\SECURITY_RULE_NOT_EMPTY,
-                        \Cherrycake\SECURITY_RULE_INTEGER,
-                        \Cherrycake\SECURITY_RULE_POSITIVE
+                        SECURITY_RULE_NOT_EMPTY,
+                        SECURITY_RULE_INTEGER,
+                        SECURITY_RULE_POSITIVE
                     ]
                 ])
             ]

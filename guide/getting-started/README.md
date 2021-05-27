@@ -81,7 +81,7 @@ namespace CherrycakeApp;
 Now we load the engine, along with any other additional packages. Since Cherrycake works with [composer](https://getcomposer.org), this is done just by including the `autoload.php` file, like this:
 
 ```php
-require "../vendor/autoload.php";
+require "vendor/autoload.php";
 ```
 
 Now we can instantiate the engine. We use the `$e` variable as a convention:
@@ -90,7 +90,7 @@ Now we can instantiate the engine. We use the `$e` variable as a convention:
 $e = new \Cherrycake\Engine;
 ```
 
-> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here, or add a `use Cherrycake;` statement at the top of your code.
+> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace you declared above. Every time you'll refer to a Cherrycake class, module or constant you'll need to prefix it with the appropriate `\Cherrycake\` namespace like we did here, or add a `use` statement at the top of your code. You'll see examples of that in the guide section and the provided examples.
 
 Now we call the [Engine::init](../../reference/core-classes/engine/methods.md#init) method to start it up:
 
@@ -140,7 +140,7 @@ So, our `index.php` file ends looking like this:
 
 namespace CherrycakeApp;
 
-require "../vendor/tin-cat/cherrycake-engine/load.php";
+require "vendorautoload.php";
 
 $e = new \Cherrycake\Engine;
 
@@ -168,12 +168,12 @@ Four our setup to be complete, we'll tell Cherrycake to attend requests to the `
 
 To do this, we'll create a module called `HelloWorld` that will map an action into the [Actions](../../reference/core-modules/actions-1/actions.md) module.
 
-Create the file `/modules/HelloWorld/HelloWorld.class.php` and edit it so it declares an empty module structure, like this:
+Create the file `/src/HelloWorld/HelloWorld.class.php` and edit it so it declares an empty module structure, like this:
 
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\HelloWorld;
 
 class HelloWorld extends \Cherrycake\Module {
 }
@@ -181,14 +181,14 @@ class HelloWorld extends \Cherrycake\Module {
 
 > Remember to use the same namespace you choose for your application in the `/public/index.php` file.
 
-> Also, don't forget that modules have their own directory inside `/modules`, that directory name must match the module name, even with uppercase and lowercase characters.
+> Also, don't forget that modules have their own directory inside `/src`, that directory name must match the module name, even with uppercase and lowercase characters.
 
 To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the[ Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction) method, like this:
 
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\HelloWorld;
 
 class HelloWorld extends \Cherrycake\Module {
 
@@ -196,11 +196,11 @@ class HelloWorld extends \Cherrycake\Module {
         global $e;
         $e->Actions->mapAction(
             "home",
-            new \Cherrycake\ActionHtml([
-                "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+            new \Cherrycake\Actions\ActionHtml([
+                "moduleType" => ACTION_MODULE_TYPE_APP,
                 "moduleName" => "HelloWorld",
                 "methodName" => "show",
-                "request" => new \Cherrycake\Request([
+                "request" => new \Cherrycake\Actions\Request([
                     "pathComponents" => false,
                     "parameters" => false
                 ])
@@ -224,7 +224,7 @@ Which is quite understandable, because we haven't yet created the `show` method 
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\HelloWorld;
 
 class HelloWorld extends \Cherrycake\Module {
 
@@ -232,11 +232,11 @@ class HelloWorld extends \Cherrycake\Module {
         global $e;
         $e->Actions->mapAction(
             "home",
-            new \Cherrycake\ActionHtml([
-                "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+            new \Cherrycake\Actions\ActionHtml([
+                "moduleType" => ACTION_MODULE_TYPE_APP,
                 "moduleName" => "HelloWorld",
                 "methodName" => "show",
-                "request" => new \Cherrycake\Request([
+                "request" => new \Cherrycake\Actions\Request([
                     "pathComponents" => false,
                     "parameters" => false
                 ])
@@ -246,8 +246,8 @@ class HelloWorld extends \Cherrycake\Module {
     
     function show() {
         global $e;
-        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
-            "code" => \Cherrycake\RESPONSE_OK,
+        $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
+            "code" => RESPONSE_OK,
             "payload" => "<html><body>Hello world</body></html>"
         ]));
     }
