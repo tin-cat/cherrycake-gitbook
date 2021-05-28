@@ -9,7 +9,7 @@ In this example, we map an action that will respond when the `/about/contact` pa
 
 $e->Actions->mapAction([
     "aboutContact",
-    new \Cherrycake\ActionsActionHtml([
+    new \Cherrycake\Actions\ActionsActionHtml([
         "moduleType" => ACTION_MODULE_TYPE_APP,
         "moduleName" => "About",
         "methodName" => "viewContact",

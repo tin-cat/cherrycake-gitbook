@@ -8,12 +8,12 @@ We'll analyze step by step the example provided in the Cherrycake documentation 
 See this complete login workflow working in the [Cherrycake documentation examples](https://documentation-examples.cherrycake.io/example/loginGuideHome) site.
 {% endhint %}
 
-First we'll create our module in `/modules/LoguinGuide/LoginGuide.class.php`:
+First we'll create our module in `/src/LoginGuide/LoginGuide.class.php`:
 
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\LoginGuide;
 
 class LoginGuide extends \Cherrycake\Module {
     protected $dependentCoreModules = [
@@ -30,7 +30,7 @@ Now we'll [define an action](../actions-guide/) that will show a welcome page wh
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\LoguinGuide;
 
 class LoginGuide extends \Cherrycake\Module {
     protected $dependentCoreModules = [
@@ -42,13 +42,13 @@ class LoginGuide extends \Cherrycake\Module {
         global $e; 
         $e->Actions->mapAction(
             "loginGuideHome",
-            new \Cherrycake\ActionHtml([
+            new \Cherrycake\Actions\ActionHtml([
                 "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
                 "moduleName" => "LoginGuide",
                 "methodName" => "home",
-                "request" => new \Cherrycake\Request([
+                "request" => new \Cherrycake\Actions\Request([
                     "pathComponents" => [
-                        new \Cherrycake\RequestPathComponent([
+                        new \Cherrycake\Actions\RequestPathComponent([
                             "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
                             "string" => "login-guide"
                         ])
@@ -61,7 +61,7 @@ class LoginGuide extends \Cherrycake\Module {
     function home() {
         global $e;
     
-        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+        $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
             "code" => \Cherrycake\RESPONSE_OK,
             "payload" =>
                 $e->HtmlDocument->header().
@@ -83,17 +83,17 @@ Now we'll add another action that will show a login form in the `/login-guide/lo
 ```php
 $e->Actions->mapAction(
     "loginGuideLoginPage",
-    new \Cherrycake\ActionHtml([
+    new \Cherrycake\Actions\ActionHtml([
         "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
         "moduleName" => "LoginGuide",
         "methodName" => "loginPage",
-        "request" => new \Cherrycake\Request([
+        "request" => new \Cherrycake\Actions\Request([
             "pathComponents" => [
-                new \Cherrycake\RequestPathComponent([
+                new \Cherrycake\Actions\RequestPathComponent([
                     "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "login-guide"
                 ]),
-                new \Cherrycake\RequestPathComponent([
+                new \Cherrycake\Actions\RequestPathComponent([
                     "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "login-page"
                 ])
@@ -107,7 +107,7 @@ $e->Actions->mapAction(
 function loginPage() {
     global $e;
 
-    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+    $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
         "code" => \Cherrycake\RESPONSE_OK,
         "payload" =>
             $e->HtmlDocument->header().
@@ -129,7 +129,7 @@ And we'll add a button right next to the `You are not logged in` message, that w
 function home() {
     global $e;
 
-    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+    $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
         "code" => \Cherrycake\RESPONSE_OK,
         "payload" =>
             $e->HtmlDocument->header().
@@ -163,18 +163,18 @@ We'll call this action `loginGuideDoLogin`:
 ```php
 $e->Actions->mapAction(
     "loginGuideDoLogin",
-    new \Cherrycake\ActionHtml([
+    new \Cherrycake\Actions\ActionHtml([
         "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
         "moduleName" => "LoginGuide",
         "methodName" => "doLogin",
-        "request" => new \Cherrycake\Request([
+        "request" => new \Cherrycake\Actions\Request([
             "isSecurityCsrf" => true,
             "pathComponents" => [
-                new \Cherrycake\RequestPathComponent([
+                new \Cherrycake\Actions\RequestPathComponent([
                     "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "login-guide"
                 ]),
-                new \Cherrycake\RequestPathComponent([
+                new \Cherrycake\Actions\RequestPathComponent([
                     "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "do-login"
                 ])
@@ -208,17 +208,17 @@ function doLogin($request) {
     global $e;
     $result = $e->Login->doLogin($request->email, $request->password);
     if (
-        $result == \Cherrycake\LOGIN_RESULT_FAILED_UNKNOWN_USER
+        $result == \Cherrycake\Login\LOGIN_RESULT_FAILED_UNKNOWN_USER
         ||
-        $result == \Cherrycake\LOGIN_RESULT_FAILED_WRONG_PASSWORD
+        $result == \Cherrycake\Login\LOGIN_RESULT_FAILED_WRONG_PASSWORD
     ) {
-        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+        $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
             "code" => \Cherrycake\RESPONSE_OK,
             "payload" => $e->HtmlDocument->header()."Login error".$e->HtmlDocument->footer()
         ]));
     }
     else {
-        $e->Output->setResponse(new \Cherrycake\Response([
+        $e->Output->setResponse(new \Cherrycake\Actions\Response([
             "code" => \Cherrycake\RESPONSE_REDIRECT_FOUND,
             "url" => $e->Actions->getAction("loginGuideHome")->request->buildUrl()
         ]));
@@ -263,17 +263,17 @@ Let's add a logout button now. First, we'll create a new action to perform the l
 ```php
 $e->Actions->mapAction(
     "loginGuideLogout",
-    new \Cherrycake\ActionHtml([
+    new \Cherrycake\Actions\ActionHtml([
         "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
         "moduleName" => "LoginGuide",
         "methodName" => "logout",
-        "request" => new \Cherrycake\Request([
+        "request" => new \Cherrycake\Actions\Request([
             "pathComponents" => [
-                new \Cherrycake\RequestPathComponent([
+                new \Cherrycake\Actions\RequestPathComponent([
                     "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "login-guide"
                 ]),
-                new \Cherrycake\RequestPathComponent([
+                new \Cherrycake\Actions\RequestPathComponent([
                     "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "logout"
                 ])
@@ -289,7 +289,7 @@ Now, just like we did before, we add a logout button in the `home` method that w
 function home() {
     global $e;
 
-    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+    $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
         "code" => \Cherrycake\RESPONSE_OK,
         "payload" =>
             $e->HtmlDocument->header().
@@ -311,7 +311,7 @@ And now we implement the `logout` method like this:
 function logout() {
     global $e;
     $e->Login->logoutUser();
-    $e->Output->setResponse(new \Cherrycake\Response([
+    $e->Output->setResponse(new \Cherrycake\Actions\Response([
         "code" => \Cherrycake\RESPONSE_REDIRECT_FOUND,
         "url" => $e->Actions->getAction("loginGuideHome")->request->buildUrl()
     ]));

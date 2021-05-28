@@ -30,7 +30,7 @@ Likewise, to create an object of a class you've created \(an App class\), just r
 $product = new \CherrycakeApp\Product;
 ```
 
-You can also add use statements at the top of your file so you don't need to prefix Class names each time you want to use them, like this:
+You can also add `use` statements at the top of your file so you don't need to prefix class names each time you want to use them, like this:
 
 ```php
 use Cherrycake;
@@ -40,7 +40,7 @@ $image = new Image;
 
 ## App class files
 
-The App classes you create must be stores in the `/src` directory of your app, and the file name must match the class name, plus the `.php` extension.
+The App classes you create must be stores in the `/src` directory of your app, and the file name must match the class name, plus the `.php` extension. Unlike modules, classes do not need their own directory under `/src`.
 
 > Note that class file names are case-sensitive.
 

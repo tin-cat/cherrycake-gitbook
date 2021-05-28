@@ -140,7 +140,7 @@ So, our `index.php` file ends looking like this:
 
 namespace CherrycakeApp;
 
-require "vendorautoload.php";
+require "vendor/autoload.php";
 
 $e = new \Cherrycake\Engine;
 

@@ -38,7 +38,7 @@ $result = $e->Database->main->prepareAndExecuteCache(
     "select name from users where dateSignUp >= ?",
     [
         [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_DATETIME,
+            "type" => \Cherrycake\Database\DATABASE_FIELD_TYPE_DATETIME,
             "value" => mktime(0, 0, 0, 1, 1, 2020)
         ]
     ],

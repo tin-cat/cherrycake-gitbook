@@ -5,7 +5,7 @@ Since the [LogEvent](../../reference/core-classes/logevent/) class extends the [
 For example, let's load the last fifty [LogEvent](../../reference/core-classes/logevent/) objects from the [Log](../../reference/core-modules/log/) database, using what we learned in the [Item lists](../items-guide/item-lists.md) section of the [Items guide](../items-guide/):
 
 ```php
-$logEvents = new \Cherrycake\LogEvents([
+$logEvents = new \Cherrycake\Log\LogEvents([
 	"p" => [
 		"limit" => 50
 	]

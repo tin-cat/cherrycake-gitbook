@@ -49,7 +49,7 @@ $e->Actions->mapAction([
         "moduleType" => ACTION_MODULE_TYPE_APP,
         "moduleName" => "Products",
         "methodName" => "view",
-        "request" => new \Cherrycake\Actinos\Request([
+        "request" => new \Cherrycake\Actions\Request([
             "pathComponents" => [
                 new \Cherrycake\Actions\RequestPathComponent([
                     "type" => REQUEST_PATH_COMPONENT_TYPE_FIXED,

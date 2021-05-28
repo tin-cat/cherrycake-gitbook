@@ -25,7 +25,7 @@ First, let's remember our simple [Hello world web app](getting-started/#the-hell
 ```php
 <?php
 
-namespace CherrycakeApp\Modules;
+namespace CherrycakeApp\HelloWorld;
 
 class HelloWorld extends \Cherrycake\Module {
 
@@ -37,7 +37,7 @@ class HelloWorld extends \Cherrycake\Module {
                 "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
                 "moduleName" => "HelloWorld",
                 "methodName" => "show",
-                "request" => new \Cherrycake\Request([
+                "request" => new \Cherrycake\Actions\Request([
                     "pathComponents" => false,
                     "parameters" => false
                 ])
@@ -47,7 +47,7 @@ class HelloWorld extends \Cherrycake\Module {
     
     function show() {
         global $e;
-        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+        $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
             "code" => \Cherrycake\RESPONSE_OK,
             "payload" =>
                 $e->HtmlDocument->header().
@@ -81,7 +81,7 @@ function show() {
     
     $e->Session->numberOfTimesViewed ++;
     
-    $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
+    $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
         "code" => \Cherrycake\RESPONSE_OK,
         "payload" =>
             $e->HtmlDocument->header().

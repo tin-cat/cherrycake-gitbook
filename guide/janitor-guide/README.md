@@ -24,19 +24,19 @@ Janitor uses the `cherrycake_janitor_log` database table to store information ab
 
 To set up a task to be executed by the [Janitor](../../reference/core-modules/janitor/) module, you first create a new class that extends the [JanitorTask](../../reference/core-classes/janitortask/) core class.
 
-Imagine we wanted to create a task to update the IMDB rating of the movies in the database every day. To do so, we would create the file `classes/JanitorTaskMoviesUpdateImdbRating.class.php` like this:
+Imagine we wanted to create a task to update the IMDB rating of the movies in the database every day. To do so, we would create the file `src/JanitorTaskMoviesUpdateImdbRating.class.php` like this:
 
 ```php
 <?php
 
 namespace CherrycakeApp;
     
-class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
+class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\Janitor\JanitorTask {
     protected $name = "Movies update IMDB rating";
     protected $description = "Updates the IMDB rating of all the movies in the database";
     
     protected $config = [
-    		"executionPeriodicity" => \Cherrycake\JANITORTASK_EXECUTION_PERIODICITY_HOURS,
+    		"executionPeriodicity" => \Cherrycake\Janitor\JANITORTASK_EXECUTION_PERIODICITY_HOURS,
 		    "periodicityHours" => ["00:00"]
     ];
 
@@ -49,7 +49,7 @@ class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
             $movie->updateImdbRating();
         
         return [
-    			\Cherrycake\JANITORTASK_EXECUTION_RETURN_OK,
+    			\Cherrycake\Janitor\JANITORTASK_EXECUTION_RETURN_OK,
 		    	$movies->count()." movies updated"
         ];
     }

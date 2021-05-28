@@ -7,7 +7,7 @@ To let your app attend requests from the command line, you set up an [Action](..
 ```php
 $e->Actions->mapAction(
     "helloWorldCli",
-    new \Cherrycake\ActionCli([
+    new \Cherrycake\Actions\ActionCli([
         "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
         "moduleName" => "HelloWorld",
         "methodName" => "sayHi"
@@ -20,7 +20,7 @@ And in your method, you use the [ResponseCli](../reference/core-classes/response
 ```php
 function sayHi() {
     global $e;
-    $e->Output->setResponse(new \Cherrycake\ResponseCli([
+    $e->Output->setResponse(new \Cherrycake\Actions\ResponseCli([
         "payload" => "Hello World from the Cli interface"
     ]));
 }
@@ -35,7 +35,7 @@ If you remember how we created the `index.php` file in the [Getting started](get
 
 namespace CherrycakeApp;
 
-require "../vendor/tin-cat/cherrycake-engine/load.php";
+require "vendor/autoload.php";
 
 $e = new \Cherrycake\Engine;
 
@@ -76,12 +76,12 @@ Just like regular Actions can receive GET and POST parameters, CLI actions can r
 ```php
 $e->Actions->mapAction(
     "userFlushCache",
-    new \Cherrycake\ActionCli([
+    new \Cherrycake\Actions\ActionCli([
         "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
         "moduleName" => "Users",
         "methodName" => "flushUserCacheCli",
         "parameters" => [
-            new \Cherrycake\RequestParameter([
+            new \Cherrycake\Actions\RequestParameter([
                 "type" => \Cherrycake\REQUEST_PARAMETER_TYPE_CLI,
                 "name" => "userId",
                 "securityRules" => [
@@ -103,7 +103,7 @@ function flushUserCacheCli($request) {
         "id" => $request->id
     ]);
     $user->clearCache();
-    $e->Output->setResponse(new \Cherrycake\ResponseCli([
+    $e->Output->setResponse(new \Cherrycake\Actions\ResponseCli([
         "payload" => "Cache for user ".$request->userId." flushed"
     ]));
 }
