@@ -32,10 +32,10 @@ A major upgrade released on 2021-05-29, mainly based around leveraging class dis
     "psr-4": {
         "CherrycakeApp\\": "src/"
     }
-  },
+  }
   ```
 
-  **Removed**
+### Removed
 
-* UIComponents are no longer part of Cherrycake because they were based on an obsolete web design standard, in favor of modern web UI techniques.
+UIComponents are no longer part of Cherrycake because they were based on an obsolete web design standard, in favor of modern web UI techniques.
 
