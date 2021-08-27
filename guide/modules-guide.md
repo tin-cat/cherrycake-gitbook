@@ -43,25 +43,17 @@ When a module is loaded for the first time during a request, this is what happen
 
 ## App module files
 
-The App modules you create must be stored in the `/modules` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.class.php` extension.
+The App modules you create must be stored in the `/src` directory of your app, and also in their own subdirectory, which has to be named exactly like your module. The file name has to be also the exact name of you module, plus the `.php` extension.
 
-> You can change the default `/modules` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine/methods.md#init)
+> You can change the default `/src` directory for the one of your choice by setting the `appModulesDir` setup key when calling [Engine::init](../reference/core-classes/engine/methods.md#init)
 
-For example, if you were to create a module called `Products`, it should be stored on the `/modules/Products/Products.class.php` directory.
+For example, if you were to create a module called `Products`, it should be stored on the `/src/Products/Products.php` directory.
 
 > Note that both the subdirectory and the file name itself are case-sensitive.
 
 ## Modules configuration file
 
 Modules can have their own configuration file where all settings related to them should be entered. Configuration files are stored under the `/config` directory by default, but you can set your own directory specifying the `configDir` setup key in [Engine::init](../reference/core-classes/engine/methods.md#init)
-
-For a module to work with its own configuration file, the `isConfigFile` property of the module class must be set to true, like this:
-
-```php
-class MyModule extends \Cherrycake\Module {
-    protected $isConfigFile = true;
-}
-```
 
 Module configuration files must have a name that matches the module name, even with upper and lowercase characters. For example, the configuration file for the [Database](../reference/core-modules/database.md) module must be called `/config/Database.config.php`
 
@@ -104,9 +96,9 @@ See this example working in the [Cherrycake documentation examples](https://docu
 
 Modules can have a constants file specifically aimed to hold their related constant declarations so they will be available anywhere in your code even if the module has not been loaded or initialized. Use them to store constants that are intended to be used outside the module itself.
 
-For example, the [Cache](../reference/core-modules/cache/#constants) module declares some useful constants in its constants file like `CACHE_TTL_SHORT`, `CACHE_TTL_NORMAL` and `CACHE_TTL_LONG`.
+For example, the [Database](../reference/core-modules/database.md) module declares some useful constants in its constants file like `DATABASE_FIELD_TYPE_INTEGER`, `DATABASE_FIELD_TYPE_TIMESTAMP` and `DATABASE_FIELD_TYPE_STRING`.
 
-Constants files are stored in the same directory as the module file, and the file name has to match the exact name of you module, plus the `.constants.php` extension. For example, the constants file for the `Products` module would be stored in `/modules/Products/Products.constants.php`, and it might look like this:
+Constants files are stored in the same directory as the module file, and the file name has to match the exact name of you module, plus the `.constants.php` extension. For example, the constants file for a module called`Products` would be stored in `/src/Products/Products.constants.php`, and it might look like this:
 
 ```php
 <?php
@@ -125,6 +117,8 @@ When your module makes use of another modules regularly, you should specify them
 Set the [dependentCoreModules](../reference/core-classes/module/#usddependentcoremodules) property of your module to specify which Core modules are required by yours, and the [dependentAppModules](../reference/core-classes/module/#usddependentappmodules) to specify dependencies between your own modules, here's an example:
 
 ```php
+namespace CherrycakeApp\MyModule;
+
 class MyModule extends \Cherrycake\Module {
     protected $dependentCoreModules = [
         "Database",

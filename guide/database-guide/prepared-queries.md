@@ -27,11 +27,11 @@ $result = $e->Database->main->prepareAndExecute(
     "insert into users (name, email) values (?, ?)",
     [
         [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_STRING,
+            "type" => \Cherrycake\Database\DATABASE_FIELD_TYPE_STRING,
             "value" => "Frank"
         ],
         [
-            "type" => \Cherrycake\Modules\DATABASE_FIELD_TYPE_STRING,
+            "type" => \Cherrycake\Database\DATABASE_FIELD_TYPE_STRING,
             "value" => "frank.abagnale@united.com"
         ]
     ]

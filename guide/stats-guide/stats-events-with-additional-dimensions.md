@@ -9,8 +9,8 @@ Imagine you want to trigger a StatsEvent every time a user in your web app logs 
 
 namespace CherrycakeApp;
 
-class StatsEventUserLogin extends \Cherrycake\StatsEvent {
-	protected $timeResolution = \Cherrycake\STATS_EVENT_TIME_RESOLUTION_DAY;
+class StatsEventUserLogin extends \Cherrycake\Stats\StatsEvent {
+	protected $timeResolution = \Cherrycake\Stats\STATS_EVENT_TIME_RESOLUTION_DAY;
 	protected $typeDescription = "User login";
 }
 ```
@@ -22,20 +22,20 @@ function doLogin($request) {
     global $e;
     $result = $e->Login->doLogin($request->email, $request->password);
     if (
-        $result == \Cherrycake\LOGIN_RESULT_FAILED_UNKNOWN_USER
+        $result == \Cherrycake\Login\LOGIN_RESULT_FAILED_UNKNOWN_USER
         ||
-        $result == \Cherrycake\LOGIN_RESULT_FAILED_WRONG_PASSWORD
+        $result == \Cherrycake\Login\LOGIN_RESULT_FAILED_WRONG_PASSWORD
     ) {    
-        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
-            "code" => \Cherrycake\RESPONSE_OK,
+        $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
+            "code" => \Cherrycake\Output\RESPONSE_OK,
             "payload" => $e->HtmlDocument->header()."Login error".$e->HtmlDocument->footer()
         ]));
     }
     else {
         $e->Stats->trigger(new StatsEventUserLogin);
         
-        $e->Output->setResponse(new \Cherrycake\Response([
-            "code" => \Cherrycake\RESPONSE_REDIRECT_FOUND,
+        $e->Output->setResponse(new \Cherrycake\Actions\Response([
+            "code" => \Cherrycake\Outut\RESPONSE_REDIRECT_FOUND,
             "url" => $e->Actions->getAction("loginGuideHome")->request->buildUrl()
         ]));
     }
@@ -51,8 +51,8 @@ To add the user id as an additional dimension to the `StatsEventUserLogin` class
 
 namespace CherrycakeApp;
 
-class StatsEventUserLogin extends \Cherrycake\StatsEvent {
-    protected $timeResolution = \Cherrycake\STATS_EVENT_TIME_RESOLUTION_DAY;
+class StatsEventUserLogin extends \Cherrycake\Stats\StatsEvent {
+    protected $timeResolution = \Cherrycake\Stats\STATS_EVENT_TIME_RESOLUTION_DAY;
     protected $typeDescription = "User login";
     protected $isSecondaryId = true;
     protected $secondaryIdDescription = "User id";

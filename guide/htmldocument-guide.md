@@ -58,6 +58,8 @@ And we get exactly the same "Hello World!" HTML page as above.
 Remembers to add the [HtmlDocument](../reference/core-modules/htmldocument/) module to your module's list of dependent core modules so it is available to use, like this:
 
 ```php
+namespace CherrycakeApp\MyModule;
+
 class MyModule extends \Cherrycake\Module {
     protected $dependentCoreModules = [
         "HtmlDocument"

@@ -6,9 +6,12 @@ description: >-
 
 # Migration
 
+## Migrating from 1.x to 2.x
+
+* If you were using the [Locale](reference/core-modules/locale/) module to get multi-lingual texts in your App, take a look at the new [Translation](reference/core-modules/translation.md) module.
+* Almost all the important methods are now called using named arguments, which allows for an easier and cleaner way of passing parameters to methods. The best way of migrating your app is to take a look at the updated documentation for each module and class you're using to see how parameters are now passed.
+
 ## Migrating from 0.x to 1.x
-
-
 
 * Update your `composer.json` file to require Cherrycake version 1.x instead of version 0.x:
 

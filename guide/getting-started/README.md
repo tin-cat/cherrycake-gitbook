@@ -18,6 +18,20 @@ composer require tin-cat/cherrycake-engine dev-master
 
 This will create the `/vendor` directory in your project, and will install there the Cherrycake engine and all its dependencies.
 
+## Setting up autoload
+
+To allow your own classes and modules to be loaded automatically, add this to your `composer.json`file:
+
+```javascript
+"autoload": {
+    "psr-4": {
+        "CherrycakeApp\\": "src/"
+    }
+}
+```
+
+> If you want to use a namespace other than `CherrycakeApp`for your App, modify the snippet above to match it.
+
 ## The public directory
 
 For security reasons, we'll put all the files that will be served publicly to the Internet in a subdirectory called `/public`. Create this subdirectory now.
@@ -64,10 +78,10 @@ Cherrycake apps need to be declared in a namespace of your choice, or you can us
 namespace CherrycakeApp;
 ```
 
-Now we load the engine. Since it has been installed by composer in a previous step, we do it by including the engine's loader file, called `load.php`:
+Now we load the engine, along with any other additional packages. Since Cherrycake works with [composer](https://getcomposer.org), this is done just by including the `autoload.php` file, like this:
 
 ```php
-require "../vendor/tin-cat/cherrycake-engine/load.php";
+require "vendor/autoload.php";
 ```
 
 Now we can instantiate the engine. We use the `$e` variable as a convention:
@@ -76,7 +90,7 @@ Now we can instantiate the engine. We use the `$e` variable as a convention:
 $e = new \Cherrycake\Engine;
 ```
 
-> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace you declared above. Every time you'll refer to a Cherrycake class or constant you'll need to prefix it with the `\Cherrycake\` namespace like we did here.
+> Note that the entire Cherrycake engine lives inside the `Cherrycake` namespace, while your application lives in its own different namespace you declared above. Every time you'll refer to a Cherrycake class, module or constant you'll need to prefix it with the appropriate `\Cherrycake\` namespace like we did here, or add a `use` statement at the top of your code. You'll see examples of that in the guide section and the provided examples.
 
 Now we call the [Engine::init](../../reference/core-classes/engine/methods.md#init) method to start it up:
 
@@ -126,7 +140,7 @@ So, our `index.php` file ends looking like this:
 
 namespace CherrycakeApp;
 
-require "../vendor/tin-cat/cherrycake-engine/load.php";
+require "vendor/autoload.php";
 
 $e = new \Cherrycake\Engine;
 
@@ -154,12 +168,12 @@ Four our setup to be complete, we'll tell Cherrycake to attend requests to the `
 
 To do this, we'll create a module called `HelloWorld` that will map an action into the [Actions](../../reference/core-modules/actions-1/actions.md) module.
 
-Create the file `/modules/HelloWorld/HelloWorld.class.php` and edit it so it declares an empty module structure, like this:
+Create the file `/src/HelloWorld/HelloWorld.class.php` and edit it so it declares an empty module structure, like this:
 
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\HelloWorld;
 
 class HelloWorld extends \Cherrycake\Module {
 }
@@ -167,14 +181,14 @@ class HelloWorld extends \Cherrycake\Module {
 
 > Remember to use the same namespace you choose for your application in the `/public/index.php` file.
 
-> Also, don't forget that modules have their own directory inside `/modules`, that directory name must match the module name, even with uppercase and lowercase characters.
+> Also, don't forget that modules have their own directory inside `/src`, that directory name must match the module name, even with uppercase and lowercase characters.
 
 To map an action for the `HelloWorld` module so it will respond to requests, declare the static method `mapActions`, and call the[ Actions::mapAction](../../reference/core-modules/actions-1/actions.md#mapaction) method, like this:
 
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\HelloWorld;
 
 class HelloWorld extends \Cherrycake\Module {
 
@@ -182,11 +196,11 @@ class HelloWorld extends \Cherrycake\Module {
         global $e;
         $e->Actions->mapAction(
             "home",
-            new \Cherrycake\ActionHtml([
-                "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+            new \Cherrycake\Actions\ActionHtml([
+                "moduleType" => ACTION_MODULE_TYPE_APP,
                 "moduleName" => "HelloWorld",
                 "methodName" => "show",
-                "request" => new \Cherrycake\Request([
+                "request" => new \Cherrycake\Actions\Request([
                     "pathComponents" => false,
                     "parameters" => false
                 ])
@@ -210,7 +224,7 @@ Which is quite understandable, because we haven't yet created the `show` method 
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\HelloWorld;
 
 class HelloWorld extends \Cherrycake\Module {
 
@@ -218,11 +232,11 @@ class HelloWorld extends \Cherrycake\Module {
         global $e;
         $e->Actions->mapAction(
             "home",
-            new \Cherrycake\ActionHtml([
-                "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+            new \Cherrycake\Actions\ActionHtml([
+                "moduleType" => ACTION_MODULE_TYPE_APP,
                 "moduleName" => "HelloWorld",
                 "methodName" => "show",
-                "request" => new \Cherrycake\Request([
+                "request" => new \Cherrycake\Actions\Request([
                     "pathComponents" => false,
                     "parameters" => false
                 ])
@@ -232,8 +246,8 @@ class HelloWorld extends \Cherrycake\Module {
     
     function show() {
         global $e;
-        $e->Output->setResponse(new \Cherrycake\ResponseTextHtml([
-            "code" => \Cherrycake\RESPONSE_OK,
+        $e->Output->setResponse(new \Cherrycake\Actions\ResponseTextHtml([
+            "code" => RESPONSE_OK,
             "payload" => "<html><body>Hello world</body></html>"
         ]));
     }

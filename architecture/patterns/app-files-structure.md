@@ -16,19 +16,20 @@ In its most basic form, it contains at least one important file:
   * Cherrycake uses [composer](https://getcomposer.org/) to manage dependencies. Modify this file to add your own dependencies if needed. To make your Cherrycake application work, the dependency `tin-cat/cherrycake-engine` is required.
 {% endtab %}
 
-{% tab title="/modules" %}
+{% tab title="/src" %}
 Contains your [modules](../modules.md), each one in a subdirectory named in the syntax:
 
-`/modules/<ModuleName>`
+`/src/<ModuleName>/<ModuleName>.php`
 
-In that subdirectory, your module must go inside a file named in the syntax:
+Also contains your [classes](../classes.md), each in one file named in the syntax:
 
-`/modules/<ModuleName>/<ModuleName>.class.php`
+`/src/<ClassName>.php`
 
 It is recommended that modules follow the naming [conventions](../../conventions.md). For example, the following module:
 
 ```php
-namespace CherrycakeApp\Modules;
+namespace CherrycakeApp\Home;
+
 class Home extends \Cherrycake\Module {
     [...]
 }
@@ -36,18 +37,13 @@ class Home extends \Cherrycake\Module {
 
 Must be saved in a file here:
 
-`/modules/Home/Home.class.php`
-{% endtab %}
+`/src/Home/Home.php`
 
-{% tab title="/classes" %}
-Contains your [classes](../classes.md), each in one file named in the syntax:
-
-`/classes/<ClassName>.class.php`
-
-The file name must match the class name exactly, and it is recommended to follow the naming [conventions](../../conventions.md). For example, the following class:
+And the following class:
 
 ```php
 namespace CherrycakeApp;
+
 class User extends \Cherrycake\Item {
     [...]
 }
@@ -55,7 +51,7 @@ class User extends \Cherrycake\Item {
 
 Must be saved in a file here:
 
-`/classes/User.class.php`
+`/src/User.php`
 {% endtab %}
 
 {% tab title="/config" %}

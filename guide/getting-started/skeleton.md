@@ -23,7 +23,7 @@ git clone https://github.com/tin-cat/cherrycake-skeleton CherrycakeApp
 Now download the dependencies with composer:
 
 ```php
-composer update
+composer install
 ```
 
 Follow the [Setting up the web server](./#setting-up-the-web-server) section of the documentation and you should be ready to go!

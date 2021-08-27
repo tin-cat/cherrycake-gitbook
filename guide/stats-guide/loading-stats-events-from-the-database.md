@@ -5,7 +5,7 @@ Just like when [loading SystemLogEvents from the database](../log-guide/loading-
 For example, let's load the last fifty `StatsEventHomeView` objects from our [earlier example](./), using what we learned in the [Item lists](../items-guide/item-lists.md) section of the [Items guide](../items-guide/):
 
 ```php
-$statsEventItems = new \Cherrycake\StatsEvents([
+$statsEventItems = new \Cherrycake\Stats\StatsEvents([
     "p" => [
         "type" => "CherrycakeApp\StatsEventHomeView",
         "limit" => 50

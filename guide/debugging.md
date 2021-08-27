@@ -73,7 +73,7 @@ A more usual way of using [Engine:getStatusHtml](../reference/core-classes/engin
 
 namespace CherrycakeApp;
 
-require "/engine/load.php";
+require "vendor/autoload.php";
 
 $e = new \Cherrycake\Engine;
 

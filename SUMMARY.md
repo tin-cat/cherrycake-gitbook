@@ -114,6 +114,7 @@
     * [Stats methods](reference/core-modules/stats/stats-methods.md)
   * [SystemLog](reference/core-modules/systemlog.md)
   * [TableAdmin](reference/core-modules/tableadmin.md)
+  * [Translation](reference/core-modules/translation.md)
   * [Validate](reference/core-modules/validate.md)
 * [Core classes](reference/core-classes/README.md)
   * [Action](reference/core-classes/action/README.md)

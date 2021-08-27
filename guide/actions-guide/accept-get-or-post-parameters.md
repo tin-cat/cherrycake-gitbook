@@ -7,23 +7,23 @@ To map actions that receive parameters, pass an array of [RequestParameter](../.
 
 $e->Actions->mapAction([
     "viewUser",
-    new \Cherrycake\ActionHtml([
-        "moduleType" => \Cherrycake\ACTION_MODULE_TYPE_APP,
+    new \Cherrycake\Actions\ActionHtml([
+        "moduleType" => ACTION_MODULE_TYPE_APP,
         "moduleName" => "Users",
         "methodName" => "viewUser",
-        "request" => new \Cherrycake\Request([
+        "request" => new \Cherrycake\Actions\Request([
             "pathComponents" => [
-                new \Cherrycake\RequestPathComponent([
-                    "type" => \Cherrycake\REQUEST_PATH_COMPONENT_TYPE_FIXED,
+                new \Cherrycake\Actions\RequestPathComponent([
+                    "type" => REQUEST_PATH_COMPONENT_TYPE_FIXED,
                     "string" => "user"
                 ])
             ],
             "parameters" => [
-                new \Cherrycake\RequestParameter([
-                    "type" => \Cherrycake\REQUEST_PARAMETER_TYPE_GET,
+                new \Cherrycake\Actions\RequestParameter([
+                    "type" => REQUEST_PARAMETER_TYPE_GET,
     						    "name" => "userId",
                     "securityRules" => [
-                        \Cherrycake\SECURITY_RULE_TYPICAL_ID
+                        SECURITY_RULE_TYPICAL_ID
                     ]
     						])
             ]

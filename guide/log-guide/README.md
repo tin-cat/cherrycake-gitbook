@@ -19,7 +19,7 @@ Imagine you would like to log an event every time a someone searches for a movie
 
 namespace CherrycakeApp;
 
-class LogEventMovieSearch extends \Cherrycake\LogEvent {
+class LogEventMovieSearch extends \Cherrycake\Log\LogEvent {
     protected $typeDescription = "Movie search";
 }
 ```
@@ -83,7 +83,7 @@ For example, let's say that whenever a user that has logged in to your app searc
 
 namespace CherrycakeApp;
 
-class LogEventMovieSearch extends \Cherrycake\LogEvent {
+class LogEventMovieSearch extends \Cherrycake\Log\LogEvent {
     protected $typeDescription = "Movie search";
     protected $outherIdDescription = "Logged user id";
     

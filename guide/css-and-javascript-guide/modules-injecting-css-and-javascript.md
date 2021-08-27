@@ -9,7 +9,7 @@ A simple way of doing it is by calling the [Css::addFileToSet](../../reference/c
 ```php
 <?php
 
-namespace CherrycakeApp;
+namespace CherrycakeApp\Home;
 
 class Home extends \Cherrycake\Module {
 

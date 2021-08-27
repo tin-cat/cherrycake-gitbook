@@ -9,7 +9,7 @@ To do so, set the `isConfigFile` property of your [JanitorTask](../../reference/
 
 namespace CherrycakeApp;
     
-class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\JanitorTask {
+class JanitorTaskMoviesUpdateImdbRating extends \Cherrycake\Janitor\JanitorTask {
     protected $isConfigFile = true;
     ...
 }

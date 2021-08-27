@@ -19,8 +19,8 @@ Let's say you want to keep track of the number of views received by the home pag
 
 namespace CherrycakeApp;
 
-class StatsEventHomeView extends \Cherrycake\StatsEvent {
-	protected $timeResolution = \Cherrycake\STATS_EVENT_TIME_RESOLUTION_DAY;
+class StatsEventHomeView extends \Cherrycake\Stats\StatsEvent {
+	protected $timeResolution = \Cherrycake\Stats\STATS_EVENT_TIME_RESOLUTION_DAY;
 	protected $typeDescription = "Home view";
 }
 ```

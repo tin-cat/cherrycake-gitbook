@@ -6,7 +6,18 @@ Cherrycake adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 * **Minor** version numbers change when there are new functionalities or improvements that are compatible with earlier minor versions. For example: A Cherrycake application using version `0.3.x` will work without much changes or no changes at all when upgraded to Cherrycake version `0.4.x`.
 * **Path** version numbers change when there are updates that solve bugs in a completely backwards compatibility fashion. For example: A Cherrycake application using version `0.3.4` will work without any changes at all when upgraded to `0.3.5`.
 
+## Version 2.0.0b
 
+A major upgrade to take advantage of PHP 8 improvements like named arguments, and constructor properties promotion, makes the code easier to read and maintain, and provides self documenting benefits.
+
+This version also replaces the multilingual text methodology in spite of a newer approach based on auto-generated translation TOML files that makes it a lot easier to create multilingual applications.
+
+This version breaks compatibility with older versions, see the [Migration](migration.md) section for a guide on how to migrate your existing Cherrycake version 1.x application to version 2.x.
+
+### Changed
+
+* Upgrade to PHP 8.
+* Multilanguage texts are managed by the easier to use new Translation module instead of the previous [Locale](reference/core-modules/locale/) module.
 
 ## Version 1.0.0b
 

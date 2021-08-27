@@ -30,11 +30,17 @@ Likewise, to create an object of a class you've created \(an App class\), just r
 $product = new \CherrycakeApp\Product;
 ```
 
+You can also add `use` statements at the top of your file so you don't need to prefix class names each time you want to use them, like this:
+
+```php
+use Cherrycake;
+
+$image = new Image;
+```
+
 ## App class files
 
-The App classes you create must be stores in the `/classes` directory of your app, and the file name must match the class name, plus the `.class.php` extension.
+The App classes you create must be stores in the `/src` directory of your app, and the file name must match the class name, plus the `.php` extension. Unlike modules, classes do not need their own directory under `/src`.
 
-> Note that file name for classes is case-sensitive.
-
-> You can change the default `/classes` directory for the one of your choice by setting the `appClassesDir` setup key when calling [Engine::init](../reference/core-classes/engine/methods.md#init)
+> Note that class file names are case-sensitive.
 
