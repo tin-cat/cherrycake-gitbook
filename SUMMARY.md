@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
 * [Status](status.md)
+* [Changelog](changelog.md)
+* [Migration](migration.md)
 
 ## Architecture
 
