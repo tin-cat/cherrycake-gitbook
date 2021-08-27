@@ -12,12 +12,12 @@ A major upgrade to take advantage of PHP 8 improvements like named arguments, an
 
 This version also replaces the multilingual text methodology in spite of a newer approach based on auto-generated translation TOML files that makes it a lot easier to create multilingual applications.
 
-This version breaks compatibility with older versions, see the [Migration](migration.md) section for a guide on how to migrate your existing Cherrycake version 1.x application to version 2.x.
+This version breaks compatibility with older versions, see the [Migration](migration.md#migrating-from-1-x-to-2-x) section for a guide on how to migrate your existing Cherrycake version 1.x application to version 2.x.
 
 ### Changed
 
 * Upgrade to PHP 8.
-* Multilanguage texts are managed by the easier to use new Translation module instead of the previous [Locale](reference/core-modules/locale/) module.
+* Multi-language texts are managed by the easier to use new [Translation](reference/core-modules/translation.md) module instead of the [Locale](reference/core-modules/locale/) module. The Locale module is still used for all other localization needs.
 
 ## Version 1.0.0b
 
